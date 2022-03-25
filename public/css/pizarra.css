@@ -1,0 +1,57 @@
+
+
+.container  section{
+	font-family: sans-serif;
+	background: url(../img/pista-horizontal.png);
+	background-size: cover;
+	height: -moz-available; /*sucendo*/
+	height: -webkit-fill-available; /*sucendo*/
+	width: 100%;
+}
+@media (max-width: 400px) {
+	.container section {
+		background: url(../img/pista-vertical.png);
+		background-size: cover;
+		height: -moz-available; /*sucendo*/
+		height: -webkit-fill-available; /*sucendo*/
+		width: 100%;
+	}
+}
+
+.draggable {
+  width: 2.2em;
+  height: 2.2em;
+  background: #F90;
+  border-radius: 100%;
+  margin: 0.33em;
+  float: left;
+  /*top: 50%;
+  left: 35%;*/
+}
+
+.draggable spam{
+   color: white;
+   padding: 0.85em;
+   text-align: center;
+   line-height: 2.2em;
+}  
+
+.gnw{
+  background: #df1c31; 
+}
+
+.ball{
+  background: #ff6700;  
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.vs{
+  background: #004f7c;
+}
+
+.draggable.is-pointer-down {
+  background: #09F;
+  z-index: 2; /* above other draggies */
+}
+.draggable.is-dragging { opacity: 0.7; }

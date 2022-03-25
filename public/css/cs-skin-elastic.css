@@ -1,0 +1,227 @@
+@font-face {
+	font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?3q52jx');
+    src:    url('fonts/icomoon.eot?3q52jx#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?3q52jx') format('truetype'),
+        url('fonts/icomoon.woff?3q52jx') format('woff'),
+        url('fonts/icomoon.svg?3q52jx#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.cs-skin-elastic {
+	background: transparent;
+	font-size: 1em; /*sucendo*/
+	font-weight: 700;
+	color: #004f7c; /*Sucendo #74777b*/
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-elastic { font-size: 1em; }
+}
+
+.cs-skin-elastic > span {
+	background-color: #fff;
+	z-index: 100;
+}
+
+.cs-skin-elastic > span::after {
+	font-family: 'icomoon';
+	content: '\e904';
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cs-skin-elastic .cs-options {
+	overflow: visible;
+	background: transparent;
+	opacity: 1;
+	visibility: visible;
+	padding-bottom: 1.25em;
+	pointer-events: none;
+}
+
+.cs-skin-elastic.cs-active .cs-options {
+	pointer-events: auto;
+}
+
+.cs-skin-elastic .cs-options > ul::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	-webkit-transform: scale3d(1,0,1);
+	transform: scale3d(1,0,1);
+	background: #fff;
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cs-skin-elastic.cs-active .cs-options > ul::before {
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+	-webkit-transition: none;
+	transition: none;
+	-webkit-animation: expand 0.6s ease-out;
+  	animation: expand 0.6s ease-out;
+}
+
+.cs-skin-elastic .cs-options ul li {
+	opacity: 0;
+	-webkit-transform: translate3d(0,-25px,0);
+	transform: translate3d(0,-25px,0);
+	-webkit-transition: opacity 0.15s, -webkit-transform 0.15s;
+	transition: opacity 0.15s, transform 0.15s;
+}
+
+.cs-skin-elastic.cs-active .cs-options ul li {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	opacity: 1;
+	-webkit-transition: none;
+	transition: none;
+	-webkit-animation: bounce 0.6s ease-out;
+  	animation: bounce 0.6s ease-out;
+}
+
+/* Optional delays (problematic in IE 11/Win) */
+/*
+.cs-skin-elastic.cs-active .cs-options ul li:first-child {
+	-webkit-animation-delay: 0.1s;
+	animation-delay: 0.1s;
+}
+
+.cs-skin-elastic.cs-active .cs-options ul li:nth-child(2) {
+	-webkit-animation-delay: 0.15s;
+	animation-delay: 0.15s;
+}
+
+.cs-skin-elastic.cs-active .cs-options ul li:nth-child(3) {
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+}
+
+.cs-skin-elastic.cs-active .cs-options ul li:nth-child(4) {
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+} 
+
+/* with more items, more delays declarations are needed */
+
+
+.cs-skin-elastic .cs-options span {
+	background-repeat: no-repeat;
+	background-position: 1.5em 50%;
+	background-size: 2em auto;
+	padding: 0.3em 1em 0.3em 4em; /*Sucendo 0.8em 1em 0.8em 4em*/
+}
+
+/*iSucendo*/
+#select-p .cs-skin-elastic .cs-options span {
+    background-repeat: no-repeat;
+    background-position: 1.5em 50%;
+    background-size: 2.7em auto;
+    padding: 0.8em 1em 0.8em 4.7em;
+}
+/*fSucendo*/
+
+.cs-skin-elastic .cs-options span:hover,
+.cs-skin-elastic .cs-options li.cs-focus span,
+.cs-skin-elastic .cs-options .cs-selected span {
+	color: #ff6700; /*Sucendo #1e4c4a*/
+}
+
+.cs-skin-elastic .cs-options .cs-selected span::after {
+	content: '';
+}
+
+.cs-skin-elastic .cs-options li.flag-begoña_bulls span {
+	background-image: url(../img/logo-begoña_bulls.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-san_jose_profets span {
+	background-image: url(../img/logo-san_jose_profets.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-la_paloma_bc span {
+	background-image: url(../img/logo-la_paloma_bc.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-laboure_spinners span {
+	background-image: url(../img/logo-laboure_spinners.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-pantorraptors span {
+	background-image: url(../img/logo-pantorraptors.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-siena span {
+	background-image: url(../img/logo-siena.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-salterio_lauders span {
+	background-image: url(../img/logo-salterio_lauders.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-salterio_tomo_II span {
+	background-image: url(../img/logo-salterio_lauders.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-hijos_del_trueno span {
+	background-image: url(../img/logo-hijos_del_trueno.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-beerstillas_bc span {
+	background-image: url(../img/logo-beerstillas_bc.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-carmelitos_calzados span {
+	background-image: url(../img/logo-carmelitos_calzados.png);
+}
+
+@-webkit-keyframes expand { 
+	0% { -webkit-transform: scale3d(1,0,1); }
+	25% { -webkit-transform: scale3d(1,1.2,1); }
+	50% { -webkit-transform: scale3d(1,0.85,1); }
+	75% { -webkit-transform: scale3d(1,1.05,1) }
+	100% { -webkit-transform: scale3d(1,1,1); }
+}
+
+@keyframes expand { 
+	0% { -webkit-transform: scale3d(1,0,1); transform: scale3d(1,0,1); }
+	25% { -webkit-transform: scale3d(1,1.2,1); transform: scale3d(1,1.2,1); }
+	50% { -webkit-transform: scale3d(1,0.85,1); transform: scale3d(1,0.85,1); }
+	75% { -webkit-transform: scale3d(1,1.05,1); transform: scale3d(1,1.05,1); }
+	100% { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+}
+
+@-webkit-keyframes bounce { 
+	0% { -webkit-transform: translate3d(0,-25px,0); opacity:0; }
+	25% { -webkit-transform: translate3d(0,10px,0); }
+	50% { -webkit-transform: translate3d(0,-6px,0); }
+	75% { -webkit-transform: translate3d(0,2px,0); }
+	100% { -webkit-transform: translate3d(0,0,0); opacity: 1; }
+}
+
+@keyframes bounce { 
+	0% { -webkit-transform: translate3d(0,-25px,0); transform: translate3d(0,-25px,0); opacity:0; }
+	25% { -webkit-transform: translate3d(0,10px,0); transform: translate3d(0,10px,0); }
+	50% { -webkit-transform: translate3d(0,-6px,0); transform: translate3d(0,-6px,0); }
+	75% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0); }
+	100% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); opacity: 1; }
+}
+
+div.control {    
+	width: 49.733%;
+    display: inline-block;
+}
+
+@media screen and (max-width: 730px){
+div.control {    
+	width: 100%;
+}
+}
