@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Pizarra táctica de baloncesto | Stats Basket</title>
+		<meta name="description" content="Pizarra táctica de Baloncesto on-line para crear jugadas en tu smartphone o tablet" />
+		<meta name="author" content="Sucendo" />
+		
+		<% include ../partials/header.ejs %>
+	</head>
+
+	<body>
+	
+		<div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+				<h1>Stats Basket <span>Pizarra Táctica de Baloncesto</span></h1>
+				<button class="btn btn-3"><a href="../">Estadísticas</a></button>
+			</header>
+			<section id="cont_escalable">
+					<div class="draggable gnw" style="position: relative; left: 165px; top: 220px;"><spam>1</spam></div>
+					<div class="draggable gnw" style="position: relative; left: 232px; top: 159px;"><spam>2</spam></div>
+					<div class="draggable gnw" style="position: relative; left: -42px; top: 111px;"><spam>3</spam></div>
+					<div class="draggable gnw" style="position: relative; left: 147px; top: 83px;"><spam>4</spam></div>
+					<div class="draggable gnw" style="position: relative; left: 6px; top: 153px;"><spam>5</spam></div>
+				  
+					<div class="draggable ball" style="position: relative; left: 20px; top: 218px;"></div>
+				  
+					<div class="draggable vs" style="position: relative; left: 6px; top: 149px;"><spam>1</spam></div>
+					<div class="draggable vs" style="position: relative; left: -117px; top: 149px;"><spam>2</spam></div>
+					<div class="draggable vs" style="position: relative; left: -164px; top: 72px;"><spam>3</spam></div>
+					<div class="draggable vs" style="position: relative; left: -75px; top: 77px;"><spam>4</spam></div>
+					<div class="draggable vs" style="position: relative; left: 153px; top: 54px;"><spam>5</spam></div>
+			</section>
+		</div>
+				
+        <link rel="stylesheet" href="css/pizarra.css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='js/draggabilly.pkgd.js'></script>
+        <script src="js/pizarra.js"></script>
+		
+		<script>
+ 
+			$(document).ready(function(){
+		 
+				 $(window).resize(function(){
+		 
+					  // aquí le pasamos la clase o id de nuestro div a centrar (en este caso "cont_escalable")
+					  $('#cont_escalable').css({
+						   position:'absolute',
+						   left: ($(window).width() - $('#cont_escalable').outerWidth())/2,
+						   height: ((window.outerHeight) + 'px')
+					  });
+		 
+				});
+		 
+			// Ejecutamos la función
+			$(window).resize();
+		 
+			});
+		 
+		</script>
+		<script>
+		window.addEventListener("load", function()
+        {
+            if(!window.pageYOffset)
+            {
+                hideAddressBar();
+        	}
+        	window.addEventListener("orientationchange", hideAddressBar);
+        });
+        
+        /**
+         * Hide the URL address bar on standard Android's browser by setting enough
+         * document height and auto scrolling to active the bar hiding feature
+         */
+        
+        function hideAddressBar()
+        {
+            var device = navigator.userAgent
+            if ((device.match(/Android/i))&&(!navigator.userAgent.indexOf('Firefox'))) {
+                //alert ("Bonito Android");
+                //if (window.outerWidth < 700) {
+    
+                    document.body.style.height = (window.outerHeight) + 'px';
+                
+                    setTimeout(function()
+                    {
+                        window.scrollTo(0, 1);
+                    }, 50);
+                //}
+            }
+            if (device.match(/iPhone/i)) { 
+                /*alert ("Los que teneis un iPhone sois un poco cansinos");
+                document.body.style.height = (window.outerHeight) + 'px';
+                setTimeout(function()
+                {
+                    window.scrollTo(0, 1);
+                }, 0);*/
+            }
+        }
+		</script>
+		
+    </body>
+
+</html>
