@@ -45,6 +45,7 @@
 							<div id="select-sc" class="control">
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Semana Actual</option>
+									<option value="22" data-class="flag-france">Semana 22</option>
 									<option value="21" data-class="flag-france">Semana 21</option>
 									<option value="20" data-class="flag-france">Semana 20</option>
 									<option value="19" data-class="flag-france">Semana 19</option>
@@ -71,7 +72,7 @@
 							<div id="select-sc-jornada" class="control">
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Jornada</option>
-									<option value="9" data-class="flag-france">Jornada 9*</option>
+									<option value="9" data-class="flag-france">Jornada 9</option>
 									<option value="8" data-class="flag-france">Jornada 8</option>
 									<option value="7" data-class="flag-france">Jornada 7</option>
 									<option value="6" data-class="flag-france">Jornada 6</option>
@@ -112,6 +113,7 @@
 							<div id="select-e">
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Semana</option>
+									<option value="22" data-class="flag-france">Semana 22</option>
 									<option value="21" data-class="flag-france">Semana 21</option>
 									<option value="20" data-class="flag-france">Semana 20</option>
 									<option value="19" data-class="flag-france">Semana 19</option>
@@ -170,6 +172,7 @@
 							<div id="select-pdo">
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Semana</option>
+									<option value="22" data-class="flag-france">Semana 22</option>
 									<option value="21" data-class="flag-france">Semana 21</option>
 									<option value="20" data-class="flag-france">Semana 20</option>
 									<option value="19" data-class="flag-france">Semana 19</option>
@@ -206,6 +209,7 @@
 								<p>Top hasta la</p>
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Semana</option>
+									<option value="22" data-class="flag-france">Semana 22</option>
 									<option value="21" data-class="flag-france">Semana 21</option>
 									<option value="20" data-class="flag-france">Semana 20</option>
 									<option value="19" data-class="flag-france">Semana 19</option>
@@ -233,7 +237,7 @@
 								<p>Top de la</p>
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Jornada</option>
-									<option value="9" data-class="flag-france">Jornada 9*</option>
+									<option value="9" data-class="flag-france">Jornada 9</option>
 									<option value="8" data-class="flag-france">Jornada 8</option>
 									<option value="7" data-class="flag-france">Jornada 7</option>
 									<option value="po-cr-2" data-class="flag-france">Copa de Cristo Rey</option>
@@ -551,7 +555,7 @@
 				
 				if (tipo == null){
 					tipo = "semana";
-					numero = 21;
+					numero = 22;
 				}
             				
 				$.getJSON("partidos.json", function(datos) {
