@@ -676,11 +676,17 @@
 								}else{
 									return (b[7] - a[7]);
 								}
-							}else if (((tipo == 'jornada')&&(numero == 9))||((tipo == 'semana')&&(numero == 21))||((tipo == 'semana')&&(numero == 22))){
+							}else if (((tipo == 'semana')&&(numero == 21))){
 								if (b[0] == "Laboure Spinners (*)"){
 									return (b[6] - a[6]);
-								}else if (a[0] == "Hijos del Trueno (*)"){
+								}else{
+									return (b[7] - a[7]);
+								}
+							}else if (((tipo == 'jornada')&&(numero == 9))||((tipo == 'semana')&&(numero == 22))){
+								if (a[0] == "Hijos del Trueno (*)"){
 									return (b[0] - a[0]);
+								}else if (b[0] == "Laboure Spinners (*)"){
+									return (b[6] - a[6]);
 								}else{
 									return (b[7] - a[7]);
 								}
