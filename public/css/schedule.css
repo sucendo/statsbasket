@@ -20,9 +20,13 @@
 }
 
 #schedule .section > img {
-    width: 100%;
+    /*width: 100%;
     height: auto;
-    max-width: 400px;
+    max-width: 400px;*/
+    
+    width: 50%;
+    float: left;
+    max-height: 150px;
 }
 
 @media screen and (max-width: 25em) {
