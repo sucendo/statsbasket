@@ -24,8 +24,8 @@
     height: auto;
     max-width: 400px;*/
     
-    width: 50%;
-    float: left;
+    width: 43%;
+    display: inline-block;
     max-height: 150px;
 }
 
