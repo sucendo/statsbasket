@@ -31,6 +31,11 @@
     object-fit: contain;
 }
 
+#schedule .section > p {
+    margin: 0;
+    padding: 0.75em 0 0.75em 0;
+}
+
 @media screen and (max-width: 25em) {
     #schedule .section {
         width: 100%;
