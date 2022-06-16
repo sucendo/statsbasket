@@ -5,9 +5,17 @@
 }
 
 #schedule .section {
-    width: 50%;
+    width: 100%;
     /*height: 520px;*/
     float: left;
+}
+
+#schedule .section2 {
+    width: 50%;
+}
+
+#schedule .section3 {
+    width: 33.3%;
 }
 
 #schedule .section > img {
@@ -21,6 +29,12 @@
         width: 100%;
         /*height: 520px;*/
         float: left;
+    }
+    #schedule .section2 {
+    width: 100%;
+    }
+    #schedule .section3 {
+        width: 100%;
     }
     #schedule .section > img {
         width: 70%;
