@@ -49,8 +49,8 @@
         width: 100%;
     }
     #schedule .section > img {
-        width: 70%;
-        height: auto;
+        /*width: 70%;
+        height: auto;*/
     }
 }
 
