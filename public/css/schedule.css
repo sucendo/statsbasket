@@ -27,6 +27,7 @@
     width: 43%;
     display: inline-block;
     max-height: 150px;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 25em) {
