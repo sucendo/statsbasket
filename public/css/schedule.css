@@ -58,10 +58,6 @@
     letter-spacing: 0.05em;
     text-shadow: 0 0 0.2em #004f7c, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
 }
-#schedule .section p {
-    margin: 0;
-    padding: 0.75em 0 0.75em 0;
-}
 
 @media screen and (max-width: 1128px){
     #schedule .section p {
