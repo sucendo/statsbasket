@@ -22,6 +22,10 @@
 #schedule .section .logot {
     width: 49%;
 }
+#schedule .section .logot > img { 
+    width: 100%;
+    object-fit: contain;
+}
 #schedule .section .vs {
     position: absolute;
     text-shadow: 0 0 0.2em #e7ecea, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
@@ -41,9 +45,8 @@
     padding: 0.5em 1em 0.5em 1em;
     border-radius: 5px;
 }
-#schedule .section .logot > img { 
-    width: 100%;
-    object-fit: contain;
+#schedule .section .date p {
+    padding: 0.1em;
 }
 #schedule .logot p {
     font-weight: 700;
