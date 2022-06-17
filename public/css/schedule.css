@@ -37,13 +37,13 @@
 }
 #schedule .section3 .vs {  
     font-size: 3em;
-    margin-left: 1.4em;
+    margin-left: 1.75em;
     margin-top: -1.6em;
 }
 #schedule .section .date {
     background-color: #004f7c;
     padding: 0.5em 1em 0.5em 1em;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 5px 5px 10px rgb(0 42 65 / 80%), 10px 10px 10px rgb(0 0 0 / 50%), 10px 10px 10px rgb(0 0 0 / 50%) inset;
     margin-bottom: 10px;
 }
