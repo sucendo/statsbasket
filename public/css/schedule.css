@@ -73,6 +73,12 @@
     #schedule .section2 .vs {
         margin-top: -1.4em;
     }
+    #schedule .section2 .vs p {
+        padding: 0 0 0.7em 0;
+    }
+    #schedule .section2 .logot p {
+        font-size: 1em;
+    }
     #schedule .section3 .vs p {
         padding: 0 0 1.2em 0;
     }
