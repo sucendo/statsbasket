@@ -43,6 +43,7 @@
 }
 #schedule .section .logot h4 {
     font-size: 1.5em;
+    text-shadow: 0 0 0.2em #004f7c, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
 }
 #schedule .section3 .vs {  
     font-size: 3em;
