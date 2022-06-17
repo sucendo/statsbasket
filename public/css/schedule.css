@@ -55,6 +55,12 @@
 #schedule .section1 .logot {
     width: 100%;
 }
+#schedule .section1 div{
+    width: 50%;
+    background-color: #fff;
+    display: inline-block;
+}
+
 #schedule .section .date {
     background-color: #004f7c;
     padding: 0.5em 1em 0.5em 1em;
@@ -116,6 +122,9 @@
     #schedule .section3 {
         width: 100%;
     } 
+    #schedule .section1 div{
+        width: 100%;
+    }
     #schedule .section .vs {
         font-size: 5em;
         margin-top: -2em;
