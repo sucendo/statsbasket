@@ -129,4 +129,7 @@
     #schedule .section p {
         font-size: 0.8em;
     }
+    #schedule .section .vs p {
+        padding: 0 0 1.3em 0;
+    }
 }
