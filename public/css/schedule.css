@@ -18,6 +18,7 @@
 }
 #schedule .section div > div {
     display: inline-block;
+    padding: 5px;
 }
 #schedule .section .logot {
     width: 49%;
