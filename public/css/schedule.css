@@ -77,6 +77,14 @@
     }
 }
 
+@media screen and (max-width: 720px){
+    #schedule .section2 .vs {
+        font-size: 4em;
+        margin-left: 1em;
+        margin-top: -1.4em;
+    }
+}
+
 @media screen and (max-width: 30em) {
     #schedule .section {
         width: 100%;
