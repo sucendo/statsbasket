@@ -51,6 +51,9 @@
 #schedule .section1 .logot > img{
     max-height: 200px;
 }
+#schedule .section1 .logot {
+    width: 100%;
+}
 #schedule .section .date {
     background-color: #004f7c;
     padding: 0.5em 1em 0.5em 1em;
