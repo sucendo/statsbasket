@@ -58,7 +58,7 @@
     letter-spacing: 0.05em;
     text-shadow: 0 0 0.2em #004f7c, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
 }
-#schedule .section > p {
+#schedule .section p {
     margin: 0;
     padding: 0.75em 0 0.75em 0;
 }
@@ -87,7 +87,7 @@
     }
 }
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 40em) {
     #schedule .section {
         width: 100%;
         float: left;
@@ -104,7 +104,7 @@
         margin-left: -3.8em;
         margin-top: 1.6em;
     }
-    #schedule .section > p {
+    #schedule .section p {
         font-size: 1.5em;
     }
     #schedule .section .date p {
@@ -119,5 +119,8 @@
 @media screen and (max-width: 25em) {
     #schedule .section .vs {
         margin-left: -3.3em;
+    }
+    #schedule .section p {
+        font-size: 1em;
     }
 }
