@@ -47,6 +47,7 @@
 }
 #schedule .section .date p {
     padding: 0.1em;
+    text-shadow: 0.5px 0.5px #e7ecea, -0.5px -0.5px #002a42;
 }
 #schedule .logot p {
     font-weight: 700;
