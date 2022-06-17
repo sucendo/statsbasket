@@ -20,6 +20,16 @@
     width: 32.4%;
 }
 
+#schedule .section > div {
+    display: inline-block;
+}
+#schedule .section .logot {
+}
+#schedule .section .vs {
+}
+#schedule .section .date {
+}
+
 #schedule .section > img {
     /*width: 100%;
     height: auto;
@@ -58,7 +68,7 @@
     }
 }
 
-#schedule .section > div {
+/*#schedule .section > div {
     font-size: 0.85em;
     width: 100%;
     height: 40px;
@@ -69,8 +79,8 @@
     color: white;
     padding: 8px 5px 5px 5px;
     /* text-align: left; */
-}
+}*/
 
-#schedule .section > div:nth-child(2n) { 
+/*#schedule .section > div:nth-child(2n) { 
     margin-bottom: 40px;
-}
+}*/
