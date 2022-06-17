@@ -3,7 +3,6 @@
     /*height: 600px;*/
     float: left;
 }
-
 #schedule .section {
     width: 100%;
     /*height: 520px;*/
@@ -11,58 +10,49 @@
     margin: 0 5px;
     padding: 7px;
 }
-
 #schedule .section2 {
     width: 49%;
 }
-
 #schedule .section3 {
     width: 32.4%;
 }
-
 #schedule .section > div {
     display: inline-block;
 }
 #schedule .section .logot {
     width: 49%;
 }
-
-#schedule .section2 .vs {
+#schedule .section .vs {
     position: absolute;
+    text-shadow: 0 0 0.2em #e7ecea, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
+}
+#schedule .section2 .vs {
     font-size: 5em;
     margin-left: -3.3em;
     margin-top: 1.8em;
-    text-shadow: 0 0 0.2em #e7ecea, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
 }
-#schedule .section3 .vs {
-    position: absolute;
+#schedule .section3 .vs {  
     font-size: 3em;
     margin-left: 1.4em;
     margin-top: -1.6em;
-    text-shadow: 0 0 0.2em #e7ecea, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
-}
-
-#schedule .section .vs {
 }
 #schedule .section .date {
+    background-color: #004f7c;
+    padding: 0.5em 2em 0.5em 2em;
 }
-
 #schedule .section .logot > img { 
     width: 100%;
     object-fit: contain;
 }
-
 #schedule .logot p {
     font-weight: 700;
     padding: 0.5em 0 0.5em 0;
     letter-spacing: 0.05em;
 }
-
 #schedule .section > p {
     margin: 0;
     padding: 0.75em 0 0.75em 0;
 }
-
 @media screen and (max-width: 25em) {
     #schedule .section {
         width: 100%;
@@ -84,20 +74,3 @@
         font-size: 1.5em;
     }
 }
-
-/*#schedule .section > div {
-    font-size: 0.85em;
-    width: 100%;
-    height: 40px;
-    border: 1px solid #000;
-    margin: 10px 0;
-    background: #ff6700;
-    font-weight: bold;
-    color: white;
-    padding: 8px 5px 5px 5px;
-    /* text-align: left; */
-}*/
-
-/*#schedule .section > div:nth-child(2n) { 
-    margin-bottom: 40px;
-}*/
