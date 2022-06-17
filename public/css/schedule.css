@@ -129,7 +129,10 @@
     #schedule .section p {
         font-size: 0.8em;
     }
+    #schedule .section .vs {
+        margin-top: -1.5em;
+    }
     #schedule .section .vs p {
-        padding: 0 0 1.3em 0;
+        padding: 0 0 0.6em 0;
     }
 }
