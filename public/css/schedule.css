@@ -38,7 +38,8 @@
 }
 #schedule .section .date {
     background-color: #004f7c;
-    padding: 0.5em 2em 0.5em 2em;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 5px;
 }
 #schedule .section .logot > img { 
     width: 100%;
@@ -48,6 +49,7 @@
     font-weight: 700;
     padding: 0.5em 0 0.5em 0;
     letter-spacing: 0.05em;
+    text-shadow: 0 0 0.2em #004f7c, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
 }
 #schedule .section > p {
     margin: 0;
