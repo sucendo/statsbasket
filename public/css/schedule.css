@@ -62,6 +62,11 @@
     margin: 0;
     padding: 0.75em 0 0.75em 0;
 }
+@media screen and (max-width: 1028px) {
+    #schedule .section > p {
+        font-size: 1em;
+    }
+}
 @media screen and (max-width: 30em) {
     #schedule .section {
         width: 100%;
