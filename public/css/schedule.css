@@ -28,17 +28,15 @@
     object-fit: contain;
 }
 #schedule .section .vs {
-    position: absolute;
+    display: block;
     text-shadow: 0 0 0.2em #e7ecea, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
 }
 #schedule .section2 .vs {
     font-size: 5em;
-    margin-left: -3.3em;
     margin-top: 1.6em;
 }
 #schedule .section3 .vs {  
     font-size: 3em;
-    margin-left: 1.75em;
     margin-top: -1.6em;
 }
 #schedule .section .date {
@@ -67,18 +65,13 @@
         text-shadow: initial;
     }
     #schedule .section2 .vs {
-        margin-left: -2.7em;
         margin-top: 1.4em;
-    }
-    #schedule .section3 .vs {
-        margin-left: 1.25em;
     }
 }
 
 @media screen and (max-width: 694px){
     #schedule .section2 .vs {
         font-size: 4em;
-        margin-left: 1em;
         margin-top: -1.4em;
     }
 }
@@ -97,7 +90,6 @@
     } 
     #schedule .section .vs {
         font-size: 5em;
-        margin-left: -3.8em;
         margin-top: 1.6em;
     }
     #schedule .section p {
@@ -113,9 +105,6 @@
 }
 
 @media screen and (max-width: 25em) {
-    #schedule .section .vs {
-        margin-left: -3.3em;
-    }
     #schedule .section p {
         font-size: 0.8em;
     }
