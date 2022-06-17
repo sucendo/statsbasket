@@ -89,6 +89,9 @@
         font-size: 4em;
         margin-top: -1.4em;
     }
+    #schedule .section .vs p {
+        padding: 0 0 0.3em 0;
+    }
 }
 
 @media screen and (max-width: 40em) {
@@ -105,13 +108,16 @@
     } 
     #schedule .section .vs {
         font-size: 5em;
-        margin-top: 1.6em;
+        margin-top: -2em;
     }
     #schedule .section p {
         font-size: 1.5em;
     }
     #schedule .section .date p {
         letter-spacing: 0.05em;
+    }
+    #schedule .section .logot p {
+        font-size: 1.25em;
     }
     #schedule .section > img {
         /*width: 70%;
