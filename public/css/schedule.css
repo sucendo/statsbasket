@@ -66,6 +66,8 @@
 @media screen and (max-width: 1128px){
     #schedule .section p {
         font-size: 0.8em;
+    }
+    #schedule .section .date p {
         text-shadow: initial;
     }
     #schedule .section2 .vs {
