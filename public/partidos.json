@@ -235,7 +235,7 @@
 		{ 	
 			"competicion":"liga regular",
 			"jornada":1,
-			"semana":1,
+			"semana":0,
 			"fecha":"10/09/2022",
 			"lugar":"Stella Maris La Gavia",
 			"hora":"09:00",
@@ -250,7 +250,7 @@
 		{
 			"competicion":"liga regular",
 			"jornada":1,
-			"semana":1,
+			"semana":0,
 			"fecha":"10/09/2022",
 			"lugar":"Stella Maris La Gavia",
 			"hora":"10:15",
