@@ -1,0 +1,266 @@
+{ 
+	"competicion":"Liga",
+	"temporada":"2022-2023",
+	"equipos": [
+		{
+			"numero":1,
+			"nombre":"Begoña Bulls",
+			"abreviatura":"BEG",
+			"fichas": [
+				{"numero":0,"nombre":"Marío A.","ficha":"C0"},
+				{"numero":3,"nombre":"Pablo A.","ficha":"C03"},
+				{"numero":5,"nombre":"Fermin F.","ficha":"C05"},
+				{"numero":7,"nombre":"Carlos A.","ficha":"C01"},
+				{"numero":8,"nombre":"Francisco R.","ficha":"C08"},
+				{"numero":10,"nombre":"Pedro G.","ficha":"C10"},
+				{"numero":11,"nombre":"Juan Manuel G.","ficha":"C11"},
+				{"numero":15,"nombre":"Fernando G.","ficha":"C15"},
+				{"numero":16,"nombre":"Gabriel L.","ficha":"C17"},
+				{"numero":17,"nombre":"Juan G.","ficha":"C92"},
+				{"numero":20,"nombre":"Ernesto G.","ficha":"C20"},
+				{"numero":27,"nombre":"Richard V.","ficha":"C27"},
+				{"numero":28,"nombre":"Javier M.","ficha":"C14"},
+				{"numero":33,"nombre":"Samuel U.","ficha":"C33","puesto":"Capitán"}
+			]
+		},
+		{
+			"numero":2,
+			"nombre":"San José Prophets",
+			"abreviatura":"SJO",
+			"fichas": [
+				{"numero":2,"nombre":"Manuel dT.","ficha":"E02"},
+				{"numero":4,"nombre":"Pedro U.","ficha":"E04"},
+				{"numero":5,"nombre":"Victor P.","ficha":"E05"},
+				{"numero":7,"nombre":"Pedro P.","ficha":"E07"},
+				{"numero":8,"nombre":"Francisco R.","ficha":"E08"},				
+				{"numero":9,"nombre":"Manuel L.","ficha":"E09"},
+				{"numero":10,"nombre":"Daniel E.","ficha":"E30","especial":"federado"},
+				{"numero":11,"nombre":"Chema C.","ficha":"E11"},
+				{"numero":12,"nombre":"Miguel A.","ficha":"E12"},
+				{"numero":13,"nombre":"Juanma U.","ficha":"E13"},
+				{"numero":14,"nombre":"Andrés S.","ficha":"E0"},
+				{"numero":15,"nombre":"Pedro N.","ficha":"E15","puesto":"Capitán"},
+				{"numero":17,"nombre":"Javier U.","ficha":"E17"},
+				{"numero":20,"nombre":"Ignacio E.","ficha":"E14"},
+				{"numero":21,"nombre":"Josevi P.","ficha":"E21"},
+				{"numero":22,"nombre":"Javier C.","ficha":"E22"},
+				{"numero":23,"nombre":"Alex G.","ficha":"E23"},
+				{"numero":24,"nombre":"Jorge S.","ficha":"E24"},
+				{"numero":30,"nombre":"Pablo E.","ficha":"E10","especial":"federado"},
+				{"numero":32,"nombre":"Josué S.","ficha":"E32"},
+				{"numero":37,"nombre":"Samuel P.","ficha":"E37"},
+				{"numero":71,"nombre":"José dR.","ficha":"E71"},
+				{"numero":75,"nombre":"Daniel G.","ficha":"E75"},
+				{"numero":77,"nombre":"Julio D.","ficha":"E27"}
+			]
+		},
+		{
+			"numero":3,
+			"nombre":"La Paloma B.C.",
+			"abreviatura":"PAL",
+			"fichas": [
+				{"numero":0,"nombre":"Aurelio G.","ficha":"G12"},
+				{"numero":1,"nombre":"Gabriel B.","ficha":"G01"},
+				{"numero":3,"nombre":"Pedro H.","ficha":"G03"},
+				{"numero":4,"nombre":"Pablo P.","ficha":"G04"},
+				{"numero":5,"nombre":"Josué M.","ficha":"G05"},
+				{"numero":7,"nombre":"Pablo dV.","ficha":"G07"},
+				{"numero":8,"nombre":"Andreas T.","ficha":"G08"},
+				{"numero":9,"nombre":"Juan O.","ficha":"G09","especial":"federado"},
+				{"numero":10,"nombre":"Avelino M.","ficha":"G10"},
+				{"numero":11,"nombre":"Daniel G.","ficha":"G11"},
+				{"numero":16,"nombre":"Jesús P.","ficha":"G16"},
+				{"numero":23,"nombre":"Miguel C.","ficha":"G23"},
+				{"numero":31,"nombre":"Victor M.","ficha":"G20"},
+				{"numero":33,"nombre":"Carlos O.","ficha":"G33","puesto":"Capitán"},
+				{"numero":37,"nombre":"Daniel O.","ficha":"G37"},
+				{"numero":71,"nombre":"Miguel Ángel P.","ficha":"G71"}				
+			]
+		},
+		{
+			"numero":4,
+			"nombre":"Laboure Spinners",
+			"abreviatura":"LAB",
+			"fichas": [
+				{"numero":0,"nombre":"Pedro M.","ficha":"B98"},
+				{"numero":1,"nombre":"Abraham C.","ficha":"B90"},
+				{"numero":2,"nombre":"David C.","ficha":"B02"},
+				{"numero":5,"nombre":"Alex J.","ficha":"B05"},
+				{"numero":6,"nombre":"Daniel A.","ficha":"B06"},				
+				{"numero":7,"nombre":"Daniel M.","ficha":"B07"},				
+				{"numero":9,"nombre":"Alfonso C.","ficha":"B09","puesto":"Capitán"},
+				{"numero":10,"nombre":"Marcos Y.","ficha":"B10"},
+				{"numero":11,"nombre":"Jesús M.","ficha":"B97"},
+				{"numero":13,"nombre":"Jorge J.","ficha":"B13"},
+				{"numero":16,"nombre":"Javier Y.","ficha":"B16"},
+				{"numero":22,"nombre":"Daniel S.","ficha":"B22"},
+				{"numero":23,"nombre":"Pablo M.R.","ficha":"B23"},				
+				{"numero":99,"nombre":"Josué F.","ficha":"B99"}
+			]
+		},
+		{
+			"numero":5,
+			"nombre":"Los Ángeles Prayers",
+			"abreviatura":"PRA",
+			"fichas": [
+				{"numero":1,"nombre":"Javier M.","ficha":"A01"},
+				{"numero":3,"nombre":"Isaac R.","ficha":"A03","puesto":"Capitán"},
+				{"numero":7,"nombre":"David C.","ficha":"A07"},
+				{"numero":8,"nombre":"Pedro V.","ficha":"A08"},
+				{"numero":9,"nombre":"Javier E.","ficha":"A09"},
+				{"numero":10,"nombre":"Miguel M.","ficha":"A10"},
+				{"numero":11,"nombre":"Javier S.","ficha":"A11"},
+				{"numero":12,"nombre":"Miguel B.","ficha":"A12"},
+				{"numero":16,"nombre":"Juan F.","ficha":"A16"},
+				{"numero":20,"nombre":"Pablo A.","ficha":"A20"},
+				{"numero":23,"nombre":"Raúl F.","ficha":"A23"},
+				{"numero":28,"nombre":"Joaquín C.","ficha":"A28"},	
+				{"numero":32,"nombre":"Daniel A.","ficha":"A32"},
+				{"numero":33,"nombre":"David S.","ficha":"A33"},
+				{"numero":37,"nombre":"Carlos G.","ficha":"A37"},
+				{"numero":77,"nombre":"Pedro L.","ficha":"A77"}
+			]
+		},
+		{
+			"numero":6,
+			"nombre":"Siena",
+			"abreviatura":"SIE",
+			"fichas": [
+				{"numero":1,"nombre":"Ángel H.","ficha":"D01"},
+				{"numero":3,"nombre":"Santiago R.","ficha":"D23","especial":"federado","puesto":"Capitán"},
+				{"numero":5,"nombre":"Javier R.","ficha":"D08"},
+				{"numero":6,"nombre":"Daniel A.","ficha":"D32"},
+				{"numero":7,"nombre":"Pablo R.","ficha":"D01"},
+				{"numero":8,"nombre":"Fernando G.","ficha":"D03"},
+				{"numero":10,"nombre":"David A.","ficha":"D10"},
+				{"numero":11,"nombre":"Pablo P.","ficha":"D11"},
+				{"numero":13,"nombre":"Antonio C.","ficha":"D13"},
+				{"numero":14,"nombre":"Santiago G.","ficha":"D14"},
+				{"numero":17,"nombre":"Samuel M.","ficha":"D17"},
+				{"numero":20,"nombre":"Pedro J.","ficha":"D20"},	
+				{"numero":21,"nombre":"Javier I.","ficha":"D02"},
+				{"numero":23,"nombre":"José G.","ficha":"D23"},
+				{"numero":24,"nombre":"José María G.","ficha":"D34"},		
+				{"numero":33,"nombre":"Manuel R.","ficha":"D33"}
+			]
+		},
+		{
+			"numero":7,
+			"nombre":"Salterio Lauders",
+			"abreviatura":"SAL",
+			"fichas": [
+				{"numero":4,"nombre":"Eduardo A.C.","ficha":"H04"},
+				{"numero":5,"nombre":"Gregorio A.","ficha":"J05"},
+				{"numero":7,"nombre":"Álvaro A.","ficha":"J07"},
+				{"numero":8,"nombre":"Felipe P.","ficha":"J08"},
+				{"numero":9,"nombre":"Ignacio T.","ficha":"J09"},
+				{"numero":101,"nombre":"Iñigo O.","ficha":"H02"},
+				{"numero":10,"nombre":"Manuel A.M.","ficha":"J10"},
+				{"numero":110,"nombre":"José L.","ficha":"H11"},
+				{"numero":11,"nombre":"Hugo K.","ficha":"J11"},
+				{"numero":13,"nombre":"Gonzalo C.","ficha":"H13"},
+				{"numero":15,"nombre":"Gabriel R.","ficha":"H15"},
+				{"numero":17,"nombre":"Miguel G.","ficha":"H17"},
+				{"numero":18,"nombre":"Eduardo A.M.","ficha":"H18"},
+				{"numero":22,"nombre":"Santiago P.","ficha":"H22"},
+				{"numero":23,"nombre":"Ángel S.","ficha":"H23"},
+				{"numero":230,"nombre":"Santiago M.","ficha":"H23"},
+				{"numero":28,"nombre":"Alvaro L.","ficha":"H28"},
+				{"numero":130,"nombre":"Lucas G.","ficha":"H30"},
+				{"numero":30,"nombre":"Miguel S.","ficha":"H30"},
+				{"numero":32,"nombre":"Manuel A.C.","ficha":"H32","puesto":"Capitán"},
+				{"numero":34,"nombre":"Alberto V.","ficha":"H34"},	
+				{"numero":35,"nombre":"Ignacio R.","ficha":"H35"},
+				{"numero":80,"nombre":"Adrián A.","ficha":"H80"},
+				{"numero":85,"nombre":"Andres R.","ficha":"H85"},
+				{"numero":99,"nombre":"Juan Diego B.","ficha":"H99"}			
+			]
+		},
+		{
+			"numero":8,
+			"nombre":"Betsaida Boanegers",
+			"abreviatura":"BET",
+			"fichas": [
+				{"numero":0,"nombre":"Juan G.","ficha":"F0"},	
+				{"numero":1,"nombre":"Miguel C.","ficha":"F01"},				
+				{"numero":7,"nombre":"Carmelo G.","ficha":"F26","puesto":"Capitán"},
+				{"numero":8,"nombre":"Fernando O.","ficha":"F08"},
+				{"numero":10,"nombre":"Nicolas M.","ficha":"F10"},	
+				{"numero":11,"nombre":"Ignacio M.","ficha":"F11"},
+				{"numero":13,"nombre":"Jesús C.","ficha":"F13"},
+				{"numero":14,"nombre":"Francisco C.","ficha":"F14"},
+				{"numero":15,"nombre":"Daniel C.","ficha":"F15"},
+				{"numero":19,"nombre":"Javier A.","ficha":"F19"},
+				{"numero":20,"nombre":"Fernando jr.","ficha":"F20"},				
+				{"numero":21,"nombre":"José C.","ficha":"F21"},
+				{"numero":22,"nombre":"Miguel G.","ficha":"F22"},
+				{"numero":23,"nombre":"Daniel G.","ficha":"F23"},
+				{"numero":24,"nombre":"Alfonso O.","ficha":"F24"},
+				{"numero":25,"nombre":"Cesar M.","ficha":"F25"},
+				{"numero":44,"nombre":"David K.","ficha":"F44"},
+				{"numero":45,"nombre":"Isidro dlP.","ficha":"F45"},							
+				{"numero":97,"nombre":"Alberto G.","ficha":"F97"}				
+			]
+		},
+		{
+			"numero":9,
+			"nombre":"San Pedro Kings",
+			"abreviatura":"BEE",
+			"fichas": [       
+        {"numero":0,"nombre":"Javier E.","ficha":"I22"},
+				{"numero":3,"nombre":"Juan P.","ficha":"I03"},
+				{"numero":6,"nombre":"Jacob P.","ficha":"I06"},
+				{"numero":7,"nombre":"Pedro N.","ficha":"I07"},
+				{"numero":8,"nombre":"Jesús M.","ficha":"I08"},
+				{"numero":10,"nombre":"José Miguel R.","ficha":"I10","puesto":"Capitán"},
+				{"numero":13,"nombre":"Juan C.","ficha":"I13"},
+				{"numero":16,"nombre":"Pablo G.","ficha":"I16"},
+				{"numero":21,"nombre":"Andrés P.","ficha":"I21"},
+				{"numero":23,"nombre":"Javier S.","ficha":"I23"},
+				{"numero":30,"nombre":"Palma JR.","ficha":"I30"},
+				{"numero":53,"nombre":"Javier G.","ficha":"I53"},
+				{"numero":99,"nombre":"Manuel G.","ficha":"I99"}
+			]
+		},
+		{
+			"numero":10,
+			"nombre":"----- -----",
+			"abreviatura":"---",
+			"fichas": [
+				
+			]
+		}
+	],
+	"partidos": [
+		{ 	
+			"competicion":"liga regular",
+			"jornada":1,
+			"semana":1,
+			"fecha":"10/09/2022",
+			"lugar":"Stella Maris La Gavia",
+			"hora":"09:00",
+			"equipos": [
+				{"equipo":3,"convocados":[],"puntos":0},
+				{"equipo":5,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+								
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":1,
+			"semana":1,
+			"fecha":"10/09/2022",
+			"lugar":"Stella Maris La Gavia",
+			"hora":"10:15",
+			"equipos": [
+				{"equipo":9,"convocados":[],"puntos":0},
+				{"equipo":4,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+					
+			]
+		}	
+	]
+}
