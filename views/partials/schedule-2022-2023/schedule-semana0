@@ -1,0 +1,48 @@
+<article id="schedule">
+								<h3>Horario</h3>	
+								<p>10/09/2022 en Stella Maris la Gavia</p>
+								<div class="section section2"> 
+									<div style="
+									    letter-spacing: -1px;
+									    background: linear-gradient(45deg, rgba(255, 255, 255,0) 0%, rgba(0, 0, 0,1) 20%, rgba(0,0,0,1) 50%, rgba(255, 255, 255,1) 80%, rgba(255, 255, 255,0) 100%);
+									">
+										<div class="logot">
+											<img src="" alt="">
+											<p></p>
+										</div>									
+										<div class="logot">
+											<img src="" alt="">
+											<p></p>	
+										</div>
+										<div class="vs">
+											<p>vs</p>
+										</div>
+										<div class="date">
+											<p>sábado 10/09/2022 - 09:00h</p>
+											<p>Stella Maris la Gavia</p>
+										</div>
+									</div>
+								</div>
+								<div class="section section2"> 
+									<div style="
+									    letter-spacing: -1px;
+									    background: linear-gradient(45deg, rgba(255, 255, 255,0) 0%, rgba(135, 191, 235,1) 20%, rgba(0,0,0,1) 50%, rgba(247, 229, 0,1) 80%, rgba(255, 255, 255,0) 100%);
+									">
+										<div class="logot">
+											<img src="" alt="">
+											<p></p>
+										</div>									
+										<div class="logot">
+											<img src="" alt="">
+											<p></p>	
+										</div>
+										<div class="vs">
+											<p>vs</p>
+										</div>
+										<div class="date">
+											<p>sábado 10/09/2022 - 10:15h</p>
+											<p>Stella Maris la Gavia</p>
+										</div>
+									</div>
+								</div>
+							</article>
