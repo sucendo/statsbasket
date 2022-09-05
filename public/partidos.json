@@ -227,12 +227,12 @@
 		{ 	
 			"competicion":"liga regular",
 			"jornada":1,
-			"semana":99,
+			"semana":1,
 			"fecha":"10/09/2022",
 			"lugar":"Stella Maris La Gavia",
 			"hora":"09:00",
 			"equipos": [
-				{"equipo":3,"convocados":[],"puntos":0},
+				{"equipo":4,"convocados":[],"puntos":0},
 				{"equipo":5,"convocados":[],"puntos":0}
 			],
 			"acciones": [
@@ -242,13 +242,13 @@
 		{
 			"competicion":"liga regular",
 			"jornada":1,
-			"semana":99,
+			"semana":1,
 			"fecha":"10/09/2022",
 			"lugar":"Stella Maris La Gavia",
 			"hora":"10:15",
 			"equipos": [
-				{"equipo":9,"convocados":[],"puntos":0},
-				{"equipo":4,"convocados":[],"puntos":0}
+				{"equipo":7,"convocados":[],"puntos":0},
+				{"equipo":9,"convocados":[],"puntos":0}
 			],
 			"acciones": [
 					
