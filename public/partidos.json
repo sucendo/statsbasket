@@ -6,8 +6,10 @@
 			"numero":1,
 			"nombre":"Begoña Bulls",
 			"abreviatura":"BEG",
+			"logo":"logo_begoña_bulls.png",
+			"color":"rgba(223,28,49,1)",
 			"fichas": [
-				{"numero":0,"nombre":"Marío A.","ficha":"C0"},
+				{"numero":0,"nombre":"Marío A.","ficha":"C00"},
 				{"numero":3,"nombre":"Pablo A.","ficha":"C03"},
 				{"numero":5,"nombre":"Fermin F.","ficha":"C05"},
 				{"numero":7,"nombre":"Carlos A.","ficha":"C01"},
@@ -27,6 +29,8 @@
 			"numero":2,
 			"nombre":"San José Prophets",
 			"abreviatura":"SJO",
+			"logo":"logo_san_jose_prophets.png",
+			"color":"rgba(46,99,165,1)",
 			"fichas": [
 				{"numero":2,"nombre":"Manuel dT.","ficha":"E02"},
 				{"numero":4,"nombre":"Pedro U.","ficha":"E04"},
@@ -58,6 +62,8 @@
 			"numero":3,
 			"nombre":"La Paloma B.C.",
 			"abreviatura":"PAL",
+			"logo":"logo_la_paloma_bc.png",
+			"color":"rgba(1,1,1,1)",
 			"fichas": [
 				{"numero":0,"nombre":"Aurelio G.","ficha":"G12"},
 				{"numero":1,"nombre":"Gabriel B.","ficha":"G01"},
@@ -81,6 +87,8 @@
 			"numero":4,
 			"nombre":"Laboure Spinners",
 			"abreviatura":"LAB",
+			"logo":"logo_laboure_spinners.png",
+			"color":"rgba(255,255,255,1)",
 			"fichas": [
 				{"numero":0,"nombre":"Pedro M.","ficha":"B98"},
 				{"numero":1,"nombre":"Abraham C.","ficha":"B90"},
@@ -102,6 +110,8 @@
 			"numero":5,
 			"nombre":"Los Ángeles Prayers",
 			"abreviatura":"PRA",
+			"logo":"logo_pantoraptors.png",
+			"color":"rgba(242,19,18,1)",
 			"fichas": [
 				{"numero":1,"nombre":"Javier M.","ficha":"A01"},
 				{"numero":3,"nombre":"Isaac R.","ficha":"A03","puesto":"Capitán"},
@@ -125,6 +135,8 @@
 			"numero":6,
 			"nombre":"Siena",
 			"abreviatura":"SIE",
+			"logo":"logo_siena.png",
+			"color":"rgba(45,45,172,1)",
 			"fichas": [
 				{"numero":1,"nombre":"Ángel H.","ficha":"D01"},
 				{"numero":3,"nombre":"Santiago R.","ficha":"D23","especial":"federado","puesto":"Capitán"},
@@ -148,6 +160,8 @@
 			"numero":7,
 			"nombre":"Salterio Lauders",
 			"abreviatura":"SAL",
+			"logo":"logo_salterio_lauders.png",
+			"color":"rgba(62,130,30,1)",
 			"fichas": [
 				{"numero":4,"nombre":"Eduardo A.C.","ficha":"H04"},
 				{"numero":5,"nombre":"Gregorio A.","ficha":"J05"},
@@ -180,6 +194,8 @@
 			"numero":8,
 			"nombre":"Betsaida Boanegers",
 			"abreviatura":"BET",
+			"logo":"logo_hijos_del_trueno.png",
+			"color":"rgba(255,63,46,1)",
 			"fichas": [
 				{"numero":0,"nombre":"Juan G.","ficha":"F0"},	
 				{"numero":1,"nombre":"Miguel C.","ficha":"F01"},				
@@ -205,9 +221,11 @@
 		{
 			"numero":9,
 			"nombre":"San Pedro Kings",
-			"abreviatura":"BEE",
+			"abreviatura":"SPK",
+			"logo":"logo_la_paloma_bc.png",
+			"color":"rgba(135,191,235,1)",
 			"fichas": [       
-        {"numero":0,"nombre":"Javier E.","ficha":"I22"},
+        			{"numero":0,"nombre":"Javier E.","ficha":"I22"},
 				{"numero":3,"nombre":"Juan P.","ficha":"I03"},
 				{"numero":6,"nombre":"Jacob P.","ficha":"I06"},
 				{"numero":7,"nombre":"Pedro N.","ficha":"I07"},
