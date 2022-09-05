@@ -2832,12 +2832,12 @@
 											
 					$.each(datos["partidos"], function(idx,partido) {
 						
-							var calendar-pdo = document.createElement('div');
-							calendar-pdo.innerHTML = "";
+							var calendarPdo = document.createElement('div');
+							calendarPdo.innerHTML = "";
 							
 							var h4 = document.createElement('h4');             
 							h4.innerHTML += partido["fecha"] + " a las " + partido["hora"] + " en " + partido["lugar"];
-							calendar-pdo.appendChild(h4); 
+							calendarPdo.appendChild(h4); 
 							
 							var h2 = document.createElement('h2');             
 							
@@ -2864,11 +2864,11 @@
 								});
 							}); 
 							
-							calendar-pdo.appendChild(h2);
+							calendarPdo.appendChild(h2);
 							
 					});
 					
-					div.appendChild(calendar-pdo);
+					div.appendChild(calendarPdo);
 					
 				}); 
 				
