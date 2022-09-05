@@ -221,14 +221,6 @@
 				{"numero":53,"nombre":"Javier G.","ficha":"I53"},
 				{"numero":99,"nombre":"Manuel G.","ficha":"I99"}
 			]
-		},
-		{
-			"numero":10,
-			"nombre":"----- -----",
-			"abreviatura":"---",
-			"fichas": [
-				
-			]
 		}
 	],
 	"partidos": [
