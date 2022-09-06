@@ -22,7 +22,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const arena = [-3.6056449561266817, 40.3727423212556];
     const arenapopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Construction on the Washington Monument began in 1848.'
+        'Colegio Stella Maris la Gavia, sede desde el año 2017'
     );
     // create DOM element for the arena
     const el = document.createElement('div');
