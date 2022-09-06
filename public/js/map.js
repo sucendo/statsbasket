@@ -142,7 +142,18 @@
         .setPopup(SPKpopup)
         .addTo(map);
 
+function rotateCamera(timestamp) {
+	// clamp the rotation between 0 -360 degrees
+	// Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+	map.rotateTo((timestamp / 100) % 360, { duration: 0 });
+	// Request the next frame of the animation.
+	requestAnimationFrame(rotateCamera);
+}
+
     map.on('load', () => {
+	// Start the animation.
+	rotateCamera(0);    
+	    
         // Insert the layer beneath any symbol layer.
         const layers = map.getStyle().layers;
         const labelLayerId = layers.find(
