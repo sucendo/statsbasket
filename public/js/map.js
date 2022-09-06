@@ -1,12 +1,23 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3BycXZocXB6In0.JzhjXlVPZEUl_lr4mBw8zw';
+    // These options control the camera position after animation
+    const start = {
+        center: [-3.6416936879862467, 40.40156369365539],
+        zoom: 10,
+        pitch: 90,
+        bearing: 180
+    };
+    const end = {
+        center: [-3.6416936879862467, 40.40156369365539],
+        zoom: 12.5,
+        bearing: 70,
+        pitch: 340
+    };
+
     const map = new mapboxgl.Map({
         container: 'map',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/light-v10',
-        center: [-3.6416936879862467, 40.40156369365539],
-        zoom: 11,
-        pitch: 67,
-        bearing: 140
+        ...start
     });
 
     const arena = [-3.6056449561266817, 40.3727423212556];
@@ -187,7 +198,14 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
             labelLayerId
         );
 	
-	map.zoomTo(12, { duration: 10000 });     
-	map.rotateTo(320, { duration: 10000 });
+	const target = isAtStart ? end : start;
+        isAtStart = !isAtStart;
+
+        map.flyTo({
+            ...target, // Fly to the selected target
+            duration: 12000, // Animate over 12 seconds
+            essential: true // This animation is considered essential with
+            //respect to prefers-reduced-motion
+        });
 	    
     });
