@@ -139,10 +139,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         .setPopup(SPKpopup)
         .addTo(map);
 
-    map.on('load', () => {	
-	    
-	map.zoomTo(12.5, { duration: 9000 });    
-	    
+    map.on('load', () => {	    
         // Insert the layer beneath any symbol layer.
         const layers = map.getStyle().layers;
         const labelLayerId = layers.find(
@@ -190,6 +187,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
             labelLayerId
         );
 	
+	map.zoomTo(12, { duration: 10000 });     
 	map.rotateTo(320, { duration: 10000 });
 	    
     });
