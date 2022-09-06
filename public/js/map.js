@@ -1,17 +1,15 @@
-
-	mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3BycXZocXB6In0.JzhjXlVPZEUl_lr4mBw8zw';
-    const arena = [-3.6056449561266817, 40.3727423212556];
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3BycXZocXB6In0.JzhjXlVPZEUl_lr4mBw8zw';
     const map = new mapboxgl.Map({
         container: 'map',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/light-v10',
         center: [-3.6416936879862467, 40.40156369365539],
-        zoom: 13,
+        zoom: 10,
         pitch: 67,
         bearing: 140
     });
 
-    // create the popup
+    const arena = [-3.6056449561266817, 40.3727423212556];
     const arenapopup = new mapboxgl.Popup({ offset: 25 }).setText(
         'Construction on the Washington Monument began in 1848.'
     );
@@ -23,7 +21,6 @@
         .setLngLat(arena)
         .setPopup(arenapopup) // sets a popup on this marker
         .addTo(map);
-
 
     const BEG = [-3.6878671994080525, 40.48392247600748];
     const BEGpopup = new mapboxgl.Popup({ offset: 25 }).setText(
@@ -142,8 +139,7 @@
         .setPopup(SPKpopup)
         .addTo(map);
 
-    map.on('load', () => {
-	    
+    map.on('load', () => {	    
         // Insert the layer beneath any symbol layer.
         const layers = map.getStyle().layers;
         const labelLayerId = layers.find(
@@ -190,7 +186,8 @@
             },
             labelLayerId
         );
-	    
+	
+	map.zoomTo(12.5, { duration: 9000 });
 	map.rotateTo(320, { duration: 10000 });
 	    
     });
