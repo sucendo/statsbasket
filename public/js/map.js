@@ -5,7 +5,7 @@
         container: 'map',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/light-v10',
-        center: arena,
+        center: [-3.6416936879862467, 40.40156369365539],
         zoom: 13,
         pitch: 67,
         bearing: -35
