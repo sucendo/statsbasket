@@ -4,13 +4,13 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         center: [-3.6416936879862467, 40.40156369365539],
         zoom: 9,
         pitch: 20,
-        bearing: 180
+        bearing: 160
     };
     const end = {
         center: [-3.6416936879862467, 40.40156369365539],
         zoom: 12.5,
-	pitch: 70,
-        bearing: 340        
+	pitch: 60,
+        bearing: 320        
     };
 
     const map = new mapboxgl.Map({
