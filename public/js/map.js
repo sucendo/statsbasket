@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/light-v10',
         center: [-3.6416936879862467, 40.40156369365539],
-        zoom: 10,
+        zoom: 11,
         pitch: 67,
         bearing: 140
     });
@@ -188,6 +188,6 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         );
 	
 	map.zoomTo(12.5, { duration: 9000 });
-	map.rotateTo(320, { duration: 10000 });
+	//map.rotateTo(320, { duration: 10000 });
 	    
     });
