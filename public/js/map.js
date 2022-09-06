@@ -2,13 +2,13 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
     // These options control the camera position after animation
     const start = {
         center: [-3.6416936879862467, 40.40156369365539],
-        zoom: 10,
-        pitch: 90,
+        zoom: 9,
+        pitch: 45,
         bearing: 180
     };
     const end = {
         center: [-3.6416936879862467, 40.40156369365539],
-        zoom: 12.5,
+        zoom: 11.5,
         bearing: 70,
         pitch: 340
     };
