@@ -8,7 +8,7 @@
         center: [-3.6416936879862467, 40.40156369365539],
         zoom: 13,
         pitch: 67,
-        bearing: 180
+        bearing: 100
     });
 
     // create the popup
