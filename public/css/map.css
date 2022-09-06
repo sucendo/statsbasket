@@ -1,4 +1,4 @@
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; height: 50%; }
 
 #arena {
         background-image: url('https://statsbasket.herokuapp.com/favicon/android-icon-48x48.png');
