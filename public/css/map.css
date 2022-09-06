@@ -1,0 +1,95 @@
+#map { width: 100%; height: 200px;}
+
+#arena {
+        background-image: url('https://statsbasket.herokuapp.com/favicon/android-icon-48x48.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#begona {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-begoña_bulls.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#sanjoseprophets {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-san_jose_profets.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#lapalomabc {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-la_paloma_bc.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#labourespinners {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-laboure_spinners.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#losangelesprayers {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-patoraptors.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#siena {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-siena.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#salteriolauders {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-salterio_lauders.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#betsaidaboanegers {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-hijos_del_trueno.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#sanpedrokings {
+        background-image: url('https://statsbasket.herokuapp.com/img/logot-la_paloma_bc.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+.mapboxgl-popup {
+        max-width: 200px;
+    }
