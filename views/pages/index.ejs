@@ -2829,20 +2829,29 @@
 				div.innerHTML = "";
 				
 				$.getJSON("partidos.json", function(datos) {
-				
-					
-											
+															
 					$.each(datos["partidos"], function(idx,partido) {
 					
-						var Cdate = document.createElement('div');
-						Cdate.class = "Cdate";
-						Cdate.innerHTML = "";
+						var divDate = document.createElement('div');
+						divDate.innerHTML = "";
 						
-							var h4 = document.createElement('h4');             
-							h4.innerHTML += partido["fecha"] + " a las " + partido["hora"] + " en " + partido["lugar"];
-							Cdate.appendChild(h4); 
+							var divCenter = document.createElement('div');
+							divCenter.innerHTML = "";
+						
+							var pDate = document.createElement('p');             
+							pDate.innerHTML += partido["fecha"];
+							divCenter.appendChild(pDate); 
 							
-							var h2 = document.createElement('h2');             
+							var pHour = document.createElement('p'); 
+							pHour.innerHTML += partido["hora"];
+							divCenter.appendChild(pHour); 
+							
+							var pPlace = document.createElement('p'); 
+							pPlace.innerHTML += partido["lugar"];
+							divCenter.appendChild(pPlace); 							
+							
+							var spanLocal = document.createElement('span');
+							var spanVisitante = document.createElement('span'); 
 							
 							var idxlv = 0;
 							var equipo_local = "";
@@ -2857,18 +2866,23 @@
 									if (equipos["equipo"] == equipo["numero"]){ 
 										
 										if (idxlv == 0){
-											h2.innerHTML += equipo["nombre"] + " " + equipos["puntos"];
-											equipo_local += equipo["nombre"];
+											spanLocal.innerHTML += equipo["nombre"] + " " + equipos["puntos"];
 										}else{
-											h2.innerHTML += " - " + equipos["puntos"] + " " + equipo["nombre"];
-											equipo_visitante += equipo["nombre"];
+											spanVisitante.innerHTML += " - " + equipos["puntos"] + " " + equipo["nombre"];
 										}
 									}
 								});
 							}); 
 							
-							Cdate.appendChild(h2);
-						div.appendChild(Cdate);	
+							var divLocal = document.createElement('div');
+							divLocal.appendChild(spanLocal); 
+							
+							var divVisitante = document.createElement('div');
+							divVisitante.appendChild(spanVisitante); 
+							
+						div.appendChild(divLocal);
+						div.appendChild(divCenter);
+						div.appendChild(divVisitante);
 							
 					});	
 					
