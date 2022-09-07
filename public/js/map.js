@@ -44,6 +44,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
     new mapboxgl.Marker(beg)
         .setLngLat(BEG)
         .setPopup(BEGpopup)
+	.setId(idBEG)
         .addTo(map);
 
 const endBEG = {
@@ -216,7 +217,7 @@ const endBEG = {
             //respect to prefers-reduced-motion
         });
 	    
-	document.getElementById('BEG').addEventListener('click', () => {
+	map.on('click', 'idBEG' => {
 		// depending on whether we're currently at point a or b,
 		// aim for point a or b
 		const target = isAtStart ? endBEG : start;
