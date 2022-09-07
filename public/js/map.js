@@ -44,10 +44,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
     new mapboxgl.Marker(beg)
         .setLngLat(BEG)
         .setPopup(BEGpopup)
-	.setId(idBEG)
         .addTo(map);
 
-const endBEG = {
+    const endBEG = {
         center: [-3.6878671994080525, 40.48392247600748],
         zoom: 9,
 	pitch: 80,
@@ -216,19 +215,5 @@ const endBEG = {
             essential: true // This animation is considered essential with
             //respect to prefers-reduced-motion
         });
-	    
-	map.on('click', 'idBEG' => {
-		// depending on whether we're currently at point a or b,
-		// aim for point a or b
-		const target = isAtStart ? endBEG : start;
-		isAtStart = !isAtStart;
-
-		map.flyTo({
-			...target, // Fly to the selected target
-			duration: 12000, // Animate over 12 seconds
-			essential: true // This animation is considered essential with
-			//respect to prefers-reduced-motion
-		});
-	});
 	    
     });
