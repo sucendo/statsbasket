@@ -172,3 +172,8 @@
 #table-calendar p {
     padding: 0;
 }
+
+#table-calendar span {
+    font-weight: 800;
+    font-size: 120%;
+}
