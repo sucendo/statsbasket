@@ -166,6 +166,7 @@
 
 #table-calendar > div > div {
     display: inline-block;
+    width: 25%;
 }
 
 #table-calendar p {
