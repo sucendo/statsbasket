@@ -192,9 +192,9 @@
 		},
 		{
 			"numero":8,
-			"nombre":"Betsaida Boanegers",
+			"nombre":"Betsaida Boanerges",
 			"abreviatura":"BET",
-			"logo":"logo_hijos_del_trueno.png",
+			"logo":"logo_betsaida_boanerges.png",
 			"color":"rgba(255,63,46,1)",
 			"fichas": [
 				{"numero":0,"nombre":"Juan G.","ficha":"F0"},	
