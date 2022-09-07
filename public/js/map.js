@@ -4,13 +4,13 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         center: [-3.6416936879862467, 40.40156369365539],
         zoom: 9,
         pitch: 25,
-        bearing: 160
+        bearing: 155
     };
     const end = {
         center: [-3.6416936879862467, 40.40156369365539],
         zoom: 12,
 	pitch: 65,
-        bearing: 320        
+        bearing: 315        
     };
 
     const map = new mapboxgl.Map({
@@ -35,7 +35,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const BEG = [-3.6878671994080525, 40.48392247600748];
     const BEGpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'BEGOÑA BULLS | SEDE: Nuestra Señora de Begoña | HISTORIA: Conocidos en los inicios de la liga como los Golden North Warriors, los Begoña Bulls, llevan en la competición desde el año 2015. A pesar de no haber conseguido hasta la fecha ningún título, han dado siempre mucha guerra y buen juego en la pista, convirtiéndose en uno de los rivales más duros durante todas las temporadas. | PALMARÉS: Subcampeón de Liga (2015-2016). Subcampeón de Copa (2022)'
     );
     // create DOM element for the BEG
     const beg = document.createElement('div');
