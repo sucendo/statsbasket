@@ -130,7 +130,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
     );
 // create DOM element for the SJO
     const bet = document.createElement('div');
-    bet.id = 'betsaidaboanegers';
+    bet.id = 'betsaidaboanerges';
     // create the SJO
     new mapboxgl.Marker(bet)
         .setLngLat(BET)
