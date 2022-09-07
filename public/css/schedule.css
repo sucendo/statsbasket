@@ -155,13 +155,19 @@
 }
 
 
-//Calendar
+/*Calendar*/
 
 #table-calendar > div {
+    background: white;
     border-style: solid;
-    backgorund: #ffffff;
-}    
+    margin-bottom: 10px;
+    border-radius: 10px;
+} 
 
-#table-calendar > div < div {
+#table-calendar > div > div {
     display: inline-block;
-}    
+}
+
+#table-calendar p {
+    padding: 0;
+}
