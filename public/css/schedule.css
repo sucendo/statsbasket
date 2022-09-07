@@ -158,5 +158,10 @@
 //Calendar
 
 #table-calendar > div {
-    display: inline-block
+    border-style: solid;
+    backgorund: #ffffff;
+}    
+
+#table-calendar > div < div {
+    display: inline-block;
 }    
