@@ -2867,20 +2867,24 @@
 										
 										if (idxlv == 0){
 											spanLocal.innerHTML += equipo["nombre"];
-											if (equipos["puntos"] > 0) spanLocal.innerHTML += + " " + equipos["puntos"]
+											spanLocal.className = "flag-" + equipo["abreviatura"];
+											if (equipos["puntos"] > 0) spanLocal.innerHTML += + " " + equipos["puntos"];
 											
 										}else{
 											if (equipos["puntos"] > 0) spanVisitante.innerHTML += equipos["puntos"] + " ";
 											spanVisitante.innerHTML += equipo["nombre"];
+											spanVisitante.className = "flag-" + equipo["abreviatura"];
 										}
 									}
 								});
 							}); 
 							
 							var divLocal = document.createElement('div');
+							divLocal.className = "DateLocal";
 							divLocal.appendChild(spanLocal); 
 							
 							var divVisitante = document.createElement('div');
+							divVisitante.className = "DateVisitante";
 							divVisitante.appendChild(spanVisitante); 
 							
 						divDate.appendChild(divLocal);
