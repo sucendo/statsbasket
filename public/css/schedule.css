@@ -176,6 +176,7 @@
 #table-calendar span {
     font-weight: 800;
     font-size: 120%;
+    text-shadow: 0 0 0.2em #004f7c, 0 0 0.2em #004f7c, 0 0 0.2em #ff6700;
 }
 
 #table-calendar .DateLocal, #table-calendar .DateVisitante {
