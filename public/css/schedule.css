@@ -192,6 +192,7 @@
 	white-space: nowrap;
 	overflow: hidden;
 	padding-left: 35%;
+	margin-bottom: -5px;
 }
 
 #table-calendar .DateVisitante span {
@@ -204,6 +205,7 @@
     	white-space: nowrap;
 	overflow: hidden;
     	padding-right: 35%;
+	margin-bottom: -5px;
 }
 
 #table-calendar .flag-BEG { background-image: url(../img/logot-begoña_bulls.png); }
