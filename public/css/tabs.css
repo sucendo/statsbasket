@@ -2,12 +2,11 @@
 
 @font-face {
   font-family: 'statsbasket';
-  src: url('../font/statsbasket.eot?35695472');
-  src: url('../font/statsbasket.eot?35695472#iefix') format('embedded-opentype'),
-       url('../font/statsbasket.woff2?35695472') format('woff2'),
-       url('../font/statsbasket.woff?35695472') format('woff'),
-       url('../font/statsbasket.ttf?35695472') format('truetype'),
-       url('../font/statsbasket.svg?35695472#statsbasket') format('svg');
+  src:  url('../fonts/statsbasket/statsbasket.eot?whvbh0');
+  src:  url('../fonts/statsbasket/statsbasket.eot?whvbh0#iefix') format('embedded-opentype'),
+    url('../fonts/statsbasket/statsbasket.ttf?whvbh0') format('truetype'),
+    url('../fonts/statsbasket/statsbasket.woff?whvbh0') format('woff'),
+    url('../fonts/statsbasket/statsbasket.svg?whvbh0#statsbasket') format('svg');
   font-weight: normal;
   font-style: normal;
 }
