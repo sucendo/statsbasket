@@ -192,8 +192,6 @@
 	cursor: pointer;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
-	min-width: 400px;
 	padding-left: 35%;
 }
 
@@ -205,10 +203,9 @@
 	display: block;
 	position: relative;
 	cursor: pointer;
-    white-space: nowrap;
+    	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
-    padding-right: 35%;
+    	padding-right: 35%;
 }
 
 #table-calendar .flag-BEG { background-image: url(../img/logot-begoña_bulls.png); }
