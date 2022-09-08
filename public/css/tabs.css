@@ -154,6 +154,10 @@
   content: "\e904";
 }
 
+.icon-calendar:before { 
+  content: '\e905'; 
+}
+
 /* Content */
 .content-wrap {
 	position: relative;
