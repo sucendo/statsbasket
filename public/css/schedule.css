@@ -186,7 +186,7 @@
     background-repeat: no-repeat;
 	background-position: left;
 	background-size: 5em auto;
-	padding: 0.8em 1em 0.8em 4.7em;
+	padding: 0.8em 1em 0.8em 1em;
 	display: block;
 	position: relative;
 	cursor: pointer;
@@ -199,7 +199,7 @@
     background-repeat: no-repeat;
 	background-position: right;
 	background-size: 5em auto;
-	padding: 0.8em 1em 0.8em 4.7em;
+	padding: 0.8em 1em 0.8em 1em;
 	display: block;
 	position: relative;
 	cursor: pointer;
