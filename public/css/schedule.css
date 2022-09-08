@@ -177,3 +177,46 @@
     font-weight: 800;
     font-size: 120%;
 }
+
+#table-calendar .DateLocal, #table-calendar .DateVisitante {
+    width: 40%;
+}
+
+#table-calendar .DateLocal span {
+    background-repeat: no-repeat;
+	background-position: left;
+	background-size: 5em auto;
+	padding: 0.8em 1em 0.8em 4.7em;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-width: 400px;
+	padding-left: 35%;
+}
+
+#table-calendar .DateVisitante span {
+    background-repeat: no-repeat;
+	background-position: right;
+	background-size: 5em auto;
+	padding: 0.8em 1em 0.8em 4.7em;
+	display: block;
+	position: relative;
+	cursor: pointer;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    padding-right: 35%;
+}
+
+#table-calendar .flag-BEG { background-image: url(../img/logot-begoña_bulls.png); }
+#table-calendar .flag-SJO { background-image: url(../img/logot-san_jose_prophets.png); }
+#table-calendar .flag-PAL { background-image: url(../img/logot-la_paloma_bc.png); }
+#table-calendar .flag-LAB { background-image: url(../img/logot-laboure_spinners.png); }
+#table-calendar .flag-PRA { background-image: url(../img/logot-los_angeles_prayers.png); }
+#table-calendar .flag-SIE { background-image: url(../img/logot-siena.png); }
+#table-calendar .flag-SAL { background-image: url(../img/logot-salterio_lauders.png); }
+#table-calendar .flag-BET { background-image: url(../img/logot-begoña_bulls.png); }
+#table-calendar .flag-SPK { background-image: url(../img/logot-san_pedro_kings.png); }
