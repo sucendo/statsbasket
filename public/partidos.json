@@ -91,19 +91,16 @@
 			"color":"rgba(255,255,255,1)",
 			"fichas": [
 				{"numero":0,"nombre":"Pedro M.","ficha":"B98"},
-				{"numero":1,"nombre":"Abraham C.","ficha":"B90"},
-				{"numero":2,"nombre":"David C.","ficha":"B02"},
 				{"numero":5,"nombre":"Alex J.","ficha":"B05"},
-				{"numero":6,"nombre":"Daniel A.","ficha":"B06"},				
-				{"numero":7,"nombre":"Daniel M.","ficha":"B07"},				
+				{"numero":6,"nombre":"Israel M.F.","ficha":"B03"},				
+				{"numero":7,"nombre":"Gabriel M.","ficha":"B08"},				
 				{"numero":9,"nombre":"Alfonso C.","ficha":"B09","puesto":"Capitán"},
 				{"numero":10,"nombre":"Marcos Y.","ficha":"B10"},
 				{"numero":11,"nombre":"Jesús M.","ficha":"B97"},
 				{"numero":13,"nombre":"Jorge J.","ficha":"B13"},
-				{"numero":16,"nombre":"Javier Y.","ficha":"B16"},
+				{"numero":16,"nombre":"Marcos M.F.","ficha":"B17"},
 				{"numero":22,"nombre":"Daniel S.","ficha":"B22"},
-				{"numero":23,"nombre":"Pablo M.R.","ficha":"B23"},				
-				{"numero":99,"nombre":"Josué F.","ficha":"B99"}
+				{"numero":23,"nombre":"Pablo M.R.","ficha":"B23"}
 			]
 		},
 		{
