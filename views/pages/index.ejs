@@ -2869,11 +2869,11 @@
 											spanLocal.innerHTML += equipo["nombre"];
 											spanLocal.className = "flag-" + equipo["abreviatura"];
 											colorLocal = equipo["color"];
-											if (equipos["puntos"] > 0) spanLocal.innerHTML += + " " + equipos["puntos"];
+											if (equipos["puntos"] > 0) spanLocal.innerHTML += " | " + equipos["puntos"];
 											
 											
 										}else{
-											if (equipos["puntos"] > 0) spanVisitante.innerHTML += equipos["puntos"] + " ";
+											if (equipos["puntos"] > 0) spanVisitante.innerHTML += equipos["puntos"] + " | ";
 											spanVisitante.innerHTML += equipo["nombre"];
 											spanVisitante.className = "flag-" + equipo["abreviatura"];
 											colorVisitante = equipo["color"];
