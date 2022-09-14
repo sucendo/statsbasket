@@ -22,7 +22,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const arena = [-3.6056449561266817, 40.3727423212556];
     const arenapopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Colegio Stella Maris la Gavia, sede desde el año 2017'
+        'Colegio Stella Maris la Gavia, sede de la competición desde el año 2017.'
     );
     // create DOM element for the arena
     const el = document.createElement('div');
@@ -35,7 +35,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const BEG = [-3.6878671994080525, 40.48392247600748];
     const BEGpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'BEGOÑA BULLS | SEDE: Nuestra Señora de Begoña | HISTORIA: Conocidos en los inicios de la liga como los Golden North Warriors, los Begoña Bulls, llevan en la competición desde el año 2015. A pesar de no haber conseguido hasta la fecha ningún título, han dado siempre mucha guerra y buen juego en la pista, convirtiéndose en uno de los rivales más duros durante todas las temporadas. | PALMARÉS: Subcampeón de Liga (2015-2016). Subcampeón de Copa (2022)'
+        'BEGOÑA BULLS | SEDE: Nuestra Señora de Begoña | HISTORIA: Conocidos en los inicios de la liga como los Golden North Warriors, los Begoña Bulls, llevan en la competición desde el año 2015. A pesar de no haber conseguido hasta la fecha ningún título, han dado siempre mucha guerra y buen juego en la pista, convirtiéndose en uno de los rivales más duros durante todas las temporadas. | PALMARÉS: Subcampeón de Liga (2015-2016) / Subcampeón de Copa (2022)'
     );
     // create DOM element for the BEG
     const beg = document.createElement('div');
@@ -55,7 +55,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const SJO = [-3.696719919048703, 40.41907215725797];
     const SJOpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'SAN JOSÉ PROPHETS | SEDE: San José | HISTORIA: Conocidos en los inicios como los Houston Prophets, los San José Prophets, llevan en la liga desde la primera temporada alla en el año 2015. Siempre favoritos para el título, este equipo siempre ha estado en lo más alto, siendo la bestia negra de muchos de sus adversarios. | PALMARÉS: Campeón de La Copa de Cristo Rey (2019)'
     );
     // create DOM element for the SJO
     const sjo = document.createElement('div');
@@ -68,7 +68,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const PAL = [-3.7116031177447435, 40.40833748931871];
     const PALpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'LA PALOMA B.C. | SEDE: Virgen de la Paloma y San Pedro el Real | HISTORIA: | PALMARÉS: Campeón de La Copa de Cristo Rey (2018)'
     );
     // create DOM element for the SJO
     const pal = document.createElement('div');
@@ -81,7 +81,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const LAB = [-3.72027007288721, 40.38738497066643];
     const LABpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'LABOURE SPINNERS | SEDE: Santa Catalina Labouré | HISTORIA: | PALMARÉS: '
     );
     // create DOM element for the SJO
     const lab = document.createElement('div');
@@ -94,7 +94,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const PRA = [-3.701425083479676, 40.41361989817525];
     const PRApopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'LOS ÁNGELES PRAYERS | SEDE: San Sebastián | HISTORIA: Equipo histórico de la liga, conocido como los Pantoraptors hasta la pasada campaña. Siempre han estado compitiendo por la liga, desde el inicio de la liga en el año 2015. A pesar de no haber conseguido ningún título, son un duro y ágil equipo que siempre da la campanada todas las temporadas. | PALMARÉS: '
     );
 // create DOM element for the SJO
     const pra = document.createElement('div');
@@ -107,7 +107,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const SIE = [-3.674067169605036, 40.40883706852372];
     const SIEpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'SIENA | SEDE: Santa Catalina de Siena | HISTORIA: | PALMARÉS: Subcampeón de Liga (2017-2018) / Campeón de Liga (2018-2019) / Subcampeón de la Copa de Cristo Rey (2019) / Campeón de La Copa de Cristo Rey (2020) / Campeón de La Copa de Cristo Rey (2022) / Campeón de Liga (2021-2022)'
     );
 // create DOM element for the SJO
     const sie = document.createElement('div');
@@ -120,7 +120,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const SAL = [-3.715716020861352, 40.49572256328227];
     const SALpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'SALTERIO LAUDERS | SEDE: San Juan de Mirasierra | HISTORIA: | PALMARÉS: Campeón de Liga (2016-2017) / Campeón de Liga (2017-2018) / Subcampeón de Liga (2018-2019)'
     );
 // create DOM element for the SJO
     const sal = document.createElement('div');
@@ -133,7 +133,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const BET = [-3.7109634569705556, 40.41675819217442];
     const BETpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'BETSAIDA BOANERGES | SEDE: Santiago y San Juan Bautista | HISTORIA: Conocidos desde sus inicios como Santiago e los Hijos del Trueno hasta la pasada temporada, llevan en la liga desde el año 2015, y tienen el honor de haberse proclamado como los primeros campeones de la liga por la temporada 2015-2016. Siempre ha sido un equipo muy competitivo, a pesar de haber tenido un par de años flojos respecto a resultados, pero jamás ningún equipo se confía ante estos gigantes de la competición. | PALMARÉS: Campeón de liga (2015-2016) / Subcampeón de liga (2021-2022)'
     );
 // create DOM element for the SJO
     const bet = document.createElement('div');
@@ -146,7 +146,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const SPK = [-3.711012586202528, 40.408184990320734];
     const SPKpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'El mejor equipo de la historia.'
+        'SAN PEDRO KINGS | SEDE: Virgen de la Paloma y San Pedro el Real | HISTORIA: Conocidos en la temporada pasada como Carmelitos Calzados | PALMARÉS: '
     );
 // create DOM element for the SJO
     const spk = document.createElement('div');
