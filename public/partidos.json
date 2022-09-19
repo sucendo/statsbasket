@@ -128,22 +128,20 @@
 			"logo":"logo_siena.png",
 			"color":"rgba(45,45,172,1)",
 			"fichas": [
-				{"numero":1,"nombre":"Ángel H.","ficha":"D01"},
-				{"numero":3,"nombre":"Santiago R.","ficha":"D23","especial":"federado","puesto":"Capitán"},
+				{"numero":3,"nombre":"Santiago R.","ficha":"D23","puesto":"Capitán"},
+				{"numero":4,"nombre":"Jesús G.","ficha":"D13","especial":"federado-18"},
 				{"numero":5,"nombre":"Javier R.","ficha":"D08"},
-				{"numero":6,"nombre":"Daniel A.","ficha":"D32"},
 				{"numero":7,"nombre":"Pablo R.","ficha":"D01"},
 				{"numero":8,"nombre":"Fernando G.","ficha":"D03"},
-				{"numero":10,"nombre":"David A.","ficha":"D10"},
-				{"numero":11,"nombre":"Pablo P.","ficha":"D11"},
-				{"numero":13,"nombre":"Antonio C.","ficha":"D13"},
-				{"numero":14,"nombre":"Santiago G.","ficha":"D14"},
-				{"numero":17,"nombre":"Samuel M.","ficha":"D17"},
-				{"numero":20,"nombre":"Pedro J.","ficha":"D20"},	
+				{"numero":9,"nombre":"Miguel S.","ficha":"D09"},
+				{"numero":11,"nombre":"Pablo P.","ficha":"D11"},				
+				{"numero":13,"nombre":"Antonio C.","ficha":"D13","especial":"federado"},
+				{"numero":14,"nombre":"Santiago G.","ficha":"D14","especial":"federado-18"},
 				{"numero":21,"nombre":"Javier I.","ficha":"D02"},
-				{"numero":23,"nombre":"José G.","ficha":"D23"},
-				{"numero":24,"nombre":"José María G.","ficha":"D34"},		
-				{"numero":33,"nombre":"Manuel R.","ficha":"D33"}
+				{"numero":23,"nombre":"José G.","ficha":"D23"},				
+				{"numero":24,"nombre":"Samuel M.","ficha":"D17"},
+				{"numero":31,"nombre":"Manuel C.","ficha":"D31","especial":"federado-18"},
+				{"numero":73,"nombre":"Pedro M.","ficha":"D73"}
 			]
 		},
 		{
