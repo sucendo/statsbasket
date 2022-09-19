@@ -48,6 +48,7 @@
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Semana Actual</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
+									<option value="2" data-class="flag-france">Semana 2</option>
 								</select>
 							</div>
 							<!-- 
@@ -74,6 +75,7 @@
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Semana</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
+									<option value="2" data-class="flag-france">Semana 2</option>
 								</select>
 							</div>
 							<div id="table-e">
@@ -110,6 +112,7 @@
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Semana</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
+									<option value="2" data-class="flag-france">Semana 2</option>
 								</select>
 							</div>
 							
@@ -126,6 +129,7 @@
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Semana</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
+									<option value="2" data-class="flag-france">Semana 2</option>
 								</select>
 							</div>
 							<div id="select-top-jornada" class="control">
@@ -363,7 +367,7 @@
 				
 				if (tipo == null){
 					tipo = "semana";
-					numero = 1;
+					numero = 2;
 				}
             				
 				$.getJSON("partidos.json", function(datos) {
