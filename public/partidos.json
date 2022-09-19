@@ -1051,8 +1051,8 @@
                         "lugar":"Stella Maris La Gavia",
                         "hora":"9:00",
                         "equipos": [
-                                {"equipo":1,"convocados":[],"puntos":0},
-                                {"equipo":3,"convocados":[],"puntos":0}
+                                {"equipo":9,"convocados":[],"puntos":0},
+                                {"equipo":4,"convocados":[],"puntos":0}
                         ],
                         "acciones": [
                                                                 
@@ -1080,21 +1080,6 @@
                         "fecha":"15/10/2022",
                         "lugar":"Stella Maris La Gavia",
                         "hora":"11:30",
-                        "equipos": [
-                                {"equipo":9,"convocados":[],"puntos":0},
-                                {"equipo":4,"convocados":[],"puntos":0}
-                        ],
-                        "acciones": [
-                                                                
-                        ]
-                },
-                {
-                        "competicion":"liga regular",
-                        "jornada":3,
-                        "semana":6,
-                        "fecha":"22/10/2022",
-                        "lugar":"Stella Maris La Gavia",
-                        "hora":"9:00",
                         "equipos": [
                                 {"equipo":5,"convocados":[],"puntos":0},
                                 {"equipo":6,"convocados":[],"puntos":0}
@@ -1135,7 +1120,7 @@
                 },
                 {
                         "competicion":"liga regular",
-                        "jornada":4,
+                        "jornada":5,
                         "semana":7,
                         "fecha":"5/11/2022",
                         "lugar":"Stella Maris La Gavia",
@@ -1150,7 +1135,7 @@
                 },
                 {
                         "competicion":"liga regular",
-                        "jornada":5,
+                        "jornada":4,
                         "semana":7,
                         "fecha":"5/11/2022",
                         "lugar":"Stella Maris La Gavia",
@@ -1165,7 +1150,7 @@
                 },
                 {
                         "competicion":"liga regular",
-                        "jornada":4,
+                        "jornada":7,
                         "semana":8,
                         "fecha":"12/11/2022",
                         "lugar":"Stella Maris La Gavia",
@@ -1180,7 +1165,7 @@
                 },
                 {
                         "competicion":"liga regular",
-                        "jornada":7,
+                        "jornada":4,
                         "semana":8,
                         "fecha":"12/11/2022",
                         "lugar":"Stella Maris La Gavia",
@@ -1240,6 +1225,21 @@
                 },
                 {
                         "competicion":"liga regular",
+                        "jornada":3,
+                        "semana":10,
+                        "fecha":"26/11/2022",
+                        "lugar":"Stella Maris La Gavia",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":1,"convocados":[],"puntos":0},
+                                {"equipo":3,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
                         "jornada":6,
                         "semana":11,
                         "fecha":"10/12/2022",
@@ -1285,9 +1285,39 @@
                 },
                 {
                         "competicion":"liga regular",
+                        "jornada":5,
+                        "semana":12,
+                        "fecha":"17/12/2022",
+                        "lugar":"Stella Maris La Gavia",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":2,"convocados":[],"puntos":0},
+                                {"equipo":1,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
                         "jornada":7,
                         "semana":12,
                         "fecha":"17/12/2022",
+                        "lugar":"Stella Maris La Gavia",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":8,"convocados":[],"puntos":0},
+                                {"equipo":7,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":7,
+                        "semana":13,
+                        "fecha":"14/01/2023",
                         "lugar":"Stella Maris La Gavia",
                         "hora":"9:00",
                         "equipos": [
@@ -1300,44 +1330,14 @@
                 },
                 {
                         "competicion":"liga regular",
-                        "jornada":5,
-                        "semana":12,
-                        "fecha":"17/12/2022",
-                        "lugar":"Stella Maris La Gavia",
-                        "hora":"10:15",
-                        "equipos": [
-                                {"equipo":2,"convocados":[],"puntos":0},
-                                {"equipo":1,"convocados":[],"puntos":0}
-                        ],
-                        "acciones": [
-                                                                
-                        ]
-                },
-                {
-                        "competicion":"liga regular",
                         "jornada":7,
                         "semana":13,
                         "fecha":"14/01/2023",
                         "lugar":"Stella Maris La Gavia",
-                        "hora":"9:00",
+                        "hora":"10:15",
                         "equipos": [
                                 {"equipo":6,"convocados":[],"puntos":0},
                                 {"equipo":2,"convocados":[],"puntos":0}
-                        ],
-                        "acciones": [
-                                                                
-                        ]
-                },
-                {
-                        "competicion":"liga regular",
-                        "jornada":7,
-                        "semana":13,
-                        "fecha":"14/01/2023",
-                        "lugar":"Stella Maris La Gavia",
-                        "hora":"10:15",
-                        "equipos": [
-                                {"equipo":8,"convocados":[],"puntos":0},
-                                {"equipo":7,"convocados":[],"puntos":0}
                         ],
                         "acciones": [
                                                                 
