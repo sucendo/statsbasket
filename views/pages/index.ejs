@@ -49,6 +49,7 @@
 									<option value="" disabled selected>Semana Actual</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
 									<option value="2" data-class="flag-france">Semana 2</option>
+									<option value="3" data-class="flag-france">Semana 3</option>
 								</select>
 							</div>
 							<!-- 
@@ -76,6 +77,7 @@
 									<option value="" disabled selected>Selecciona una Semana</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
 									<option value="2" data-class="flag-france">Semana 2</option>
+									<option value="3" data-class="flag-france">Semana 3</option>
 								</select>
 							</div>
 							<div id="table-e">
@@ -113,6 +115,7 @@
 									<option value="" disabled selected>Selecciona una Semana</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
 									<option value="2" data-class="flag-france">Semana 2</option>
+									<option value="3" data-class="flag-france">Semana 3</option>
 								</select>
 							</div>
 							
@@ -130,6 +133,7 @@
 									<option value="" disabled selected>Selecciona una Semana</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
 									<option value="2" data-class="flag-france">Semana 2</option>
+									<option value="3" data-class="flag-france">Semana 3</option>
 								</select>
 							</div>
 							<div id="select-top-jornada" class="control">
@@ -137,6 +141,7 @@
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Jornada</option>
 									<option value="1" data-class="flag-france">Jornada 1</option>
+									<option value="2" data-class="flag-france">Jornada 2</option>
 								</select>
 							</div>
 							
@@ -367,7 +372,7 @@
 				
 				if (tipo == null){
 					tipo = "semana";
-					numero = 2;
+					numero = 3;
 				}
             				
 				$.getJSON("partidos.json", function(datos) {
