@@ -62,8 +62,7 @@
 			"logo":"logo_la_paloma_bc.png",
 			"color":"rgba(1,1,1,1)",
 			"fichas": [
-				{"numero":0,"nombre":"Aurelio G.","ficha":"G12"},
-				{"numero":1,"nombre":"Gabriel B.","ficha":"G01"},
+				{"numero":0,"nombre":"Victor M.","ficha":"G20"},
 				{"numero":3,"nombre":"Pedro H.","ficha":"G03"},
 				{"numero":4,"nombre":"Pablo P.","ficha":"G04"},
 				{"numero":5,"nombre":"Josué M.","ficha":"G05"},
@@ -74,10 +73,11 @@
 				{"numero":11,"nombre":"Daniel G.","ficha":"G11"},
 				{"numero":16,"nombre":"Jesús P.","ficha":"G16"},
 				{"numero":22,"nombre":"Javier E.","ficha":"G22"},
-				{"numero":23,"nombre":"Miguel C.","ficha":"G23"},
-				{"numero":31,"nombre":"Victor M.","ficha":"G20"},
+				{"numero":23,"nombre":"Miguel F.","ficha":"G24"},
+				{"numero":27,"nombre":"Pablo P.","ficha":"G27"},
 				{"numero":33,"nombre":"Carlos O.","ficha":"G33","puesto":"Capitán"},
 				{"numero":37,"nombre":"Daniel O.","ficha":"G37"},
+				{"numero":55,"nombre":"Clemente","ficha":"G55"},
 				{"numero":71,"nombre":"Miguel Ángel P.","ficha":"G71"}				
 			]
 		},
