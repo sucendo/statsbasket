@@ -116,9 +116,12 @@
 				{"numero":8,"nombre":"Pedro V.","ficha":"A08"},			
 				{"numero":10,"nombre":"Miguel M.","ficha":"A10"},				
 				{"numero":11,"nombre":"Javier S.","ficha":"A11"},
+				{"numero":12,"nombre":"Miguel B.","ficha":"A12"},
 				{"numero":20,"nombre":"Pablo A.","ficha":"A20"},
+				{"numero":22,"nombre":"Chicho R.","ficha":"A22"},
 				{"numero":23,"nombre":"Raúl F.","ficha":"A23"},
 				{"numero":28,"nombre":"Joaquín C.","ficha":"A28"},
+				{"numero":31,"nombre":"Rubén R.","ficha":"A31"},
 				{"numero":32,"nombre":"Daniel A.","ficha":"A32"},
 				{"numero":33,"nombre":"David S.","ficha":"A33"}
 			]
