@@ -111,6 +111,7 @@
 			"fichas": [
 				{"numero":1,"nombre":"Javier M.","ficha":"A01"},
 				{"numero":3,"nombre":"Isaac R.","ficha":"A03","puesto":"Capitán"},
+				{"numero":4,"nombre":"Emilio G.","ficha":"A40"},
 				{"numero":6,"nombre":"Tin Z.","ficha":"A06"},
 				{"numero":7,"nombre":"David C.","ficha":"A07"},
 				{"numero":8,"nombre":"Pedro V.","ficha":"A08"},			
