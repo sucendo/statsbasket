@@ -159,20 +159,24 @@
 			"color":"rgba(62,130,30,1)",
 			"fichas": [
 				{"numero":5,"nombre":"Gregorio A.","ficha":"J05"},
+				{"numero":7,"nombre":"Santiago J.","ficha":"H70"},
 				{"numero":8,"nombre":"Felipe P.","ficha":"J08","puesto":"Capitán"},
 				{"numero":9,"nombre":"Ignacio T.","ficha":"J09"},
 				{"numero":10,"nombre":"Manuel A.M.","ficha":"J10"},
 				{"numero":11,"nombre":"Hugo K.","ficha":"J11"},
 				{"numero":12,"nombre":"Pablo S.","ficha":"H12"},
 				{"numero":15,"nombre":"Gabriel R.","ficha":"H15"},
+				{"numero":17,"nombre":"Ignacio E.","ficha":"H71"},
 				{"numero":18,"nombre":"Eduardo A.M.","ficha":"H18"},
+				{"numero":19,"nombre":"Angel S.","ficha":"H24"},
 				{"numero":22,"nombre":"Santiago P.","ficha":"H22"},
 				{"numero":23,"nombre":"Santiago M.","ficha":"H23"},
 				{"numero":28,"nombre":"Alvaro L.","ficha":"H28"},
 				{"numero":30,"nombre":"Miguel S.","ficha":"H30"},
 				{"numero":32,"nombre":"Manuel A.C.","ficha":"H32"},
 				{"numero":35,"nombre":"Ignacio R.","ficha":"H35"},
-				{"numero":85,"nombre":"Andres R.","ficha":"H85"}		
+				{"numero":85,"nombre":"Andres R.","ficha":"H85"},
+				{"numero":93,"nombre":"Pablo M.","ficha":"H93"}
 			]
 		},
 		{
