@@ -1760,8 +1760,8 @@
                         "lugar":"Stella Maris La Gavia",
                         "hora":"9:00",
                         "equipos": [
-                                {"equipo":9,"convocados":[],"puntos":0},
-                                {"equipo":4,"convocados":[],"puntos":0}
+                                {"equipo":9,"convocados":[],"puntos":40},
+                                {"equipo":4,"convocados":[],"puntos":62}
                         ],
                         "acciones": [
                                                                 
@@ -1775,8 +1775,8 @@
                         "lugar":"Stella Maris La Gavia",
                         "hora":"10:15",
                         "equipos": [
-                                {"equipo":2,"convocados":[],"puntos":0},
-                                {"equipo":7,"convocados":[],"puntos":0}
+                                {"equipo":2,"convocados":[],"puntos":59},
+                                {"equipo":7,"convocados":[],"puntos":27}
                         ],
                         "acciones": [
                                                                 
@@ -1790,8 +1790,8 @@
                         "lugar":"Stella Maris La Gavia",
                         "hora":"11:30",
                         "equipos": [
-                                {"equipo":5,"convocados":[],"puntos":0},
-                                {"equipo":6,"convocados":[],"puntos":0}
+                                {"equipo":5,"convocados":[],"puntos":45},
+                                {"equipo":6,"convocados":[],"puntos":56}
                         ],
                         "acciones": [
                                                                 
