@@ -53,6 +53,7 @@
 									<option value="4" data-class="flag-france">Semana 4</option>
 									<option value="5" data-class="flag-france">Semana 5</option>
 									<option value="6" data-class="flag-france">Semana 6</option>
+									<option value="7" data-class="flag-france">Semana 7</option>
 								</select>
 							</div>
 							<!-- 
@@ -67,7 +68,7 @@
 								<table id="clasificacion"></table>
 							</div>
 								
-							<% include ../partials/schedule-2022-2023/schedule-semana7.ejs %>
+							<% include ../partials/schedule-2022-2023/schedule-semana8.ejs %>
 							
 							<% include ../partials/summaries.ejs %>
 														
@@ -84,6 +85,7 @@
 									<option value="4" data-class="flag-france">Semana 4</option>
 									<option value="5" data-class="flag-france">Semana 5</option>
 									<option value="6" data-class="flag-france">Semana 6</option>
+									<option value="7" data-class="flag-france">Semana 7</option>
 								</select>
 							</div>
 							<div id="table-e">
@@ -125,6 +127,7 @@
 									<option value="4" data-class="flag-france">Semana 4</option>
 									<option value="5" data-class="flag-france">Semana 5</option>
 									<option value="6" data-class="flag-france">Semana 6</option>
+									<option value="7" data-class="flag-france">Semana 7</option>
 								</select>
 							</div>
 							
@@ -146,6 +149,7 @@
 									<option value="4" data-class="flag-france">Semana 4</option>
 									<option value="5" data-class="flag-france">Semana 5</option>
 									<option value="6" data-class="flag-france">Semana 6</option>
+									<option value="7" data-class="flag-france">Semana 7</option>
 								</select>
 							</div>
 							<div id="select-top-jornada" class="control">
@@ -155,7 +159,8 @@
 									<option value="1" data-class="flag-france">Jornada 1</option>
 									<option value="2" data-class="flag-france">Jornada 2</option>
 									<option value="3" data-class="flag-france">Jornada 3</option>
-									<option value="3" data-class="flag-france">Jornada 4</option>
+									<option value="4" data-class="flag-france">Jornada 4</option>
+									<option value="6" data-class="flag-france">Jornada 6</option>
 								</select>
 							</div>
 							
@@ -386,7 +391,7 @@
 				
 				if (tipo == null){
 					tipo = "semana";
-					numero = 6;
+					numero = 7;
 				}
             				
 				$.getJSON("partidos.json", function(datos) {
