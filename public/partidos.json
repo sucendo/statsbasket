@@ -2858,8 +2858,7 @@
 				{"cuarto":4,"equipo":1,"ficha":7,"tipo":"T3"},
 				{"cuarto":4,"equipo":1,"ficha":15,"tipo":"T2"},
 				{"cuarto":4,"equipo":8,"ficha":8,"tipo":"T1","acierto":"fuera"},
-				{"cuarto":4,"equipo":8,"ficha":8,"tipo":"T1","acierto":"fuera"},
-				
+				{"cuarto":4,"equipo":8,"ficha":8,"tipo":"T1","acierto":"fuera"},				
 				{"cuarto":1,"equipo":8,"ficha":16,"tipo":"reb"},
 				{"cuarto":1,"equipo":8,"ficha":23,"tipo":"reb"},
 				{"cuarto":1,"equipo":8,"ficha":20,"tipo":"reb"},
@@ -2897,8 +2896,7 @@
 				{"cuarto":4,"equipo":8,"ficha":8,"tipo":"reb"},
 				{"cuarto":4,"equipo":8,"ficha":23,"tipo":"reb"},
 				{"cuarto":4,"equipo":8,"ficha":10,"tipo":"reb"},
-				{"cuarto":4,"equipo":8,"ficha":27,"tipo":"reb"},
-				
+				{"cuarto":4,"equipo":8,"ficha":27,"tipo":"reb"},				
 				{"cuarto":1,"equipo":1,"ficha":33,"tipo":"reb"},
 				{"cuarto":1,"equipo":1,"ficha":11,"tipo":"reb"},
 				{"cuarto":1,"equipo":1,"ficha":7,"tipo":"reb"},
@@ -2941,8 +2939,7 @@
 				{"cuarto":4,"equipo":1,"ficha":7,"tipo":"reb"},
 				{"cuarto":4,"equipo":1,"ficha":7,"tipo":"reb"},
 				{"cuarto":4,"equipo":1,"ficha":17,"tipo":"reb"},
-				{"cuarto":4,"equipo":1,"ficha":11,"tipo":"reb"},
-				
+				{"cuarto":4,"equipo":1,"ficha":11,"tipo":"reb"},				
 				{"cuarto":1,"equipo":8,"ficha":16,"tipo":"fal"},
 				{"cuarto":1,"equipo":8,"ficha":8,"tipo":"fal"},
 				{"cuarto":1,"equipo":8,"ficha":20,"tipo":"fal"},
@@ -2951,8 +2948,19 @@
 				{"cuarto":2,"equipo":8,"ficha":16,"tipo":"fal"},
 				{"cuarto":2,"equipo":8,"ficha":21,"tipo":"fal"},
 				{"cuarto":2,"equipo":8,"ficha":23,"tipo":"fal"},
-				{"cuarto":2,"equipo":8,"ficha":16,"tipo":"fal"},
-				                              
+				{"cuarto":3,"equipo":8,"ficha":16,"tipo":"fal"},
+				{"cuarto":3,"equipo":8,"ficha":8,"tipo":"fal",agravante:"tecnica"},
+				{"cuarto":3,"equipo":8,"ficha":20,"tipo":"fal"},
+				{"cuarto":3,"equipo":8,"ficha":21,"tipo":"fal"},
+				{"cuarto":4,"equipo":8,"ficha":3,"tipo":"fal"},
+				{"cuarto":4,"equipo":8,"ficha":21,"tipo":"fal"},
+				{"cuarto":4,"equipo":8,"ficha":23,"tipo":"fal"},
+				{"cuarto":4,"equipo":8,"ficha":77,"tipo":"fal"},
+				{"cuarto":4,"equipo":8,"ficha":77,"tipo":"fal"},				
+				{"cuarto":1,"equipo":1,"ficha":7,"tipo":"fal"},
+				{"cuarto":2,"equipo":1,"ficha":11,"tipo":"fal"},
+				{"cuarto":4,"equipo":1,"ficha":11,"tipo":"fal"},
+				{"cuarto":4,"equipo":1,"ficha":27,"tipo":"fal"}				                              
                         ]
                 },
                 {
