@@ -11,11 +11,11 @@
  /*Time variable recording the number of milliseconds past since start of the stats teams*/
  
 
-    function stats_teams(table, div, week, competition) {
+    function stats_teams(archive_json, table, div, week, competition) {
 		var json = [];
 		var aviso = 0;
 				
-		$.getJSON("partidos.json", function(datos) {
+		$.getJSON(archive_json, function(datos) {
 										
 			var f = 0;
 		 
