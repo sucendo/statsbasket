@@ -567,7 +567,7 @@
 					table.id ="estadisticas-equipos-co";
 					div.appendChild(table);
 				
-					stats_teams(table, div, "co-cr", "copa");
+					stats_teams("public/partidos.json", table, div, "co-cr", "copa");
 				
 				}else if (semana == "po-4"){
 					var div = document.createElement('div');
@@ -583,7 +583,7 @@
 					table.id ="estadisticas-equipos-po";
 					div.appendChild(table);
 					//-------------------------------------------
-					stats_teams(table, div, "po-4", "playoffs");
+					stats_teams("public/partidos.json", table, div, "po-4", "playoffs");
 
 					var div = document.createElement('div');
 					div.id ="stats-team-playoffs";
@@ -598,7 +598,7 @@
 					table.id ="estadisticas-equipos-te";
 					div.appendChild(table);
 				
-					stats_teams(table, div, "temporada", "temporada");
+					stats_teams("public/partidos.json", table, div, "temporada", "temporada");
 				}else{
 					var div = document.createElement('div');
 					div.id ="stats-team-regular-leage";
@@ -613,7 +613,7 @@
 					table.id ="estadisticas-equipos-lr";
 					div.appendChild(table);
 					
-					stats_teams(table, div, semana, "liga regular");
+					stats_teams("public/partidos.json", table, div, semana, "liga regular");
 				}
 								
             }
