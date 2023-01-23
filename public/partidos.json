@@ -4829,7 +4829,7 @@
                         "hora":"9:00",
                         "equipos": [
                                 {"equipo":9,"convocados":[3,6,11,16,19,21,23],"puntos":20},
-                                {"equipo":1,"convocados":[0,3,7,11,15,17,20,27,28,33],"puntos":79}
+                                {"equipo":1,"convocados":[0,3,7,15,17,20,27,28,33],"puntos":79}
                         ],
                         "acciones": [
                                 {"cuarto":1,"equipo":9,"ficha":21,"tipo":"T2"},
