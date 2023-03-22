@@ -8423,8 +8423,8 @@
 					"lugar":"Stella Maris La Gavia",
 					"hora":"9:00",
 					"equipos": [
-						{"equipo":2,"convocados":[],"puntos":0},
-						{"equipo":3,"convocados":[],"puntos":0}
+						{"equipo":2,"convocados":[],"puntos":58},
+						{"equipo":3,"convocados":[],"puntos":32}
 					],
 					"acciones": [
 
@@ -8438,8 +8438,8 @@
 					"lugar":"Stella Maris La Gavia",
 					"hora":"10:15",
 					"equipos": [
-						{"equipo":1,"convocados":[],"puntos":0},
-						{"equipo":6,"convocados":[],"puntos":0}
+						{"equipo":1,"convocados":[],"puntos":32},
+						{"equipo":6,"convocados":[],"puntos":33}
 					],
 					"acciones": [
 
