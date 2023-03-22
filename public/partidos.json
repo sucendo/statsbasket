@@ -216,6 +216,7 @@
 			"color":"rgba(135,191,235,1)",
 			"fichas": [		
 				{"numero":0,"nombre":"Pablo A.","ficha":"K00"},
+				{"numero":1,"nombre":"Alejandro G.","ficha":"K01"},
 				{"numero":3,"nombre":"Juan P.","ficha":"K03","puesto":"Capitán"},	
 				{"numero":4,"nombre":"Alberto S.","ficha":"K04"},	
 				{"numero":5,"nombre":"Pablo P.","ficha":"K05"},				
