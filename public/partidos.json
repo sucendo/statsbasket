@@ -9189,8 +9189,8 @@
 					"lugar":"Stella Maris La Gavia",
 					"hora":"09:00",
 					"equipos": [
-						{"equipo":8,"convocados": [],"puntos":},
-						{"equipo":7,"convocados": [],"puntos":}
+						{"equipo":8,"convocados": [],"puntos":0},
+						{"equipo":7,"convocados": [],"puntos":0}
 					],
 					"acciones": [
 					
@@ -9204,8 +9204,8 @@
 					"lugar":"Stella Maris La Gavia",
 					"hora":"10:15",
 					"equipos": [
-						{"equipo":2,"convocados": [],"puntos":},
-						{"equipo":5,"convocados": [],"puntos":}
+						{"equipo":2,"convocados": [],"puntos":0},
+						{"equipo":5,"convocados": [],"puntos":0}
 					],
 					"acciones": [
 					
@@ -9219,8 +9219,8 @@
 					"lugar":"Stella Maris La Gavia",
 					"hora":"09:00",
 					"equipos": [
-						{"equipo":1,"convocados": [],"puntos":},
-						{"equipo":4,"convocados": [],"puntos":}
+						{"equipo":1,"convocados": [],"puntos":0},
+						{"equipo":4,"convocados": [],"puntos":0}
 					],
 					"acciones": [
 					
@@ -9234,8 +9234,8 @@
 					"lugar":"Stella Maris La Gavia",
 					"hora":"10:15",
 					"equipos": [
-						{"equipo":3,"convocados": [],"puntos":},
-						{"equipo":6,"convocados": [],"puntos":}
+						{"equipo":3,"convocados": [],"puntos":0},
+						{"equipo":6,"convocados": [],"puntos":0}
 					],
 					"acciones": [
 					
