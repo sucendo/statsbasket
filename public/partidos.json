@@ -9183,8 +9183,8 @@
 				},
 				{ 	
 					"competicion":"playoffs",
-					"jornada":"po-4",
-					"semana":"po-4",
+					"jornada":"po-8",
+					"semana":"po-8",
 					"fecha":"22/04/2023",
 					"lugar":"Stella Maris La Gavia",
 					"hora":"09:00",
@@ -9198,8 +9198,8 @@
 				},
 				{ 	
 					"competicion":"playoffs",
-					"jornada":"po-4",
-					"semana":"po-4",
+					"jornada":"po-8",
+					"semana":"po-8",
 					"fecha":"22/04/2023",
 					"lugar":"Stella Maris La Gavia",
 					"hora":"10:15",
@@ -9213,13 +9213,103 @@
 				},
 				{ 	
 					"competicion":"playoffs",
-					"jornada":"po-4",
-					"semana":"po-4",
+					"jornada":"po-8",
+					"semana":"po-8",
 					"fecha":"29/04/2023",
 					"lugar":"Stella Maris La Gavia",
 					"hora":"09:00",
 					"equipos": [
+						{"equipo":1,"convocados": [],"puntos":47},
+						{"equipo":4,"convocados": [],"puntos":63}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-8",
+					"semana":"po-8",
+					"fecha":"29/04/2023",
+					"lugar":"Stella Maris La Gavia",
+					"hora":"10:15",
+					"equipos": [
+						{"equipo":3,"convocados": [],"puntos":54},
+						{"equipo":6,"convocados": [],"puntos":47}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-4b",
+					"semana":"po-4",
+					"fecha":"20/05/2023",
+					"lugar":"Stella Maris La Gavia",
+					"hora":"11:30",
+					"equipos": [
+						{"equipo":6,"convocados": [],"puntos":63},
+						{"equipo":5,"convocados": [],"puntos":35}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-4a",
+					"semana":"po-4",
+					"fecha":"27/05/2023",
+					"lugar":"Stella Maris La Gavia",
+					"hora":"11:30",
+					"equipos": [
+						{"equipo":8,"convocados": [],"puntos":53},
+						{"equipo":4,"convocados": [],"puntos":64}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-4a",
+					"semana":"po-4",
+					"fecha":"27/05/2023",
+					"lugar":"Stella Maris La Gavia",
+					"hora":"12:45",
+					"equipos": [
+						{"equipo":2,"convocados": [],"puntos":61},
+						{"equipo":3,"convocados": [],"puntos":24}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-4b",
+					"semana":"po-4",
+					"fecha":"02/06/2023",
+					"lugar":"Pabellón 2 U.A.M.",
+					"hora":"20:00",
+					"equipos": [
 						{"equipo":1,"convocados": [],"puntos":0},
+						{"equipo":7,"convocados": [],"puntos":0}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-2a",
+					"semana":"po-2",
+					"fecha":"03/06/2023",
+					"lugar":"La Caja Mágica",
+					"hora":"13:00",
+					"equipos": [
+						{"equipo":2,"convocados": [],"puntos":0},
 						{"equipo":4,"convocados": [],"puntos":0}
 					],
 					"acciones": [
@@ -9228,18 +9318,49 @@
 				},
 				{ 	
 					"competicion":"playoffs",
-					"jornada":"po-4",
-					"semana":"po-4",
-					"fecha":"29/04/2023",
-					"lugar":"Stella Maris La Gavia",
+					"jornada":"po-2c",
+					"semana":"po-2",
+					"fecha":"10/06/2023",
+					"lugar":"La Caja Mágica",
+					"hora":"09:00",
+					"equipos": [
+						{"equipo":0,"convocados": [],"puntos":0},
+						{"equipo":5,"convocados": [],"puntos":0}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-2c",
+					"semana":"po-2",
+					"fecha":"10/06/2023",
+					"lugar":"La Caja Mágica",
 					"hora":"10:15",
 					"equipos": [
+						{"equipo":4,"convocados": [],"puntos":0},
+						{"equipo":0,"convocados": [],"puntos":0}
+					],
+					"acciones": [
+					
+					]
+				},
+				{ 	
+					"competicion":"playoffs",
+					"jornada":"po-2b",
+					"semana":"po-2",
+					"fecha":"17/06/2023",
+					"lugar":"La Caja Mágica",
+					"hora":"11:00",
+					"equipos": [
 						{"equipo":3,"convocados": [],"puntos":0},
-						{"equipo":6,"convocados": [],"puntos":0}
+						{"equipo":8,"convocados": [],"puntos":0}
 					],
 					"acciones": [
 					
 					]
 				}
+		
 	]
 }
