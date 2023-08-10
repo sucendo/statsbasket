@@ -9324,7 +9324,7 @@
 					"lugar":"La Caja Mágica",
 					"hora":"09:00",
 					"equipos": [
-						{"equipo":0,"convocados": [],"puntos":0},
+						{"equipo":1,"convocados": [],"puntos":0},
 						{"equipo":5,"convocados": [],"puntos":0}
 					],
 					"acciones": [
@@ -9340,7 +9340,7 @@
 					"hora":"10:15",
 					"equipos": [
 						{"equipo":6,"convocados": [],"puntos":0},
-						{"equipo":0,"convocados": [],"puntos":0}
+						{"equipo":7,"convocados": [],"puntos":0}
 					],
 					"acciones": [
 					
