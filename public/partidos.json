@@ -1,0 +1,944 @@
+{ 
+	"competicion":"Parish League",
+	"temporada":"2023-2024",
+	"equipos": [
+		{
+			"numero":1,
+			"nombre":"Begoña Bulls",
+			"abreviatura":"BEG",
+			"logo":"logo_begoña_bulls.png",
+			"color":"rgba(223,28,49,1)",
+			"fichas": [
+				{"numero":0,"nombre":"Marío A.","ficha":"C00"},
+				{"numero":3,"nombre":"Pablo A.","ficha":"C03"},
+				{"numero":5,"nombre":"Fermin F.","ficha":"C05"},
+				{"numero":7,"nombre":"Carlos A.","ficha":"C01"},
+				{"numero":8,"nombre":"Francisco R.","ficha":"C08"},
+				{"numero":10,"nombre":"Pedro G.","ficha":"C10"},
+				{"numero":15,"nombre":"Fernando G.","ficha":"C15"},
+				{"numero":16,"nombre":"Gabriel L.","ficha":"C17"},
+				{"numero":17,"nombre":"Juan G.","ficha":"C92"},
+				{"numero":20,"nombre":"Ernesto G.","ficha":"C20"},
+				{"numero":27,"nombre":"Richard V.","ficha":"C27"},
+				{"numero":28,"nombre":"Javier M.","ficha":"C14"},
+				{"numero":33,"nombre":"Samuel U.","ficha":"C33","puesto":"Capitán"}
+			]
+		},
+		{
+			"numero":2,
+			"nombre":"San José Prophets",
+			"abreviatura":"SJO",
+			"logo":"logo_san_jose_prophets.png",
+			"color":"rgba(46,99,165,1)",
+			"fichas": [				
+				{"numero":3,"nombre":"Manuel P.","ficha":"E03"},
+				{"numero":4,"nombre":"Pedro U.","ficha":"E04"},
+				{"numero":5,"nombre":"Victor P.","ficha":"E05"},
+				{"numero":7,"nombre":"Pedro P.","ficha":"E07"},
+				{"numero":8,"nombre":"Francisco R.","ficha":"E08"},				
+				{"numero":10,"nombre":"Daniel E.","ficha":"E30"},
+				{"numero":11,"nombre":"Chema C.","ficha":"E11"},
+				{"numero":12,"nombre":"Miguel A.","ficha":"E12"},
+				{"numero":13,"nombre":"Juanma U.","ficha":"E13"},
+				{"numero":14,"nombre":"Andrés S.","ficha":"E00"},
+				{"numero":15,"nombre":"Pedro N.","ficha":"E15","puesto":"Capitán"},				
+				{"numero":17,"nombre":"Javier U.","ficha":"E17"},
+				{"numero":20,"nombre":"Ignacio E.","ficha":"E14"},
+				{"numero":21,"nombre":"Josevi P.","ficha":"E21"},
+				{"numero":22,"nombre":"Javier C.","ficha":"E22"},
+				{"numero":23,"nombre":"Alex G.","ficha":"E23"},	
+				{"numero":24,"nombre":"Jorge S.","ficha":"E24"},
+				{"numero":30,"nombre":"Pablo E.","ficha":"E10","especial":"federado"},
+				{"numero":32,"nombre":"Josué S.","ficha":"E32"},
+				{"numero":37,"nombre":"Samuel P.","ficha":"E37","especial":"municipal"},
+				{"numero":80,"nombre":"Daniel G.","ficha":"E75"},
+				{"numero":77,"nombre":"Julio D.","ficha":"E27"}
+			]
+		},
+		{
+			"numero":3,
+			"nombre":"La Paloma B.C.",
+			"abreviatura":"PAL",
+			"logo":"logo_la_paloma_bc.png",
+			"color":"rgba(1,1,1,1)",
+			"fichas": [
+				{"numero":0,"nombre":"Victor M.","ficha":"G20"},
+				{"numero":3,"nombre":"Pedro H.","ficha":"G03"},
+				{"numero":4,"nombre":"Pablo P.","ficha":"G04"},
+				{"numero":5,"nombre":"Josué M.","ficha":"G05"},
+				{"numero":7,"nombre":"Pablo dV.","ficha":"G07"},
+				{"numero":8,"nombre":"Andreas T.","ficha":"G08"},
+				{"numero":9,"nombre":"Juan O.","ficha":"G09","especial":"federado"},
+				{"numero":10,"nombre":"Avelino M.","ficha":"G10"},
+				{"numero":11,"nombre":"Daniel G.","ficha":"G11"},
+				{"numero":16,"nombre":"Jesús P.","ficha":"G16"},
+				{"numero":22,"nombre":"Javier E.","ficha":"G22"},
+				{"numero":23,"nombre":"Miguel F.","ficha":"G24"},
+				{"numero":27,"nombre":"Pablo P.","ficha":"G27"},
+				{"numero":33,"nombre":"Carlos O.","ficha":"G33","puesto":"Capitán"},
+				{"numero":37,"nombre":"Daniel O.","ficha":"G37"},
+				{"numero":55,"nombre":"Clemente","ficha":"G55"},
+				{"numero":71,"nombre":"Miguel Ángel P.","ficha":"G71"}				
+			]
+		},
+		{
+			"numero":4,
+			"nombre":"Laboure Spinners",
+			"abreviatura":"LAB",
+			"logo":"logo_laboure_spinners.png",
+			"color":"rgba(255,255,255,1)",
+			"fichas": [
+				{"numero":0,"nombre":"Pedro M.","ficha":"B98"},
+				{"numero":5,"nombre":"Alex J.","ficha":"B05"},
+				{"numero":6,"nombre":"Israel M.F.","ficha":"B03"},				
+				{"numero":7,"nombre":"Gabriel M.","ficha":"B08"},				
+				{"numero":9,"nombre":"Alfonso C.","ficha":"B09","puesto":"Capitán"},
+				{"numero":10,"nombre":"Marcos Y.","ficha":"B10"},
+				{"numero":11,"nombre":"Jesús M.","ficha":"B97"},
+				{"numero":13,"nombre":"Jorge J.","ficha":"B13"},
+				{"numero":16,"nombre":"Marcos M.F.","ficha":"B17"},
+				{"numero":22,"nombre":"Daniel S.","ficha":"B22"},
+				{"numero":23,"nombre":"Pablo M.R.","ficha":"B23"},
+				{"numero":99,"nombre":"Miguel M.","ficha":"B96"}
+			]
+		},
+		{
+			"numero":5,
+			"nombre":"Los Ángeles Prayers",
+			"abreviatura":"PRA",
+			"logo":"logot-los_angeles_prayers.png",
+			"color":"rgba(247,229,0,1)",
+			"fichas": [
+				{"numero":1,"nombre":"Javier M.","ficha":"A01"},
+				{"numero":3,"nombre":"Isaac R.","ficha":"A03","puesto":"Capitán"},
+				{"numero":4,"nombre":"Emilio G.","ficha":"A40"},
+				{"numero":5,"nombre":"Juan H.","ficha":"A50"},
+				{"numero":6,"nombre":"Tin Z.","ficha":"A06"},
+				{"numero":7,"nombre":"David C.","ficha":"A07"},
+				{"numero":8,"nombre":"Pedro V.","ficha":"A08"},			
+				{"numero":10,"nombre":"Miguel M.","ficha":"A10"},				
+				{"numero":11,"nombre":"Javier S.","ficha":"A11"},
+				{"numero":12,"nombre":"Miguel B.","ficha":"A12"},
+				{"numero":20,"nombre":"Pablo A.","ficha":"A20"},
+				{"numero":22,"nombre":"Chicho R.","ficha":"A22"},
+				{"numero":23,"nombre":"Raúl F.","ficha":"A23"},
+				{"numero":28,"nombre":"Joaquín C.","ficha":"A28"},
+				{"numero":31,"nombre":"Rubén R.","ficha":"A31"},
+				{"numero":32,"nombre":"Daniel A.","ficha":"A32"},
+				{"numero":33,"nombre":"David S.","ficha":"A33"}
+			]
+		},
+		{
+			"numero":6,
+			"nombre":"Siena",
+			"abreviatura":"SIE",
+			"logo":"logo_siena.png",
+			"color":"rgba(45,45,172,1)",
+			"fichas": [
+				{"numero":3,"nombre":"Santiago R.","ficha":"D23","puesto":"Capitán"},
+				{"numero":4,"nombre":"Jesús G.","ficha":"D13","especial":"federado-18"},
+				{"numero":5,"nombre":"Javier R.","ficha":"D08"},
+				{"numero":7,"nombre":"Pablo R.","ficha":"D01"},
+				{"numero":8,"nombre":"Fernando G.","ficha":"D03"},
+				{"numero":9,"nombre":"Miguel S.","ficha":"D09"},
+				{"numero":10,"nombre":"Elías G.","ficha":"D50"},
+				{"numero":11,"nombre":"Pablo P.","ficha":"D11"},				
+				{"numero":13,"nombre":"Antonio C.","ficha":"D13","especial":"federado"},
+				{"numero":14,"nombre":"Santiago G.(+)","ficha":"D14","especial":"federado-18"},
+				{"numero":21,"nombre":"Javier I.","ficha":"D02"},
+				{"numero":23,"nombre":"José G.","ficha":"D23"},				
+				{"numero":24,"nombre":"Samuel M.","ficha":"D17"},
+				{"numero":31,"nombre":"Manuel C.","ficha":"D31","especial":"federado-18"},
+				{"numero":41,"nombre":"José María G.","ficha":"D34"},
+				{"numero":73,"nombre":"Pedro M.","ficha":"D73"}
+			]
+		},
+		{
+			"numero":7,
+			"nombre":"Salterio Lauders",
+			"abreviatura":"SAL",
+			"logo":"logo_salterio_lauders.png",
+			"color":"rgba(62,130,30,1)",
+			"fichas": [
+				{"numero":1,"nombre":"Angel S.L.","ficha":"H24"},
+				{"numero":5,"nombre":"Gregorio A.","ficha":"J05"},
+				{"numero":7,"nombre":"Santiago J.","ficha":"H70"},
+				{"numero":8,"nombre":"Felipe P.","ficha":"J08","puesto":"Capitán"},
+				{"numero":9,"nombre":"Ignacio T.","ficha":"J09"},
+				{"numero":10,"nombre":"Manuel A.M.","ficha":"J10"},
+				{"numero":11,"nombre":"Hugo K.","ficha":"J11"},
+				{"numero":14,"nombre":"Pablo S.L.","ficha":"H12"},
+				{"numero":15,"nombre":"Gabriel R.","ficha":"H15"},
+				{"numero":17,"nombre":"Ignacio E.","ficha":"H71"},
+				{"numero":18,"nombre":"Eduardo A.M.","ficha":"H18"},
+				{"numero":22,"nombre":"Santiago P.","ficha":"H22"},
+				{"numero":23,"nombre":"Santiago M.","ficha":"H23"},
+				{"numero":28,"nombre":"Alvaro L.","ficha":"H28"},
+				{"numero":30,"nombre":"Miguel S.","ficha":"H30"},
+				{"numero":32,"nombre":"Manuel A.C.","ficha":"H32"},
+				{"numero":35,"nombre":"Ignacio R.","ficha":"H35"},
+				{"numero":66,"nombre":"Fernando P.(+)","ficha":"H35"},
+				{"numero":85,"nombre":"Andres R.","ficha":"H85"},
+				{"numero":93,"nombre":"Pablo M.V.","ficha":"H93"}
+			]
+		},
+		{
+			"numero":8,
+			"nombre":"Betsaida Boanerges",
+			"abreviatura":"BET",
+			"logo":"logo_betsaida_boanerges.png",
+			"color":"rgba(255,63,46,1)",
+			"fichas": [
+				{"numero":0,"nombre":"Juan G.","ficha":"F00"},	
+				{"numero":4,"nombre":"Miguel C.","ficha":"F01"},
+				{"numero":5,"nombre":"César M.","ficha":"F25"},
+				{"numero":8,"nombre":"Fernando O.","ficha":"F08"},
+				{"numero":10,"nombre":"Nicolás M.","ficha":"F10"},
+				{"numero":11,"nombre":"Borja M.","ficha":"F12"},
+				{"numero":13,"nombre":"Jesús C.","ficha":"F13"},
+				{"numero":14,"nombre":"Francisco C.","ficha":"F14"},
+				{"numero":15,"nombre":"Daniel C.","ficha":"F15"},
+				{"numero":16,"nombre":"Miguel G.","ficha":"F22","puesto":"Capitán"},
+				{"numero":19,"nombre":"Miguel F.","ficha":"F18"},
+				{"numero":20,"nombre":"Cristian O.","ficha":"F20"},
+				{"numero":21,"nombre":"José C.","ficha":"F21"},
+				{"numero":23,"nombre":"Daniel G.","ficha":"F23"},
+				{"numero":24,"nombre":"Alfonso O.","ficha":"F24"},
+				{"numero":28,"nombre":"Diego M.","ficha":"F28"},
+				{"numero":77,"nombre":"Ignacio M.","ficha":"F11"}
+			]
+		},
+		{
+			"numero":9,
+			"nombre":"Snow Knights",
+			"abreviatura":"SNK",
+			"logo":"logo_la_paloma_bc.png",
+			"color":"rgba(246,202,246,1)",
+			"fichas": [		
+				{"numero":0,"nombre":"Pablo A.","ficha":"L00"},
+				{"numero":1,"nombre":"Alejandro G.","ficha":"K01"},
+				{"numero":3,"nombre":"Juan P.","ficha":"K03","puesto":"Capitán"},	
+				{"numero":4,"nombre":"Alberto S.","ficha":"K04"},	
+				{"numero":5,"nombre":"Pablo P.","ficha":"K05"},				
+				{"numero":6,"nombre":"Jacob P.","ficha":"K06"},
+				{"numero":7,"nombre":"Pedro N.","ficha":"K07"},
+				{"numero":8,"nombre":"Jesús M.","ficha":"K08"},
+				{"numero":10,"nombre":"José Miguel R.","ficha":"K10"},
+				{"numero":11,"nombre":"Manuel G.","ficha":"K99"},
+				{"numero":16,"nombre":"Pablo G.","ficha":"K16"},
+				{"numero":17,"nombre":"Miguel M.","ficha":"K17"},
+				{"numero":19,"nombre":"Juan C.","ficha":"K19"},
+				{"numero":21,"nombre":"Andrés P.","ficha":"K21"},
+				{"numero":23,"nombre":"Javier S.","ficha":"K23"},
+				{"numero":28,"nombre":"Josué P.","ficha":"I28"},
+				{"numero":53,"nombre":"Javier G.","ficha":"K53"},
+				{"numero":77,"nombre":"Izan","ficha":"K77"}
+			]
+		},
+		{
+			"numero":10,
+			"nombre":"The Valva Cherubs",
+			"abreviatura":"VAL",
+			"logo":"logo_la_paloma_bc.png",
+			"color":"rgba(164,194,244,1)",
+			"fichas": [		
+				{"numero":0,"nombre":"Pablo A.","ficha":"M00"},
+				{"numero":1,"nombre":"Alejandro G.","ficha":"K01"},
+				{"numero":3,"nombre":"Juan P.","ficha":"K03","puesto":"Capitán"},	
+				{"numero":4,"nombre":"Alberto S.","ficha":"K04"},	
+				{"numero":5,"nombre":"Pablo P.","ficha":"K05"},				
+				{"numero":6,"nombre":"Jacob P.","ficha":"K06"},
+				{"numero":7,"nombre":"Pedro N.","ficha":"K07"},
+				{"numero":8,"nombre":"Jesús M.","ficha":"K08"},
+				{"numero":10,"nombre":"José Miguel R.","ficha":"K10"},
+				{"numero":11,"nombre":"Manuel G.","ficha":"K99"},
+				{"numero":16,"nombre":"Pablo G.","ficha":"K16"},
+				{"numero":17,"nombre":"Miguel M.","ficha":"K17"},
+				{"numero":19,"nombre":"Juan C.","ficha":"K19"},
+				{"numero":21,"nombre":"Andrés P.","ficha":"K21"},
+				{"numero":23,"nombre":"Javier S.","ficha":"K23"},
+				{"numero":28,"nombre":"Josué P.","ficha":"I28"},
+				{"numero":53,"nombre":"Javier G.","ficha":"K53"},
+				{"numero":77,"nombre":"Izan","ficha":"K77"}
+			]
+		}
+	],
+	"partidos": [
+		{
+			"competicion":"liga regular",
+			"jornada":1,
+			"semana":1,
+			"fecha":"09/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":8,"convocados":[],"puntos":0},
+					{"equipo":4,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":1,
+			"semana":1,
+			"fecha":"09/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":1,"convocados":[],"puntos":0},
+					{"equipo":5,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":1,
+			"semana":2,
+			"fecha":"16/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":6,"convocados":[],"puntos":0},
+					{"equipo":7,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":1,
+			"semana":2,
+			"fecha":"16/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":9,"convocados":[],"puntos":0},
+					{"equipo":2,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":2,
+			"semana":2,
+			"fecha":"16/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":8,"convocados":[],"puntos":0},
+					{"equipo":1,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":3,
+			"semana":3,
+			"fecha":"23/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":2,"convocados":[],"puntos":0},
+					{"equipo":7,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":2,
+			"semana":3,
+			"fecha":"23/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":5,"convocados":[],"puntos":0},
+					{"equipo":9,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":1,
+			"semana":3,
+			"fecha":"23/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":3,"convocados":[],"puntos":0},
+					{"equipo":10,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":2,
+			"semana":4,
+			"fecha":"30/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":7,"convocados":[],"puntos":0},
+					{"equipo":4,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":2,
+			"semana":4,
+			"fecha":"30/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":6,"convocados":[],"puntos":0},
+					{"equipo":3,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":2,
+			"semana":4,
+			"fecha":"30/09/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":2,"convocados":[],"puntos":0},
+					{"equipo":10,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":3,
+			"semana":5,
+			"fecha":"07/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":5,"convocados":[],"puntos":0},
+					{"equipo":4,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":3,
+			"semana":5,
+			"fecha":"07/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":3,"convocados":[],"puntos":0},
+					{"equipo":8,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":3,
+			"semana":5,
+			"fecha":"07/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":1,"convocados":[],"puntos":0},
+					{"equipo":6,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":3,
+			"semana":6,
+			"fecha":"14/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":9,"convocados":[],"puntos":0},
+					{"equipo":10,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":4,
+			"semana":6,
+			"fecha":"14/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":2,"convocados":[],"puntos":0},
+					{"equipo":8,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":4,
+			"semana":6,
+			"fecha":"14/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":3,"convocados":[],"puntos":0},
+					{"equipo":5,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":4,
+			"semana":7,
+			"fecha":"21/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":4,"convocados":[],"puntos":0},
+					{"equipo":9,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":4,
+			"semana":7,
+			"fecha":"21/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":7,"convocados":[],"puntos":0},
+					{"equipo":1,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":4,
+			"semana":7,
+			"fecha":"21/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":6,"convocados":[],"puntos":0},
+					{"equipo":10,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":5,
+			"semana":8,
+			"fecha":"28/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":5,"convocados":[],"puntos":0},
+					{"equipo":7,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":5,
+			"semana":8,
+			"fecha":"28/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":10,"convocados":[],"puntos":0},
+					{"equipo":8,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":5,
+			"semana":8,
+			"fecha":"28/10/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":3,"convocados":[],"puntos":0},
+					{"equipo":2,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":5,
+			"semana":9,
+			"fecha":"04/11/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":4,"convocados":[],"puntos":0},
+					{"equipo":1,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":5,
+			"semana":9,
+			"fecha":"04/11/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":9,"convocados":[],"puntos":0},
+					{"equipo":6,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":6,
+			"semana":10,
+			"fecha":"18/11/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":10,"convocados":[],"puntos":0},
+					{"equipo":7,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":6,
+			"semana":10,
+			"fecha":"18/11/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":5,"convocados":[],"puntos":0},
+					{"equipo":8,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":6,
+			"semana":11,
+			"fecha":"25/11/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":4,"convocados":[],"puntos":0},
+					{"equipo":6,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":6,
+			"semana":11,
+			"fecha":"25/11/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":1,"convocados":[],"puntos":0},
+					{"equipo":2,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":6,
+			"semana":12,
+			"fecha":"02/12/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":9,"convocados":[],"puntos":0},
+					{"equipo":3,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":7,
+			"semana":12,
+			"fecha":"02/12/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":7,"convocados":[],"puntos":0},
+					{"equipo":8,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":7,
+			"semana":12,
+			"fecha":"02/12/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":10,"convocados":[],"puntos":0},
+					{"equipo":5,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":7,
+			"semana":13,
+			"fecha":"16/12/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":4,"convocados":[],"puntos":0},
+					{"equipo":3,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":7,
+			"semana":13,
+			"fecha":"16/12/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":9,"convocados":[],"puntos":0},
+					{"equipo":1,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":7,
+			"semana":13,
+			"fecha":"16/12/2023",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":6,"convocados":[],"puntos":0},
+					{"equipo":2,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":8,
+			"semana":14,
+			"fecha":"13/01/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":3,"convocados":[],"puntos":0},
+					{"equipo":7,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":8,
+			"semana":14,
+			"fecha":"13/01/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":8,"convocados":[],"puntos":0},
+					{"equipo":9,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":8,
+			"semana":14,
+			"fecha":"13/01/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":1,"convocados":[],"puntos":0},
+					{"equipo":10,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":8,
+			"semana":15,
+			"fecha":"20/01/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":2,"convocados":[],"puntos":0},
+					{"equipo":4,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":8,
+			"semana":15,
+			"fecha":"20/01/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":6,"convocados":[],"puntos":0},
+					{"equipo":5,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":9,
+			"semana":16,
+			"fecha":"27/01/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":7,"convocados":[],"puntos":0},
+					{"equipo":9,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":9,
+			"semana":16,
+			"fecha":"27/01/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":2,"convocados":[],"puntos":0},
+					{"equipo":5,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":9,
+			"semana":17,
+			"fecha":"03/02/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"9:00",
+			"equipos": [
+					{"equipo":10,"convocados":[],"puntos":0},
+					{"equipo":4,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":9,
+			"semana":17,
+			"fecha":"03/02/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"10:15",
+			"equipos": [
+					{"equipo":1,"convocados":[],"puntos":0},
+					{"equipo":3,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		},
+		{
+			"competicion":"liga regular",
+			"jornada":9,
+			"semana":17,
+			"fecha":"03/02/2024",
+			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"hora":"11:30",
+			"equipos": [
+					{"equipo":8,"convocados":[],"puntos":0},
+					{"equipo":6,"convocados":[],"puntos":0}
+			],
+			"acciones": [
+													
+			]
+		}
+
+	]
+}
