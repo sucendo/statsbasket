@@ -81,8 +81,17 @@
         cursor: pointer;
     }
 
-#sanpedrokings {
-        background-image: url('https://statsbasket.com/public/img/logot-la_paloma_bc.png');
+#snowknights {
+        background-image: url('https://statsbasket.com/public/favicon/android-icon-48x48.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+#thevalvacherubs {
+        background-image: url('https://statsbasket.com/public/favicon/android-icon-48x48.png');
         background-size: cover;
         width: 50px;
         height: 50px;
