@@ -144,17 +144,30 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         .setPopup(BETpopup)
         .addTo(map);
 
-    const SPK = [-3.711012586202528, 40.408184990320734];
-    const SPKpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'SAN PEDRO KINGS | SEDE: Virgen de la Paloma y San Pedro el Real | HISTORIA: Conocidos en la temporada pasada como Carmelitos Calzados | PALMARÉS: '
+    const SNW = [-3.7051862247690837, 40.491247893452545];
+    const SNWpopup = new mapboxgl.Popup({ offset: 25 }).setText(
+        'SNOW KNIGTHS | SEDE: Nuestra Señora de las Nieves | HISTORIA: Nueva incorporación en nuestra liga | PALMARÉS: '
     );
-// create DOM element for the SJO
+// create DOM element for the SNW
     const spk = document.createElement('div');
-    spk.id = 'sanpedrokings';
-    // create the SJO
-    new mapboxgl.Marker(spk)
-        .setLngLat(SPK)
-        .setPopup(SPKpopup)
+    snw.id = 'snowknights';
+    // create the SNW
+    new mapboxgl.Marker(snw)
+        .setLngLat(SNW)
+        .setPopup(SNWpopup)
+        .addTo(map);
+
+    const VAL = [-3.629403937072695, 40.54808706139967];
+    const VALpopup = new mapboxgl.Popup({ offset: 25 }).setText(
+        'THE VALVA CHERUBS | SEDE: Nuestra Señora de la Valvanera | HISTORIA: Nueva incorporación en nuestra liga | PALMARÉS: '
+    );
+// create DOM element for the VAL
+    const val = document.createElement('div');
+    val.id = 'snowknights';
+    // create the VAL
+    new mapboxgl.Marker(val)
+        .setLngLat(VAL)
+        .setPopup(VALpopup)
         .addTo(map);
 
     map.on('load', () => {	    
