@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Stats Basket: Resultados y Estadísticas de Baloncesto Amateur</title>
+		<meta name="description" content="Resultados y Estadísticas de baloncesto del torneo amateur Parish Pro Tournament" />
+		<meta name="author" content="Sucendo" />
+	
+		
+		<link rel="shortcut icon" href="favicon.ico">
+        <!--Estilo General-->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/playoffs.css" />
+		<link rel="stylesheet" type="text/css" href="css/schedule.css" />
+		<!--Secciones-->
+        <link rel="stylesheet" type="text/css" href="css/tabs.css" />
+		<link rel="stylesheet" type="text/css" href="css/tabstyles.css" />
+	<!-- Añadir Mapa MapBox -->
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>	
+        <!--Añadir Jugador-->
+        <link rel="stylesheet" type="text/css" href="css/modalwindoweffects.css" />
+        <link rel="stylesheet" type="text/css" href="css/minimalform.css" />
+        <!--Tablas estadisticas-->
+    	<link rel="stylesheet" type="text/css" href="css/stickytableheaders.css" />
+        <!--Botones con estilo-->
+		<link rel="stylesheet" type="text/css" href="css/creativebuttons.css" />
+        <!--DragDropInteractions-->
+    	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bottom-area.css" />
+        <!--Boton Select-->
+        <link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-elastic.css" />
+        <link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+        
+        <!--<link rel="stylesheet" type="text/css" href="css/component.css" />-->
+		
+		<!-- Stylesheet required to power RRSSB. Copy this css file to your header or merge directly into your css -->
+		<link rel="stylesheet" type="text/css" href="css/rrssb.css" />
+		
+		<script src="js/jquery-1.11.2.min.js"></script>
+  		<script src="js/modernizr.custom.js"></script>
+		
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		
+		<!-- sample fb meta -->
+		<meta property="og:title" content="Stats Basket: Estadísticas de baloncesto" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://www.statsbasket.com" />
+		<meta property="og:image" content="http://www.statsbasket.com/img/preview.png" />
+		<meta property="og:description" content="Estadisticas de baloncesto de torneos y ligas amateur."/>
+
+		<!-- sample twitter meta -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@statsbasket.com">
+		<meta name="twitter:creator" content="@Sucendo">
+		<meta name="twitter:title" content="Stats Basket: Estadísticas de baloncesto del torneo Parish Pro Tournament">
+		<meta name="twitter:description" content="Estadisticas completas del Parish Pro Tournament en: http://www.statsbasket.com | http://www.statsbasket.com/img/preview.png">
+		<meta name="twitter:image" content="http://www.statsbasket.com/media/rrssb-preview.png">
+		  
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-88735130-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</head>
+
+	<body>
+        
+     <!--CONTENIDO-->
+		<div class="container">
+    
+      <link rel="stylesheet" type="text/css" href="public/css/map.css" />
+			<div id="map"></div>
+			<script type="text/javascript" src="public/js/map.js"></script>
+      
+    </div>
+    
+  </body>
+
+</html>
