@@ -20,9 +20,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         ...start
     });
 
-    const arena = [-3.6056449561266817, 40.3727423212556];
+    const arena = [-3.686149308117554, 40.37018595052673];
     const arenapopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Colegio Stella Maris la Gavia, sede de la competición desde el año 2017.'
+        'La Caja Mágica (Pabellón Indoor Norte) Sede de la competición desde este año 2023.'
     );
     // create DOM element for the arena
     const el = document.createElement('div');
