@@ -55,7 +55,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const SJO = [-3.696719919048703, 40.41907215725797];
     const SJOpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'SAN JOSÉ PROPHETS | SEDE: San José | HISTORIA: Conocidos en los inicios como los Houston Prophets, los San José Prophets, llevan en la liga desde la primera temporada alla en el año 2015. Siempre favoritos para el título, este equipo siempre ha estado en lo más alto, siendo la bestia negra de muchos de sus adversarios. | PALMARÉS: Campeón de La Copa de Cristo Rey (2019)'
+        'SAN JOSÉ PROPHETS | SEDE: San José | HISTORIA: Conocidos en los inicios como los Houston Prophets, los San José Prophets, llevan en la liga desde la primera temporada alla en el año 2015. Siempre favoritos para el título, este equipo siempre ha estado en lo más alto, siendo la bestia negra de muchos de sus adversarios. | PALMARÉS: Campeón de La Copa de Cristo Rey (2019) / Campeón de La Copa de Cristo Rey (2023) / Campeón de Liga (2023)'
     );
     // create DOM element for the SJO
     const sjo = document.createElement('div');
@@ -68,7 +68,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const PAL = [-3.7116031177447435, 40.40833748931871];
     const PALpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'LA PALOMA B.C. | SEDE: Virgen de la Paloma y San Pedro el Real | HISTORIA: | PALMARÉS: Campeón de La Copa de Cristo Rey (2018)'
+        'LA PALOMA B.C. | SEDE: Virgen de la Paloma y San Pedro el Real | HISTORIA: | PALMARÉS: Campeón de La Copa de Cristo Rey (2018) / Subcampeón de La Copa de Cristo Rey (2023)'
     );
     // create DOM element for the SJO
     const pal = document.createElement('div');
@@ -81,7 +81,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
 
     const LAB = [-3.72027007288721, 40.38738497066643];
     const LABpopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'LABOURE SPINNERS | SEDE: Santa Catalina Labouré | HISTORIA: | PALMARÉS: '
+        'LABOURE SPINNERS | SEDE: Santa Catalina Labouré | HISTORIA: | PALMARÉS: Subcampeón de Liga (2023)'
     );
     // create DOM element for the SJO
     const lab = document.createElement('div');
