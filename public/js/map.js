@@ -7,7 +7,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         bearing: 155
     };
     const end = {
-        center: [-3.6886754071479833, 40.38611463758258],
+        center: [-3.6877258844223144, 40.37574202666592],
         zoom: 15,
 	pitch: 72,
         bearing: 350        
