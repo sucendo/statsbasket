@@ -187,7 +187,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
                 'source-layer': 'building',
                 'filter': ['==', 'extrude', 'true'],
                 'type': 'fill-extrusion',
-                'minzoom': 15,
+                'minzoom': 14,
                 'paint': {
                     'fill-extrusion-color': '#aaa',
 
@@ -198,7 +198,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
                         'interpolate',
                         ['linear'],
                         ['zoom'],
-                        15,
+                        14,
                         0,
                         15.05,
                         ['get', 'height']
@@ -207,7 +207,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
                         'interpolate',
                         ['linear'],
                         ['zoom'],
-                        15,
+                        14,
                         0,
                         15.05,
                         ['get', 'min_height']
