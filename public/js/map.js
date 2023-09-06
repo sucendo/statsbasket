@@ -149,7 +149,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
         'SNOW KNIGTHS | SEDE: Nuestra Señora de las Nieves | HISTORIA: Nueva incorporación en nuestra liga | PALMARÉS: '
     );
 // create DOM element for the SNW
-    const spk = document.createElement('div');
+    const snw = document.createElement('div');
     snw.id = 'snowknights';
     // create the SNW
     new mapboxgl.Marker(snw)
