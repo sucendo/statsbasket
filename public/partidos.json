@@ -269,11 +269,11 @@
 			"jornada":1,
 			"semana":1,
 			"fecha":"09/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
-					{"equipo":8,"convocados":[],"puntos":0},
-					{"equipo":4,"convocados":[],"puntos":0}
+					{"equipo":8,"convocados":[],"puntos":53},
+					{"equipo":4,"convocados":[],"puntos":26}
 			],
 			"acciones": [
 													
@@ -284,11 +284,11 @@
 			"jornada":1,
 			"semana":1,
 			"fecha":"09/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
-					{"equipo":1,"convocados":[],"puntos":0},
-					{"equipo":5,"convocados":[],"puntos":0}
+					{"equipo":1,"convocados":[],"puntos":50},
+					{"equipo":5,"convocados":[],"puntos":16}
 			],
 			"acciones": [
 													
@@ -299,7 +299,7 @@
 			"jornada":1,
 			"semana":2,
 			"fecha":"16/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":6,"convocados":[],"puntos":0},
@@ -314,7 +314,7 @@
 			"jornada":1,
 			"semana":2,
 			"fecha":"16/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":9,"convocados":[],"puntos":0},
@@ -329,7 +329,7 @@
 			"jornada":2,
 			"semana":2,
 			"fecha":"16/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":8,"convocados":[],"puntos":0},
@@ -344,7 +344,7 @@
 			"jornada":3,
 			"semana":3,
 			"fecha":"23/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":2,"convocados":[],"puntos":0},
@@ -359,7 +359,7 @@
 			"jornada":2,
 			"semana":3,
 			"fecha":"23/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":5,"convocados":[],"puntos":0},
@@ -374,7 +374,7 @@
 			"jornada":1,
 			"semana":3,
 			"fecha":"23/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":3,"convocados":[],"puntos":0},
@@ -389,7 +389,7 @@
 			"jornada":2,
 			"semana":4,
 			"fecha":"30/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":7,"convocados":[],"puntos":0},
@@ -404,7 +404,7 @@
 			"jornada":2,
 			"semana":4,
 			"fecha":"30/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":6,"convocados":[],"puntos":0},
@@ -419,7 +419,7 @@
 			"jornada":2,
 			"semana":4,
 			"fecha":"30/09/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":2,"convocados":[],"puntos":0},
@@ -434,7 +434,7 @@
 			"jornada":3,
 			"semana":5,
 			"fecha":"07/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":5,"convocados":[],"puntos":0},
@@ -449,7 +449,7 @@
 			"jornada":3,
 			"semana":5,
 			"fecha":"07/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":3,"convocados":[],"puntos":0},
@@ -464,7 +464,7 @@
 			"jornada":3,
 			"semana":5,
 			"fecha":"07/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":1,"convocados":[],"puntos":0},
@@ -479,7 +479,7 @@
 			"jornada":3,
 			"semana":6,
 			"fecha":"14/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":9,"convocados":[],"puntos":0},
@@ -494,7 +494,7 @@
 			"jornada":4,
 			"semana":6,
 			"fecha":"14/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":2,"convocados":[],"puntos":0},
@@ -509,7 +509,7 @@
 			"jornada":4,
 			"semana":6,
 			"fecha":"14/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":3,"convocados":[],"puntos":0},
@@ -524,7 +524,7 @@
 			"jornada":4,
 			"semana":7,
 			"fecha":"21/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":4,"convocados":[],"puntos":0},
@@ -539,7 +539,7 @@
 			"jornada":4,
 			"semana":7,
 			"fecha":"21/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":7,"convocados":[],"puntos":0},
@@ -554,7 +554,7 @@
 			"jornada":4,
 			"semana":7,
 			"fecha":"21/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":6,"convocados":[],"puntos":0},
@@ -569,7 +569,7 @@
 			"jornada":5,
 			"semana":8,
 			"fecha":"28/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":5,"convocados":[],"puntos":0},
@@ -584,7 +584,7 @@
 			"jornada":5,
 			"semana":8,
 			"fecha":"28/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":10,"convocados":[],"puntos":0},
@@ -599,7 +599,7 @@
 			"jornada":5,
 			"semana":8,
 			"fecha":"28/10/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":3,"convocados":[],"puntos":0},
@@ -614,7 +614,7 @@
 			"jornada":5,
 			"semana":9,
 			"fecha":"04/11/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":4,"convocados":[],"puntos":0},
@@ -629,7 +629,7 @@
 			"jornada":5,
 			"semana":9,
 			"fecha":"04/11/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":9,"convocados":[],"puntos":0},
@@ -644,7 +644,7 @@
 			"jornada":6,
 			"semana":10,
 			"fecha":"18/11/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":10,"convocados":[],"puntos":0},
@@ -659,7 +659,7 @@
 			"jornada":6,
 			"semana":10,
 			"fecha":"18/11/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":5,"convocados":[],"puntos":0},
@@ -674,7 +674,7 @@
 			"jornada":6,
 			"semana":11,
 			"fecha":"25/11/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":4,"convocados":[],"puntos":0},
@@ -689,7 +689,7 @@
 			"jornada":6,
 			"semana":11,
 			"fecha":"25/11/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":1,"convocados":[],"puntos":0},
@@ -704,7 +704,7 @@
 			"jornada":6,
 			"semana":12,
 			"fecha":"02/12/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":9,"convocados":[],"puntos":0},
@@ -719,7 +719,7 @@
 			"jornada":7,
 			"semana":12,
 			"fecha":"02/12/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":7,"convocados":[],"puntos":0},
@@ -734,7 +734,7 @@
 			"jornada":7,
 			"semana":12,
 			"fecha":"02/12/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":10,"convocados":[],"puntos":0},
@@ -749,7 +749,7 @@
 			"jornada":7,
 			"semana":13,
 			"fecha":"16/12/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":4,"convocados":[],"puntos":0},
@@ -764,7 +764,7 @@
 			"jornada":7,
 			"semana":13,
 			"fecha":"16/12/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":9,"convocados":[],"puntos":0},
@@ -779,7 +779,7 @@
 			"jornada":7,
 			"semana":13,
 			"fecha":"16/12/2023",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":6,"convocados":[],"puntos":0},
@@ -794,7 +794,7 @@
 			"jornada":8,
 			"semana":14,
 			"fecha":"13/01/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":3,"convocados":[],"puntos":0},
@@ -809,7 +809,7 @@
 			"jornada":8,
 			"semana":14,
 			"fecha":"13/01/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":8,"convocados":[],"puntos":0},
@@ -824,7 +824,7 @@
 			"jornada":8,
 			"semana":14,
 			"fecha":"13/01/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":1,"convocados":[],"puntos":0},
@@ -839,7 +839,7 @@
 			"jornada":8,
 			"semana":15,
 			"fecha":"20/01/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":2,"convocados":[],"puntos":0},
@@ -854,7 +854,7 @@
 			"jornada":8,
 			"semana":15,
 			"fecha":"20/01/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":6,"convocados":[],"puntos":0},
@@ -869,7 +869,7 @@
 			"jornada":9,
 			"semana":16,
 			"fecha":"27/01/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":7,"convocados":[],"puntos":0},
@@ -884,7 +884,7 @@
 			"jornada":9,
 			"semana":16,
 			"fecha":"27/01/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":2,"convocados":[],"puntos":0},
@@ -899,7 +899,7 @@
 			"jornada":9,
 			"semana":17,
 			"fecha":"03/02/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
 					{"equipo":10,"convocados":[],"puntos":0},
@@ -914,7 +914,7 @@
 			"jornada":9,
 			"semana":17,
 			"fecha":"03/02/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
 					{"equipo":1,"convocados":[],"puntos":0},
@@ -929,7 +929,7 @@
 			"jornada":9,
 			"semana":17,
 			"fecha":"03/02/2024",
-			"lugar":"Caja Mágica (pabellón Indoor Norte)",
+			"lugar":"Caja Mágica, pabellón",
 			"hora":"11:30",
 			"equipos": [
 					{"equipo":8,"convocados":[],"puntos":0},
