@@ -126,6 +126,7 @@
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Semana Actual</option>
 									<option value="1" data-class="flag-france">Semana 1</option>
+									<option value="2" data-class="flag-france">Semana 2</option>
 								</select>
 							</div>
 							<!-- 
@@ -542,7 +543,7 @@
 				
 				if (tipo == null){
 					tipo = "semana";
-					numero = 1;
+					numero = 2;
 				}
             				
 				$.getJSON("public/partidos.json", function(datos) {
