@@ -163,7 +163,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3VjZW5kbyIsImEiOiJja3dvd243c3EwNzFhMm5sY3Byc
     );
 // create DOM element for the VAL
     const val = document.createElement('div');
-    val.id = 'snowknights';
+    val.id = 'thevalvacherubs';
     // create the VAL
     new mapboxgl.Marker(val)
         .setLngLat(VAL)
