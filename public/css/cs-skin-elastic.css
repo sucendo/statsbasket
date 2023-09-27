@@ -179,8 +179,12 @@ div.cs-skin-elastic {
 	background-image: url(../img/logo-la_paloma_bc.png);
 }
 
-.cs-skin-elastic .cs-options li.flag-carmelitos_calzados span {
-	background-image: url(../img/logo-carmelitos_calzados.png);
+.cs-skin-elastic .cs-options li.flag-snow_knights span {
+	background-image: url(../img/logot-snow_knights.png);
+}
+
+.cs-skin-elastic .cs-options li.flag-the_valva_Cherubs span {
+	background-image: url(../img/logot-the_valva_cherubs.png);
 }
 
 @-webkit-keyframes expand { 
