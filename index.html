@@ -236,7 +236,13 @@
 								</div>
 								</div>
 							</article>
-
+							
+							<article>						
+								<h2>RESUMEN SEMANA 4</h2>
+								<p>Salterio Lauders vs Labouré Spinners</p>
+								<p>Siena vs La Paloma B.C.</p>
+								<p>San José Prophets vs The Valva Cherubs</p>
+							</article>
 							<article>						
 								<h2>RESUMEN SEMANA 3</h2>
 								<p>San José Prophets vs Salterio Lauders</p>
@@ -270,6 +276,7 @@
 									<option value="1" data-class="flag-france">Semana 1</option>
 									<option value="2" data-class="flag-france">Semana 2</option>
 									<option value="3" data-class="flag-france">Semana 3</option>
+									<option value="4" data-class="flag-france">Semana 4</option>
 								</select>
 							</div>
 							<div id="table-e">
@@ -309,6 +316,7 @@
 									<option value="1" data-class="flag-france">Semana 1</option>
 									<option value="2" data-class="flag-france">Semana 2</option>
 									<option value="3" data-class="flag-france">Semana 3</option>
+									<option value="4" data-class="flag-france">Semana 4</option>
 								</select>
 							</div>
 							
@@ -327,6 +335,7 @@
 									<option value="1" data-class="flag-france">Semana 1</option>
 									<option value="2" data-class="flag-france">Semana 2</option>
 									<option value="3" data-class="flag-france">Semana 3</option>
+									<option value="4" data-class="flag-france">Semana 4</option>
 								</select>
 							</div>
 							<div id="select-top-jornada" class="control">
@@ -334,7 +343,7 @@
 								<select class="cs-select cs-skin-elastic">
 									<option value="" disabled selected>Selecciona una Jornada</option>
 									<option value="1" data-class="flag-france">Jornada 1</option>
-									<option value="2" data-class="flag-france">Jornada 2*</option>
+									<option value="2" data-class="flag-france">Jornada 2</option>
 									<option value="3" data-class="flag-france">Jornada 3*</option>
 								</select>
 							</div>
@@ -565,7 +574,7 @@
 				
 				if (tipo == null){
 					tipo = "semana";
-					numero = 3;
+					numero = 4;
 				}
             				
 				$.getJSON("public/partidos.json", function(datos) {
