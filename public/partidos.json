@@ -482,8 +482,8 @@
 			"lugar":"Caja Mágica, pabellón",
 			"hora":"9:00",
 			"equipos": [
-					{"equipo":9,"convocados":[],"puntos":0},
-					{"equipo":10,"convocados":[],"puntos":0}
+					{"equipo":9,"convocados":[],"puntos":18},
+					{"equipo":10,"convocados":[],"puntos":15}
 			],
 			"acciones": [
 													
@@ -497,8 +497,8 @@
 			"lugar":"Caja Mágica, pabellón",
 			"hora":"10:15",
 			"equipos": [
-					{"equipo":3,"convocados":[],"puntos":0},
-					{"equipo":5,"convocados":[],"puntos":0}
+					{"equipo":3,"convocados":[],"puntos":51},
+					{"equipo":5,"convocados":[],"puntos":18}
 			],
 			"acciones": [
 													
