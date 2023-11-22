@@ -10,33 +10,33 @@
 		<meta name="author" content="Sucendo" />
 	
 		<link rel="shortcut icon" href="public/favicon.ico">
-        	<!--Estilo General-->
+        <!--Estilo General-->
 		<link rel="stylesheet" type="text/css" href="public/css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="public/css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="public/css/playoffs.css" />
 		<link rel="stylesheet" type="text/css" href="public/css/schedule.css" />
 		<!--Secciones-->
-        	<link rel="stylesheet" type="text/css" href="public/css/tabs.css" />
+       	<link rel="stylesheet" type="text/css" href="public/css/tabs.css" />
 		<link rel="stylesheet" type="text/css" href="public/css/tabstyles.css" />
 		<!-- Añadir Mapa MapBox -->
 		<link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
 		<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>	
-	        <!--Añadir Jugador-->
-	        <link rel="stylesheet" type="text/css" href="public/css/modalwindoweffects.css" />
-	        <link rel="stylesheet" type="text/css" href="public/css/minimalform.css" />
-	        <!--Tablas estadisticas-->
-	    	<link rel="stylesheet" type="text/css" href="public/css/stickytableheaders.css" />
-	        <!--Botones con estilo-->
+	    <!--Añadir Jugador-->
+	    <link rel="stylesheet" type="text/css" href="public/css/modalwindoweffects.css" />
+	    <link rel="stylesheet" type="text/css" href="public/css/minimalform.css" />
+	    <!--Tablas estadisticas-->
+	   	<link rel="stylesheet" type="text/css" href="public/css/stickytableheaders.css" />
+	    <!--Botones con estilo-->
 		<link rel="stylesheet" type="text/css" href="public/css/creativebuttons.css" />
-	        <!--DragDropInteractions-->
-	    	<link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+	    <!--DragDropInteractions-->
+	   	<link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="public/css/bottom-area.css" />
-	        <!--Boton Select-->
-	        <link rel="stylesheet" type="text/css" href="public/css/cs-select.css" />
+	    <!--Boton Select-->
+	    <link rel="stylesheet" type="text/css" href="public/css/cs-select.css" />
 		<link rel="stylesheet" type="text/css" href="public/css/cs-skin-elastic.css" />
-        	<link rel="stylesheet" type="text/css" href="public/css/cs-skin-boxes.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/cs-skin-boxes.css" />
         
-        	<!--<link rel="stylesheet" type="text/css" href="public/css/component.css" />-->
+        <!--<link rel="stylesheet" type="text/css" href="public/css/component.css" />-->
 		
 		<!-- Stylesheet required to power RRSSB. Copy this css file to your header or merge directly into your css -->
 		<link rel="stylesheet" type="text/css" href="public/css/rrssb.css" />
@@ -134,6 +134,8 @@
 									<option value="7" data-class="flag-france">Semana 7</option>
 									<option value="8" data-class="flag-france">Semana 8</option>
 									<option value="9" data-class="flag-france">Semana 9</option>
+									<option value="10" data-class="flag-france">Semana 10</option>
+									<option value="11" data-class="flag-france">Semana 11</option>
 								</select>
 							</div>
 							<!-- 
@@ -243,6 +245,17 @@
 							</article>
 
 							<article>						
+								<h2>RESUMEN SEMANA 11</h2>
+								<p></p>
+								<p></p>
+							</article>
+							<article>						
+								<h2>RESUMEN SEMANA 10</h2>
+								<p></p>
+								<p></p>
+								<p></p>
+							</article>
+							<article>						
 								<h2>RESUMEN SEMANA 9</h2>
 								<p>The Valva Cherubs vs Betsaida Boanerges</p>
 							</article>
@@ -312,6 +325,8 @@
 									<option value="7" data-class="flag-france">Semana 7</option>
 									<option value="8" data-class="flag-france">Semana 8</option>
 									<option value="9" data-class="flag-france">Semana 9</option>
+									<option value="10" data-class="flag-france">Semana 10</option>
+									<option value="11" data-class="flag-france">Semana 11</option>
 								</select>
 							</div>
 							<div id="table-e">
@@ -357,6 +372,8 @@
 									<option value="7" data-class="flag-france">Semana 7</option>
 									<option value="8" data-class="flag-france">Semana 8</option>
 									<option value="9" data-class="flag-france">Semana 9</option>
+									<option value="10" data-class="flag-france">Semana 10</option>
+									<option value="11" data-class="flag-france">Semana 11</option>
 								</select>
 							</div>
 							
@@ -381,6 +398,8 @@
 									<option value="7" data-class="flag-france">Semana 7</option>
 									<option value="8" data-class="flag-france">Semana 8</option>
 									<option value="9" data-class="flag-france">Semana 9</option>
+									<option value="10" data-class="flag-france">Semana 10</option>
+									<option value="11" data-class="flag-france">Semana 11</option>
 								</select>
 							</div>
 							<div id="select-top-jornada" class="control">
@@ -622,7 +641,7 @@
 				
 				if (tipo == null){
 					tipo = "semana";
-					numero = 9;
+					numero = 11;
 				}
             				
 				$.getJSON("public/partidos.json", function(datos) {
