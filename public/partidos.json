@@ -655,290 +655,485 @@
 			]
 		},
 		{
-			"competicion":"liga regular",
-			"jornada":5,
-			"semana":12,
-			"fecha":"25/11/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"9:00",
-			"equipos": [
-					{"equipo":9,"convocados":[],"puntos":0},
-					{"equipo":6,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-			"competicion":"liga regular",
-			"jornada":4,
-			"semana":12,
-			"fecha":"25/11/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"10:15",
-			"equipos": [
-					{"equipo":2,"convocados":[],"puntos":0},
-					{"equipo":8,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-			"competicion":"liga regular",
-			"jornada":7,
-			"semana":12,
-			"fecha":"25/11/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"11:30",
-			"equipos": [
-					{"equipo":4,"convocados":[],"puntos":0},
-					{"equipo":3,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-			"competicion":"liga regular",
-			"jornada":7,
-			"semana":13,
-			"fecha":"02/12/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"9:00",
-			"equipos": [
-					{"equipo":10,"convocados":[],"puntos":0},
-					{"equipo":5,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-			"competicion":"liga regular",
-			"jornada":4,
-			"semana":13,
-			"fecha":"02/12/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"10:15",
-			"equipos": [
-					{"equipo":4,"convocados":[],"puntos":0},
-					{"equipo":9,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-			"competicion":"liga regular",
-			"jornada":7,
-			"semana":14,
-			"fecha":"16/12/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"9:00",
-			"equipos": [
-					{"equipo":9,"convocados":[],"puntos":0},
-					{"equipo":1,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-			"competicion":"liga regular",
-			"jornada":7,
-			"semana":14,
-			"fecha":"16/12/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"10:15",
-			"equipos": [
-					{"equipo":7,"convocados":[],"puntos":0},
-					{"equipo":8,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-			"competicion":"liga regular",
-			"jornada":7,
-			"semana":14,
-			"fecha":"16/12/2023",
-			"lugar":"Caja Mágica, pabellón",
-			"hora":"11:30",
-			"equipos": [
-					{"equipo":6,"convocados":[],"puntos":0},
-					{"equipo":2,"convocados":[],"puntos":0}
-			],
-			"acciones": [
-													
-			]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":8,
-				"semana":15,
-				"fecha":"13/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"9:00",
-				"equipos": [
-						{"equipo":3,"convocados":[],"puntos":0},
-						{"equipo":7,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":8,
-				"semana":15,
-				"fecha":"13/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"10:15",
-				"equipos": [
-						{"equipo":8,"convocados":[],"puntos":0},
-						{"equipo":9,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":8,
-				"semana":15,
-				"fecha":"13/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"11:30",
-				"equipos": [
-						{"equipo":1,"convocados":[],"puntos":0},
-						{"equipo":10,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":8,
-				"semana":16,
-				"fecha":"20/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"9:00",
-				"equipos": [
-						{"equipo":2,"convocados":[],"puntos":0},
-						{"equipo":4,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":8,
-				"semana":16,
-				"fecha":"20/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"10:15",
-				"equipos": [
-						{"equipo":6,"convocados":[],"puntos":0},
-						{"equipo":5,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":6,
-				"semana":16,
-				"fecha":"20/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"11:30",
-				"equipos": [
-						{"equipo":9,"convocados":[],"puntos":0},
-						{"equipo":3,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":9,
-				"semana":17,
-				"fecha":"27/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"9:00",
-				"equipos": [
-						{"equipo":7,"convocados":[],"puntos":0},
-						{"equipo":9,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":9,
-				"semana":17,
-				"fecha":"27/01/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"10:15",
-				"equipos": [
-						{"equipo":2,"convocados":[],"puntos":0},
-						{"equipo":5,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":9,
-				"semana":18,
-				"fecha":"03/02/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"9:00",
-				"equipos": [
-						{"equipo":10,"convocados":[],"puntos":0},
-						{"equipo":4,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":9,
-				"semana":18,
-				"fecha":"03/02/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"10:15",
-				"equipos": [
-						{"equipo":1,"convocados":[],"puntos":0},
-						{"equipo":3,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		},
-		{
-				"competicion":"liga regular",
-				"jornada":9,
-				"semana":18,
-				"fecha":"03/02/2024",
-				"lugar":"Caja Mágica, pabellón",
-				"hora":"11:30",
-				"equipos": [
-						{"equipo":8,"convocados":[],"puntos":0},
-						{"equipo":6,"convocados":[],"puntos":0}
-				],
-				"acciones": [
-														
-				]
-		}
+                        "competicion":"liga regular",
+                        "jornada":5,
+                        "semana":12,
+                        "fecha":"25/11/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":9,"convocados":[],"puntos":26},
+                                {"equipo":6,"convocados":[],"puntos":33}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":4,
+                        "semana":12,
+                        "fecha":"25/11/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":2,"convocados":[],"puntos":51},
+                                {"equipo":8,"convocados":[],"puntos":38}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":7,
+                        "semana":12,
+                        "fecha":"25/11/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"11:30",
+                        "equipos": [
+                                {"equipo":4,"convocados":[],"puntos":34},
+                                {"equipo":3,"convocados":[],"puntos":37}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":7,
+                        "semana":13,
+                        "fecha":"02/12/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":10,"convocados":[],"puntos":34},
+                                {"equipo":5,"convocados":[],"puntos":12}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":4,
+                        "semana":13,
+                        "fecha":"02/12/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":4,"convocados":[],"puntos":40},
+                                {"equipo":9,"convocados":[],"puntos":32}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":7,
+                        "semana":14,
+                        "fecha":"16/12/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":9,"convocados":[],"puntos":32},
+                                {"equipo":1,"convocados":[],"puntos":24}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":7,
+                        "semana":14,
+                        "fecha":"16/12/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":7,"convocados":[],"puntos":36},
+                                {"equipo":8,"convocados":[],"puntos":29}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":7,
+                        "semana":14,
+                        "fecha":"16/12/2023",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"11:30",
+                        "equipos": [
+                                {"equipo":6,"convocados":[],"puntos":41},
+                                {"equipo":2,"convocados":[],"puntos":51}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":8,
+                        "semana":15,
+                        "fecha":"13/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":3,"convocados":[],"puntos":53},
+                                {"equipo":7,"convocados":[],"puntos":47}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":9,
+                        "semana":15,
+                        "fecha":"13/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":8,"convocados":[],"puntos":60},
+                                {"equipo":6,"convocados":[],"puntos":61}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":8,
+                        "semana":15,
+                        "fecha":"13/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"11:30",
+                        "equipos": [
+                                {"equipo":1,"convocados":[],"puntos":53},
+                                {"equipo":10,"convocados":[],"puntos":39}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":8,
+                        "semana":16,
+                        "fecha":"20/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":6,"convocados":[],"puntos":58},
+                                {"equipo":5,"convocados":[],"puntos":19}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":8,
+                        "semana":16,
+                        "fecha":"20/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":8,"convocados":[],"puntos":0},
+                                {"equipo":9,"convocados":[],"puntos":20}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":8,
+                        "semana":16,
+                        "fecha":"20/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"11:30",
+                        "equipos": [
+                                {"equipo":2,"convocados":[],"puntos":63},
+                                {"equipo":4,"convocados":[],"puntos":47}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":9,
+                        "semana":17,
+                        "fecha":"27/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":7,"convocados":[],"puntos":53},
+                                {"equipo":9,"convocados":[],"puntos":15}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":9,
+                        "semana":17,
+                        "fecha":"27/01/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":1,"convocados":[],"puntos":40},
+                                {"equipo":3,"convocados":[],"puntos":43}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":9,
+                        "semana":18,
+                        "fecha":"03/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":10,"convocados":[],"puntos":37},
+                                {"equipo":4,"convocados":[],"puntos":42}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":9,
+                        "semana":18,
+                        "fecha":"03/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":2,"convocados":[],"puntos":73},
+                                {"equipo":5,"convocados":[],"puntos":13}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":6,
+                        "semana":18,
+                        "fecha":"03/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"11:30",
+                        "equipos": [
+                                {"equipo":9,"convocados":[],"puntos":38},
+                                {"equipo":3,"convocados":[],"puntos":42}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":10,
+                        "semana":19,
+                        "fecha":"10/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":10,"convocados":[],"puntos":0},
+                                {"equipo":8,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":COPA CR,
+                        "semana":Copa,
+                        "fecha":"17/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":2,"convocados":[],"puntos":0},
+                                {"equipo":6,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":COPA CR,
+                        "semana":Copa,
+                        "fecha":"17/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:30",
+                        "equipos": [
+                                {"equipo":3,"convocados":[],"puntos":0},
+                                {"equipo":7,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":COPA CR,
+                        "semana":Copa,
+                        "fecha":"17/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"12:00",
+                        "equipos": [
+                                {"equipo":Ganador Partido 1,"convocados":[],"puntos":0},
+                                {"equipo":Ganador Partido 2,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":10,
+                        "semana":20,
+                        "fecha":"24/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":5,"convocados":[],"puntos":0},
+                                {"equipo":7,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":10,
+                        "semana":20,
+                        "fecha":"24/02/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":9,"convocados":[],"puntos":0},
+                                {"equipo":6,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":10,
+                        "semana":21,
+                        "fecha":"02/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":3,"convocados":[],"puntos":0},
+                                {"equipo":2,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":10,
+                        "semana":21,
+                        "fecha":"02/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":4,"convocados":[],"puntos":0},
+                                {"equipo":1,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":11,
+                        "semana":21,
+                        "fecha":"02/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":6,"convocados":[],"puntos":0},
+                                {"equipo":10,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":11,
+                        "semana":22,
+                        "fecha":"09/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":7,"convocados":[],"puntos":0},
+                                {"equipo":1,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":11,
+                        "semana":22,
+                        "fecha":"09/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":4,"convocados":[],"puntos":0},
+                                {"equipo":9,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":11,
+                        "semana":23,
+                        "fecha":"16/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"9:00",
+                        "equipos": [
+                                {"equipo":2,"convocados":[],"puntos":0},
+                                {"equipo":8,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+                {
+                        "competicion":"liga regular",
+                        "jornada":11,
+                        "semana":23,
+                        "fecha":"16/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"10:15",
+                        "equipos": [
+                                {"equipo":3,"convocados":[],"puntos":0},
+                                {"equipo":5,"convocados":[],"puntos":0}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                }
 
 	]
 }
