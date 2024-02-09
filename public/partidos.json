@@ -955,9 +955,9 @@
                         ]
                 },
                 {
-                        "competicion":"liga regular",
-                        "jornada":COPA CR,
-                        "semana":Copa,
+                        "competicion":"copa",
+                        "jornada":"po-cr-2",
+                        "semana":"co-cr",
                         "fecha":"17/02/2024",
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"9:00",
@@ -970,9 +970,9 @@
                         ]
                 },
                 {
-                        "competicion":"liga regular",
-                        "jornada":COPA CR,
-                        "semana":Copa,
+                        "competicion":"copa",
+                        "jornada":"po-cr-2",
+                        "semana":"co-cr",
                         "fecha":"17/02/2024",
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"10:30",
@@ -985,9 +985,9 @@
                         ]
                 },
                 {
-                        "competicion":"liga regular",
-                        "jornada":COPA CR,
-                        "semana":Copa,
+                        "competicion":"copa",
+                        "jornada":"po-cr-1",
+                        "semana":"co-cr",
                         "fecha":"17/02/2024",
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"12:00",
