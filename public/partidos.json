@@ -992,8 +992,8 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"12:00",
                         "equipos": [
-                                {"equipo":Ganador Partido 1,"convocados":[],"puntos":0},
-                                {"equipo":Ganador Partido 2,"convocados":[],"puntos":0}
+                                {"equipo":"Ganador Partido 1","convocados":[],"puntos":0},
+                                {"equipo":"Ganador Partido 2","convocados":[],"puntos":0}
                         ],
                         "acciones": [
                                                                 
