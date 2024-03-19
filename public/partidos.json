@@ -947,8 +947,8 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"9:00",
                         "equipos": [
-                                {"equipo":10,"convocados":[],"puntos":0},
-                                {"equipo":8,"convocados":[],"puntos":0}
+                                {"equipo":10,"convocados":[],"puntos":29},
+                                {"equipo":8,"convocados":[],"puntos":40}
                         ],
                         "acciones": [
                                                                 
@@ -1007,8 +1007,8 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"9:00",
                         "equipos": [
-                                {"equipo":5,"convocados":[],"puntos":0},
-                                {"equipo":7,"convocados":[],"puntos":0}
+                                {"equipo":5,"convocados":[],"puntos":27},
+                                {"equipo":7,"convocados":[],"puntos":52}
                         ],
                         "acciones": [
                                                                 
@@ -1022,8 +1022,8 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"10:15",
                         "equipos": [
-                                {"equipo":9,"convocados":[],"puntos":0},
-                                {"equipo":6,"convocados":[],"puntos":0}
+                                {"equipo":9,"convocados":[],"puntos"37},
+                                {"equipo":6,"convocados":[],"puntos":45}
                         ],
                         "acciones": [
                                                                 
@@ -1037,23 +1037,8 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"9:00",
                         "equipos": [
-                                {"equipo":3,"convocados":[],"puntos":0},
-                                {"equipo":2,"convocados":[],"puntos":0}
-                        ],
-                        "acciones": [
-                                                                
-                        ]
-                },
-                {
-                        "competicion":"liga regular",
-                        "jornada":10,
-                        "semana":21,
-                        "fecha":"02/03/2024",
-                        "lugar":"Caja Mágica, pabellón",
-                        "hora":"10:15",
-                        "equipos": [
-                                {"equipo":4,"convocados":[],"puntos":0},
-                                {"equipo":1,"convocados":[],"puntos":0}
+                                {"equipo":3,"convocados":[],"puntos":38},
+                                {"equipo":2,"convocados":[],"puntos":60}
                         ],
                         "acciones": [
                                                                 
@@ -1067,8 +1052,23 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"10:15",
                         "equipos": [
-                                {"equipo":6,"convocados":[],"puntos":0},
-                                {"equipo":10,"convocados":[],"puntos":0}
+                                {"equipo":6,"convocados":[],"puntos":65},
+                                {"equipo":10,"convocados":[],"puntos":32}
+                        ],
+                        "acciones": [
+                                                                
+                        ]
+                },
+		{
+                        "competicion":"liga regular",
+                        "jornada":10,
+                        "semana":21,
+                        "fecha":"02/03/2024",
+                        "lugar":"Caja Mágica, pabellón",
+                        "hora":"11:30",
+                        "equipos": [
+                                {"equipo":4,"convocados":[],"puntos":47},
+                                {"equipo":1,"convocados":[],"puntos":33}
                         ],
                         "acciones": [
                                                                 
@@ -1082,8 +1082,8 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"9:00",
                         "equipos": [
-                                {"equipo":7,"convocados":[],"puntos":0},
-                                {"equipo":1,"convocados":[],"puntos":0}
+                                {"equipo":7,"convocados":[],"puntos":28},
+                                {"equipo":1,"convocados":[],"puntos":27}
                         ],
                         "acciones": [
                                                                 
@@ -1097,8 +1097,8 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"10:15",
                         "equipos": [
-                                {"equipo":4,"convocados":[],"puntos":0},
-                                {"equipo":9,"convocados":[],"puntos":0}
+                                {"equipo":4,"convocados":[],"puntos":38},
+                                {"equipo":9,"convocados":[],"puntos":25}
                         ],
                         "acciones": [
                                                                 
@@ -1108,7 +1108,7 @@
                         "competicion":"liga regular",
                         "jornada":11,
                         "semana":23,
-                        "fecha":"16/03/2024",
+                        "fecha":"23/03/2024",
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"9:00",
                         "equipos": [
@@ -1123,9 +1123,9 @@
                         "competicion":"liga regular",
                         "jornada":11,
                         "semana":23,
-                        "fecha":"16/03/2024",
+                        "fecha":"23/03/2024",
                         "lugar":"Caja Mágica, pabellón",
-                        "hora":"10:15",
+                        "hora":"11:00",
                         "equipos": [
                                 {"equipo":3,"convocados":[],"puntos":0},
                                 {"equipo":5,"convocados":[],"puntos":0}
