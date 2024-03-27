@@ -1022,7 +1022,7 @@
                         "lugar":"Caja Mágica, pabellón",
                         "hora":"10:15",
                         "equipos": [
-                                {"equipo":9,"convocados":[],"puntos"37},
+                                {"equipo":9,"convocados":[],"puntos":37},
                                 {"equipo":6,"convocados":[],"puntos":45}
                         ],
                         "acciones": [
