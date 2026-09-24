@@ -200,17 +200,17 @@ function chooseHistoryMatches(target,season){
  }
  const compatible=all.filter(x=>compatiblePlayerName(target.player.name,x.player.name));
  const sameTeam=compatible.filter(x=>teamIdentity(x.team.name)===teamIdentity(target.team.name));
- const choose=arr=>{
-   if(!arr.length)return [];
-   const exact=arr.filter(x=>playerSignature(x.player.name).publicKey===playerSignature(target.player.name).publicKey);
+ const targetKey=playerSignature(target.player.name).publicKey;
+ if(sameTeam.length){
+   const exact=sameTeam.filter(x=>playerSignature(x.player.name).publicKey===targetKey);
    if(exact.length)return exact;
-   if(arr.length===1)return arr;
-   const raw=new Set(arr.map(x=>normIdentity(x.player.name)));
-   return raw.size===1?arr:[]
- };
- let picked=choose(sameTeam);
- if(picked.length)return picked;
- return choose(compatible)
+   if(sameTeam.length===1)return sameTeam;
+   const raw=new Set(sameTeam.map(x=>normIdentity(x.player.name)));
+   return raw.size===1?sameTeam:[]
+ }
+ const globalExact=compatible.filter(x=>playerSignature(x.player.name).publicKey===targetKey);
+ if(globalExact.length===1)return globalExact;
+ return compatible.length===1?compatible:[]
 }
 function mergePlayerStats(records){
  const out={...blank(),gp:0},keys=['pts','t2m','t2a','t3m','t3a','tlm','tla','reb','rebO','rebD','ast','stl','blk','blkAgainst','tov','foul','foulDrawn','seconds','plusMinus'];
