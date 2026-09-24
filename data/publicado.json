@@ -1,0 +1,4281 @@
+{
+  "schema": 2,
+  "publishedAt": "2026-09-23T12:00:00Z",
+  "seasons": [
+    {
+      "id": "parish-league-2026-2027",
+      "schema": 2,
+      "season": "2026-2027",
+      "competition": "Parish League",
+      "teams": [
+        {
+          "id": "parish-league-2026-2027-begona",
+          "name": "Begoña Bulls",
+          "abbr": "BEG",
+          "logo": "public/img/logo-begoña_bulls.png",
+          "players": [
+            {
+              "id": "parish-league-2026-2027-begona-n8",
+              "name": "REBOLLO GARCÍA, FRANCISCO JOSÉ",
+              "number": "8"
+            },
+            {
+              "id": "parish-league-2026-2027-begona-n14",
+              "name": "CHICHARRO DEL CAMPO, ANDRÉS",
+              "number": "14"
+            },
+            {
+              "id": "parish-league-2026-2027-begona-n15",
+              "name": "GIMÉNEZ UCENDO, FERNANDO",
+              "number": "15"
+            },
+            {
+              "id": "parish-league-2026-2027-begona-n20",
+              "name": "GÓMEZ-IBARLUCEA SAIZ, ERNESTO",
+              "number": "20"
+            },
+            {
+              "id": "parish-league-2026-2027-begona-n24",
+              "name": "CHICHARRO DEL CAMPO, ÁLVARO",
+              "number": "24"
+            },
+            {
+              "id": "parish-league-2026-2027-begona-n27",
+              "name": "VASQUEZ BATISTA, RICHARD",
+              "number": "27"
+            },
+            {
+              "id": "parish-league-2026-2027-begona-n28",
+              "name": "MÁRQUEZ LÓPEZ, JAVIER",
+              "number": "28"
+            },
+            {
+              "id": "parish-league-2026-2027-begona-n33",
+              "name": "UCENDO GÓMEZ, SAMUEL",
+              "number": "33"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-paloma",
+          "name": "La Paloma B.C.",
+          "abbr": "PAL",
+          "logo": "public/img/logo-la_paloma_bc.png",
+          "players": [
+            {
+              "id": "parish-league-2026-2027-paloma-n2",
+              "name": "NAVARRO LIMA, PEDRO",
+              "number": "2"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n5",
+              "name": "MADRIGAL, JOSUÉ",
+              "number": "5"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n7",
+              "name": "DE VICENTE, PABLO",
+              "number": "7"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n22",
+              "name": "ESTEVE, JAVIER",
+              "number": "22"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n91",
+              "name": "Cortés , Juan",
+              "number": "91"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n99",
+              "name": "ORTEGA AREVALO, LEON",
+              "number": "99"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n0",
+              "name": "MARTÍN, VICTOR",
+              "number": "0"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n3",
+              "name": "HERNANZ RAMOS, PEDRO",
+              "number": "3"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n4",
+              "name": "PLAZA, PABLO",
+              "number": "4"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n9",
+              "name": "ORTEGA, JUAN",
+              "number": "9"
+            },
+            {
+              "id": "parish-league-2026-2027-paloma-n16",
+              "name": "PEÑASCO, JESÚS",
+              "number": "16"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-trigolution",
+          "name": "Trigolution Magikikos JyM",
+          "abbr": "TRI",
+          "logo": null,
+          "players": [
+            {
+              "id": "parish-league-2026-2027-trigolution-n13",
+              "name": "BERIAIN FERNÁNDEZ, ÁNGEL",
+              "number": "13"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n17",
+              "name": "JULIÁN LARGO, ANTONIO",
+              "number": "17"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n21",
+              "name": "GARCIA SANCHEZ, JESUS",
+              "number": "21"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n23",
+              "name": "TORRES LEAL, JUAN",
+              "number": "23"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n29",
+              "name": "LÓPEZ GARMILLA, JORGE",
+              "number": "29"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n30",
+              "name": "ÁGUEDA LEAL, JOSÉ",
+              "number": "30"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n35",
+              "name": "CIOCAN, VASILE TIBERIU",
+              "number": "35"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n41",
+              "name": "ÁGUEDA LEAL, MIGUEL",
+              "number": "41"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n43",
+              "name": "JULIÁN LARGO, DAVID",
+              "number": "43"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n67",
+              "name": "CHAMIZO GUERRERO, JUAN ANTONIO",
+              "number": "67"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n78",
+              "name": "PÉREZ LEAL, CARLOS",
+              "number": "78"
+            },
+            {
+              "id": "parish-league-2026-2027-trigolution-n88",
+              "name": "ÁGUEDA LEAL, JAVIER",
+              "number": "88"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-betsaida",
+          "name": "Betsaida Boanerges",
+          "abbr": "BET",
+          "logo": "public/img/logo-betsaida_boanerges.png",
+          "players": [
+            {
+              "id": "parish-league-2026-2027-betsaida-n8",
+              "name": "ORELLANA GALARZA, FERNANDO",
+              "number": "8"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n15",
+              "name": "ROSAS, GABRIEL",
+              "number": "15"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n16",
+              "name": "GARCÍA JIMÉNEZ, MIGUEL",
+              "number": "16"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n18",
+              "name": "SANDIN MUÑOZ DE ARENILLAS, PEDRO",
+              "number": "18"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n23",
+              "name": "RUIZ CANO, JUAN",
+              "number": "23"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n28",
+              "name": "MARTÍN MARTÍN, DIEGO",
+              "number": "28"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n41",
+              "name": "ALGAR, JAVIER",
+              "number": "41"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n77",
+              "name": "MARTINEZ MEDINA, IGNACIO",
+              "number": "77"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n88",
+              "name": "YAGUE, JOSE MARIA",
+              "number": "88"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n6",
+              "name": "RUIZ CANO, IGNACIO",
+              "number": "6"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n19",
+              "name": "Fries, Manuel",
+              "number": "19"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n20",
+              "name": "ALGAR, MIGUEL",
+              "number": "20"
+            },
+            {
+              "id": "parish-league-2026-2027-betsaida-n27",
+              "name": "MARTÍN MARTÍN, DIEGO",
+              "number": "27"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-prayers",
+          "name": "Los Ángeles Prayers",
+          "abbr": "PRA",
+          "logo": "public/img/logot-los_angeles_prayers.png",
+          "players": [
+            {
+              "id": "parish-league-2026-2027-prayers-n3",
+              "name": "RODRÍGUEZ PÉREZ, ISAAC",
+              "number": "3"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n7",
+              "name": "CORNEJO MANRIQUE, DAVID GABRIEL",
+              "number": "7"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n10",
+              "name": "PELÁEZ-CAMPOMANES GUIBERT, JACOBO",
+              "number": "10"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n11",
+              "name": "SERRADA SOTIL, JAVIER",
+              "number": "11"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n12",
+              "name": "BENITO PASCUAL, MIGUEL",
+              "number": "12"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n16",
+              "name": "CERDÁN RUBIALES, SAMUEL",
+              "number": "16"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n22",
+              "name": "REDONDO ELRÍO, JAIME",
+              "number": "22"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n33",
+              "name": "SALAVERRÍA BLANCO, DAVID",
+              "number": "33"
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n0",
+              "name": "HERNANZ ROMERO, SEBASTIÁN",
+              "number": "0"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-siena",
+          "name": "Siena Suns",
+          "abbr": "SIE",
+          "logo": "public/img/logo-siena.png",
+          "players": [
+            {
+              "id": "parish-league-2026-2027-siena-n3",
+              "name": "Jugador #3 (sin identificar)",
+              "number": "3"
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n8",
+              "name": "Jugador #8 (sin identificar)",
+              "number": "8"
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n10",
+              "name": "MARTÍN LORENZANA, NICOLÁS",
+              "number": "10"
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n11",
+              "name": "PEREA UCENDO, PABLO",
+              "number": "11"
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n18",
+              "name": "GUZMÁN BELDA, JAVIER",
+              "number": "18"
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n24",
+              "name": "MUÑOZ PEREZ, SAMUEL",
+              "number": "24"
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n73",
+              "name": "MOYA RIPOLL, PEDRO",
+              "number": "73"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-valva",
+          "name": "The Valva Cherubs",
+          "abbr": "VAL",
+          "logo": null,
+          "players": [
+            {
+              "id": "parish-league-2026-2027-valva-n4",
+              "name": "MARCOS METAIS, JESÚS",
+              "number": "4"
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n5",
+              "name": "OLIAS ALLENDE, SEBASTIAN",
+              "number": "5"
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n8",
+              "name": "GODAY GARCIA, MATEO",
+              "number": "8"
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n11",
+              "name": "OLIAS ALLENDE, IGNACIO",
+              "number": "11"
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n17",
+              "name": "GARCIA MERLO, SANTIAGO",
+              "number": "17"
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n18",
+              "name": "PETRUZZO RECIO, SAMUEL",
+              "number": "18"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-salterio",
+          "name": "Salterio Lauders",
+          "abbr": "SAL",
+          "logo": "public/img/logo-salterio_lauders.png",
+          "players": [
+            {
+              "id": "parish-league-2026-2027-salterio-n7",
+              "name": "JIMENEZ, SANTIAGO",
+              "number": "7"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n10",
+              "name": "AMADOR MENDEZ, MANUEL",
+              "number": "10"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n15",
+              "name": "ROSAS, OSCAR",
+              "number": "15"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n18",
+              "name": "AMADOR MENDEZ, EDUARDO",
+              "number": "18"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n32",
+              "name": "Jugador #32 (sin identificar)",
+              "number": "32"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n33",
+              "name": "OSORO, IÑIGO",
+              "number": "33"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n55",
+              "name": "AMADOR CAYUELA, GREGORIO",
+              "number": "55"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n85",
+              "name": "ROSAS SANCHEZ, ANDRES",
+              "number": "85"
+            },
+            {
+              "id": "parish-league-2026-2027-salterio-n89",
+              "name": "CAMPOS, NACHO",
+              "number": "89"
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-laboure",
+          "name": "Laboure Spinners",
+          "abbr": "LAB",
+          "logo": "public/img/logo-laboure_spinners.png",
+          "players": []
+        },
+        {
+          "id": "parish-league-2026-2027-snow",
+          "name": "Snow Knights",
+          "abbr": "SNK",
+          "logo": "public/img/logot-snow_knights.png",
+          "players": []
+        },
+        {
+          "id": "pending-home",
+          "name": "Pendiente de sorteo",
+          "abbr": "—",
+          "players": [],
+          "placeholder": true,
+          "logo": null
+        },
+        {
+          "id": "pending-away",
+          "name": "Pendiente de sorteo",
+          "abbr": "—",
+          "players": [],
+          "placeholder": true,
+          "logo": null
+        }
+      ],
+      "games": [
+        {
+          "id": "parish-league-2026-2027-p01",
+          "fixtureNumber": 1,
+          "round": "1",
+          "week": 1,
+          "date": "2026-09-12",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-paloma"
+          ],
+          "score": [
+            35,
+            30
+          ],
+          "status": "final",
+          "source": "fbm",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "LAB / PRA / SNK / SAL / VAL",
+          "calendarNames": [
+            "Begoña Bulls",
+            "La Paloma B.C."
+          ],
+          "note": "Estadísticas acumuladas importadas del Excel FBM (23/09/2026): no incluyen el desarrollo jugada a jugada.",
+          "statLines": [
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n8",
+              "pts": 15,
+              "t2m": 3,
+              "t2a": 8,
+              "t3m": 3,
+              "t3a": 8,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 4,
+              "rebO": 2,
+              "reb": 6,
+              "ast": 1,
+              "stl": 2,
+              "tov": 0,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": 11,
+              "plusMinus": 5,
+              "seconds": 2656
+            },
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n14",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 5,
+              "rebO": 1,
+              "reb": 6,
+              "ast": 1,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 1,
+              "plusMinus": -4,
+              "seconds": 925
+            },
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n15",
+              "pts": 4,
+              "t2m": 0,
+              "t2a": 7,
+              "t3m": 1,
+              "t3a": 1,
+              "tlm": 1,
+              "tla": 2,
+              "rebD": 3,
+              "rebO": 3,
+              "reb": 6,
+              "ast": 3,
+              "stl": 1,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 3,
+              "officialVal": 5,
+              "plusMinus": 5,
+              "seconds": 2664
+            },
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n20",
+              "pts": 6,
+              "t2m": 0,
+              "t2a": 6,
+              "t3m": 1,
+              "t3a": 4,
+              "tlm": 3,
+              "tla": 8,
+              "rebD": 10,
+              "rebO": 4,
+              "reb": 14,
+              "ast": 4,
+              "stl": 1,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 3,
+              "foulDrawn": 4,
+              "officialVal": 11,
+              "plusMinus": 9,
+              "seconds": 2667
+            },
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n24",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 8,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 3,
+              "rebO": 2,
+              "reb": 5,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": -3,
+              "plusMinus": -4,
+              "seconds": 1675
+            },
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n27",
+              "pts": 8,
+              "t2m": 4,
+              "t2a": 9,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 11,
+              "rebO": 3,
+              "reb": 14,
+              "ast": 2,
+              "stl": 1,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 1,
+              "officialVal": 17,
+              "plusMinus": 5,
+              "seconds": 2382
+            },
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n28",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 0,
+              "seconds": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "playerId": "parish-league-2026-2027-begona-n33",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 4,
+              "reb": 5,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -3,
+              "plusMinus": 9,
+              "seconds": 1427
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n2",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 7,
+              "rebO": 1,
+              "reb": 8,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": 5,
+              "plusMinus": -3,
+              "seconds": 2124
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n5",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 7,
+              "t3m": 0,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 5,
+              "rebO": 1,
+              "reb": 6,
+              "ast": 1,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -3,
+              "plusMinus": -7,
+              "seconds": 2387
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n7",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 7,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 2,
+              "reb": 4,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -4,
+              "plusMinus": -7,
+              "seconds": 1758
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n22",
+              "pts": 17,
+              "t2m": 6,
+              "t2a": 11,
+              "t3m": 0,
+              "t3a": 5,
+              "tlm": 5,
+              "tla": 11,
+              "rebD": 8,
+              "rebO": 3,
+              "reb": 11,
+              "ast": 1,
+              "stl": 2,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 8,
+              "officialVal": 18,
+              "plusMinus": -5,
+              "seconds": 2880
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n91",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 2,
+              "seconds": 734
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n99",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 4,
+              "rebO": 3,
+              "reb": 7,
+              "ast": 1,
+              "stl": 2,
+              "tov": 2,
+              "blk": 1,
+              "blkAgainst": 2,
+              "foul": 2,
+              "foulDrawn": 1,
+              "officialVal": 4,
+              "plusMinus": -10,
+              "seconds": 1790
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n0",
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 9,
+              "t3m": 1,
+              "t3a": 8,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 6,
+              "rebO": 2,
+              "reb": 8,
+              "ast": 3,
+              "stl": 2,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 4,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 3,
+              "seconds": 2160
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n3",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 2,
+              "seconds": 565
+            }
+          ],
+          "teamBox": [
+            {
+              "teamId": "parish-league-2026-2027-begona",
+              "pts": 35,
+              "t2m": 8,
+              "t2a": 48,
+              "t3m": 5,
+              "t3a": 16,
+              "tlm": 4,
+              "tla": 16,
+              "rebD": 37,
+              "rebO": 19,
+              "reb": 56,
+              "ast": 11,
+              "stl": 5,
+              "tov": 7,
+              "blk": 3,
+              "blkAgainst": 1,
+              "foul": 9,
+              "foulDrawn": 9,
+              "officialVal": 39,
+              "plusMinus": 0,
+              "seconds": 14400
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "pts": 30,
+              "t2m": 11,
+              "t2a": 36,
+              "t3m": 1,
+              "t3a": 26,
+              "tlm": 5,
+              "tla": 13,
+              "rebD": 35,
+              "rebO": 12,
+              "reb": 47,
+              "ast": 6,
+              "stl": 6,
+              "tov": 8,
+              "blk": 1,
+              "blkAgainst": 3,
+              "foul": 14,
+              "foulDrawn": 9,
+              "officialVal": 16,
+              "plusMinus": 0,
+              "seconds": 14400
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-p02",
+          "fixtureNumber": 2,
+          "round": "1",
+          "week": 1,
+          "date": "2026-09-12",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-trigolution",
+            "parish-league-2026-2027-betsaida"
+          ],
+          "score": [
+            35,
+            32
+          ],
+          "status": "final",
+          "source": "fbm",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "LAB / PRA / SNK / SAL / VAL",
+          "calendarNames": [
+            "Trigolution Magikikos",
+            "Betsaida Boanegers"
+          ],
+          "note": "Estadísticas acumuladas importadas del Excel FBM (23/09/2026): no incluyen el desarrollo jugada a jugada.",
+          "statLines": [
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n13",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 6,
+              "rebO": 0,
+              "reb": 6,
+              "ast": 0,
+              "stl": 0,
+              "tov": 3,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 8,
+              "seconds": 1774
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n17",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 1,
+              "stl": 2,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 2,
+              "officialVal": -10,
+              "plusMinus": -6,
+              "seconds": 1964
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n21",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": 0,
+              "seconds": 161
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n23",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 0,
+              "officialVal": -9,
+              "plusMinus": -7,
+              "seconds": 910
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n29",
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 3,
+              "tla": 6,
+              "rebD": 6,
+              "rebO": 2,
+              "reb": 8,
+              "ast": 0,
+              "stl": 2,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 4,
+              "officialVal": 8,
+              "plusMinus": 5,
+              "seconds": 2376
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n30",
+              "pts": 1,
+              "t2m": 0,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 1,
+              "tla": 2,
+              "rebD": 5,
+              "rebO": 2,
+              "reb": 7,
+              "ast": 1,
+              "stl": 3,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": 4,
+              "plusMinus": -8,
+              "seconds": 1451
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n35",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 1,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 1,
+              "plusMinus": 9,
+              "seconds": 401
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n41",
+              "pts": 19,
+              "t2m": 8,
+              "t2a": 12,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 3,
+              "tla": 4,
+              "rebD": 6,
+              "rebO": 7,
+              "reb": 13,
+              "ast": 3,
+              "stl": 2,
+              "tov": 0,
+              "blk": 1,
+              "blkAgainst": 1,
+              "foul": 0,
+              "foulDrawn": 4,
+              "officialVal": 35,
+              "plusMinus": 7,
+              "seconds": 2369
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n43",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 3,
+              "rebO": 2,
+              "reb": 5,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 3,
+              "plusMinus": 0,
+              "seconds": 618
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n67",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 0,
+              "seconds": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n78",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -6,
+              "seconds": 718
+            },
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "playerId": "parish-league-2026-2027-trigolution-n88",
+              "pts": 6,
+              "t2m": 3,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 0,
+              "rebO": 4,
+              "reb": 4,
+              "ast": 1,
+              "stl": 3,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": 3,
+              "plusMinus": 13,
+              "seconds": 1626
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n8",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 5,
+              "rebO": 0,
+              "reb": 5,
+              "ast": 2,
+              "stl": -1,
+              "tov": 4,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": -3,
+              "plusMinus": -4,
+              "seconds": 1232
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n15",
+              "pts": 7,
+              "t2m": 2,
+              "t2a": 6,
+              "t3m": 1,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 3,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": 4,
+              "plusMinus": 0,
+              "seconds": 1772
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n16",
+              "pts": 4,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 2,
+              "tla": 2,
+              "rebD": 5,
+              "rebO": 1,
+              "reb": 6,
+              "ast": 0,
+              "stl": 2,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 5,
+              "foulDrawn": 2,
+              "officialVal": 8,
+              "plusMinus": -4,
+              "seconds": 1457
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n18",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 2,
+              "stl": 1,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 1,
+              "seconds": 1388
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n23",
+              "pts": 15,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 5,
+              "t3a": 8,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 3,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 13,
+              "plusMinus": -5,
+              "seconds": 2143
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n28",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 2,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -1,
+              "seconds": 1134
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n41",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 6,
+              "rebO": 1,
+              "reb": 7,
+              "ast": 0,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 4,
+              "plusMinus": -7,
+              "seconds": 1764
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n77",
+              "pts": 1,
+              "t2m": 0,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 6,
+              "tlm": 1,
+              "tla": 4,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 1,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": -8,
+              "plusMinus": 10,
+              "seconds": 1618
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n88",
+              "pts": 3,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 1,
+              "tla": 2,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 1,
+              "officialVal": 0,
+              "plusMinus": -5,
+              "seconds": 1888
+            }
+          ],
+          "teamBox": [
+            {
+              "teamId": "parish-league-2026-2027-trigolution",
+              "pts": 35,
+              "t2m": 14,
+              "t2a": 45,
+              "t3m": 0,
+              "t3a": 17,
+              "tlm": 7,
+              "tla": 14,
+              "rebD": 28,
+              "rebO": 17,
+              "reb": 45,
+              "ast": 6,
+              "stl": 13,
+              "tov": 10,
+              "blk": 2,
+              "blkAgainst": 2,
+              "foul": 14,
+              "foulDrawn": 12,
+              "officialVal": 32,
+              "plusMinus": 0,
+              "seconds": 14374
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "pts": 32,
+              "t2m": 5,
+              "t2a": 21,
+              "t3m": 6,
+              "t3a": 22,
+              "tlm": 4,
+              "tla": 10,
+              "rebD": 27,
+              "rebO": 5,
+              "reb": 32,
+              "ast": 8,
+              "stl": 4,
+              "tov": 17,
+              "blk": 2,
+              "blkAgainst": 2,
+              "foul": 14,
+              "foulDrawn": 9,
+              "officialVal": 16,
+              "plusMinus": 0,
+              "seconds": 14400
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-p03",
+          "fixtureNumber": 3,
+          "round": "1",
+          "week": 2,
+          "date": "2026-09-19",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-prayers",
+            "parish-league-2026-2027-siena"
+          ],
+          "score": [
+            32,
+            46
+          ],
+          "status": "final",
+          "source": "fbm",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "LAB / SNK",
+          "calendarNames": [
+            "Los Ángeles Prayers",
+            "Siena"
+          ],
+          "note": "Estadísticas acumuladas importadas del Excel FBM (23/09/2026): no incluyen el desarrollo jugada a jugada.",
+          "statLines": [
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n3",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 3,
+              "stl": 4,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 4,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": -1,
+              "seconds": 1998
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n7",
+              "pts": 9,
+              "t2m": 4,
+              "t2a": 11,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 1,
+              "tla": 4,
+              "rebD": 2,
+              "rebO": 2,
+              "reb": 4,
+              "ast": 3,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 3,
+              "plusMinus": -8,
+              "seconds": 2521
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n10",
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 8,
+              "t3m": 1,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 1,
+              "reb": 2,
+              "ast": 0,
+              "stl": 3,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": -3,
+              "seconds": 1413
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n11",
+              "pts": 4,
+              "t2m": 2,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 5,
+              "rebO": 3,
+              "reb": 8,
+              "ast": 1,
+              "stl": 1,
+              "tov": 0,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 12,
+              "plusMinus": -6,
+              "seconds": 1790
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n12",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 1,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": -13,
+              "seconds": 919
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n16",
+              "pts": 5,
+              "t2m": 2,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 1,
+              "tla": 4,
+              "rebD": 3,
+              "rebO": 2,
+              "reb": 5,
+              "ast": 2,
+              "stl": 1,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 2,
+              "officialVal": 4,
+              "plusMinus": -15,
+              "seconds": 1417
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n22",
+              "pts": 3,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 1,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 1,
+              "plusMinus": -2,
+              "seconds": 1206
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n33",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 1,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -13,
+              "seconds": 912
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n0",
+              "pts": 4,
+              "t2m": 2,
+              "t2a": 8,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 3,
+              "reb": 4,
+              "ast": 1,
+              "stl": 4,
+              "tov": 6,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": -9,
+              "seconds": 2218
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n3",
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 6,
+              "t3m": 1,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 6,
+              "rebO": 1,
+              "reb": 7,
+              "ast": 5,
+              "stl": 3,
+              "tov": 5,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 6,
+              "plusMinus": 21,
+              "seconds": 2304
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n8",
+              "pts": 9,
+              "t2m": 3,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 3,
+              "tla": 5,
+              "rebD": 2,
+              "rebO": 9,
+              "reb": 11,
+              "ast": 0,
+              "stl": 1,
+              "tov": 2,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 4,
+              "officialVal": 18,
+              "plusMinus": 6,
+              "seconds": 2174
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n10",
+              "pts": 4,
+              "t2m": 2,
+              "t2a": 8,
+              "t3m": 0,
+              "t3a": 5,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 6,
+              "rebO": 6,
+              "reb": 12,
+              "ast": 1,
+              "stl": 4,
+              "tov": 4,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 3,
+              "foulDrawn": 1,
+              "officialVal": 1,
+              "plusMinus": 9,
+              "seconds": 1936
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n11",
+              "pts": 5,
+              "t2m": 2,
+              "t2a": 8,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 1,
+              "tla": 3,
+              "rebD": 7,
+              "rebO": 5,
+              "reb": 12,
+              "ast": 3,
+              "stl": 1,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 2,
+              "officialVal": 15,
+              "plusMinus": 9,
+              "seconds": 2210
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n18",
+              "pts": 9,
+              "t2m": 0,
+              "t2a": 3,
+              "t3m": 3,
+              "t3a": 8,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 1,
+              "stl": 2,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 2,
+              "plusMinus": 5,
+              "seconds": 2107
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n24",
+              "pts": 14,
+              "t2m": 2,
+              "t2a": 7,
+              "t3m": 2,
+              "t3a": 2,
+              "tlm": 4,
+              "tla": 4,
+              "rebD": 4,
+              "rebO": 6,
+              "reb": 10,
+              "ast": 0,
+              "stl": 1,
+              "tov": 5,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 16,
+              "plusMinus": 6,
+              "seconds": 2212
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n73",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 4,
+              "rebO": 1,
+              "reb": 5,
+              "ast": 0,
+              "stl": 1,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 1,
+              "officialVal": -4,
+              "plusMinus": 14,
+              "seconds": 1452
+            }
+          ],
+          "teamBox": [
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "pts": 32,
+              "t2m": 12,
+              "t2a": 40,
+              "t3m": 2,
+              "t3a": 13,
+              "tlm": 2,
+              "tla": 8,
+              "rebD": 16,
+              "rebO": 12,
+              "reb": 28,
+              "ast": 11,
+              "stl": 13,
+              "tov": 17,
+              "blk": 1,
+              "blkAgainst": 2,
+              "foul": 11,
+              "foulDrawn": 4,
+              "officialVal": 14,
+              "plusMinus": 0,
+              "seconds": 14400
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "pts": 46,
+              "t2m": 10,
+              "t2a": 42,
+              "t3m": 6,
+              "t3a": 23,
+              "tlm": 8,
+              "tla": 14,
+              "rebD": 29,
+              "rebO": 28,
+              "reb": 57,
+              "ast": 10,
+              "stl": 13,
+              "tov": 21,
+              "blk": 2,
+              "blkAgainst": 1,
+              "foul": 7,
+              "foulDrawn": 10,
+              "officialVal": 54,
+              "plusMinus": 0,
+              "seconds": 14400
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-p04",
+          "fixtureNumber": 4,
+          "round": "1",
+          "week": 2,
+          "date": "2026-09-19",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-valva",
+            "parish-league-2026-2027-salterio"
+          ],
+          "score": [
+            19,
+            50
+          ],
+          "status": "final",
+          "source": "fbm",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "LAB / SNK",
+          "calendarNames": [
+            "The Valva Cherubs",
+            "Salterio Lauders"
+          ],
+          "note": "Estadísticas acumuladas importadas del Excel FBM (23/09/2026): no incluyen el desarrollo jugada a jugada.",
+          "statLines": [
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n4",
+              "pts": 4,
+              "t2m": 2,
+              "t2a": 7,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 4,
+              "rebO": 1,
+              "reb": 5,
+              "ast": 2,
+              "stl": 5,
+              "tov": 6,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 4,
+              "officialVal": 4,
+              "plusMinus": -31,
+              "seconds": 2880
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n5",
+              "pts": 6,
+              "t2m": 3,
+              "t2a": 19,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 6,
+              "rebO": 3,
+              "reb": 9,
+              "ast": 0,
+              "stl": 4,
+              "tov": 9,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -7,
+              "plusMinus": -31,
+              "seconds": 2880
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n8",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 3,
+              "rebO": 2,
+              "reb": 5,
+              "ast": 1,
+              "stl": 2,
+              "tov": 7,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": -31,
+              "seconds": 2880
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n11",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 1,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 0,
+              "officialVal": -7,
+              "plusMinus": -10,
+              "seconds": 1534
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n17",
+              "pts": 7,
+              "t2m": 3,
+              "t2a": 8,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 1,
+              "tla": 2,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 0,
+              "stl": 1,
+              "tov": 5,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 0,
+              "plusMinus": -31,
+              "seconds": 2880
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n18",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 1,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -5,
+              "plusMinus": -21,
+              "seconds": 1345
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n7",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 2,
+              "stl": 3,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": -4,
+              "plusMinus": 12,
+              "seconds": 1600
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n10",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 1,
+              "reb": 2,
+              "ast": 1,
+              "stl": 1,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 1,
+              "officialVal": 0,
+              "plusMinus": 7,
+              "seconds": 1220
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n15",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 1,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 10,
+              "seconds": 773
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n18",
+              "pts": 9,
+              "t2m": 3,
+              "t2a": 10,
+              "t3m": 1,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 6,
+              "rebO": 2,
+              "reb": 8,
+              "ast": 2,
+              "stl": 2,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 8,
+              "plusMinus": 30,
+              "seconds": 2174
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n32",
+              "pts": 14,
+              "t2m": 7,
+              "t2a": 11,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 4,
+              "rebO": 8,
+              "reb": 12,
+              "ast": 1,
+              "stl": 2,
+              "tov": 4,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 21,
+              "plusMinus": 20,
+              "seconds": 1839
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n33",
+              "pts": 4,
+              "t2m": 2,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 3,
+              "rebO": 0,
+              "reb": 3,
+              "ast": 2,
+              "stl": 1,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 1,
+              "officialVal": 6,
+              "plusMinus": 12,
+              "seconds": 1684
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n55",
+              "pts": 7,
+              "t2m": 3,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 1,
+              "tla": 2,
+              "rebD": 7,
+              "rebO": 3,
+              "reb": 10,
+              "ast": 3,
+              "stl": 7,
+              "tov": 6,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 17,
+              "plusMinus": 21,
+              "seconds": 1949
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n85",
+              "pts": 12,
+              "t2m": 6,
+              "t2a": 11,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 3,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 2,
+              "stl": 3,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 1,
+              "officialVal": 9,
+              "plusMinus": 30,
+              "seconds": 2027
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "playerId": "parish-league-2026-2027-salterio-n89",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 1,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 13,
+              "seconds": 1130
+            }
+          ],
+          "teamBox": [
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "pts": 19,
+              "t2m": 9,
+              "t2a": 46,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 1,
+              "tla": 4,
+              "rebD": 16,
+              "rebO": 8,
+              "reb": 24,
+              "ast": 3,
+              "stl": 13,
+              "tov": 29,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 9,
+              "foulDrawn": 6,
+              "officialVal": -15,
+              "plusMinus": 0,
+              "seconds": 14400
+            },
+            {
+              "teamId": "parish-league-2026-2027-salterio",
+              "pts": 50,
+              "t2m": 23,
+              "t2a": 53,
+              "t3m": 1,
+              "t3a": 9,
+              "tlm": 1,
+              "tla": 9,
+              "rebD": 26,
+              "rebO": 15,
+              "reb": 41,
+              "ast": 14,
+              "stl": 20,
+              "tov": 22,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 10,
+              "foulDrawn": 6,
+              "officialVal": 53,
+              "plusMinus": 0,
+              "seconds": 14400
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-p05",
+          "fixtureNumber": 5,
+          "round": "2",
+          "week": 2,
+          "date": "2026-09-19",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-betsaida",
+            "parish-league-2026-2027-paloma"
+          ],
+          "score": [
+            14,
+            35
+          ],
+          "status": "final",
+          "source": "fbm",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "LAB / SNK",
+          "calendarNames": [
+            "Betsaida Boanegers",
+            "La Paloma B.C."
+          ],
+          "note": "Estadísticas acumuladas importadas del Excel FBM (23/09/2026): no incluyen el desarrollo jugada a jugada.",
+          "statLines": [
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n6",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 1,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -8,
+              "seconds": 1036
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n8",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 0,
+              "stl": 2,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 1,
+              "officialVal": 0,
+              "plusMinus": -14,
+              "seconds": 1573
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n15",
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 3,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -12,
+              "seconds": 1588
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n16",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 0,
+              "seconds": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n18",
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 1,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": -12,
+              "seconds": 1342
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n19",
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 1,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": -11,
+              "seconds": 1227
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n20",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 1,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -7,
+              "seconds": 1178
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n23",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 6,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -7,
+              "plusMinus": -6,
+              "seconds": 1034
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n27",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 2,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 5,
+              "foulDrawn": 0,
+              "officialVal": -9,
+              "plusMinus": -15,
+              "seconds": 1245
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n41",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 4,
+              "rebO": 4,
+              "reb": 8,
+              "ast": 0,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": 0,
+              "plusMinus": -5,
+              "seconds": 1165
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n77",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 8,
+              "rebO": 1,
+              "reb": 9,
+              "ast": 2,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 0,
+              "plusMinus": -6,
+              "seconds": 1610
+            },
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "playerId": "parish-league-2026-2027-betsaida-n88",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 1,
+              "tov": 0,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 2,
+              "plusMinus": -9,
+              "seconds": 1396
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n0",
+              "pts": 9,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 2,
+              "t3a": 4,
+              "tlm": 1,
+              "tla": 2,
+              "rebD": 9,
+              "rebO": 0,
+              "reb": 9,
+              "ast": 2,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 3,
+              "officialVal": 18,
+              "plusMinus": 19,
+              "seconds": 2291
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n4",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 0,
+              "stl": 1,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 3,
+              "plusMinus": 9,
+              "seconds": 1009
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n5",
+              "pts": 6,
+              "t2m": 3,
+              "t2a": 10,
+              "t3m": 0,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 5,
+              "rebO": 0,
+              "reb": 5,
+              "ast": 3,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": 17,
+              "seconds": 2044
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n7",
+              "pts": 6,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 2,
+              "t3a": 7,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 1,
+              "officialVal": 0,
+              "plusMinus": 13,
+              "seconds": 1705
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n9",
+              "pts": 7,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 5,
+              "tla": 7,
+              "rebD": 6,
+              "rebO": 7,
+              "reb": 13,
+              "ast": 0,
+              "stl": 2,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 4,
+              "officialVal": 19,
+              "plusMinus": 12,
+              "seconds": 1868
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n16",
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 6,
+              "seconds": 1301
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n22",
+              "pts": 3,
+              "t2m": 1,
+              "t2a": 7,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 1,
+              "tla": 4,
+              "rebD": 2,
+              "rebO": 3,
+              "reb": 5,
+              "ast": 2,
+              "stl": 3,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 3,
+              "officialVal": -1,
+              "plusMinus": 21,
+              "seconds": 2880
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "playerId": "parish-league-2026-2027-paloma-n99",
+              "pts": 4,
+              "t2m": 2,
+              "t2a": 7,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 3,
+              "reb": 5,
+              "ast": 2,
+              "stl": 3,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": 7,
+              "plusMinus": 8,
+              "seconds": 1299
+            }
+          ],
+          "teamBox": [
+            {
+              "teamId": "parish-league-2026-2027-betsaida",
+              "pts": 14,
+              "t2m": 4,
+              "t2a": 26,
+              "t3m": 2,
+              "t3a": 23,
+              "tlm": 0,
+              "tla": 6,
+              "rebD": 23,
+              "rebO": 7,
+              "reb": 30,
+              "ast": 4,
+              "stl": 7,
+              "tov": 16,
+              "blk": 2,
+              "blkAgainst": 2,
+              "foul": 15,
+              "foulDrawn": 4,
+              "officialVal": -21,
+              "plusMinus": 0,
+              "seconds": 14400
+            },
+            {
+              "teamId": "parish-league-2026-2027-paloma",
+              "pts": 35,
+              "t2m": 8,
+              "t2a": 32,
+              "t3m": 4,
+              "t3a": 21,
+              "tlm": 7,
+              "tla": 13,
+              "rebD": 30,
+              "rebO": 14,
+              "reb": 44,
+              "ast": 9,
+              "stl": 9,
+              "tov": 12,
+              "blk": 2,
+              "blkAgainst": 2,
+              "foul": 7,
+              "foulDrawn": 14,
+              "officialVal": 45,
+              "plusMinus": 0,
+              "seconds": 14400
+            }
+          ]
+        },
+        {
+          "id": "parish-league-2026-2027-p06",
+          "fixtureNumber": 6,
+          "round": "2",
+          "week": 3,
+          "date": "2026-09-26",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-siena",
+            "parish-league-2026-2027-laboure"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "TRI / SAL / PAL / BET / SNK",
+          "calendarNames": [
+            "Siena",
+            "Laboure Spinners"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p07",
+          "fixtureNumber": 7,
+          "round": "2",
+          "week": 3,
+          "date": "2026-09-26",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-valva",
+            "parish-league-2026-2027-prayers"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "TRI / SAL / PAL / BET / SNK",
+          "calendarNames": [
+            "The Valva Cherubs",
+            "Los Ángeles Prayers"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p08",
+          "fixtureNumber": 8,
+          "round": "3",
+          "week": 4,
+          "date": "2026-10-03",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-trigolution",
+            "parish-league-2026-2027-laboure"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "SAL / VAL / SNK",
+          "calendarNames": [
+            "Trigolution Magikikos",
+            "Laboure Spinners"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p09",
+          "fixtureNumber": 9,
+          "round": "4",
+          "week": 4,
+          "date": "2026-10-03",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-betsaida",
+            "parish-league-2026-2027-siena"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "SAL / VAL / SNK",
+          "calendarNames": [
+            "Betsaida Boanegers",
+            "Siena"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p10",
+          "fixtureNumber": 10,
+          "round": "2",
+          "week": 5,
+          "date": "2026-10-10",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-trigolution"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "SAL / SNK",
+          "calendarNames": [
+            "Begoña Bulls",
+            "Trigolution Magikikos"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p11",
+          "fixtureNumber": 11,
+          "round": "3",
+          "week": 5,
+          "date": "2026-10-10",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-valva",
+            "parish-league-2026-2027-siena"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "SAL / SNK",
+          "calendarNames": [
+            "The Valva Cherubs",
+            "Siena"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p12",
+          "fixtureNumber": 12,
+          "round": "3",
+          "week": 6,
+          "date": "2026-10-17",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-prayers"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "VAL / TRI / SNK",
+          "calendarNames": [
+            "Begoña Bulls",
+            "Los Ángeles Prayers"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p13",
+          "fixtureNumber": 13,
+          "round": "5",
+          "week": 6,
+          "date": "2026-10-17",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-laboure",
+            "parish-league-2026-2027-paloma"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "VAL / TRI / SNK",
+          "calendarNames": [
+            "Laboure Spinners",
+            "La Paloma B.C."
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p14",
+          "fixtureNumber": 14,
+          "round": "3",
+          "week": 6,
+          "date": "2026-10-17",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-betsaida",
+            "parish-league-2026-2027-salterio"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "VAL / TRI / SNK",
+          "calendarNames": [
+            "Betsaida Boanegers",
+            "Salterio Lauders"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p15",
+          "fixtureNumber": 15,
+          "round": "3",
+          "week": 7,
+          "date": "2026-10-24",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-paloma",
+            "parish-league-2026-2027-snow"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "TRI",
+          "calendarNames": [
+            "La Paloma B.C.",
+            "Snow Knights"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p16",
+          "fixtureNumber": 16,
+          "round": "4",
+          "week": 7,
+          "date": "2026-10-24",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-prayers",
+            "parish-league-2026-2027-salterio"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "TRI",
+          "calendarNames": [
+            "Los Ángeles Prayers",
+            "Salterio Lauders"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p17",
+          "fixtureNumber": 17,
+          "round": "4",
+          "week": 7,
+          "date": "2026-10-24",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-valva",
+            "parish-league-2026-2027-laboure"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "TRI",
+          "calendarNames": [
+            "The Valva Cherubs",
+            "Laboure Spinners"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p18",
+          "fixtureNumber": 18,
+          "round": "4",
+          "week": 8,
+          "date": "2026-10-31",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-trigolution",
+            "parish-league-2026-2027-paloma"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "BET",
+          "calendarNames": [
+            "Trigolution Magikikos",
+            "La Paloma B.C."
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p19",
+          "fixtureNumber": 19,
+          "round": "1",
+          "week": 8,
+          "date": "2026-10-31",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-snow",
+            "parish-league-2026-2027-laboure"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "BET",
+          "calendarNames": [
+            "Snow Knights",
+            "Laboure Spinners"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p20",
+          "fixtureNumber": 20,
+          "round": "2",
+          "week": 9,
+          "date": "2026-11-08",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-snow",
+            "parish-league-2026-2027-salterio"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Snow Knights",
+            "Salterio Lauders"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p21",
+          "fixtureNumber": 21,
+          "round": "5",
+          "week": 9,
+          "date": "2026-11-08",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-betsaida"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Begoña Bulls",
+            "Betsaida Boanegers"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p22",
+          "fixtureNumber": 22,
+          "round": "5",
+          "week": 10,
+          "date": "2026-11-14",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-prayers",
+            "parish-league-2026-2027-trigolution"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Los Ángeles Prayers",
+            "Trigolution Magikikos"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p23",
+          "fixtureNumber": 23,
+          "round": "4",
+          "week": 10,
+          "date": "2026-11-14",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-snow"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Begoña Bulls",
+            "Snow Knights"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p24",
+          "fixtureNumber": 24,
+          "round": "5",
+          "week": 11,
+          "date": "2026-11-21",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-salterio",
+            "parish-league-2026-2027-siena"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Salterio Lauders",
+            "Siena"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p25",
+          "fixtureNumber": 25,
+          "round": "5",
+          "week": 11,
+          "date": "2026-11-21",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-snow",
+            "parish-league-2026-2027-valva"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Snow Knights",
+            "The Valva Cherubs"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p26",
+          "fixtureNumber": 26,
+          "round": "6",
+          "week": 12,
+          "date": "2026-11-28",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-laboure"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Begoña Bulls",
+            "Laboure Spinners"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p27",
+          "fixtureNumber": 27,
+          "round": "6",
+          "week": 12,
+          "date": "2026-11-28",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-betsaida",
+            "parish-league-2026-2027-prayers"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Betsaida Boanegers",
+            "Los Ángeles Prayers"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p28",
+          "fixtureNumber": 28,
+          "round": "6",
+          "week": 13,
+          "date": "2026-12-12",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-siena",
+            "parish-league-2026-2027-snow"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Siena",
+            "Snow Knights"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p29",
+          "fixtureNumber": 29,
+          "round": "6",
+          "week": 13,
+          "date": "2026-12-12",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-trigolution",
+            "parish-league-2026-2027-valva"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Trigolution Magikikos",
+            "The Valva Cherubs"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p30",
+          "fixtureNumber": 30,
+          "round": "6",
+          "week": 13,
+          "date": "2026-12-12",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-paloma",
+            "parish-league-2026-2027-salterio"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "La Paloma B.C.",
+            "Salterio Lauders"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p31",
+          "fixtureNumber": 31,
+          "round": "7",
+          "week": 14,
+          "date": "2026-12-19",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-laboure",
+            "parish-league-2026-2027-salterio"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Laboure Spinners",
+            "Salterio Lauders"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p32",
+          "fixtureNumber": 32,
+          "round": "7",
+          "week": 14,
+          "date": "2026-12-19",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-prayers",
+            "parish-league-2026-2027-paloma"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Los Ángeles Prayers",
+            "La Paloma B.C."
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p33",
+          "fixtureNumber": 33,
+          "round": "7",
+          "week": 14,
+          "date": "2026-12-19",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-valva"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Begoña Bulls",
+            "The Valva Cherubs"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p34",
+          "fixtureNumber": 34,
+          "round": "7",
+          "week": 15,
+          "date": "2027-01-16",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-betsaida",
+            "parish-league-2026-2027-snow"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Betsaida Boanegers",
+            "Snow Knights"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p35",
+          "fixtureNumber": 35,
+          "round": "7",
+          "week": 15,
+          "date": "2027-01-16",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-siena",
+            "parish-league-2026-2027-trigolution"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Siena",
+            "Trigolution Magikikos"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p36",
+          "fixtureNumber": 36,
+          "round": "8",
+          "week": 15,
+          "date": "2027-01-16",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-paloma",
+            "parish-league-2026-2027-valva"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "La Paloma B.C.",
+            "The Valva Cherubs"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p37",
+          "fixtureNumber": 37,
+          "round": "8",
+          "week": 16,
+          "date": "2027-01-23",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-betsaida",
+            "parish-league-2026-2027-laboure"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Betsaida Boanegers",
+            "Laboure Spinners"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p38",
+          "fixtureNumber": 38,
+          "round": "8",
+          "week": 16,
+          "date": "2027-01-23",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-salterio",
+            "parish-league-2026-2027-trigolution"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Salterio Lauders",
+            "Trigolution Magikikos"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p39",
+          "fixtureNumber": 39,
+          "round": "8",
+          "week": 16,
+          "date": "2027-01-23",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-prayers",
+            "parish-league-2026-2027-snow"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Los Ángeles Prayers",
+            "Snow Knights"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p40",
+          "fixtureNumber": 40,
+          "round": "8",
+          "week": 17,
+          "date": "2027-01-30",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-siena"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Begoña Bulls",
+            "Siena"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p41",
+          "fixtureNumber": 41,
+          "round": "9",
+          "week": 17,
+          "date": "2027-01-30",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-snow",
+            "parish-league-2026-2027-trigolution"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Snow Knights",
+            "Trigolution Magikikos"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p42",
+          "fixtureNumber": 42,
+          "round": "9",
+          "week": 17,
+          "date": "2027-01-30",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-laboure",
+            "parish-league-2026-2027-prayers"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Laboure Spinners",
+            "Los Ángeles Prayers"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p43",
+          "fixtureNumber": 43,
+          "round": "9",
+          "week": 18,
+          "date": "2027-02-06",
+          "time": "09:00",
+          "teamIds": [
+            "parish-league-2026-2027-betsaida",
+            "parish-league-2026-2027-valva"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Betsaida Boanegers",
+            "The Valva Cherubs"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p44",
+          "fixtureNumber": 44,
+          "round": "9",
+          "week": 18,
+          "date": "2027-02-06",
+          "time": "10:15",
+          "teamIds": [
+            "parish-league-2026-2027-paloma",
+            "parish-league-2026-2027-siena"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "La Paloma B.C.",
+            "Siena"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p45",
+          "fixtureNumber": 45,
+          "round": "9",
+          "week": 18,
+          "date": "2027-02-06",
+          "time": "11:30",
+          "teamIds": [
+            "parish-league-2026-2027-begona",
+            "parish-league-2026-2027-salterio"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            "Begoña Bulls",
+            "Salterio Lauders"
+          ],
+          "note": ""
+        },
+        {
+          "id": "parish-league-2026-2027-p46",
+          "fixtureNumber": 46,
+          "round": "10",
+          "week": 16,
+          "date": "2027-02-27",
+          "time": "09:00",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p47",
+          "fixtureNumber": 47,
+          "round": "10",
+          "week": 16,
+          "date": "2027-02-27",
+          "time": "10:15",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p48",
+          "fixtureNumber": 48,
+          "round": "10",
+          "week": 16,
+          "date": "2027-02-27",
+          "time": "11:30",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p49",
+          "fixtureNumber": 49,
+          "round": "10",
+          "week": 16,
+          "date": "2027-02-27",
+          "time": "12:45",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p50",
+          "fixtureNumber": 50,
+          "round": "10",
+          "week": 17,
+          "date": "2027-03-06",
+          "time": "09:00",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p51",
+          "fixtureNumber": 51,
+          "round": "11",
+          "week": 17,
+          "date": "2027-03-06",
+          "time": "10:15",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p52",
+          "fixtureNumber": 52,
+          "round": "11",
+          "week": 17,
+          "date": "2027-03-06",
+          "time": "11:30",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p53",
+          "fixtureNumber": 53,
+          "round": "11",
+          "week": 18,
+          "date": "2027-03-13",
+          "time": "09:00",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p54",
+          "fixtureNumber": 54,
+          "round": "11",
+          "week": 18,
+          "date": "2027-03-13",
+          "time": "10:15",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        },
+        {
+          "id": "parish-league-2026-2027-p55",
+          "fixtureNumber": 55,
+          "round": "11",
+          "week": 18,
+          "date": "2027-03-13",
+          "time": "11:30",
+          "teamIds": [
+            "pending-home",
+            "pending-away"
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "status": "scheduled",
+          "source": "calendar",
+          "competition": "Parish League",
+          "events": [],
+          "noes": "",
+          "calendarNames": [
+            null,
+            null
+          ],
+          "note": "Emparejamiento pendiente de sorteo."
+        }
+      ],
+      "updatedAt": "2026-09-23T12:00:00Z",
+      "source": "fbm",
+      "published": true,
+      "description": "Calendario del documento proporcionado y resultados/estadísticas acumuladas de cinco archivos FBM."
+    }
+  ]
+}
