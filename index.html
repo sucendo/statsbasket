@@ -55,8 +55,8 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
 <footer><div class="shell">© StatsBasket · Archivo histórico conservado · Portal público 1.2</div></footer>
 <script>
 const $=id=>document.getElementById(id), E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])), N=v=>Number.isFinite(Number(v))?Number(v):0;
-function titleWords(v){return String(v||'').trim().toLocaleLowerCase('es-ES').replace(/(^|[\\s-])([\\p{L}])/gu,(m,a,b)=>a+b.toLocaleUpperCase('es-ES'))}
-function playerPublicName(raw){raw=String(raw||'').trim();if(!raw||/^Jugador\\s+#/i.test(raw)||!raw.includes(','))return raw;let parts=raw.split(','),surname=parts.shift().trim(),given=titleWords(parts.join(' ').trim()),tokens=surname.split(/\\s+/).filter(Boolean),ini=tokens.slice(0,2).map(t=>{let ch=[...t].find(x=>/\\p{L}/u.test(x));return ch?ch.toLocaleUpperCase('es-ES')+'.':''}).filter(Boolean).join(' ');return (given+' '+ini).trim()}
+function titleWords(v){return String(v||'').trim().toLocaleLowerCase('es-ES').replace(/(^|[\s-])([\p{L}])/gu,(m,a,b)=>a+b.toLocaleUpperCase('es-ES'))}
+function playerPublicName(raw){raw=String(raw||'').trim();if(!raw||/^Jugador\s+#/i.test(raw)||!raw.includes(','))return raw;let parts=raw.split(','),surname=parts.shift().trim(),given=titleWords(parts.join(' ').trim()),tokens=surname.split(/\s+/).filter(Boolean),ini=tokens.slice(0,2).map(t=>{let ch=[...t].find(x=>/\p{L}/u.test(x));return ch?ch.toLocaleUpperCase('es-ES')+'.':''}).filter(Boolean).join(' ');return (given+' '+ini).trim()}
 function realTeams(){return active?active.teams.filter(t=>!t.placeholder):[]}
 const legacy=[
  ['2022-2023','public/partidos-22-23.json'],['2021-2022','public/partidos-21-22.json'],['2019-2020','public/partidos-19-20.json'],['2018-2019','public/partidos-18-19.json'],['2017-2018','public/partidos-17-18.json'],['2016-2017','public/partidos-16-17.json']
