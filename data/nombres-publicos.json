@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "generatedAt": "2026-09-24T12:56:37.217Z",
+  "version": 4,
+  "generatedAt": "2026-09-24T12:58:12.722Z",
   "person": {
     "acta-20232024-p001": "Marío A. M.",
     "acta-20232024-p002": "Carlos A. M.",
@@ -191,7 +191,30 @@
     "acta-20242025-p064": "Miguel Á. L.",
     "acta-20242025-p095": "Pablo M. J.",
     "acta-20242025-p098": "Miguel Á. L.",
-    "acta-20252026-p012": "Francisco José R. G."
+    "acta-20252026-p012": "Francisco José R. G.",
+    "acta-20232024-p043": "Manuel A. M.",
+    "acta-20232024-p050": "Iñigo O.",
+    "acta-20242025-p006": "Andrés C.",
+    "acta-20242025-p007": "Fernando G. U.",
+    "acta-20242025-p024": "Pablo S. L.",
+    "acta-20242025-p027": "Santiago S. L.",
+    "acta-20242025-p029": "Miguel S. L.",
+    "acta-20242025-p030": "Manuel A. C.",
+    "acta-20242025-p040": "Álvaro C.",
+    "acta-20242025-p043": "César M. M.",
+    "acta-20242025-p044": "Fernando O. G.",
+    "acta-20242025-p048": "Ignacio M. M.",
+    "acta-20242025-p071": "José Á. L.",
+    "acta-20242025-p072": "Miguel Á. L.",
+    "acta-20242025-p075": "Javier Á. L.",
+    "acta-20242025-p093": "Jorge J. F.",
+    "acta-20242025-p096": "Juan G. U.",
+    "acta-20252026-p008": "Manuel A. C.",
+    "acta-20252026-p014": "Andrés C.",
+    "acta-20252026-p018": "Álvaro C.",
+    "acta-20252026-p057": "José Á. L.",
+    "acta-20252026-p063": "Javier Á. L.",
+    "acta-20252026-p099": "Manuel A. M."
   },
   "ficha": {
     "C00": "Marío A. M.",
@@ -515,7 +538,7 @@
   },
   "stats": {
     "fichas": 318,
-    "actaPersons": 190,
+    "actaPersons": 213,
     "resolved2023": 176,
     "season2024_2025": {
       "people": 98,
@@ -525,7 +548,8 @@
       "people": 109,
       "resolved": 1
     },
-    "current": 72
+    "current": 72,
+    "dorsalTieBreakResolved": 23
   },
   "current": {
     "parish-league-2026-2027-begona-n8": "Francisco José R. G.",
