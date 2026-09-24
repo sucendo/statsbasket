@@ -1,187 +1,155 @@
-<!DOCTYPE html>
-<html lang="es" xml:lang="es">
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pizarra táctica de baloncesto | StatsBasket</title>
+<meta name="description" content="Pizarra táctica de baloncesto de StatsBasket para preparar, dibujar y compartir jugadas.">
+<meta name="author" content="Sucendo">
+<meta name="theme-color" content="#004f7c">
+<link rel="shortcut icon" href="public/favicon.ico">
+<link rel="stylesheet" href="public/css/normalize.css">
+<link rel="stylesheet" href="public/css/pizarra.css">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-88735130-1','auto');ga('send','pageview');
+</script>
+</head>
+<body>
+<header class="sb-header">
+  <div class="sb-header-inner">
+    <div>
+      <a class="brand" href="./">Stats Basket</a>
+      <p>Pizarra táctica de baloncesto</p>
+    </div>
+    <a class="back-link" href="./">← Estadísticas</a>
+  </div>
+</header>
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Pizarra táctica de baloncesto | Stats Basket</title>
-		<meta name="description" content="Pizarra táctica de Baloncesto on-line para crear jugadas en tu smartphone o tablet" />
-		<meta name="author" content="Sucendo" />
-		
-				<link rel="shortcut icon" href="public/favicon.ico">
-        <!--Estilo General-->
-		<link rel="stylesheet" type="text/css" href="public/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="public/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="public/css/playoffs.css" />
-		<link rel="stylesheet" type="text/css" href="public/css/schedule.css" />
-		<!--Secciones-->
-        <link rel="stylesheet" type="text/css" href="public/css/tabs.css" />
-		<link rel="stylesheet" type="text/css" href="public/css/tabstyles.css" />
-	<!-- Añadir Mapa MapBox -->
-	<link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
-	<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>	
-        <!--Añadir Jugador-->
-        <link rel="stylesheet" type="text/css" href="public/css/modalwindoweffects.css" />
-        <link rel="stylesheet" type="text/css" href="public/css/minimalform.css" />
-        <!--Tablas estadisticas-->
-    	<link rel="stylesheet" type="text/css" href="public/css/stickytableheaders.css" />
-        <!--Botones con estilo-->
-		<link rel="stylesheet" type="text/css" href="public/css/creativebuttons.css" />
-        <!--DragDropInteractions-->
-    	<link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="public/css/bottom-area.css" />
-        <!--Boton Select-->
-        <link rel="stylesheet" type="text/css" href="public/css/cs-select.css" />
-		<link rel="stylesheet" type="text/css" href="public/css/cs-skin-elastic.css" />
-        <link rel="stylesheet" type="text/css" href="public/css/cs-skin-boxes.css" />
-        
-        <!--<link rel="stylesheet" type="text/css" href="public/css/component.css" />-->
-		
-		<!-- Stylesheet required to power RRSSB. Copy this css file to your header or merge directly into your css -->
-		<link rel="stylesheet" type="text/css" href="public/css/rrssb.css" />
-		
-		<script src="public/js/jquery-1.11.2.min.js"></script>
-  		<script src="public/js/modernizr.custom.js"></script>
-		
-		<link rel="apple-touch-icon" sizes="57x57" href="public/favicon/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="public/favicon/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="public/favicon/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="public/favicon/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="public/favicon/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="public/favicon/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="public/favicon/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="public/favicon/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="public/favicon/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="public/favicon/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
-		<link rel="manifest" href="public/favicon/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="public/favicon/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
-		
-		<!-- sample fb meta -->
-		<meta property="og:title" content="Stats Basket: Estadísticas de baloncesto" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://www.statsbasket.com" />
-		<meta property="og:image" content="http://www.statsbasket.com/img/preview.png" />
-		<meta property="og:description" content="Estadisticas de baloncesto de torneos y ligas amateur."/>
+<main class="board-page">
+  <section class="board-intro" aria-labelledby="board-title">
+    <div>
+      <h1 id="board-title">Pizarra táctica</h1>
+      <p>Arrastra jugadores y balón, dibuja movimientos y pases, deshaz cambios y guarda la jugada como imagen.</p>
+    </div>
+    <label class="play-name">
+      <span>Nombre de la jugada</span>
+      <input id="playName" type="text" maxlength="60" placeholder="Ej. Saque de fondo 1">
+    </label>
+  </section>
 
-		<!-- sample twitter meta -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@statsbasket.com">
-		<meta name="twitter:creator" content="@Sucendo">
-		<meta name="twitter:title" content="Stats Basket: Estadísticas de baloncesto del torneo Parish Pro Tournament">
-		<meta name="twitter:description" content="Estadisticas completas del Parish Pro Tournament en: http://www.statsbasket.com | http://www.statsbasket.com/img/preview.png">
-		<meta name="twitter:image" content="http://www.statsbasket.com/media/rrssb-preview.png">
-		  
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <section class="toolbar" aria-label="Herramientas de pizarra">
+    <div class="tool-group" role="group" aria-label="Herramienta activa">
+      <button type="button" class="tool active" data-tool="move" aria-pressed="true">
+        <span class="tool-icon">✥</span><span>Mover</span>
+      </button>
+      <button type="button" class="tool" data-tool="arrow" aria-pressed="false">
+        <span class="tool-icon">➜</span><span>Movimiento</span>
+      </button>
+      <button type="button" class="tool" data-tool="pass" aria-pressed="false">
+        <span class="tool-icon">⇢</span><span>Pase</span>
+      </button>
+      <button type="button" class="tool" data-tool="erase" aria-pressed="false">
+        <span class="tool-icon">⌦</span><span>Borrador</span>
+      </button>
+    </div>
 
-		  ga('create', 'UA-88735130-1', 'auto');
-		  ga('send', 'pageview');
+    <div class="tool-group" role="group" aria-label="Vista de pista">
+      <button type="button" class="action active-view" id="halfCourtBtn" aria-pressed="true">Media pista</button>
+      <button type="button" class="action" id="fullCourtBtn" aria-pressed="false">Pista completa</button>
+    </div>
 
-		</script>
-		
-	</head>
+    <div class="tool-group actions" role="group" aria-label="Acciones">
+      <button type="button" class="action" id="undoBtn" title="Deshacer">↶ <span>Deshacer</span></button>
+      <button type="button" class="action" id="resetBtn" title="Recolocar jugadores">↺ <span>Recolocar</span></button>
+      <button type="button" class="action" id="clearBtn" title="Borrar trazos">⌫ <span>Borrar trazos</span></button>
+      <button type="button" class="action primary" id="exportBtn">Guardar PNG</button>
+    </div>
+  </section>
 
-	<body>
-	
-		<div class="container">
-			<!-- Top Navigation -->
-			<header class="codrops-header">
-				<h1>Stats Basket <span>Pizarra Táctica de Baloncesto</span></h1>
-				<button class="btn btn-3"><a href="../">Estadísticas</a></button>
-			</header>
-			<section id="cont_escalable">
-					<div class="draggable gnw" style="position: relative; left: 165px; top: 220px;"><spam>1</spam></div>
-					<div class="draggable gnw" style="position: relative; left: 232px; top: 159px;"><spam>2</spam></div>
-					<div class="draggable gnw" style="position: relative; left: -42px; top: 111px;"><spam>3</spam></div>
-					<div class="draggable gnw" style="position: relative; left: 147px; top: 83px;"><spam>4</spam></div>
-					<div class="draggable gnw" style="position: relative; left: 6px; top: 153px;"><spam>5</spam></div>
-				  
-					<div class="draggable ball" style="position: relative; left: 20px; top: 218px;"></div>
-				  
-					<div class="draggable vs" style="position: relative; left: 6px; top: 149px;"><spam>1</spam></div>
-					<div class="draggable vs" style="position: relative; left: -117px; top: 149px;"><spam>2</spam></div>
-					<div class="draggable vs" style="position: relative; left: -164px; top: 72px;"><spam>3</spam></div>
-					<div class="draggable vs" style="position: relative; left: -75px; top: 77px;"><spam>4</spam></div>
-					<div class="draggable vs" style="position: relative; left: 153px; top: 54px;"><spam>5</spam></div>
-			</section>
-		</div>
-				
-        <link rel="stylesheet" href="public/css/pizarra.css">
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src='public/js/draggabilly.pkgd.js'></script>
-        <script src="public/js/pizarra.js"></script>
-		
-		<script>
- 
-			$(document).ready(function(){
-		 
-				 $(window).resize(function(){
-		 
-					  // aquí le pasamos la clase o id de nuestro div a centrar (en este caso "cont_escalable")
-					  $('#cont_escalable').css({
-						   position:'absolute',
-						   left: ($(window).width() - $('#cont_escalable').outerWidth())/2,
-						   height: ((window.outerHeight) + 'px')
-					  });
-		 
-				});
-		 
-			// Ejecutamos la función
-			$(window).resize();
-		 
-			});
-		 
-		</script>
-		<script>
-		window.addEventListener("load", function()
-        {
-            if(!window.pageYOffset)
-            {
-                hideAddressBar();
-        	}
-        	window.addEventListener("orientationchange", hideAddressBar);
-        });
-        
-        /**
-         * Hide the URL address bar on standard Android's browser by setting enough
-         * document height and auto scrolling to active the bar hiding feature
-         */
-        
-        function hideAddressBar()
-        {
-            var device = navigator.userAgent
-            if ((device.match(/Android/i))&&(!navigator.userAgent.indexOf('Firefox'))) {
-                //alert ("Bonito Android");
-                //if (window.outerWidth < 700) {
-    
-                    document.body.style.height = (window.outerHeight) + 'px';
-                
-                    setTimeout(function()
-                    {
-                        window.scrollTo(0, 1);
-                    }, 50);
-                //}
-            }
-            if (device.match(/iPhone/i)) { 
-                /*alert ("Los que teneis un iPhone sois un poco cansinos");
-                document.body.style.height = (window.outerHeight) + 'px';
-                setTimeout(function()
-                {
-                    window.scrollTo(0, 1);
-                }, 0);*/
-            }
-        }
-		</script>
-		
-    </body>
+  <section class="legend" aria-label="Leyenda">
+    <span><i class="dot attack"></i>Ataque</span>
+    <span><i class="dot defense"></i>Defensa</span>
+    <span><i class="dot ball-dot"></i>Balón</span>
+    <span class="hint" id="toolHint">Modo mover: arrastra jugadores y balón.</span>
+  </section>
 
+  <div class="board-shell">
+    <div class="board-scroll" id="boardScroll">
+      <svg id="tacticalBoard" class="tactical-board" viewBox="700 0 700 750" role="img" aria-label="Pizarra táctica de baloncesto">
+        <defs>
+          <pattern id="wood" width="86" height="86" patternUnits="userSpaceOnUse">
+            <rect width="86" height="86" fill="#dca762"></rect>
+            <path d="M0 8H86 M0 51H86" stroke="#d19a58" stroke-width="2" opacity=".42"></path>
+            <path d="M18 0V86 M62 0V86" stroke="#e8b978" stroke-width="1.5" opacity=".35"></path>
+          </pattern>
+          <marker id="arrowOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L12,6 L0,12 z" fill="#ff6700"></path>
+          </marker>
+          <marker id="arrowWhite" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L12,6 L0,12 z" fill="#ffffff"></path>
+          </marker>
+          <filter id="pieceShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#002a42" flood-opacity=".28"></feDropShadow>
+          </filter>
+        </defs>
+
+        <g id="court">
+          <rect x="0" y="0" width="1400" height="750" fill="url(#wood)"></rect>
+          <rect x="20" y="20" width="1360" height="710" fill="none" stroke="#fff" stroke-width="8"></rect>
+          <line x1="700" y1="20" x2="700" y2="730" stroke="#fff" stroke-width="8"></line>
+          <circle cx="700" cy="375" r="92" fill="none" stroke="#fff" stroke-width="8"></circle>
+
+          <g class="court-half left">
+            <rect x="20" y="245" width="250" height="260" fill="rgba(255,255,255,.06)" stroke="#fff" stroke-width="8"></rect>
+            <circle cx="270" cy="375" r="92" fill="none" stroke="#fff" stroke-width="8"></circle>
+            <path d="M20 116 A350 350 0 0 1 20 634" fill="none" stroke="#fff" stroke-width="8"></path>
+            <line x1="112" y1="315" x2="112" y2="435" stroke="#fff" stroke-width="8"></line>
+            <circle cx="88" cy="375" r="11" fill="none" stroke="#fff" stroke-width="7"></circle>
+            <path d="M88 310 A65 65 0 0 1 88 440" fill="none" stroke="#fff" stroke-width="6"></path>
+          </g>
+
+          <g class="court-half right">
+            <rect x="1130" y="245" width="250" height="260" fill="rgba(255,255,255,.06)" stroke="#fff" stroke-width="8"></rect>
+            <circle cx="1130" cy="375" r="92" fill="none" stroke="#fff" stroke-width="8"></circle>
+            <path d="M1380 116 A350 350 0 0 0 1380 634" fill="none" stroke="#fff" stroke-width="8"></path>
+            <line x1="1288" y1="315" x2="1288" y2="435" stroke="#fff" stroke-width="8"></line>
+            <circle cx="1312" cy="375" r="11" fill="none" stroke="#fff" stroke-width="7"></circle>
+            <path d="M1312 310 A65 65 0 0 0 1312 440" fill="none" stroke="#fff" stroke-width="6"></path>
+          </g>
+        </g>
+
+        <g id="drawings" aria-hidden="true"></g>
+
+        <g id="pieces" aria-label="Jugadores y balón">
+          <g class="piece attack-piece" data-piece="a1" tabindex="0" aria-label="Ataque 1"><circle r="42"></circle><text>1</text></g>
+          <g class="piece attack-piece" data-piece="a2" tabindex="0" aria-label="Ataque 2"><circle r="42"></circle><text>2</text></g>
+          <g class="piece attack-piece" data-piece="a3" tabindex="0" aria-label="Ataque 3"><circle r="42"></circle><text>3</text></g>
+          <g class="piece attack-piece" data-piece="a4" tabindex="0" aria-label="Ataque 4"><circle r="42"></circle><text>4</text></g>
+          <g class="piece attack-piece" data-piece="a5" tabindex="0" aria-label="Ataque 5"><circle r="42"></circle><text>5</text></g>
+
+          <g class="piece defense-piece" data-piece="d1" tabindex="0" aria-label="Defensa 1"><circle r="42"></circle><text>1</text></g>
+          <g class="piece defense-piece" data-piece="d2" tabindex="0" aria-label="Defensa 2"><circle r="42"></circle><text>2</text></g>
+          <g class="piece defense-piece" data-piece="d3" tabindex="0" aria-label="Defensa 3"><circle r="42"></circle><text>3</text></g>
+          <g class="piece defense-piece" data-piece="d4" tabindex="0" aria-label="Defensa 4"><circle r="42"></circle><text>4</text></g>
+          <g class="piece defense-piece" data-piece="d5" tabindex="0" aria-label="Defensa 5"><circle r="42"></circle><text>5</text></g>
+
+          <g class="piece ball-piece" data-piece="ball" tabindex="0" aria-label="Balón">
+            <circle r="28"></circle>
+            <path d="M-25 0H25 M0-25V25 M-19-19C-4-4 4 4 19 19 M19-19C4-4-4 4-19 19"></path>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <section class="board-help">
+    <div><strong>1.</strong> Mueve las fichas con el dedo o ratón.</div>
+    <div><strong>2.</strong> Usa Movimiento para flechas y Pase para líneas discontinuas.</div>
+    <div><strong>3.</strong> La jugada se guarda automáticamente en este dispositivo.</div>
+  </section>
+</main>
+
+<script src="public/js/pizarra.js"></script>
+</body>
 </html>
