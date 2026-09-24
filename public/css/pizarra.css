@@ -1,57 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700,800');
 
-
-.container  section{
-	font-family: sans-serif;
-	background: url(../img/pista-horizontal.png);
-	background-size: cover;
-	height: -moz-available; /*sucendo*/
-	height: -webkit-fill-available; /*sucendo*/
-	width: 100%;
-}
-@media (max-width: 400px) {
-	.container section {
-		background: url(../img/pista-vertical.png);
-		background-size: cover;
-		height: -moz-available; /*sucendo*/
-		height: -webkit-fill-available; /*sucendo*/
-		width: 100%;
-	}
+:root{
+  --sb-blue:#004f7c;
+  --sb-blue-dark:#003753;
+  --sb-orange:#ff6700;
+  --sb-bg:#e7ecea;
+  --sb-card:#ffffff;
+  --sb-line:#d5dcda;
+  --sb-text:#153242;
+  --sb-muted:#6f7c81;
 }
 
-.draggable {
-  width: 2.2em;
-  height: 2.2em;
-  background: #F90;
-  border-radius: 100%;
-  margin: 0.33em;
-  float: left;
-  /*top: 50%;
-  left: 35%;*/
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{
+  background:var(--sb-bg);
+  color:var(--sb-text);
+  font-family:'Raleway',Arial,sans-serif;
 }
 
-.draggable spam{
-   color: white;
-   padding: 0.85em;
-   text-align: center;
-   line-height: 2.2em;
-}  
+button,input{font:inherit}
+button{touch-action:manipulation}
 
-.gnw{
-  background: #df1c31; 
+.sb-header{
+  background:var(--sb-blue);
+  border-bottom:5px solid var(--sb-orange);
+  color:#fff;
+}
+.sb-header-inner{
+  width:min(1200px,calc(100% - 28px));
+  margin:auto;
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  color:var(--sb-orange);
+  text-decoration:none;
+  font-size:2rem;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:-1px;
+}
+.sb-header p{
+  margin:.35rem 0 0;
+  color:#cfdde5;
+  font-size:.88rem;
+}
+.back-link{
+  color:#fff;
+  border:1px solid #ffffff55;
+  padding:.65rem .8rem;
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:700;
+}
+.back-link:hover,.back-link:focus-visible{
+  background:#fff;
+  color:var(--sb-orange);
 }
 
-.ball{
-  background: #ff6700;  
-  width: 1.5em;
-  height: 1.5em;
+.board-page{
+  width:min(1200px,calc(100% - 28px));
+  margin:0 auto;
+  padding:18px 0 40px;
 }
 
-.vs{
-  background: #004f7c;
+.board-intro{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:12px;
+}
+.board-intro h1{
+  margin:0 0 5px;
+  color:var(--sb-blue);
+  font-size:1.65rem;
+}
+.board-intro p{
+  margin:0;
+  color:var(--sb-muted);
+  line-height:1.45;
+  font-size:.88rem;
+  max-width:720px;
+}
+.play-name{
+  min-width:260px;
+  display:grid;
+  gap:5px;
+  color:var(--sb-muted);
+  font-size:.68rem;
+  text-transform:uppercase;
+  font-weight:800;
+  letter-spacing:.07em;
+}
+.play-name input{
+  width:100%;
+  border:1px solid #c7d1ce;
+  background:#fff;
+  color:var(--sb-text);
+  padding:9px 11px;
+  min-height:42px;
+  border-radius:3px;
+  font-size:.9rem;
+  text-transform:none;
+  letter-spacing:normal;
+}
+.play-name input:focus{
+  outline:2px solid var(--sb-orange);
+  outline-offset:1px;
 }
 
-.draggable.is-pointer-down {
-  background: #09F;
-  z-index: 2; /* above other draggies */
+.toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px;
+  background:#fff;
+  border:1px solid var(--sb-line);
+  border-top:5px solid var(--sb-blue);
 }
-.draggable.is-dragging { opacity: 0.7; }
+.tool-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.tool,.action{
+  min-height:42px;
+  border:1px solid #cad5d2;
+  background:#f8faf9;
+  color:var(--sb-blue);
+  padding:8px 11px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:.78rem;
+  border-radius:3px;
+}
+.tool{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.tool-icon{font-size:1.1rem}
+.tool:hover,.tool:focus-visible,.action:hover,.action:focus-visible{
+  border-color:var(--sb-orange);
+  color:var(--sb-orange);
+  outline:none;
+}
+.tool.active{
+  background:var(--sb-blue);
+  color:#fff;
+  border-color:var(--sb-blue);
+}
+.active-view{
+  background:#eaf2f5;
+  box-shadow:inset 0 -3px 0 var(--sb-orange);
+}
+.action.primary{
+  background:var(--sb-orange);
+  border-color:var(--sb-orange);
+  color:#fff;
+}
+.action.primary:hover,.action.primary:focus-visible{
+  background:var(--sb-blue);
+  border-color:var(--sb-blue);
+  color:#fff;
+}
+.action:disabled{
+  opacity:.42;
+  cursor:not-allowed;
+}
+
+.legend{
+  min-height:43px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  padding:8px 2px;
+  color:var(--sb-muted);
+  font-size:.75rem;
+}
+.legend>span{display:inline-flex;align-items:center;gap:6px}
+.legend .hint{
+  margin-left:auto;
+  color:var(--sb-blue);
+  font-weight:700;
+}
+.dot{
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  display:inline-block;
+}
+.dot.attack{background:#df1c31}
+.dot.defense{background:#004f7c}
+.dot.ball-dot{background:#ff8a20;border:1px solid #7b3d00}
+
+.board-shell{
+  background:#fff;
+  border:1px solid #cbd5d2;
+  padding:10px;
+  box-shadow:0 8px 24px rgba(0,79,124,.08);
+}
+.board-scroll{
+  width:100%;
+  overflow:auto;
+  background:#9d713f;
+  overscroll-behavior:contain;
+}
+.tactical-board{
+  display:block;
+  width:100%;
+  min-width:520px;
+  height:auto;
+  max-height:76vh;
+  margin:auto;
+  user-select:none;
+  -webkit-user-select:none;
+  touch-action:none;
+  background:#dca762;
+}
+.tactical-board.full-court{
+  min-width:760px;
+}
+.tactical-board .piece{
+  cursor:grab;
+  filter:url(#pieceShadow);
+}
+.tactical-board .piece:focus-visible{
+  outline:none;
+}
+.tactical-board .piece:focus-visible circle{
+  stroke:#ffe26a;
+  stroke-width:10;
+}
+.tactical-board .piece.dragging{cursor:grabbing}
+.tactical-board .piece circle{
+  stroke:#fff;
+  stroke-width:6;
+}
+.tactical-board .piece text{
+  fill:#fff;
+  font-family:'Raleway',Arial,sans-serif;
+  font-size:38px;
+  font-weight:800;
+  text-anchor:middle;
+  dominant-baseline:middle;
+  pointer-events:none;
+}
+.attack-piece circle{fill:#df1c31}
+.defense-piece circle{fill:#004f7c}
+.ball-piece circle{
+  fill:#ff8a20;
+  stroke:#fff3dd!important;
+}
+.ball-piece path{
+  fill:none;
+  stroke:#8a4200;
+  stroke-width:4;
+  pointer-events:none;
+}
+.draw-path{
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  pointer-events:stroke;
+}
+.draw-path.move{
+  stroke:#ff6700;
+  stroke-width:11;
+  marker-end:url(#arrowOrange);
+}
+.draw-path.pass{
+  stroke:#fff;
+  stroke-width:9;
+  stroke-dasharray:24 18;
+  marker-end:url(#arrowWhite);
+  filter:drop-shadow(0 2px 2px rgba(0,42,66,.55));
+}
+.draw-path.preview{opacity:.72}
+
+.board-help{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:10px;
+}
+.board-help div{
+  background:#fff;
+  border-left:4px solid var(--sb-orange);
+  padding:10px 12px;
+  color:var(--sb-muted);
+  font-size:.76rem;
+  line-height:1.4;
+}
+.board-help strong{color:var(--sb-blue)}
+
+@media(max-width:850px){
+  .board-intro{align-items:stretch;flex-direction:column;gap:12px}
+  .play-name{min-width:0;width:100%}
+  .toolbar{align-items:stretch}
+  .toolbar>.tool-group{flex:1 1 auto}
+  .actions{justify-content:flex-start}
+  .board-help{grid-template-columns:1fr}
+}
+
+@media(max-width:620px){
+  .sb-header-inner{
+    min-height:76px;
+    align-items:flex-start;
+    padding:14px 0;
+  }
+  .brand{font-size:1.55rem}
+  .sb-header p{font-size:.72rem}
+  .back-link{padding:.55rem .65rem}
+  .board-page{
+    width:100%;
+    padding:12px 0 28px;
+  }
+  .board-intro,.toolbar,.legend,.board-help{
+    margin-left:12px;
+    margin-right:12px;
+  }
+  .toolbar{padding:8px}
+  .tool,.action{
+    min-height:44px;
+    font-size:.73rem;
+    padding:8px 9px;
+  }
+  .actions .action span{display:none}
+  .legend .hint{
+    width:100%;
+    margin-left:0;
+  }
+  .board-shell{
+    border-left:0;
+    border-right:0;
+    padding:6px 0;
+  }
+  .tactical-board{
+    min-width:0;
+    width:100%;
+    max-height:none;
+  }
+  .tactical-board.full-court{
+    min-width:700px;
+  }
+}
+
+@media(orientation:landscape) and (max-height:560px){
+  .sb-header-inner{min-height:58px;padding:8px 0}
+  .sb-header p{display:none}
+  .board-intro{display:none}
+  .board-page{padding-top:8px}
+  .toolbar{position:relative}
+  .legend{min-height:34px;padding:5px 2px}
+  .tactical-board{max-height:calc(100vh - 180px)}
+  .board-help{display:none}
+}
