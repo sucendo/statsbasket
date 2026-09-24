@@ -76,7 +76,9 @@ function playerSignature(raw){
 function compatiblePlayerName(a,b){
  if(isPlaceholderName(a)||isPlaceholderName(b))return false;
  let x=playerSignature(a),y=playerSignature(b);
- if(!x.first||x.first!==y.first)return false;
+ if(!x.first||!y.first)return false;
+ let firstOk=x.first===y.first||(x.first.length===1&&y.first.startsWith(x.first))||(y.first.length===1&&x.first.startsWith(y.first));
+ if(!firstOk)return false;
  if(x.initials.length&&y.initials.length&&x.initials[0]!==y.initials[0])return false;
  if(x.initials.length>1&&y.initials.length>1&&x.initials[1]!==y.initials[1])return false;
  return true
@@ -110,7 +112,12 @@ const legacy=[
  ['2025-2026','public/partidos-25-26.json'],['2024-2025','public/partidos-24-25.json'],['2023-2024','public/partidos.json'],['2022-2023','public/partidos-22-23.json'],['2021-2022','public/partidos-21-22.json'],['2019-2020','public/partidos-19-20.json'],['2018-2019','public/partidos-18-19.json'],['2017-2018','public/partidos-17-18.json'],['2016-2017','public/partidos-16-17.json']
 ];
 const ACTION={t2m:'T2 anotado',t2x:'T2 fallado',t3m:'T3 anotado',t3x:'T3 fallado',tlm:'TL anotado',tlx:'TL fallado',reb:'Rebote',rebO:'Rebote ofensivo',rebD:'Rebote defensivo',ast:'Asistencia',stl:'Recuperación',blk:'Tapón',tov:'Pérdida',foul:'Falta'};
-let sources=[],active=null,tab='clasificacion',competition='all',publishedSeasons=[];const historyCache=new Map();
+let sources=[],active=null,tab='clasificacion',competition='all',publishedSeasons=[],actaHistory=[];const historyCache=new Map();
+const ACTA_FILES=[
+ 'data/actas-2023-2024-1.json','data/actas-2023-2024-2.json','data/actas-2023-2024-3.json',
+ 'data/actas-2024-2025-1.json','data/actas-2024-2025-2.json','data/actas-2024-2025-3.json',
+ 'data/actas-2025-2026-1.json','data/actas-2025-2026-2.json','data/actas-2025-2026-3.json'
+];
 function blank(){return {pts:0,t2m:0,t2a:0,t3m:0,t3a:0,tlm:0,tla:0,reb:0,rebO:0,rebD:0,ast:0,stl:0,blk:0,blkAgainst:0,tov:0,foul:0,foulDrawn:0,seconds:0,plusMinus:0,officialVal:null,gp:0}}
 function action(s,t){if(t==='t2m'){s.pts+=2;s.t2m++;s.t2a++}else if(t==='t2x')s.t2a++;else if(t==='t3m'){s.pts+=3;s.t3m++;s.t3a++}else if(t==='t3x')s.t3a++;else if(t==='tlm'){s.pts++;s.tlm++;s.tla++}else if(t==='tlx')s.tla++;else if(t==='rebO'){s.rebO++;s.reb++}else if(t==='rebD'){s.rebD++;s.reb++}else if(t==='reb')s.reb++;else if(['ast','stl','blk','tov','foul'].includes(t))s[t]++}
 function rating(s){return s.officialVal!=null?N(s.officialVal):N(s.pts)+N(s.reb)+N(s.ast)+N(s.stl)+N(s.blk)-(N(s.t2a)-N(s.t2m))-(N(s.t3a)-N(s.t3m))-(N(s.tla)-N(s.tlm))-N(s.tov)}
@@ -131,9 +138,49 @@ function normalizeLegacy(raw,id){
  (raw.partidos||[]).forEach((g,i)=>{if(!Array.isArray(g.equipos)||g.equipos.length!==2)return;const teamIds=g.equipos.map(x=>sid+'-t'+x.equipo);g.equipos.forEach(x=>{if(!teams.some(t=>t.id===sid+'-t'+x.equipo))teams.push({id:sid+'-t'+x.equipo,name:String(x.equipo),abbr:'—',players:[],placeholder:true})});const events=[];
   (g.acciones||[]).forEach((a,k)=>{const rt=by.get(String(a.equipo));if(!rt)return;const p=(rt.fichas||[]).find(p=>String(p.numero)===String(a.ficha));if(!p)return;let type;if(a.tipo==='T1')type=a.acierto==='dentro'?'tlm':'tlx';else if(a.tipo==='T2')type=a.acierto==='fuera'?'t2x':'t2m';else if(a.tipo==='T3')type=a.acierto==='fuera'?'t3x':'t3m';else type={reb:'reb',fal:'foul',tap:'blk',asis:'ast',yap:'blk'}[a.tipo];if(type)events.push({id:sid+'-g'+i+'-e'+k,teamId:sid+'-t'+a.equipo,playerId:sid+'-t'+a.equipo+'-p'+p.numero,type,period:N(a.cuarto)||1})});
   let d=String(g.fecha||''),m=d.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);if(m)d=m[3]+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0');
-  games.push({id:sid+'-g'+i,source:'legacy',teamIds,participants:(g.equipos||[]).flatMap(x=>(x.convocados||[]).map(n=>sid+'-t'+x.equipo+'-p'+n)),score:g.equipos.map(x=>N(x.puntos)),date:d,time:String(g.hora||''),venue:String(g.lugar||''),round:String(g.jornada||''),competition:String(g.competicion||raw.competicion||'Liga'),status:g.equipos.some(x=>x.puntos==null||typeof x.equipo==='string'&&!/^\d+$/.test(x.equipo))?'scheduled':'final',events});
+  games.push({id:sid+'-g'+i,source:'legacy',acta:String(g.acta||''),teamIds,participants:(g.equipos||[]).flatMap(x=>(x.convocados||[]).map(n=>sid+'-t'+x.equipo+'-p'+n)),score:g.equipos.map(x=>N(x.puntos)),date:d,time:String(g.hora||''),venue:String(g.lugar||''),round:String(g.jornada||''),competition:String(g.competicion||raw.competicion||'Liga'),status:g.equipos.some(x=>x.puntos==null||typeof x.equipo==='string'&&!/^\d+$/.test(x.equipo))?'scheduled':'final',events});
  });
- return {id:sid,schema:2,season:id||raw.temporada,sourceSeason:raw.temporada||id,competition:raw.competicion||'Liga',teams,games,source:'legacy',partial:Boolean(raw.partial),sourceNote:String(raw.sourceNote||'')}
+ return applyActaHistory({id:sid,schema:2,season:id||raw.temporada,sourceSeason:raw.temporada||id,competition:raw.competicion||'Liga',teams,games,source:'legacy',partial:Boolean(raw.partial),sourceNote:String(raw.sourceNote||'')})
+}
+function isoActaDate(d){let m=String(d||'').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);return m?m[3]+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0'):String(d||'')}
+function actaGame(g){return Array.isArray(g?.statsAvailability)&&g.statsAvailability.includes('pts')&&g.statsAvailability.includes('foul')}
+function findActaTeam(s,name){return (s.teams||[]).find(t=>teamIdentity(t.name)===teamIdentity(name))}
+function applyActaHistory(s){
+ const acts=actaHistory.filter(a=>String(a.season)===String(s.season));if(!acts.length)return s;
+ let matched=0;
+ acts.forEach(a=>{
+  let g=(s.games||[]).find(x=>String(x.acta||'')===String(a.acta));
+  if(!g){
+   let d=isoActaDate(a.date);
+   g=(s.games||[]).find(x=>x.date===d&&N(x.score?.[0])===N(a.scoreA)&&N(x.score?.[1])===N(a.scoreB));
+  }
+  if(!g)return;
+  let ta=findActaTeam(s,a.teamA),tb=findActaTeam(s,a.teamB);if(!ta||!tb)return;
+  const roster=[],statLines=[],participants=[],teamBox=[];
+  [[ta,a.playersA,a.scoreA],[tb,a.playersB,a.scoreB]].forEach(([t,rows,score])=>{
+   (rows||[]).forEach(r=>{
+    let p=(t.players||[]).find(x=>x.personId===r.personKey);
+    if(!p){
+     let candidates=(t.players||[]).filter(x=>compatiblePlayerName(x.name,r.name));
+     p=candidates.find(x=>String(x.number)===String(r.number))||(candidates.length===1?candidates[0]:null);
+     if(p){p.personId=r.personKey}
+     else{p={id:t.id+'-'+r.personKey,personId:r.personKey,number:String(r.number||''),name:String(r.name||''),numbers:[]};(t.players||(t.players=[])).push(p)}
+    }
+    p.numbers=Array.isArray(p.numbers)?p.numbers:[String(p.number||'')].filter(Boolean);
+    if(r.number!=null&&!p.numbers.includes(String(r.number)))p.numbers.push(String(r.number));
+    roster.push({teamId:t.id,playerId:p.id,number:String(r.number||''),name:String(r.name||''),entered:Boolean(r.entered),pts:N(r.points),foul:N(r.fouls)});
+    if(r.entered){
+     participants.push(p.id);
+     statLines.push({teamId:t.id,playerId:p.id,pts:N(r.points),foul:N(r.fouls),partial:true})
+    }
+   });
+   teamBox.push({teamId:t.id,pts:N(score),foul:(rows||[]).reduce((n,r)=>n+N(r.fouls),0),partial:true})
+  });
+  [ta,tb].forEach(t=>(t.players||[]).forEach(p=>{if(Array.isArray(p.numbers)&&p.numbers.length>1)p.number=p.numbers.join('/')})); 
+  g.acta=String(a.acta);g.rosterLines=roster;g.statLines=statLines;g.participants=[...new Set(participants)];g.teamBox=teamBox;g.statsAvailability=['pts','foul'];g.source='fbm-acta';matched++;
+ });
+ if(matched){s.actaStatsCount=matched;s.statsAvailability='acta-partial'}
+ return s
 }
 function fmt(d){if(!d)return 'Sin fecha';let p=String(d).split('-');return p.length===3?p[2]+'/'+p[1]+'/'+p[0]:d}
 function pct(m,a){return N(a)?(100*N(m)/N(a)).toFixed(1)+'%':'—'}
