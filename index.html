@@ -83,6 +83,9 @@ function compatiblePlayerName(a,b){
  if(x.initials.length>1&&y.initials.length>1&&x.initials[1]!==y.initials[1])return false;
  return true
 }
+function surnameIdentity(raw){raw=String(raw||'').trim();let part=raw.includes(',')?raw.split(',')[0]:raw;return normIdentity(part)}
+function compatibleSurnamePrefix(a,b){let x=surnameIdentity(a),y=surnameIdentity(b);if(!x||!y||Math.min(x.length,y.length)<4)return false;return x.startsWith(y)||y.startsWith(x)}
+
 
 function realTeams(){return active?active.teams.filter(t=>!t.placeholder):[]}
 function isPlaceholderName(name){let n=String(name||'').trim().toLocaleLowerCase('es-ES');return !n||n==='nombre'||n.includes('sin identificar')||n.startsWith('jugador #')}
@@ -281,7 +284,10 @@ function chooseHistoryMatches(target,season){
  }
  const globalExact=compatible.filter(x=>playerSignature(x.player.name).publicKey===targetKey);
  if(globalExact.length===1)return globalExact;
- return compatible.length===1?compatible:[]
+ if(compatible.length===1)return compatible;
+ const surnameSameTeam=all.filter(x=>teamIdentity(x.team.name)===teamIdentity(target.team.name)&&compatibleSurnamePrefix(target.player.name,x.player.name));
+ if(surnameSameTeam.length===1)return surnameSameTeam;
+ return []
 }
 function mergePlayerStats(records){
  const out={...blank(),gp:0},keys=['pts','t2m','t2a','t3m','t3a','tlm','tla','reb','rebO','rebD','ast','stl','blk','blkAgainst','tov','foul','foulDrawn','seconds','plusMinus'];
