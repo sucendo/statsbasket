@@ -133,7 +133,7 @@ function normalizeLegacy(raw,id){
   let d=String(g.fecha||''),m=d.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);if(m)d=m[3]+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0');
   games.push({id:sid+'-g'+i,source:'legacy',teamIds,participants:(g.equipos||[]).flatMap(x=>(x.convocados||[]).map(n=>sid+'-t'+x.equipo+'-p'+n)),score:g.equipos.map(x=>N(x.puntos)),date:d,time:String(g.hora||''),venue:String(g.lugar||''),round:String(g.jornada||''),competition:String(g.competicion||raw.competicion||'Liga'),status:g.equipos.some(x=>x.puntos==null||typeof x.equipo==='string'&&!/^\d+$/.test(x.equipo))?'scheduled':'final',events});
  });
- return {id:sid,schema:2,season:raw.temporada||id,competition:raw.competicion||'Liga',teams,games,source:'legacy'}
+ return {id:sid,schema:2,season:id||raw.temporada,sourceSeason:raw.temporada||id,competition:raw.competicion||'Liga',teams,games,source:'legacy'}
 }
 function fmt(d){if(!d)return 'Sin fecha';let p=String(d).split('-');return p.length===3?p[2]+'/'+p[1]+'/'+p[0]:d}
 function pct(m,a){return N(a)?(100*N(m)/N(a)).toFixed(1)+'%':'—'}
@@ -242,7 +242,7 @@ async function playerHistoryDetail(playerId,teamId){
  const target={team:teamObj,player};
  $('detail-title').textContent=playerPublicName(player.name)+' · Historial';
  $('detail-body').innerHTML='<div class="empty">Buscando todas las temporadas…</div>';
- $('detail').showModal();
+ if(!$('detail').open)$('detail').showModal();
  const seasons=await allPlayerHistorySeasons(),rows=[];
  seasons.forEach(s=>{
    const matches=chooseHistoryMatches(target,s);if(!matches.length)return;
@@ -256,7 +256,7 @@ async function playerHistoryDetail(playerId,teamId){
  const body=rows.map(r=>'<tr><td class="bold">'+E(r.season)+'</td><td>'+E(r.teams.join(' / '))+'</td><td>'+E(r.numbers.join(' / '))+'</td>'+statCells(r.stats,true)+'</tr>').join('');
  const totalRow='<tr class="team-total"><th colspan="3">TOTAL HISTÓRICO</th>'+statCells(total,true)+'</tr>';
  const summary='<div class="career-summary"><div class="career-stat"><strong>'+rows.length+'</strong><span>Temporadas</span></div><div class="career-stat"><strong>'+N(total.gp)+'</strong><span>Partidos</span></div><div class="career-stat"><strong>'+N(total.pts)+'</strong><span>Puntos</span></div><div class="career-stat"><strong>'+N(total.reb)+'</strong><span>Rebotes</span></div><div class="career-stat"><strong>'+N(total.ast)+'</strong><span>Asistencias</span></div></div>';
- const note='<p class="career-note">La identidad histórica no depende del dorsal. Para datos antiguos sin identificador personal estable, StatsBasket enlaza únicamente coincidencias de nombre que resultan suficientemente claras; si una coincidencia es ambigua, no mezcla jugadores distintos.</p>';
+ const note='<p class="career-note">La identidad histórica no depende del dorsal. Para datos antiguos sin identificador personal estable, StatsBasket enlaza únicamente coincidencias de nombre suficientemente claras; si una coincidencia es ambigua, no mezcla jugadores distintos. Algunas temporadas antiguas conservan plantilla o resultados pero no actas estadísticas completas; en esos casos pueden aparecer 0 o — porque ese dato no está registrado.</p>';
  $('detail-body').innerHTML='<h3 class="match-team-title">'+E(playerPublicName(player.name))+'</h3>'+summary+(rows.length?table(head,body+totalRow):'<p class="muted">No hay estadísticas históricas identificables para este jugador.</p>')+note
 }
 function detail(id){let g=active.games.find(x=>x.id===id);if(!g)return;let a=tBy(g.teamIds[0]),b=tBy(g.teamIds[1]),one=stats({...active,games:[g]},[g]),players=one.players.filter(p=>p.gp>0),ta=one.teams.find(t=>t.team.id===a.id),tb=one.teams.find(t=>t.team.id===b.id),pa=players.filter(p=>p.team.id===a.id).sort((x,y)=>N(x.player.number)-N(y.player.number)),pb=players.filter(p=>p.team.id===b.id).sort((x,y)=>N(x.player.number)-N(y.player.number));$('detail-title').textContent=a.name+' – '+b.name;$('detail-body').innerHTML='<div class="match match-summary" style="margin-bottom:16px"><div>'+team(a)+'</div><span class="score">'+(g.status==='final'?g.score.map(N).join(' : '):'— : —')+'</span><div>'+team(b)+'</div></div><p class="muted small">'+E(fmt(g.date))+' · '+E(g.time||'')+(g.venue?' · '+E(g.venue):'')+'</p>'+((pa.length||pb.length)?matchPlayerTable(a,pa,ta)+matchPlayerTable(b,pb,tb):'<p class="muted">Este partido no tiene estadísticas individuales disponibles.</p>')+'<p class="muted small">MIN: minutos · RD/RO: rebotes defensivos/ofensivos · REC: recuperaciones · PÉR: pérdidas · TAP/TR: tapones realizados/recibidos · FC/FR: faltas cometidas/recibidas · VAL: valoración · +/-: más/menos.</p>';$('detail').showModal()}
