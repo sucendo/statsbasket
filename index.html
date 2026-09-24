@@ -58,6 +58,29 @@ const $=id=>document.getElementById(id), E=v=>String(v??'').replace(/[&<>"']/g,c
 function titleWords(v){return String(v||'').trim().toLocaleLowerCase('es-ES').replace(/(^|[\s-])([\p{L}])/gu,(m,a,b)=>a+b.toLocaleUpperCase('es-ES'))}
 function playerPublicName(raw){raw=String(raw||'').trim();if(!raw||/^Jugador\s+#/i.test(raw)||!raw.includes(','))return raw;let parts=raw.split(','),surname=parts.shift().trim(),given=titleWords(parts.join(' ').trim()),tokens=surname.split(/\s+/).filter(Boolean),ini=tokens.slice(0,2).map(t=>{let ch=[...t].find(x=>/\p{L}/u.test(x));return ch?ch.toLocaleUpperCase('es-ES')+'.':''}).filter(Boolean).join(' ');return (given+' '+ini).trim()}
 function realTeams(){return active?active.teams.filter(t=>!t.placeholder):[]}
+function isPlaceholderName(name){let n=String(name||'').trim().toLocaleLowerCase('es-ES');return !n||n==='nombre'||n.includes('sin identificar')||n.startsWith('jugador #')}
+function canonicalizePublishedSeason(s){
+ if(!s||!Array.isArray(s.teams))return s;
+ const aliases=new Map();
+ s.teams.forEach(t=>{
+   if(!Array.isArray(t.players))return;
+   const byNumber=new Map(), merged=[];
+   t.players.forEach(p=>{
+     const key=String(p.number??'').trim();
+     if(!key){merged.push(p);return}
+     if(!byNumber.has(key)){byNumber.set(key,p);merged.push(p);return}
+     const keep=byNumber.get(key);
+     aliases.set(p.id,keep.id);
+     if(isPlaceholderName(keep.name)&&!isPlaceholderName(p.name))keep.name=p.name;
+   });
+   t.players=merged;
+ });
+ (s.games||[]).forEach(g=>{
+   (g.statLines||[]).forEach(l=>{if(aliases.has(l.playerId))l.playerId=aliases.get(l.playerId)});
+   (g.events||[]).forEach(e=>{if(aliases.has(e.playerId))e.playerId=aliases.get(e.playerId)});
+ });
+ return s;
+}
 const legacy=[
  ['2022-2023','public/partidos-22-23.json'],['2021-2022','public/partidos-21-22.json'],['2019-2020','public/partidos-19-20.json'],['2018-2019','public/partidos-18-19.json'],['2017-2018','public/partidos-17-18.json'],['2016-2017','public/partidos-16-17.json']
 ];
@@ -113,7 +136,7 @@ function matchPlayerTable(teamObj,players,total){
 function detail(id){let g=active.games.find(x=>x.id===id);if(!g)return;let a=tBy(g.teamIds[0]),b=tBy(g.teamIds[1]),one=stats({...active,games:[g]},[g]),players=one.players.filter(p=>p.gp>0),ta=one.teams.find(t=>t.team.id===a.id),tb=one.teams.find(t=>t.team.id===b.id),pa=players.filter(p=>p.team.id===a.id).sort((x,y)=>N(x.player.number)-N(y.player.number)),pb=players.filter(p=>p.team.id===b.id).sort((x,y)=>N(x.player.number)-N(y.player.number));$('detail-title').textContent=a.name+' – '+b.name;$('detail-body').innerHTML='<div class="match match-summary" style="margin-bottom:16px"><div>'+team(a)+'</div><span class="score">'+(g.status==='final'?g.score.map(N).join(' : '):'— : —')+'</span><div>'+team(b)+'</div></div><p class="muted small">'+E(fmt(g.date))+' · '+E(g.time||'')+(g.venue?' · '+E(g.venue):'')+'</p>'+((pa.length||pb.length)?matchPlayerTable(a,pa,ta)+matchPlayerTable(b,pb,tb):'<p class="muted">Este partido no tiene estadísticas individuales disponibles.</p>')+'<p class="muted small">MIN: minutos · RD/RO: rebotes defensivos/ofensivos · REC: recuperaciones · PÉR: pérdidas · TAP/TR: tapones realizados/recibidos · FC/FR: faltas cometidas/recibidas · VAL: valoración · +/-: más/menos.</p>';$('detail').showModal()}
 function render(){if(!active)return;quick();renderClubs();$('hero-title').textContent=active.competition+' · '+active.season;$('source').textContent=active.source==='legacy'?'Archivo histórico':'Temporada publicada';$('notice').innerHTML=active.source==='legacy'?'<div class="notice">Archivo histórico: se conservan los registros originales. Algunas temporadas no contienen tiros fallados, asistencias o desglose completo de rebotes.</div>':(active.season==='2026-2027'?'<div class="notice">Parish League 2026-2027: calendario de 55 partidos integrado. Los encuentros con acta importada incluyen estadísticas de jugador y equipo.</div>':'');$('screen').innerHTML=tab==='resultados'?renderResults():tab==='clasificacion'?renderStand():tab==='jugadores'?renderPlayers():tab==='equipos'?renderTeams():tab==='partidos'?renderFinishedGames():renderLeaders()}
 async function select(id){let src=sources.find(s=>s.id===id);if(!src)return;$('screen').innerHTML='<div class="panel empty">Cargando temporada…</div>';try{if(src.data)active=src.data;else{let r=await fetch(src.url);if(!r.ok)throw Error('No se pudo cargar '+src.url);active=normalizeLegacy(await r.json(),src.id)}competition='all';let comps=[...new Set(active.games.map(g=>g.competition).filter(Boolean))].sort();$('competition').innerHTML='<option value="all">Todas</option>'+comps.map(c=>'<option>'+E(c)+'</option>').join('');render()}catch(e){$('screen').innerHTML='<div class="panel empty">No se pudo cargar la temporada: '+E(e.message)+'</div>'}}
-async function start(){let current=[];try{let r=await fetch('data/publicado.json?t='+Date.now(),{cache:'no-store'}),j=await r.json();current=(j.seasons||[]).map((s,i)=>({id:'published-'+i,label:s.season+' · '+s.competition,data:s}))}catch(e){}sources=[...current,...legacy.map(x=>({id:x[0],label:x[0]+' · Histórico',url:x[1]}))];$('season').innerHTML=sources.map(s=>'<option value="'+E(s.id)+'">'+E(s.label)+'</option>').join('');if(sources.length)select(sources[0].id)}
+async function start(){let current=[];try{let r=await fetch('data/publicado.json?t='+Date.now(),{cache:'no-store'}),j=await r.json();current=(j.seasons||[]).map((s,i)=>({id:'published-'+i,label:s.season+' · '+s.competition,data:canonicalizePublishedSeason(s)}))}catch(e){}sources=[...current,...legacy.map(x=>({id:x[0],label:x[0]+' · Histórico',url:x[1]}))];$('season').innerHTML=sources.map(s=>'<option value="'+E(s.id)+'">'+E(s.label)+'</option>').join('');if(sources.length)select(sources[0].id)}
 $('season').addEventListener('change',e=>select(e.target.value));$('competition').addEventListener('change',e=>{competition=e.target.value;render()});document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{tab=b.dataset.tab;document.querySelectorAll('.tabs nav li').forEach(li=>li.classList.toggle('tab-current',li.contains(b)));render()}));$('screen').addEventListener('click',e=>{let b=e.target.closest('[data-game]');if(b)detail(b.dataset.game)});$('close').addEventListener('click',()=>$('detail').close());start();
 </script>
 </body></html>
