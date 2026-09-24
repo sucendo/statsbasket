@@ -56,7 +56,23 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
 <script>
 const $=id=>document.getElementById(id), E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])), N=v=>Number.isFinite(Number(v))?Number(v):0;
 function titleWords(v){return String(v||'').trim().toLocaleLowerCase('es-ES').replace(/(^|[\s-])([\p{L}])/gu,(m,a,b)=>a+b.toLocaleUpperCase('es-ES'))}
-function playerPublicName(raw){raw=String(raw||'').trim();if(!raw||/^Jugador\s+#/i.test(raw)||!raw.includes(','))return raw;let parts=raw.split(','),surname=parts.shift().trim(),given=titleWords(parts.join(' ').trim()),tokens=surname.split(/\s+/).filter(Boolean),ini=tokens.slice(0,2).map(t=>{let ch=[...t].find(x=>/\p{L}/u.test(x));return ch?ch.toLocaleUpperCase('es-ES')+'.':''}).filter(Boolean).join(' ');return (given+' '+ini).trim()}
+function surnamePublicInitials(raw){
+ let tokens=String(raw||'').trim().split(/\s+/).filter(Boolean),particles=new Set(['de','del','la','las','los','y','da','do','dos','van','von']);
+ if(!tokens.length)return [];
+ let idx=0;while(idx<tokens.length&&particles.has(normIdentity(tokens[idx])))idx++;
+ if(idx>=tokens.length)return [];
+ let first=[...tokens[idx]].find(x=>/\p{L}/u.test(x)),out=first?[first.toLocaleUpperCase('es-ES')+'.']:[];
+ let next=tokens[idx+1];
+ if(next&&!particles.has(normIdentity(next))){let ch=[...next].find(x=>/\p{L}/u.test(x));if(ch)out.push(ch.toLocaleUpperCase('es-ES')+'.')}
+ return out.slice(0,2)
+}
+function playerPublicName(raw){
+ raw=String(raw||'').replace(/\s*\(\+\)\s*/g,' ').trim();
+ if(!raw||/^Jugador\s+#/i.test(raw)||!raw.includes(','))return raw;
+ let parts=raw.split(','),surname=parts.shift().trim(),given=titleWords(parts.join(' ').trim()),ini=surnamePublicInitials(surname).join(' ');
+ return (given+(ini?' '+ini:'')).trim()
+}
+function playerDisplayName(p){if(!p)return '';return String(p.publicName||publicNames.current?.[p.id]||publicNames.person?.[p.personId]||publicNames.ficha?.[p.legacyFicha]||playerPublicName(p.name)||'').trim()}
 function normIdentity(v){return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es-ES').replace(/[^a-z0-9]+/g,' ').trim()}
 function teamIdentity(v){return normIdentity(v).replace(/\s+/g,'').replace(/^sienasuns$/,'siena')}
 function playerSignature(raw){
@@ -96,6 +112,7 @@ function canonicalizePublishedSeason(s){
    if(!Array.isArray(t.players))return;
    const byNumber=new Map(), merged=[];
    t.players.forEach(p=>{
+     if(publicNames.current?.[p.id])p.publicName=publicNames.current[p.id];
      const key=String(p.number??'').trim();
      if(!key){merged.push(p);return}
      if(!byNumber.has(key)){byNumber.set(key,p);merged.push(p);return}
@@ -115,7 +132,7 @@ const legacy=[
  ['2025-2026','public/partidos-25-26.json'],['2024-2025','public/partidos-24-25.json'],['2023-2024','public/partidos.json'],['2022-2023','public/partidos-22-23.json'],['2021-2022','public/partidos-21-22.json'],['2019-2020','public/partidos-19-20.json'],['2018-2019','public/partidos-18-19.json'],['2017-2018','public/partidos-17-18.json'],['2016-2017','public/partidos-16-17.json']
 ];
 const ACTION={t2m:'T2 anotado',t2x:'T2 fallado',t3m:'T3 anotado',t3x:'T3 fallado',tlm:'TL anotado',tlx:'TL fallado',reb:'Rebote',rebO:'Rebote ofensivo',rebD:'Rebote defensivo',ast:'Asistencia',stl:'Recuperación',blk:'Tapón',tov:'Pérdida',foul:'Falta'};
-let sources=[],active=null,tab='clasificacion',competition='all',publishedSeasons=[],actaHistory=[];const historyCache=new Map();
+let sources=[],active=null,tab='clasificacion',competition='all',publishedSeasons=[],actaHistory=[],publicNames={person:{},ficha:{},current:{}};const historyCache=new Map();
 const ACTA_FILES=[
  'data/actas-2023-2024-1.json','data/actas-2023-2024-2.json','data/actas-2023-2024-3.json',
  'data/actas-2024-2025-1.json','data/actas-2024-2025-2.json','data/actas-2024-2025-3.json',
@@ -136,7 +153,7 @@ function stats(s,games=s.games){
  return {teams:[...tt.values()],players:[...pt.values()].map(p=>({...p,gp:p.games.size,games:undefined}))}
 }
 function normalizeLegacy(raw,id){
- const sid='legacy-'+id, teams=(raw.equipos||[]).map(t=>({id:sid+'-t'+t.numero,name:String(t.nombre||''),abbr:String(t.abreviatura||t.nombre||'').slice(0,8),logo:t.logo?('public/img/'+t.logo):null,players:(t.fichas||[]).map(p=>({id:sid+'-t'+t.numero+'-p'+p.numero,number:p.numero,name:String(p.nombre||'')}))}));
+ const sid='legacy-'+id, teams=(raw.equipos||[]).map(t=>({id:sid+'-t'+t.numero,name:String(t.nombre||''),abbr:String(t.abreviatura||t.nombre||'').slice(0,8),logo:t.logo?('public/img/'+t.logo):null,players:(t.fichas||[]).map(p=>({id:sid+'-t'+t.numero+'-p'+p.numero,number:p.numero,name:String(p.nombre||''),legacyFicha:String(p.ficha||''),publicName:publicNames.ficha?.[String(p.ficha||'')]||''}))}));
  const by=new Map((raw.equipos||[]).map(t=>[String(t.numero),t]));const games=[];
  (raw.partidos||[]).forEach((g,i)=>{if(!Array.isArray(g.equipos)||g.equipos.length!==2)return;const teamIds=g.equipos.map(x=>sid+'-t'+x.equipo);g.equipos.forEach(x=>{if(!teams.some(t=>t.id===sid+'-t'+x.equipo))teams.push({id:sid+'-t'+x.equipo,name:String(x.equipo),abbr:'—',players:[],placeholder:true})});const events=[];
   (g.acciones||[]).forEach((a,k)=>{const rt=by.get(String(a.equipo));if(!rt)return;const p=(rt.fichas||[]).find(p=>String(p.numero)===String(a.ficha));if(!p)return;let type;if(a.tipo==='T1')type=a.acierto==='dentro'?'tlm':'tlx';else if(a.tipo==='T2')type=a.acierto==='fuera'?'t2x':'t2m';else if(a.tipo==='T3')type=a.acierto==='fuera'?'t3x':'t3m';else type={reb:'reb',fal:'foul',tap:'blk',asis:'ast',yap:'blk'}[a.tipo];if(type)events.push({id:sid+'-g'+i+'-e'+k,teamId:sid+'-t'+a.equipo,playerId:sid+'-t'+a.equipo+'-p'+p.numero,type,period:N(a.cuarto)||1})});
@@ -168,6 +185,7 @@ function applyActaHistory(s){
      p=candidates.find(x=>String(x.number)===String(r.number))||(candidates.length===1?candidates[0]:null);
      if(p){p.personId=r.personKey}
      else{p={id:t.id+'-'+r.personKey,personId:r.personKey,number:String(r.number||''),name:String(r.name||''),numbers:[]};(t.players||(t.players=[])).push(p)}
+    if(publicNames.person?.[r.personKey])p.publicName=publicNames.person[r.personKey]
     }
     p.numbers=Array.isArray(p.numbers)?p.numbers:[String(p.number||'')].filter(Boolean);
     if(r.number!=null&&!p.numbers.includes(String(r.number)))p.numbers.push(String(r.number));
@@ -221,7 +239,7 @@ function sortStatsTable(button){
 function renderClubs(){$('clubs').innerHTML=realTeams().map(t=>'<div class="club">'+logo(t)+'<span>'+E(t.name)+'</span></div>').join('')}
 function renderResults(){const gs=[...filtered()].sort((a,b)=>String(a.date).localeCompare(String(b.date))||String(a.time).localeCompare(String(b.time)));return '<div class="panel"><div class="panel-title"><h2>Calendario y resultados · '+E(active.season)+'</h2><span class="pill gray">'+gs.length+' partidos</span></div><div class="games">'+gs.map(g=>{let a=tBy(g.teamIds[0]),b=tBy(g.teamIds[1]);return '<article class="game"><div class="date">'+E(fmt(g.date))+(g.time?'<br>'+E(g.time):'')+(g.round?'<br>Jornada '+E(g.round):'')+'</div><div class="match"><div>'+team(a)+'</div><span class="score">'+(g.status==='final'?(N(g.score?.[0])+' : '+N(g.score?.[1])):'— : —')+'</span><div>'+team(b)+'</div></div><div><span class="pill '+(g.status==='final'?'green':'gray')+'">'+(g.status==='final'?'Finalizado':'Programado')+'</span> <button data-game="'+E(g.id)+'">Ficha</button></div></article>'}).join('')+'</div></div>'}
 function renderStand(){let st=stats(active,filtered()).teams.filter(t=>!t.team.placeholder).sort((a,b)=>b.points-a.points||(b.pf-b.pa)-(a.pf-a.pa)||b.pf-a.pf||a.team.name.localeCompare(b.team.name,'es'));return '<div class="panel"><div class="panel-title"><h2>Clasificación</h2></div>'+table([['Pos.'],['Equipo'],['PJ','num'],['G','num'],['P','num'],['PF','num'],['PC','num'],['DIF','num'],['Pts','num']],st.map((r,i)=>'<tr><td class="bold">'+(i+1)+'</td><td>'+team(r.team)+'</td><td class="num">'+r.played+'</td><td class="num">'+r.wins+'</td><td class="num">'+r.losses+'</td><td class="num">'+r.pf+'</td><td class="num">'+r.pa+'</td><td class="num">'+(r.pf-r.pa)+'</td><td class="num bold">'+r.points+'</td></tr>').join(''),false)+'<p class="muted small">Cálculo general provisional: 2 puntos por victoria y 1 por derrota. Los desempates oficiales pueden seguir otros criterios.</p></div>'}
-function playerButton(p,teamObj,prefix=''){return '<button type="button" class="player-link" data-player="'+E(p.id)+'" data-player-team="'+E(teamObj.id)+'" title="Ver historial de '+E(playerPublicName(p.name))+'">'+prefix+E(playerPublicName(p.name))+'</button>'}
+function playerButton(p,teamObj,prefix=''){let n=playerDisplayName(p);return '<button type="button" class="player-link" data-player="'+E(p.id)+'" data-player-team="'+E(teamObj.id)+'" title="Ver historial de '+E(n)+'">'+prefix+E(n)+'</button>'}
 function partialActaSeason(){return active?.statsAvailability==='acta-partial'}
 function actaFilteredGames(){return filtered().filter(actaGame)}
 function partialPlayerCells(p){let gp=N(p.gp);return '<td class="num">'+gp+'</td><td class="num bold">'+N(p.pts)+'</td><td class="num">'+(gp?(N(p.pts)/gp).toFixed(1):'0.0')+'</td><td class="num">'+N(p.foul)+'</td>'}
@@ -253,7 +271,7 @@ function actaPlayerTable(teamObj,g){
  return '<section class="match-team-block"><h3 class="match-team-title">'+team(teamObj)+'</h3>'+table(head,body+total)+'</section>'
 }
 function teamPlayersDetail(teamId){
- let t=tBy(teamId),partial=partialActaSeason(),all=stats(active,partial?actaFilteredGames():filtered()),players=all.players.filter(p=>p.team.id===teamId&&(!partial||p.gp>0)).sort((a,b)=>N(a.player.number)-N(b.player.number)||playerPublicName(a.player.name).localeCompare(playerPublicName(b.player.name),'es'));
+ let t=tBy(teamId),partial=partialActaSeason(),all=stats(active,partial?actaFilteredGames():filtered()),players=all.players.filter(p=>p.team.id===teamId&&(!partial||p.gp>0)).sort((a,b)=>N(a.player.number)-N(b.player.number)||playerDisplayName(a.player).localeCompare(playerDisplayName(b.player),'es'));
  $('detail-title').textContent=t.name+' · Jugadores';
  if(partial){
   let head=[['N.'],['Jugador'],['PJ','num'],['PTS','num'],['PPP','num'],['FC','num']],rows=players.map(p=>'<tr><td class="bold">'+E(p.player.number)+'</td><td class="bold">'+playerButton(p.player,p.team)+'</td>'+partialPlayerCells(p)+'</tr>').join('');
@@ -322,7 +340,7 @@ async function playerHistoryDetail(playerId,teamId){
  const teamObj=active?.teams?.find(t=>t.id===teamId),player=teamObj?.players?.find(p=>p.id===playerId);
  if(!teamObj||!player)return;
  const target={team:teamObj,player};
- $('detail-title').textContent=playerPublicName(player.name)+' · Historial';
+ $('detail-title').textContent=playerDisplayName(player)+' · Historial';
  $('detail-body').innerHTML='<div class="empty">Buscando todas las temporadas…</div>';
  if(!$('detail').open)$('detail').showModal();
  const seasons=await allPlayerHistorySeasons(),rows=[];
@@ -330,7 +348,7 @@ async function playerHistoryDetail(playerId,teamId){
    const matches=chooseHistoryMatches(target,s);if(!matches.length)return;
    const allStats=stats(s,s.games),records=matches.map(m=>allStats.players.find(x=>x.player.id===m.player.id)).filter(Boolean);
    const merged=mergePlayerStats(records),teams=[...new Set(matches.map(m=>m.team.name))],numbers=[...new Set(matches.map(m=>String(m.player.number??'—')))];
-   rows.push({season:String(s.season),competition:String(s.competition||''),teams,numbers,stats:merged,partial:s.statsAvailability==='acta-partial',names:[...new Set(matches.map(m=>playerPublicName(m.player.name)))]});
+   rows.push({season:String(s.season),competition:String(s.competition||''),teams,numbers,stats:merged,partial:s.statsAvailability==='acta-partial',names:[...new Set(matches.map(m=>playerDisplayName(m.player)))]});
  });
  rows.sort((a,b)=>b.season.localeCompare(a.season,undefined,{numeric:true}));
  const total=historyTotal(rows);
@@ -339,7 +357,7 @@ async function playerHistoryDetail(playerId,teamId){
  const totalRow='<tr class="team-total"><th colspan="3">TOTAL REGISTRADO</th>'+statCells(total,true)+'</tr>';
  const summary='<div class="career-summary"><div class="career-stat"><strong>'+rows.length+'</strong><span>Temporadas</span></div><div class="career-stat"><strong>'+N(total.gp)+'</strong><span>Partidos</span></div><div class="career-stat"><strong>'+N(total.pts)+'</strong><span>Puntos</span></div><div class="career-stat"><strong>'+N(total.reb)+'</strong><span>Rebotes</span></div><div class="career-stat"><strong>'+N(total.ast)+'</strong><span>Asistencias</span></div></div>';
  const note='<p class="career-note">La identidad histórica no depende del dorsal. Para datos antiguos sin identificador personal estable, StatsBasket enlaza únicamente coincidencias de nombre suficientemente claras; si una coincidencia es ambigua, no mezcla jugadores distintos. Las temporadas procedentes de actas oficiales muestran únicamente participación, puntos y faltas; las columnas no registradas aparecen como —. El total de las demás columnas suma solo los datos que existen en las temporadas que sí los registran.</p>';
- $('detail-body').innerHTML='<h3 class="match-team-title">'+E(playerPublicName(player.name))+'</h3>'+summary+(rows.length?table(head,body+totalRow):'<p class="muted">No hay estadísticas históricas identificables para este jugador.</p>')+note
+ $('detail-body').innerHTML='<h3 class="match-team-title">'+E(playerDisplayName(player))+'</h3>'+summary+(rows.length?table(head,body+totalRow):'<p class="muted">No hay estadísticas históricas identificables para este jugador.</p>')+note
 }
 function detail(id){
  let g=active.games.find(x=>x.id===id);if(!g)return;let a=tBy(g.teamIds[0]),b=tBy(g.teamIds[1]);
@@ -357,6 +375,7 @@ function render(){if(!active)return;quick();renderClubs();$('hero-title').textCo
 async function select(id){let src=sources.find(s=>s.id===id);if(!src)return;$('screen').innerHTML='<div class="panel empty">Cargando temporada…</div>';try{if(src.data)active=src.data;else{let r=await fetch(src.url);if(!r.ok)throw Error('No se pudo cargar '+src.url);active=normalizeLegacy(await r.json(),src.id)}competition='all';let comps=[...new Set(active.games.map(g=>g.competition).filter(Boolean))].sort();$('competition').innerHTML='<option value="all">Todas</option>'+comps.map(c=>'<option>'+E(c)+'</option>').join('');render()}catch(e){$('screen').innerHTML='<div class="panel empty">No se pudo cargar la temporada: '+E(e.message)+'</div>'}}
 async function start(){
  let current=[];
+ try{let r=await fetch('data/nombres-publicos.json?t='+Date.now(),{cache:'no-store'});if(r.ok)publicNames=await r.json()}catch(e){publicNames={person:{},ficha:{},current:{}}}
  try{let rs=await Promise.all(ACTA_FILES.map(url=>fetch(url+'?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)));actaHistory=rs.filter(Boolean).flatMap(j=>j.matches||[])}catch(e){actaHistory=[]}
  try{let r=await fetch('data/publicado.json?t='+Date.now(),{cache:'no-store'}),j=await r.json();publishedSeasons=(j.seasons||[]).map(s=>canonicalizePublishedSeason(s));current=publishedSeasons.map((s,i)=>({id:'published-'+i,label:s.season+' · '+s.competition,data:s}))}catch(e){}
  sources=[...current,...legacy.map(x=>({id:x[0],label:x[0]+' · Histórico',url:x[1]}))];$('season').innerHTML=sources.map(s=>'<option value="'+E(s.id)+'">'+E(s.label)+'</option>').join('');if(sources.length)select(sources[0].id)
