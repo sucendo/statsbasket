@@ -1,10 +1,10 @@
 {
-  "version": 1,
-  "generatedAt": "2026-09-24T12:52:34.912Z",
+  "version": 3,
+  "generatedAt": "2026-09-24T12:56:37.217Z",
   "person": {
     "acta-20232024-p001": "Marío A. M.",
     "acta-20232024-p002": "Carlos A. M.",
-    "acta-20232024-p003": "Francisco R. G.",
+    "acta-20232024-p003": "Francisco José R. G.",
     "acta-20232024-p004": "Pedro G. S.",
     "acta-20232024-p005": "Fernando G. U.",
     "acta-20232024-p006": "Gabriel L. F.",
@@ -184,14 +184,21 @@
     "acta-20252026-p104": "Juan R. C.",
     "acta-20252026-p105": "Miguel G. J.",
     "acta-20252026-p106": "Manuel F.",
-    "acta-20252026-p108": "Alex J. F."
+    "acta-20252026-p108": "Alex J. F.",
+    "acta-20242025-p004": "Francisco José R. G.",
+    "acta-20242025-p034": "Pablo M. J.",
+    "acta-20242025-p038": "Gabriel M. S.",
+    "acta-20242025-p064": "Miguel Á. L.",
+    "acta-20242025-p095": "Pablo M. J.",
+    "acta-20242025-p098": "Miguel Á. L.",
+    "acta-20252026-p012": "Francisco José R. G."
   },
   "ficha": {
     "C00": "Marío A. M.",
     "C03": "Pablo A. M.",
     "C05": "Fermin F. M.",
     "C01": "Carlos A. M.",
-    "C08": "Francisco R. G.",
+    "C08": "Francisco José R. G.",
     "C10": "Pedro G. S.",
     "C15": "Fernando G. U.",
     "C17": "Gabriel L. F.",
@@ -508,15 +515,15 @@
   },
   "stats": {
     "fichas": 318,
-    "actaPersons": 183,
+    "actaPersons": 190,
     "resolved2023": 176,
     "season2024_2025": {
       "people": 98,
-      "resolved": 43
+      "resolved": 6
     },
     "season2025_2026": {
       "people": 109,
-      "resolved": 59
+      "resolved": 1
     },
     "current": 72
   },
