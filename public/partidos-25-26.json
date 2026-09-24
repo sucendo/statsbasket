@@ -1,0 +1,354 @@
+{
+  "competicion": "Parish League",
+  "temporada": "2025-2026",
+  "partial": true,
+  "sourceNote": "Archivo parcial creado a partir de actas oficiales FBM aportadas de Begoña Bulls.",
+  "equipos": [
+    {
+      "numero": 1,
+      "nombre": "Begoña Bulls",
+      "abreviatura": "BEG",
+      "logo": "logo-begoña_bulls.png",
+      "fichas": []
+    },
+    {
+      "numero": 2,
+      "nombre": "Betsaida Boanerges",
+      "abreviatura": "BET",
+      "logo": "logo-betsaida_boanerges.png",
+      "fichas": []
+    },
+    {
+      "numero": 3,
+      "nombre": "La Paloma B.C.",
+      "abreviatura": "PAL",
+      "logo": "logo-la_paloma_bc.png",
+      "fichas": []
+    },
+    {
+      "numero": 4,
+      "nombre": "Labouré Spinners",
+      "abreviatura": "LAB",
+      "logo": "logo-laboure_spinners.png",
+      "fichas": []
+    },
+    {
+      "numero": 5,
+      "nombre": "Los Ángeles Prayers",
+      "abreviatura": "PRA",
+      "logo": "logot-los_angeles_prayers.png",
+      "fichas": []
+    },
+    {
+      "numero": 6,
+      "nombre": "Siena Suns",
+      "abreviatura": "SIE",
+      "logo": "logo-siena.png",
+      "fichas": []
+    },
+    {
+      "numero": 7,
+      "nombre": "Salterio Lauders",
+      "abreviatura": "SAL",
+      "logo": "logo-salterio_lauders.png",
+      "fichas": []
+    },
+    {
+      "numero": 8,
+      "nombre": "Snow Knights",
+      "abreviatura": "SNK",
+      "logo": "logot-snow_knights.png",
+      "fichas": []
+    },
+    {
+      "numero": 9,
+      "nombre": "The Valva Cherubs",
+      "abreviatura": "VAL",
+      "fichas": []
+    },
+    {
+      "numero": 10,
+      "nombre": "Trigolution Magikikos JyM",
+      "abreviatura": "TRI",
+      "fichas": []
+    }
+  ],
+  "partidos": [
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "13/09/2025",
+      "lugar": "",
+      "hora": "09:00",
+      "acta": "311570",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 7,
+          "convocados": [],
+          "puntos": 62
+        },
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 15
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "04/10/2025",
+      "lugar": "",
+      "hora": "09:00",
+      "acta": "311579",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 3,
+          "convocados": [],
+          "puntos": 38
+        },
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 35
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "11/10/2025",
+      "lugar": "",
+      "hora": "09:00",
+      "acta": "311584",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 2,
+          "convocados": [],
+          "puntos": 53
+        },
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 19
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "25/10/2025",
+      "lugar": "",
+      "hora": "10:15",
+      "acta": "311591",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 6,
+          "convocados": [],
+          "puntos": 55
+        },
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 41
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "08/11/2025",
+      "lugar": "",
+      "hora": "09:00",
+      "acta": "311593",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 34
+        },
+        {
+          "equipo": 10,
+          "convocados": [],
+          "puntos": 40
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "13/12/2025",
+      "lugar": "",
+      "hora": "09:00",
+      "acta": "311603",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 38
+        },
+        {
+          "equipo": 5,
+          "convocados": [],
+          "puntos": 34
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "17/01/2026",
+      "lugar": "",
+      "hora": "11:30",
+      "acta": "347872",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 33
+        },
+        {
+          "equipo": 4,
+          "convocados": [],
+          "puntos": 58
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "31/01/2026",
+      "lugar": "",
+      "hora": "10:15",
+      "acta": "311601",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 34
+        },
+        {
+          "equipo": 8,
+          "convocados": [],
+          "puntos": 38
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "07/02/2026",
+      "lugar": "",
+      "hora": "09:00",
+      "acta": "347877",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 9,
+          "convocados": [],
+          "puntos": 16
+        },
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 60
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "28/02/2026",
+      "lugar": "",
+      "hora": "10:15",
+      "acta": "358181",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 27
+        },
+        {
+          "equipo": 7,
+          "convocados": [],
+          "puntos": 15
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "07/03/2026",
+      "lugar": "",
+      "hora": "10:15",
+      "acta": "358185",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 39
+        },
+        {
+          "equipo": 2,
+          "convocados": [],
+          "puntos": 65
+        }
+      ],
+      "acciones": []
+    },
+    {
+      "competicion": "liga / acta oficial",
+      "jornada": "",
+      "semana": "",
+      "fecha": "25/04/2026",
+      "lugar": "",
+      "hora": "09:00",
+      "acta": "368735",
+      "fuente": "Acta oficial FBM",
+      "equipos": [
+        {
+          "equipo": 4,
+          "convocados": [],
+          "puntos": 65
+        },
+        {
+          "equipo": 1,
+          "convocados": [],
+          "puntos": 35
+        }
+      ],
+      "acciones": []
+    }
+  ]
+}
