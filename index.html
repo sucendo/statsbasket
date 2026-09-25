@@ -89,9 +89,9 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
     <nav class="main-nav" aria-label="Navegación principal">
       <button class="nav-item active" data-tab="inicio">Inicio</button>
       <button class="nav-item" data-tab="clasificacion">Clasificación</button>
+      <button class="nav-item" data-tab="partidos">Resultados</button>
       <button class="nav-item" data-tab="equipos">Equipos</button>
       <button class="nav-item" data-tab="jugadores">Jugadores</button>
-      <button class="nav-item" data-tab="partidos">Partidos</button>
       <button class="nav-item" data-tab="lideres">Líderes</button>
       <button class="nav-item" data-tab="resultados">Calendario</button>
       <a class="nav-item" href="pizarra-tactica-baloncesto.html">Pizarra</a>
@@ -401,7 +401,7 @@ function renderHome(){
  let quick='<section class="quick-panel"><div class="quick-title">⚡ Accesos rápidos</div><div class="quick-links">'+
   '<button class="quick-link" data-goto="jugadores"><span class="quick-link-icon">👤</span><span><b>Estadísticas Jugadores</b><small>Puntos, rebotes, asistencias…</small></span><span>›</span></button>'+
   '<button class="quick-link" data-goto="equipos"><span class="quick-link-icon">👥</span><span><b>Estadísticas Equipos</b><small>Rendimiento, promedios y totales</small></span><span>›</span></button>'+
-  '<button class="quick-link" data-goto="partidos"><span class="quick-link-icon">📊</span><span><b>Estadísticas Partidos</b><small>Resultados y boxscores</small></span><span>›</span></button>'+
+  '<button class="quick-link" data-goto="partidos"><span class="quick-link-icon">📊</span><span><b>Resultados</b><small>Marcadores y estadísticas</small></span><span>›</span></button>'+
   '<button class="quick-link" onclick="location.href=\'pizarra-tactica-baloncesto.html\'"><span class="quick-link-icon">📋</span><span><b>Pizarra táctica</b><small>Dibuja jugadas y estrategias</small></span><span>›</span></button>'+
  '</div></section>';
  return pageHead('StatsBasket',active.competition+' · '+active.season)+summary+topGrid+'<div class="leaders-grid">'+leaders.join('')+'</div>'+quick
@@ -412,7 +412,7 @@ function renderFinishedGames(){
   let a=tBy(g.teamIds[0]),b=tBy(g.teamIds[1]),sa=N(g.score?.[0]),sb=N(g.score?.[1]),wa=sa>sb,wb=sb>sa;
   return '<article class="matches-feed-row"><div class="matches-feed-date">'+E(fmt(g.date))+(g.time?'<br>'+E(g.time):'')+'</div><div class="matches-feed-team left">'+feedTeam(a,'left')+'</div><div class="matches-feed-middle"><div class="matches-feed-score"><span class="'+(wa?'winner-score':'')+'">'+sa+'</span><span class="separator">:</span><span class="'+(wb?'winner-score':'')+'">'+sb+'</span></div><button class="matches-feed-stats" data-game="'+E(g.id)+'">Ver estadísticas</button></div><div class="matches-feed-team right">'+feedTeam(b,'right')+'</div></article>'
  }).join('');
- return pageHead('Partidos','Resultados y estadísticas de cada encuentro')+'<div class="panel"><div class="panel-title"><h2>🏀 Estadísticas de partidos</h2><span class="pill gray">'+gs.length+' finalizados</span></div><div class="matches-feed">'+(rows||'<div class="empty">Todavía no hay partidos finalizados.</div>')+'</div></div>'
+ return pageHead('Resultados','Partidos finalizados y estadísticas de cada encuentro')+'<div class="panel"><div class="panel-title"><h2>🏀 Resultados y estadísticas</h2><span class="pill gray">'+gs.length+' finalizados</span></div><div class="matches-feed">'+(rows||'<div class="empty">Todavía no hay partidos finalizados.</div>')+'</div></div>'
 }
 function renderPlayers(){
  let partial=partialActaSeason(),ps=stats(active,partial?actaFilteredGames():filtered()).players.filter(p=>p.gp>0).sort((a,b)=>b.pts-a.pts);
