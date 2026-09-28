@@ -175,8 +175,13 @@ function canonicalizePublishedSeason(s){
      if(!key){merged.push(p);return}
      if(!byNumber.has(key)){byNumber.set(key,p);merged.push(p);return}
      const keep=byNumber.get(key);
-     aliases.set(p.id,keep.id);
-     if(isPlaceholderName(keep.name)&&!isPlaceholderName(p.name))keep.name=p.name;
+     const sameIdentity=normIdentity(keep.name)===normIdentity(p.name);
+     if(isPlaceholderName(keep.name)||isPlaceholderName(p.name)||sameIdentity){
+       aliases.set(p.id,keep.id);
+       if(isPlaceholderName(keep.name)&&!isPlaceholderName(p.name))keep.name=p.name;
+     }else{
+       merged.push(p);
+     }
    });
    t.players=merged;
  });
@@ -204,7 +209,7 @@ function stats(s,games=s.games){
  games.forEach(g=>{if(!Array.isArray(g.teamIds)||g.teamIds.length!==2)return;const [a,b]=g.teamIds,ta=tt.get(a),tb=tt.get(b);if(!ta||!tb)return;
   (g.participants||[]).forEach(id=>{const p=pt.get(id);if(p)p.games.add(g.id)});
   (g.events||[]).forEach(e=>{const p=pt.get(e.playerId),t=tt.get(e.teamId);if(t)action(t,e.type);if(p&&p.team.id===e.teamId){action(p,e.type);p.games.add(g.id)}});
-  (g.statLines||[]).forEach(l=>{const p=pt.get(l.playerId);if(!p)return;['pts','t2m','t2a','t3m','t3a','tlm','tla','reb','rebO','rebD','ast','stl','blk','blkAgainst','tov','foul','foulDrawn','seconds','plusMinus'].forEach(k=>p[k]+=N(l[k]));if(l.officialVal!=null)p.officialVal=(p.officialVal??0)+N(l.officialVal);p.games.add(g.id)});
+  (g.statLines||[]).forEach(l=>{const p=pt.get(l.playerId);if(!p)return;['pts','t2m','t2a','t3m','t3a','tlm','tla','reb','rebO','rebD','ast','stl','blk','blkAgainst','tov','foul','foulDrawn','seconds','plusMinus'].forEach(k=>p[k]+=N(l[k]));if(l.number!=null&&String(l.number).trim())p.gameNumber=String(l.number).trim();if(l.officialVal!=null)p.officialVal=(p.officialVal??0)+N(l.officialVal);p.games.add(g.id)});
   (g.teamBox||[]).forEach(l=>{const t=tt.get(l.teamId);if(!t)return;['pts','t2m','t2a','t3m','t3a','tlm','tla','reb','rebO','rebD','ast','stl','blk','blkAgainst','tov','foul','foulDrawn','seconds','plusMinus'].forEach(k=>t[k]+=N(l[k]));if(l.officialVal!=null)t.officialVal=(t.officialVal??0)+N(l.officialVal)});
   if(g.status==='final'){const x=N(g.score?.[0]),y=N(g.score?.[1]);ta.played++;tb.played++;ta.pf+=x;ta.pa+=y;tb.pf+=y;tb.pa+=x;if(x>y){ta.wins++;tb.losses++;ta.points+=2;tb.points++}else if(y>x){tb.wins++;ta.losses++;tb.points+=2;ta.points++}else{ta.draws++;tb.draws++;ta.points++;tb.points++}}
  });
@@ -487,7 +492,7 @@ function renderLeaders(){
 }
 function matchPlayerTable(teamObj,players,total){
  const head=[['N.'],['Nombre'],['MIN','num'],['PTS','num'],['T2','num'],['T2%','num'],['T3','num'],['T3%','num'],['TL','num'],['TL%','num'],['RD','num'],['RO','num'],['REB','num'],['AST','num'],['REC','num'],['PÉR','num'],['TAP','num'],['TR','num'],['FC','num'],['FR','num'],['VAL','num'],['+/-','num']];
- const rows=players.map(p=>'<tr><td class="bold">'+E(p.player.number)+'</td><td class="bold">'+playerButton(p.player,p.team)+'</td><td class="num">'+minFmt(p.seconds)+'</td><td class="num bold">'+N(p.pts)+'</td><td class="num">'+N(p.t2m)+'/'+N(p.t2a)+'</td><td class="num">'+pct(p.t2m,p.t2a)+'</td><td class="num">'+N(p.t3m)+'/'+N(p.t3a)+'</td><td class="num">'+pct(p.t3m,p.t3a)+'</td><td class="num">'+N(p.tlm)+'/'+N(p.tla)+'</td><td class="num">'+pct(p.tlm,p.tla)+'</td><td class="num">'+N(p.rebD)+'</td><td class="num">'+N(p.rebO)+'</td><td class="num">'+N(p.reb)+'</td><td class="num">'+N(p.ast)+'</td><td class="num">'+N(p.stl)+'</td><td class="num">'+N(p.tov)+'</td><td class="num">'+N(p.blk)+'</td><td class="num">'+N(p.blkAgainst)+'</td><td class="num">'+N(p.foul)+'</td><td class="num">'+N(p.foulDrawn)+'</td><td class="num">'+rating(p)+'</td><td class="num">'+(N(p.plusMinus)>0?'+':'')+N(p.plusMinus)+'</td></tr>').join('');
+ const rows=players.map(p=>'<tr><td class="bold">'+E(p.gameNumber??p.player.number)+'</td><td class="bold">'+playerButton(p.player,p.team)+'</td><td class="num">'+minFmt(p.seconds)+'</td><td class="num bold">'+N(p.pts)+'</td><td class="num">'+N(p.t2m)+'/'+N(p.t2a)+'</td><td class="num">'+pct(p.t2m,p.t2a)+'</td><td class="num">'+N(p.t3m)+'/'+N(p.t3a)+'</td><td class="num">'+pct(p.t3m,p.t3a)+'</td><td class="num">'+N(p.tlm)+'/'+N(p.tla)+'</td><td class="num">'+pct(p.tlm,p.tla)+'</td><td class="num">'+N(p.rebD)+'</td><td class="num">'+N(p.rebO)+'</td><td class="num">'+N(p.reb)+'</td><td class="num">'+N(p.ast)+'</td><td class="num">'+N(p.stl)+'</td><td class="num">'+N(p.tov)+'</td><td class="num">'+N(p.blk)+'</td><td class="num">'+N(p.blkAgainst)+'</td><td class="num">'+N(p.foul)+'</td><td class="num">'+N(p.foulDrawn)+'</td><td class="num">'+rating(p)+'</td><td class="num">'+(N(p.plusMinus)>0?'+':'')+N(p.plusMinus)+'</td></tr>').join('');
  const totalRow=total?'<tr class="team-total"><th colspan="2">TOTAL '+E(teamObj.name)+'</th><th class="num">'+minFmt(total.seconds)+'</th><th class="num">'+N(total.pts)+'</th><th class="num">'+N(total.t2m)+'/'+N(total.t2a)+'</th><th class="num">'+pct(total.t2m,total.t2a)+'</th><th class="num">'+N(total.t3m)+'/'+N(total.t3a)+'</th><th class="num">'+pct(total.t3m,total.t3a)+'</th><th class="num">'+N(total.tlm)+'/'+N(total.tla)+'</th><th class="num">'+pct(total.tlm,total.tla)+'</th><th class="num">'+N(total.rebD)+'</th><th class="num">'+N(total.rebO)+'</th><th class="num">'+N(total.reb)+'</th><th class="num">'+N(total.ast)+'</th><th class="num">'+N(total.stl)+'</th><th class="num">'+N(total.tov)+'</th><th class="num">'+N(total.blk)+'</th><th class="num">'+N(total.blkAgainst)+'</th><th class="num">'+N(total.foul)+'</th><th class="num">'+N(total.foulDrawn)+'</th><th class="num">'+rating(total)+'</th><th class="num">'+(N(total.plusMinus)>0?'+':'')+N(total.plusMinus)+'</th></tr>':'';
  return '<section class="match-team-block"><h3 class="match-team-title">'+team(teamObj)+'</h3>'+table(head,rows+totalRow)+'</section>'
 }
