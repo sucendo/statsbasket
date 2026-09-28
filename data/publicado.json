@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "publishedAt": "2026-09-23T12:00:00Z",
+  "publishedAt": "2026-09-28T06:46:00Z",
   "seasons": [
     {
       "id": "parish-league-2026-2027",
@@ -269,27 +269,42 @@
             {
               "id": "parish-league-2026-2027-prayers-n3",
               "name": "RODRÍGUEZ PÉREZ, ISAAC",
-              "number": "3"
+              "number": "3",
+              "numbers": [
+                "3"
+              ]
             },
             {
               "id": "parish-league-2026-2027-prayers-n7",
               "name": "CORNEJO MANRIQUE, DAVID GABRIEL",
-              "number": "7"
+              "number": "7",
+              "numbers": [
+                "7"
+              ]
             },
             {
               "id": "parish-league-2026-2027-prayers-n10",
               "name": "PELÁEZ-CAMPOMANES GUIBERT, JACOBO",
-              "number": "10"
+              "number": "10",
+              "numbers": [
+                "10"
+              ]
             },
             {
               "id": "parish-league-2026-2027-prayers-n11",
               "name": "SERRADA SOTIL, JAVIER",
-              "number": "11"
+              "number": "11",
+              "numbers": [
+                "11"
+              ]
             },
             {
               "id": "parish-league-2026-2027-prayers-n12",
               "name": "BENITO PASCUAL, MIGUEL",
-              "number": "12"
+              "number": "12",
+              "numbers": [
+                "12"
+              ]
             },
             {
               "id": "parish-league-2026-2027-prayers-n16",
@@ -304,12 +319,66 @@
             {
               "id": "parish-league-2026-2027-prayers-n33",
               "name": "SALAVERRÍA BLANCO, DAVID",
-              "number": "33"
+              "number": "33",
+              "numbers": [
+                "33"
+              ]
             },
             {
               "id": "parish-league-2026-2027-prayers-n0",
               "name": "HERNANZ ROMERO, SEBASTIÁN",
-              "number": "0"
+              "number": "0",
+              "numbers": [
+                "0"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n5",
+              "name": "HERNANZ RAMOS, JUAN",
+              "number": "5",
+              "numbers": [
+                "5"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n8",
+              "name": "SERRADA BARAJAS, MATEO",
+              "number": "8",
+              "numbers": [
+                "8"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n23",
+              "name": "SÁNCHEZ PÉREZ, IGNACIO",
+              "number": "23",
+              "numbers": [
+                "23"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n24",
+              "name": "PÉREZ GORRITI, FRANCISCO JAVIER",
+              "number": "24",
+              "numbers": [
+                "24"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n27",
+              "name": "CORNEJO MANRIQUE, JOAQUÍN GONZALO",
+              "number": "27",
+              "numbers": [
+                "27"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-prayers-n34",
+              "name": "VÁSQUEZ CADARSO, SEBASTIÁN",
+              "number": "34",
+              "numbers": [
+                "34"
+              ]
             }
           ]
         },
@@ -321,8 +390,11 @@
           "players": [
             {
               "id": "parish-league-2026-2027-siena-n3",
-              "name": "Jugador #3 (sin identificar)",
-              "number": "3"
+              "name": "RODRIGO GUTIERREZ DE LA CAMARA, SANTIAGO",
+              "number": "3",
+              "numbers": [
+                "3"
+              ]
             },
             {
               "id": "parish-league-2026-2027-siena-n8",
@@ -332,27 +404,80 @@
             {
               "id": "parish-league-2026-2027-siena-n10",
               "name": "MARTÍN LORENZANA, NICOLÁS",
-              "number": "10"
+              "number": "10",
+              "numbers": [
+                "10"
+              ]
             },
             {
               "id": "parish-league-2026-2027-siena-n11",
               "name": "PEREA UCENDO, PABLO",
-              "number": "11"
+              "number": "11",
+              "numbers": [
+                "11"
+              ]
             },
             {
               "id": "parish-league-2026-2027-siena-n18",
               "name": "GUZMÁN BELDA, JAVIER",
-              "number": "18"
+              "number": "18",
+              "numbers": [
+                "18",
+                "20"
+              ]
             },
             {
               "id": "parish-league-2026-2027-siena-n24",
               "name": "MUÑOZ PEREZ, SAMUEL",
-              "number": "24"
+              "number": "24",
+              "numbers": [
+                "24"
+              ]
             },
             {
               "id": "parish-league-2026-2027-siena-n73",
               "name": "MOYA RIPOLL, PEDRO",
               "number": "73"
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n4",
+              "name": "GUITART DE LA LASTRA, JESUS",
+              "number": "4",
+              "numbers": [
+                "4"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n7",
+              "name": "PLANELLES PRENSA, GONZALO",
+              "number": "7",
+              "numbers": [
+                "7"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n13",
+              "name": "CORDERO SARMIENTO, ANTONIO",
+              "number": "13",
+              "numbers": [
+                "13"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n17",
+              "name": "DE ANCOS MARTIN, JESUS",
+              "number": "17",
+              "numbers": [
+                "17"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-siena-n31",
+              "name": "CORDERO SARMIENTO, MANUEL",
+              "number": "31",
+              "numbers": [
+                "31"
+              ]
             }
           ]
         },
@@ -365,12 +490,18 @@
             {
               "id": "parish-league-2026-2027-valva-n4",
               "name": "MARCOS METAIS, JESÚS",
-              "number": "4"
+              "number": "4",
+              "numbers": [
+                "4"
+              ]
             },
             {
               "id": "parish-league-2026-2027-valva-n5",
               "name": "OLIAS ALLENDE, SEBASTIAN",
-              "number": "5"
+              "number": "5",
+              "numbers": [
+                "5"
+              ]
             },
             {
               "id": "parish-league-2026-2027-valva-n8",
@@ -380,17 +511,58 @@
             {
               "id": "parish-league-2026-2027-valva-n11",
               "name": "OLIAS ALLENDE, IGNACIO",
-              "number": "11"
+              "number": "11",
+              "numbers": [
+                "11"
+              ]
             },
             {
               "id": "parish-league-2026-2027-valva-n17",
               "name": "GARCIA MERLO, SANTIAGO",
-              "number": "17"
+              "number": "17",
+              "numbers": [
+                "17"
+              ]
             },
             {
               "id": "parish-league-2026-2027-valva-n18",
               "name": "PETRUZZO RECIO, SAMUEL",
-              "number": "18"
+              "number": "18",
+              "numbers": [
+                "18"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n2",
+              "name": "ALONSO CALVO, RAUL",
+              "number": "2",
+              "numbers": [
+                "2"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n3",
+              "name": "FERNANDEZ BAUTISTA, MARCOS",
+              "number": "3",
+              "numbers": [
+                "3"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n8-bidault-terra-jose-andre",
+              "name": "BIDAULT TERRA, JOSE ANDRES",
+              "number": "8",
+              "numbers": [
+                "8"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-valva-n10",
+              "name": "MUÑOZ CARREÑO, MIGUEL",
+              "number": "10",
+              "numbers": [
+                "10"
+              ]
             }
           ]
         },
@@ -452,7 +624,88 @@
           "name": "Laboure Spinners",
           "abbr": "LAB",
           "logo": "public/img/logo-laboure_spinners.png",
-          "players": []
+          "players": [
+            {
+              "id": "parish-league-2026-2027-laboure-n5",
+              "name": "JIMÉNEZ FERNÁNDEZ, ALEJANDRO",
+              "number": "5",
+              "numbers": [
+                "5"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n7",
+              "name": "MEDRANO SÁNCHEZ, GABRIEL",
+              "number": "7",
+              "numbers": [
+                "7"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n9",
+              "name": "COLLADO JIMÉNEZ, ILDEFONSO",
+              "number": "9",
+              "numbers": [
+                "9"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n10",
+              "name": "YRAZUSTA AYUSO, MARCOS",
+              "number": "10",
+              "numbers": [
+                "10"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n13",
+              "name": "JIMÉNEZ FERNÁNDEZ, JORGE",
+              "number": "13",
+              "numbers": [
+                "13"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n15",
+              "name": "MEDRANO RAMOS, PABLO",
+              "number": "15",
+              "numbers": [
+                "15"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n16",
+              "name": "MEDRANO SANCHEZ, LUCAS",
+              "number": "16",
+              "numbers": [
+                "16"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n17",
+              "name": "ROMAN VENTURA, JOSUE",
+              "number": "17",
+              "numbers": [
+                "17"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n22",
+              "name": "SÁNCHEZ MEDRANO, DANIEL",
+              "number": "22",
+              "numbers": [
+                "22"
+              ]
+            },
+            {
+              "id": "parish-league-2026-2027-laboure-n77",
+              "name": "MEDRANO CALVACHE, JORGE",
+              "number": "77",
+              "numbers": [
+                "77"
+              ]
+            }
+          ]
         },
         {
           "id": "parish-league-2026-2027-snow",
@@ -2983,11 +3236,11 @@
             "parish-league-2026-2027-laboure"
           ],
           "score": [
-            0,
-            0
+            42,
+            40
           ],
-          "status": "scheduled",
-          "source": "calendar",
+          "status": "final",
+          "source": "fbm",
           "competition": "Parish League",
           "events": [],
           "noes": "TRI / SAL / PAL / BET / SNK",
@@ -2995,7 +3248,579 @@
             "Siena",
             "Laboure Spinners"
           ],
-          "note": ""
+          "note": "Estadísticas acumuladas importadas del Excel oficial FBM recibido el 28/09/2026; no incluyen desarrollo jugada a jugada.",
+          "statLines": [
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n3",
+              "number": "3",
+              "seconds": 1202,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 1,
+              "stl": 1,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 5,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -3
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n4",
+              "number": "4",
+              "seconds": 1577,
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 1,
+              "t3m": 1,
+              "t3a": 3,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 1,
+              "stl": 1,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 3,
+              "plusMinus": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n7",
+              "number": "7",
+              "seconds": 1465,
+              "pts": 5,
+              "t2m": 1,
+              "t2a": 5,
+              "t3m": 1,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 1,
+              "rebO": 2,
+              "reb": 3,
+              "ast": 1,
+              "stl": 4,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 4,
+              "foulDrawn": 1,
+              "officialVal": 1,
+              "plusMinus": -2
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n10",
+              "number": "10",
+              "seconds": 1235,
+              "pts": 4,
+              "t2m": 1,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 2,
+              "tla": 4,
+              "rebD": 3,
+              "rebO": 1,
+              "reb": 4,
+              "ast": 0,
+              "stl": 2,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 2,
+              "officialVal": 5,
+              "plusMinus": -2
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n11",
+              "number": "11",
+              "seconds": 1893,
+              "pts": 6,
+              "t2m": 2,
+              "t2a": 8,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 2,
+              "tla": 2,
+              "rebD": 7,
+              "rebO": 9,
+              "reb": 16,
+              "ast": 0,
+              "stl": 1,
+              "tov": 4,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 3,
+              "foulDrawn": 2,
+              "officialVal": 11,
+              "plusMinus": 1
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n13",
+              "number": "13",
+              "seconds": 1682,
+              "pts": 9,
+              "t2m": 3,
+              "t2a": 10,
+              "t3m": 1,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 4,
+              "rebO": 1,
+              "reb": 5,
+              "ast": 3,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": 5,
+              "plusMinus": 7
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n17",
+              "number": "17",
+              "seconds": 1093,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 7,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 3,
+              "rebO": 1,
+              "reb": 4,
+              "ast": 0,
+              "stl": 2,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -3,
+              "plusMinus": 6
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n18",
+              "number": "20",
+              "seconds": 983,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 1,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 1
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n24",
+              "number": "24",
+              "seconds": 1363,
+              "pts": 6,
+              "t2m": 2,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 2,
+              "tla": 2,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 3,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": 8,
+              "plusMinus": -3
+            },
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "playerId": "parish-league-2026-2027-siena-n31",
+              "number": "31",
+              "seconds": 1902,
+              "pts": 5,
+              "t2m": 2,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 7,
+              "tlm": 1,
+              "tla": 4,
+              "rebD": 2,
+              "rebO": 1,
+              "reb": 3,
+              "ast": 2,
+              "stl": 1,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 2,
+              "officialVal": -4,
+              "plusMinus": 5
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n5",
+              "number": "5",
+              "seconds": 779,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 1,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": -6
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n7",
+              "number": "7",
+              "seconds": 1955,
+              "pts": 12,
+              "t2m": 3,
+              "t2a": 6,
+              "t3m": 1,
+              "t3a": 6,
+              "tlm": 3,
+              "tla": 5,
+              "rebD": 5,
+              "rebO": 2,
+              "reb": 7,
+              "ast": 0,
+              "stl": 2,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 6,
+              "officialVal": 13,
+              "plusMinus": 5
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n9",
+              "number": "9",
+              "seconds": 1013,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 3,
+              "rebO": 0,
+              "reb": 3,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 4,
+              "plusMinus": 2
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n10",
+              "number": "10",
+              "seconds": 2117,
+              "pts": 7,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 2,
+              "t3a": 4,
+              "tlm": 1,
+              "tla": 2,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 2,
+              "stl": 0,
+              "tov": 3,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 1,
+              "officialVal": 2,
+              "plusMinus": -2
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n13",
+              "number": "13",
+              "seconds": 607,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 1,
+              "plusMinus": 1
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n15",
+              "number": "15",
+              "seconds": 1719,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 3,
+              "rebD": 5,
+              "rebO": 2,
+              "reb": 7,
+              "ast": 1,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 5,
+              "plusMinus": -5
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n16",
+              "number": "16",
+              "seconds": 1378,
+              "pts": 3,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 1,
+              "tla": 4,
+              "rebD": 4,
+              "rebO": 0,
+              "reb": 4,
+              "ast": 2,
+              "stl": 0,
+              "tov": 6,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 2,
+              "officialVal": 0,
+              "plusMinus": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n17",
+              "number": "17",
+              "seconds": 1439,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 5,
+              "rebO": 0,
+              "reb": 5,
+              "ast": 1,
+              "stl": 1,
+              "tov": 7,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -7,
+              "plusMinus": 5
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n22",
+              "number": "22",
+              "seconds": 2110,
+              "pts": 12,
+              "t2m": 5,
+              "t2a": 14,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 2,
+              "tla": 3,
+              "rebD": 11,
+              "rebO": 7,
+              "reb": 18,
+              "ast": 3,
+              "stl": 2,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 5,
+              "officialVal": 27,
+              "plusMinus": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "playerId": "parish-league-2026-2027-laboure-n77",
+              "number": "77",
+              "seconds": 1278,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 1,
+              "tov": 4,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -5,
+              "plusMinus": -10
+            }
+          ],
+          "teamBox": [
+            {
+              "teamId": "parish-league-2026-2027-siena",
+              "seconds": 14400,
+              "pts": 42,
+              "t2m": 13,
+              "t2a": 49,
+              "t3m": 3,
+              "t3a": 20,
+              "tlm": 7,
+              "tla": 14,
+              "rebD": 25,
+              "rebO": 16,
+              "reb": 41,
+              "ast": 9,
+              "stl": 15,
+              "tov": 11,
+              "blk": 1,
+              "blkAgainst": 2,
+              "foul": 21,
+              "foulDrawn": 8,
+              "officialVal": 22,
+              "plusMinus": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-laboure",
+              "seconds": 14400,
+              "pts": 40,
+              "t2m": 12,
+              "t2a": 36,
+              "t3m": 3,
+              "t3a": 13,
+              "tlm": 7,
+              "tla": 17,
+              "rebD": 38,
+              "rebO": 11,
+              "reb": 49,
+              "ast": 9,
+              "stl": 7,
+              "tov": 28,
+              "blk": 2,
+              "blkAgainst": 1,
+              "foul": 12,
+              "foulDrawn": 16,
+              "officialVal": 38,
+              "plusMinus": 0
+            }
+          ],
+          "participants": [
+            "parish-league-2026-2027-siena-n3",
+            "parish-league-2026-2027-siena-n4",
+            "parish-league-2026-2027-siena-n7",
+            "parish-league-2026-2027-siena-n10",
+            "parish-league-2026-2027-siena-n11",
+            "parish-league-2026-2027-siena-n13",
+            "parish-league-2026-2027-siena-n17",
+            "parish-league-2026-2027-siena-n18",
+            "parish-league-2026-2027-siena-n24",
+            "parish-league-2026-2027-siena-n31",
+            "parish-league-2026-2027-laboure-n5",
+            "parish-league-2026-2027-laboure-n7",
+            "parish-league-2026-2027-laboure-n9",
+            "parish-league-2026-2027-laboure-n10",
+            "parish-league-2026-2027-laboure-n13",
+            "parish-league-2026-2027-laboure-n15",
+            "parish-league-2026-2027-laboure-n16",
+            "parish-league-2026-2027-laboure-n17",
+            "parish-league-2026-2027-laboure-n22",
+            "parish-league-2026-2027-laboure-n77"
+          ]
         },
         {
           "id": "parish-league-2026-2027-p07",
@@ -3009,11 +3834,11 @@
             "parish-league-2026-2027-prayers"
           ],
           "score": [
-            0,
-            0
+            18,
+            28
           ],
-          "status": "scheduled",
-          "source": "calendar",
+          "status": "final",
+          "source": "fbm",
           "competition": "Parish League",
           "events": [],
           "noes": "TRI / SAL / PAL / BET / SNK",
@@ -3021,7 +3846,605 @@
             "The Valva Cherubs",
             "Los Ángeles Prayers"
           ],
-          "note": ""
+          "note": "Estadísticas acumuladas importadas del Excel oficial FBM recibido el 28/09/2026; no incluyen desarrollo jugada a jugada.",
+          "statLines": [
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n2",
+              "number": "2",
+              "seconds": 962,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 5,
+              "rebO": 0,
+              "reb": 5,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 1,
+              "plusMinus": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n3",
+              "number": "3",
+              "seconds": 1056,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 0,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -5,
+              "plusMinus": -9
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n4",
+              "number": "4",
+              "seconds": 2794,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 4,
+              "rebD": 4,
+              "rebO": 0,
+              "reb": 4,
+              "ast": 2,
+              "stl": 1,
+              "tov": 5,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 0,
+              "foulDrawn": 4,
+              "officialVal": -2,
+              "plusMinus": -10
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n5",
+              "number": "5",
+              "seconds": 1704,
+              "pts": 3,
+              "t2m": 1,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 1,
+              "tla": 6,
+              "rebD": 2,
+              "rebO": 2,
+              "reb": 4,
+              "ast": 2,
+              "stl": 4,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 3,
+              "officialVal": 4,
+              "plusMinus": -6
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n8-bidault-terra-jose-andre",
+              "number": "8",
+              "seconds": 2032,
+              "pts": 9,
+              "t2m": 4,
+              "t2a": 12,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 1,
+              "tla": 1,
+              "rebD": 9,
+              "rebO": 0,
+              "reb": 9,
+              "ast": 1,
+              "stl": 1,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 3,
+              "officialVal": 14,
+              "plusMinus": -3
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n10",
+              "number": "10",
+              "seconds": 2145,
+              "pts": 6,
+              "t2m": 3,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 5,
+              "rebO": 1,
+              "reb": 6,
+              "ast": 2,
+              "stl": 3,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 3,
+              "officialVal": 9,
+              "plusMinus": -4
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n11",
+              "number": "11",
+              "seconds": 1212,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 2,
+              "reb": 2,
+              "ast": 0,
+              "stl": 2,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -6,
+              "plusMinus": 1
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n17",
+              "number": "17",
+              "seconds": 1564,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 2,
+              "rebO": 2,
+              "reb": 4,
+              "ast": 0,
+              "stl": 0,
+              "tov": 3,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": -4,
+              "plusMinus": -8
+            },
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "playerId": "parish-league-2026-2027-valva-n18",
+              "number": "18",
+              "seconds": 927,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 0,
+              "reb": 0,
+              "ast": 0,
+              "stl": 0,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -3,
+              "plusMinus": -11
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n0",
+              "number": "0",
+              "seconds": 1330,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 3,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 0,
+              "rebO": 1,
+              "reb": 1,
+              "ast": 2,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 1,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": -5
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n3",
+              "number": "3",
+              "seconds": 1661,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 5,
+              "t3m": 0,
+              "t3a": 4,
+              "tlm": 0,
+              "tla": 1,
+              "rebD": 0,
+              "rebO": 1,
+              "reb": 1,
+              "ast": 1,
+              "stl": 1,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 1,
+              "officialVal": -6,
+              "plusMinus": 7
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n5",
+              "number": "5",
+              "seconds": 548,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 2,
+              "rebD": 0,
+              "rebO": 2,
+              "reb": 2,
+              "ast": 0,
+              "stl": 1,
+              "tov": 0,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 1,
+              "officialVal": -1,
+              "plusMinus": 4
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n7",
+              "number": "7",
+              "seconds": 1655,
+              "pts": 5,
+              "t2m": 2,
+              "t2a": 7,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 1,
+              "tla": 5,
+              "rebD": 7,
+              "rebO": 4,
+              "reb": 11,
+              "ast": 1,
+              "stl": 0,
+              "tov": 3,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 2,
+              "officialVal": 7,
+              "plusMinus": -3
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n8",
+              "number": "8",
+              "seconds": 737,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 1,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": 0,
+              "plusMinus": 4
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n10",
+              "number": "10",
+              "seconds": 1418,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 6,
+              "t3m": 0,
+              "t3a": 2,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 3,
+              "rebO": 0,
+              "reb": 3,
+              "ast": 4,
+              "stl": 3,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 14
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n11",
+              "number": "11",
+              "seconds": 1917,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 4,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 9,
+              "rebO": 4,
+              "reb": 13,
+              "ast": 1,
+              "stl": 0,
+              "tov": 1,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": 11,
+              "plusMinus": 1
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n12",
+              "number": "12",
+              "seconds": 624,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 1,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 1,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 1,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": 7
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n23",
+              "number": "23",
+              "seconds": 2317,
+              "pts": 15,
+              "t2m": 0,
+              "t2a": 6,
+              "t3m": 5,
+              "t3a": 7,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 4,
+              "rebO": 3,
+              "reb": 7,
+              "ast": 0,
+              "stl": 1,
+              "tov": 2,
+              "blk": 1,
+              "blkAgainst": 0,
+              "foul": 2,
+              "foulDrawn": 0,
+              "officialVal": 12,
+              "plusMinus": 5
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n27",
+              "number": "27",
+              "seconds": 645,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -1,
+              "plusMinus": -3
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n33",
+              "number": "33",
+              "seconds": 780,
+              "pts": 2,
+              "t2m": 1,
+              "t2a": 2,
+              "t3m": 0,
+              "t3a": 0,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 1,
+              "rebO": 0,
+              "reb": 1,
+              "ast": 0,
+              "stl": 1,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 3,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 9
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "playerId": "parish-league-2026-2027-prayers-n34",
+              "number": "34",
+              "seconds": 762,
+              "pts": 0,
+              "t2m": 0,
+              "t2a": 1,
+              "t3m": 0,
+              "t3a": 1,
+              "tlm": 0,
+              "tla": 0,
+              "rebD": 2,
+              "rebO": 0,
+              "reb": 2,
+              "ast": 0,
+              "stl": 0,
+              "tov": 2,
+              "blk": 0,
+              "blkAgainst": 0,
+              "foul": 0,
+              "foulDrawn": 0,
+              "officialVal": -2,
+              "plusMinus": 10
+            }
+          ],
+          "teamBox": [
+            {
+              "teamId": "parish-league-2026-2027-valva",
+              "seconds": 14400,
+              "pts": 18,
+              "t2m": 8,
+              "t2a": 38,
+              "t3m": 0,
+              "t3a": 6,
+              "tlm": 2,
+              "tla": 15,
+              "rebD": 27,
+              "rebO": 7,
+              "reb": 34,
+              "ast": 7,
+              "stl": 11,
+              "tov": 16,
+              "blk": 1,
+              "blkAgainst": 4,
+              "foul": 8,
+              "foulDrawn": 14,
+              "officialVal": 8,
+              "plusMinus": 0
+            },
+            {
+              "teamId": "parish-league-2026-2027-prayers",
+              "seconds": 14400,
+              "pts": 28,
+              "t2m": 6,
+              "t2a": 40,
+              "t3m": 5,
+              "t3a": 15,
+              "tlm": 1,
+              "tla": 8,
+              "rebD": 30,
+              "rebO": 16,
+              "reb": 46,
+              "ast": 9,
+              "stl": 8,
+              "tov": 17,
+              "blk": 4,
+              "blkAgainst": 1,
+              "foul": 16,
+              "foulDrawn": 4,
+              "officialVal": 14,
+              "plusMinus": 0
+            }
+          ],
+          "participants": [
+            "parish-league-2026-2027-valva-n2",
+            "parish-league-2026-2027-valva-n3",
+            "parish-league-2026-2027-valva-n4",
+            "parish-league-2026-2027-valva-n5",
+            "parish-league-2026-2027-valva-n8-bidault-terra-jose-andre",
+            "parish-league-2026-2027-valva-n10",
+            "parish-league-2026-2027-valva-n11",
+            "parish-league-2026-2027-valva-n17",
+            "parish-league-2026-2027-valva-n18",
+            "parish-league-2026-2027-prayers-n0",
+            "parish-league-2026-2027-prayers-n3",
+            "parish-league-2026-2027-prayers-n5",
+            "parish-league-2026-2027-prayers-n7",
+            "parish-league-2026-2027-prayers-n8",
+            "parish-league-2026-2027-prayers-n10",
+            "parish-league-2026-2027-prayers-n11",
+            "parish-league-2026-2027-prayers-n12",
+            "parish-league-2026-2027-prayers-n23",
+            "parish-league-2026-2027-prayers-n27",
+            "parish-league-2026-2027-prayers-n33",
+            "parish-league-2026-2027-prayers-n34"
+          ]
         },
         {
           "id": "parish-league-2026-2027-p08",
@@ -4272,7 +5695,7 @@
           "note": "Emparejamiento pendiente de sorteo."
         }
       ],
-      "updatedAt": "2026-09-23T12:00:00Z",
+      "updatedAt": "2026-09-28T06:46:00Z",
       "source": "fbm",
       "published": true,
       "description": "Calendario del documento proporcionado y resultados/estadísticas acumuladas de cinco archivos FBM."
