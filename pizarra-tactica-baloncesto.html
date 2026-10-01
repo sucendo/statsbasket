@@ -110,7 +110,7 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
       </div>
     </div>
 
-    <details class="desktop-library-card">
+    <details class="desktop-library-card" open>
       <summary>Biblioteca de jugadas</summary>
       <div class="desktop-library-actions">
         <button type="button" class="primary" id="desktopSavePlayBtn">＋ Guardar jugada</button>
@@ -263,6 +263,9 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
   <button type="button" class="mobile-float-btn" id="mobileOptionsBtn" aria-expanded="false" aria-controls="mobileOptionsPanel">
     <span aria-hidden="true">☰</span><span>Opciones</span>
   </button>
+  <button type="button" class="mobile-float-btn library" id="mobileLibraryBtn" title="Biblioteca de jugadas">
+    <span aria-hidden="true">▤</span><span>Biblioteca</span>
+  </button>
 
   <button type="button" class="mobile-float-btn playback play" id="mobilePlayBtn" title="Representar jugada">
     <span aria-hidden="true">▶</span><span>Play</span>
@@ -320,7 +323,7 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
     </div>
   </div>
 
-  <div class="mobile-options-section play-library-section">
+  <div class="mobile-options-section play-library-section" id="mobilePlayLibrarySection">
     <span class="mobile-options-label">Biblioteca de jugadas</span>
     <div class="mobile-options-grid two">
       <button type="button" class="accent" id="mobileSavePlayBtn">＋ Guardar jugada</button>
