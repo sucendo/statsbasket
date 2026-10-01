@@ -115,9 +115,19 @@
             next.pieces[id] = {x:Number(src.pieces[id].x),y:Number(src.pieces[id].y)};
           }
         });
-        next.drawings = Array.isArray(src.drawings)
-          ? src.drawings.filter(validDrawing).map(normalizeDrawing)
-          : [];
+        next.drawings = [];
+        if(Array.isArray(src.drawings)){
+          let inferredPhase=1;
+          src.drawings.filter(validDrawing).forEach(raw=>{
+            const normalized=normalizeDrawing(raw);
+            if(normalized.type==='step'){
+              inferredPhase=Math.max(1,Number(normalized.n)||inferredPhase);
+            }else if(!Number.isFinite(Number(raw.phase))){
+              normalized.phase=inferredPhase;
+            }
+            next.drawings.push(normalized);
+          });
+        }
         state.boards[mode] = next;
       });
     }catch(_){}
@@ -717,12 +727,49 @@
     if(playback.positions && id) playback.positions[id]={x:pos.x,y:pos.y};
   }
 
+  function nearestInPositions(pos,positions,maxDistance=110){
+    let best=null,bestDistance=maxDistance;
+    Object.entries(positions).forEach(([id,p])=>{
+      if(id==='ball') return;
+      const distance=Math.hypot(p.x-pos.x,p.y-pos.y);
+      if(distance<bestDistance){
+        bestDistance=distance;
+        best=id;
+      }
+    });
+    return best;
+  }
+
   function playbackPhases(){
-    const actions=board().drawings
+    const raw=board().drawings
       .filter(d=>d.type!=='step')
-      .map((d,index)=>({d,index,phase:Math.max(1,Number(d.phase)||1)}));
-    const numbers=[...new Set(actions.map(a=>a.phase))].sort((a,b)=>a-b);
-    return numbers.map(n=>({number:n,actions:actions.filter(a=>a.phase===n).sort((a,b)=>a.index-b.index)}));
+      .map((d,index)=>({d:{...d},index,phase:Math.max(1,Number(d.phase)||1)}));
+    const numbers=[...new Set(raw.map(a=>a.phase))].sort((a,b)=>a-b);
+    const predicted=clone(board().pieces);
+
+    return numbers.map(number=>{
+      const actions=raw.filter(a=>a.phase===number).sort((a,b)=>a.index-b.index);
+      const phaseStart=clone(predicted);
+
+      actions.forEach(action=>{
+        const d=action.d;
+        if(['arrow','dribble','screen'].includes(d.type) && !d.pieceId){
+          d.pieceId=nearestInPositions({x:d.x1,y:d.y1},phaseStart);
+        }
+        if(d.type==='pass'){
+          if(!d.fromId) d.fromId=nearestInPositions({x:d.x1,y:d.y1},phaseStart);
+          if(!d.toId) d.toId=nearestInPositions({x:d.x2,y:d.y2},phaseStart);
+        }
+      });
+
+      actions.forEach(({d})=>{
+        if(['arrow','dribble','screen'].includes(d.type) && d.pieceId && predicted[d.pieceId]){
+          predicted[d.pieceId]={x:Number(d.x2),y:Number(d.y2)};
+        }
+      });
+
+      return {number,actions};
+    });
   }
 
   function updatePlaybackControls(){
