@@ -15,6 +15,9 @@
   const pieceEls = [...svg.querySelectorAll('.piece')];
 
   const primaryTools = document.getElementById('primaryTools');
+  const mobileSideDock = document.getElementById('mobileSideDock');
+  const mobileDockTools = document.getElementById('mobileDockTools');
+  const mobileDockActions = document.getElementById('mobileDockActions');
   const mobileLaunch = document.getElementById('mobileLaunch');
   const mobileLaunchBtn = document.getElementById('mobileLaunchBtn');
   const mobileAppControls = document.getElementById('mobileAppControls');
@@ -28,6 +31,7 @@
   const mobileUndoBtn = document.getElementById('mobileUndoBtn');
   const mobileResetBtn = document.getElementById('mobileResetBtn');
   const mobileClearBtn = document.getElementById('mobileClearBtn');
+  const mobileResetStepsBtn = document.getElementById('mobileResetStepsBtn');
   const mobileExportBtn = document.getElementById('mobileExportBtn');
   const mobileFullscreenBtn = document.getElementById('mobileFullscreenBtn');
   const mobileResetControlsBtn = document.getElementById('mobileResetControlsBtn');
@@ -85,11 +89,9 @@
             next.pieces[id] = {x:Number(src.pieces[id].x),y:Number(src.pieces[id].y)};
           }
         });
-        next.drawings = Array.isArray(src.drawings) ? src.drawings.filter(validDrawing).map(d => ({
-          id:String(d.id || ('d'+Date.now())),
-          type:d.type === 'pass' ? 'pass' : 'arrow',
-          x1:Number(d.x1),y1:Number(d.y1),x2:Number(d.x2),y2:Number(d.y2)
-        })) : [];
+        next.drawings = Array.isArray(src.drawings)
+          ? src.drawings.filter(validDrawing).map(normalizeDrawing)
+          : [];
         state.boards[mode] = next;
       });
     }catch(_){}
@@ -107,8 +109,31 @@
   }
 
   function validDrawing(d){
-    return d && ['arrow','pass'].includes(d.type) &&
-      [d.x1,d.y1,d.x2,d.y2].every(v => Number.isFinite(Number(v)));
+    if(!d || !['arrow','pass','dribble','screen','step'].includes(d.type)) return false;
+    if(d.type === 'step'){
+      return [d.x,d.y,d.n].every(v => Number.isFinite(Number(v)));
+    }
+    return [d.x1,d.y1,d.x2,d.y2].every(v => Number.isFinite(Number(v)));
+  }
+
+  function normalizeDrawing(d){
+    if(d.type === 'step'){
+      return {
+        id:String(d.id || ('d'+Date.now())),
+        type:'step',
+        x:Number(d.x),y:Number(d.y),n:Number(d.n)
+      };
+    }
+    return {
+      id:String(d.id || ('d'+Date.now())),
+      type:['pass','dribble','screen'].includes(d.type) ? d.type : 'arrow',
+      x1:Number(d.x1),y1:Number(d.y1),x2:Number(d.x2),y2:Number(d.y2)
+    };
+  }
+
+  function nextStepNumber(){
+    const nums=board().drawings.filter(d=>d.type==='step').map(d=>Number(d.n)||0);
+    return (nums.length ? Math.max(...nums) : 0) + 1;
   }
 
   function board(){ return state.boards[state.view]; }
@@ -149,19 +174,22 @@
   }
 
   function setTool(tool){
-    if(!['move','arrow','pass','erase'].includes(tool)) return;
+    if(!['move','arrow','dribble','pass','screen','step','erase'].includes(tool)) return;
     state.tool = tool;
     toolButtons.forEach(btn => {
       const active = btn.dataset.tool === tool;
       btn.classList.toggle('active',active);
       btn.setAttribute('aria-pressed',active ? 'true':'false');
     });
-    svg.classList.toggle('drawing-tool',tool === 'arrow' || tool === 'pass');
+    svg.classList.toggle('drawing-tool',['arrow','dribble','pass','screen'].includes(tool));
     const messages = {
-      move:'Modo mover: arrastra jugadores y balón.',
-      arrow:'Movimiento: arrastra sobre la pista para dibujar una flecha.',
-      pass:'Pase: arrastra para dibujar una línea discontinua.',
-      erase:'Borrador: toca una flecha o pase para eliminarlo.'
+      move:'Mover: arrastra jugadores y balón.',
+      arrow:'Movimiento: línea continua con flecha.',
+      dribble:'Bote: movimiento con balón en zigzag.',
+      pass:'Pase: línea discontinua con flecha.',
+      screen:'Bloqueo: arrastra para colocar un bloqueo terminado en T.',
+      step:'Paso: toca la pista para numerar la secuencia 1, 2, 3…',
+      erase:'Borrador: toca cualquier trazo o paso para eliminarlo.'
     };
     hint.textContent = messages[tool];
   }
@@ -174,17 +202,95 @@
     });
   }
 
-  function drawingPath(d,preview=false){
-    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-    path.setAttribute('d',`M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`);
-    path.setAttribute('class',`draw-path ${d.type === 'pass' ? 'pass':'move'}${preview?' preview':''}`);
-    if(!preview) path.dataset.drawingId = d.id;
+  function zigzagPath(x1,y1,x2,y2){
+    const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);
+    if(len<2) return `M ${x1} ${y1} L ${x2} ${y2}`;
+    const ux=dx/len,uy=dy/len,px=-uy,py=ux;
+    const spacing=24,amp=11,steps=Math.max(2,Math.floor(len/spacing));
+    let path=`M ${x1} ${y1}`;
+    for(let i=1;i<steps;i++){
+      const t=i/steps;
+      const offset=(i%2?1:-1)*amp;
+      const x=x1+dx*t+px*offset;
+      const y=y1+dy*t+py*offset;
+      path+=` L ${x} ${y}`;
+    }
+    return path+` L ${x2} ${y2}`;
+  }
+
+  function screenCap(d){
+    const dx=d.x2-d.x1,dy=d.y2-d.y1,len=Math.hypot(dx,dy)||1;
+    const px=-dy/len,py=dx/len,half=22;
+    return {
+      x1:d.x2+px*half,y1:d.y2+py*half,
+      x2:d.x2-px*half,y2:d.y2-py*half
+    };
+  }
+
+  function drawingElement(d,preview=false){
+    const ns='http://www.w3.org/2000/svg';
+
+    if(d.type === 'step'){
+      const g=document.createElementNS(ns,'g');
+      g.setAttribute('class',`step-marker${preview?' preview':''}`);
+      if(!preview) g.dataset.drawingId=d.id;
+      const circle=document.createElementNS(ns,'circle');
+      circle.setAttribute('cx',d.x);circle.setAttribute('cy',d.y);circle.setAttribute('r','24');
+      const text=document.createElementNS(ns,'text');
+      text.setAttribute('x',d.x);text.setAttribute('y',d.y);
+      text.textContent=String(d.n);
+      g.append(circle,text);
+      return g;
+    }
+
+    if(d.type === 'screen'){
+      const g=document.createElementNS(ns,'g');
+      g.setAttribute('class',`screen-drawing${preview?' preview':''}`);
+      if(!preview) g.dataset.drawingId=d.id;
+      const path=document.createElementNS(ns,'path');
+      path.setAttribute('d',`M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`);
+      path.setAttribute('class','draw-path screen');
+      const cap=screenCap(d);
+      const line=document.createElementNS(ns,'line');
+      line.setAttribute('x1',cap.x1);line.setAttribute('y1',cap.y1);
+      line.setAttribute('x2',cap.x2);line.setAttribute('y2',cap.y2);
+      line.setAttribute('class','screen-cap');
+      g.append(path,line);
+      return g;
+    }
+
+    const path=document.createElementNS(ns,'path');
+    const pathData=d.type === 'dribble'
+      ? zigzagPath(d.x1,d.y1,d.x2,d.y2)
+      : `M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`;
+    path.setAttribute('d',pathData);
+    path.setAttribute('class',`draw-path ${d.type === 'pass' ? 'pass' : d.type === 'dribble' ? 'dribble' : 'move'}${preview?' preview':''}`);
+    if(!preview) path.dataset.drawingId=d.id;
     return path;
+  }
+
+  function updatePreviewElement(el,d){
+    if(!el) return;
+    if(d.type === 'screen'){
+      const path=el.querySelector('path');
+      const line=el.querySelector('line');
+      path?.setAttribute('d',`M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`);
+      const cap=screenCap(d);
+      if(line){
+        line.setAttribute('x1',cap.x1);line.setAttribute('y1',cap.y1);
+        line.setAttribute('x2',cap.x2);line.setAttribute('y2',cap.y2);
+      }
+      return;
+    }
+    const pathData=d.type === 'dribble'
+      ? zigzagPath(d.x1,d.y1,d.x2,d.y2)
+      : `M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`;
+    el.setAttribute('d',pathData);
   }
 
   function renderDrawings(){
     drawingsLayer.replaceChildren();
-    board().drawings.forEach(d => drawingsLayer.appendChild(drawingPath(d)));
+    board().drawings.forEach(d => drawingsLayer.appendChild(drawingElement(d)));
   }
 
   function render(){
@@ -269,7 +375,20 @@
       return;
     }
 
-    if(state.tool !== 'arrow' && state.tool !== 'pass') return;
+    if(state.tool === 'step'){
+      evt.preventDefault();
+      const p=svgPoint(evt);
+      pushUndo();
+      board().drawings.push({
+        id:'d'+Date.now()+'-'+Math.random().toString(36).slice(2,7),
+        type:'step',x:p.x,y:p.y,n:nextStepNumber()
+      });
+      renderDrawings();
+      save();
+      return;
+    }
+
+    if(!['arrow','dribble','pass','screen'].includes(state.tool)) return;
     evt.preventDefault();
     const p = svgPoint(evt);
     pushUndo();
@@ -279,7 +398,7 @@
       type:state.tool,
       x1:p.x,y1:p.y,x2:p.x,y2:p.y
     };
-    previewPath = drawingPath(interaction,true);
+    previewPath = drawingElement(interaction,true);
     drawingsLayer.appendChild(previewPath);
     try{ svg.setPointerCapture(evt.pointerId); }catch(_){}
   });
@@ -294,7 +413,7 @@
     }else if(interaction.kind === 'draw'){
       interaction.x2=p.x;
       interaction.y2=p.y;
-      if(previewPath) previewPath.setAttribute('d',`M ${interaction.x1} ${interaction.y1} L ${p.x} ${p.y}`);
+      updatePreviewElement(previewPath,interaction);
     }
   });
 
@@ -377,7 +496,7 @@
     style.textContent = `
       .piece circle{stroke:#fff;stroke-width:6}.piece text{fill:#fff;font-family:Arial,sans-serif;font-size:38px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
       .attack-piece circle{fill:#df1c31}.defense-piece circle{fill:#004f7c}.ball-piece circle{fill:#ff8a20;stroke:#fff3dd}.ball-piece path{fill:none;stroke:#8a4200;stroke-width:4}
-      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:11;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:9;stroke-dasharray:24 18;marker-end:url(#arrowWhite)}
+      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:11;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:9;stroke-dasharray:24 18;marker-end:url(#arrowWhite)}.draw-path.dribble{stroke:#ffd34f;stroke-width:8;marker-end:url(#arrowYellow)}.draw-path.screen,.screen-cap{stroke:#68dcff;stroke-width:10;fill:none;stroke-linecap:round}.step-marker circle{fill:#003753;stroke:#fff;stroke-width:5}.step-marker text{fill:#fff;font-family:Arial,sans-serif;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
     `;
     cloneSvg.insertBefore(style,cloneSvg.firstChild);
 
@@ -583,7 +702,7 @@
         .filter(key => key.startsWith(MOBILE_POS_PREFIX))
         .forEach(key => localStorage.removeItem(key));
     }catch(_){}
-    [primaryTools,mobileAppControls,mobileOptionsPanel].forEach(el => {
+    [mobileSideDock,mobileOptionsPanel].forEach(el => {
       if(!el) return;
       el.style.removeProperty('left');
       el.style.removeProperty('top');
@@ -613,14 +732,19 @@
     if(!isMobileBoard) return;
     document.body.classList.add('mobile-board-mode');
 
-    makeDraggable(primaryTools);
-    makeDraggable(mobileAppControls);
+    if(mobileDockTools && primaryTools && primaryTools.parentElement !== mobileDockTools){
+      mobileDockTools.appendChild(primaryTools);
+    }
+    if(mobileDockActions && mobileAppControls && mobileAppControls.parentElement !== mobileDockActions){
+      mobileDockActions.appendChild(mobileAppControls);
+    }
+
+    makeDraggable(mobileSideDock);
     makeDraggable(mobileOptionsPanel);
 
     if(mobilePlayName) mobilePlayName.value=playName.value;
     syncMobileViewButtons();
-    restoreDraggable(primaryTools);
-    restoreDraggable(mobileAppControls);
+    restoreDraggable(mobileSideDock);
 
     const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     if(document.fullscreenElement || standalone){
@@ -670,6 +794,13 @@
   mobileUndoBtn?.addEventListener('click',() => undoBtn.click());
   mobileResetBtn?.addEventListener('click',() => resetBtn.click());
   mobileClearBtn?.addEventListener('click',() => clearBtn.click());
+  mobileResetStepsBtn?.addEventListener('click',() => {
+    if(!board().drawings.some(d=>d.type==='step')) return;
+    pushUndo();
+    board().drawings=board().drawings.filter(d=>d.type!=='step');
+    renderDrawings();
+    save();
+  });
   mobileExportBtn?.addEventListener('click',() => exportBtn.click());
 
   mobilePlayName?.addEventListener('input',() => {
@@ -695,7 +826,7 @@
     if(!isMobileBoard) return;
     clearTimeout(resizeTimer);
     resizeTimer=setTimeout(() => {
-      [primaryTools,mobileAppControls].forEach(restoreDraggable);
+      [mobileSideDock].forEach(restoreDraggable);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
     },180);
   });
@@ -703,7 +834,7 @@
   window.addEventListener('orientationchange',() => {
     if(!isMobileBoard) return;
     setTimeout(() => {
-      [primaryTools,mobileAppControls].forEach(restoreDraggable);
+      [mobileSideDock].forEach(restoreDraggable);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
     },260);
   });
