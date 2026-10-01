@@ -9,6 +9,11 @@
   --sb-line:#d5dcda;
   --sb-text:#153242;
   --sb-muted:#6f7c81;
+  --attack-color:#df1c31;
+  --defense-color:#004f7c;
+  --step-color:#16a34a;
+  --step-text:#ffffff;
+  --mobile-dock-rail:clamp(148px,19vw,172px);
 }
 
 *{box-sizing:border-box}
@@ -198,8 +203,8 @@ button{touch-action:manipulation}
   border-radius:50%;
   display:inline-block;
 }
-.dot.attack{background:#df1c31}
-.dot.defense{background:#004f7c}
+.dot.attack{background:var(--attack-color)}
+.dot.defense{background:var(--defense-color)}
 .dot.ball-dot{background:#ff8a20;border:1px solid #7b3d00}
 
 .board-shell{
@@ -254,8 +259,8 @@ button{touch-action:manipulation}
   dominant-baseline:middle;
   pointer-events:none;
 }
-.attack-piece circle{fill:#df1c31}
-.defense-piece circle{fill:#004f7c}
+.attack-piece circle{fill:var(--attack-color)}
+.defense-piece circle{fill:var(--defense-color)}
 .ball-piece circle{
   fill:#ff8a20;
   stroke:#fff3dd!important;
@@ -274,15 +279,15 @@ button{touch-action:manipulation}
 }
 .draw-path.move{
   stroke:#ff6700;
-  stroke-width:11;
+  stroke-width:5;
   marker-end:url(#arrowOrange);
 }
 .draw-path.pass{
   stroke:#fff;
-  stroke-width:9;
-  stroke-dasharray:24 18;
+  stroke-width:4;
+  stroke-dasharray:12 10;
   marker-end:url(#arrowWhite);
-  filter:drop-shadow(0 2px 2px rgba(0,42,66,.55));
+  filter:drop-shadow(0 1px 1px rgba(0,42,66,.5));
 }
 .draw-path.preview{opacity:.72}
 
@@ -1231,6 +1236,52 @@ body.mobile-board-mode .mobile-options-panel.open{
   letter-spacing:.06em;
 }
 
+
+.mobile-color-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.mobile-color-grid label{
+  min-height:44px;
+  display:grid;
+  grid-template-columns:1fr 34px;
+  align-items:center;
+  gap:6px;
+  padding:5px 7px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:10px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:.66rem;
+  font-weight:750;
+}
+.mobile-color-grid input[type="color"]{
+  width:34px;
+  height:30px;
+  padding:2px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:8px;
+  background:transparent;
+  cursor:pointer;
+}
+.mobile-step-color-note{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:rgba(255,255,255,.64);
+  font-size:.58rem;
+  line-height:1.25;
+}
+.mobile-step-color-swatch{
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  border:2px solid rgba(255,255,255,.82);
+  border-radius:50%;
+  background:var(--step-color);
+}
+
 .mobile-options-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1335,17 +1386,17 @@ body.mobile-board-mode .mobile-options-panel.open{
 /* Herramientas tácticas adicionales */
 .draw-path.dribble{
   stroke:#ffd34f;
-  stroke-width:8;
+  stroke-width:4;
   marker-end:url(#arrowYellow);
-  filter:drop-shadow(0 2px 2px rgba(0,42,66,.38));
+  filter:drop-shadow(0 1px 1px rgba(0,42,66,.35));
 }
 .draw-path.screen{
   stroke:#68dcff;
-  stroke-width:10;
+  stroke-width:5;
 }
 .screen-cap{
   stroke:#68dcff;
-  stroke-width:10;
+  stroke-width:5;
   stroke-linecap:round;
   pointer-events:stroke;
 }
@@ -1357,15 +1408,15 @@ body.mobile-board-mode .mobile-options-panel.open{
   cursor:pointer;
 }
 .step-marker circle{
-  fill:rgba(0,55,83,.94);
+  fill:var(--step-color);
   stroke:#fff;
-  stroke-width:5;
-  filter:drop-shadow(0 3px 4px rgba(0,42,66,.3));
+  stroke-width:4;
+  filter:drop-shadow(0 2px 3px rgba(0,42,66,.28));
 }
 .step-marker text{
-  fill:#fff;
+  fill:var(--step-text);
   font-family:'Raleway',Arial,sans-serif;
-  font-size:27px;
+  font-size:24px;
   font-weight:800;
   text-anchor:middle;
   dominant-baseline:middle;
@@ -1501,7 +1552,7 @@ body.mobile-board-mode .mobile-side-dock .mobile-app-controls{
   top:auto;
   bottom:auto;
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:4px;
   margin:0;
   padding:0;
@@ -1639,4 +1690,79 @@ body:not(.mobile-board-mode) .mobile-drag-handle{
 body.mobile-board-mode .mobile-side-dock>.mobile-dock-handle,
 body.mobile-board-mode .mobile-options-head>.mobile-drag-handle{
   display:block;
+}
+
+
+
+/* Pista completa móvil: panel acoplado en la franja negra, sin tapar la cancha. */
+@media (orientation:landscape){
+  body.mobile-board-mode:not(.dock-floating){
+    --mobile-dock-rail:clamp(148px,19vw,172px);
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .board-shell{
+    inset:0 0 0 var(--mobile-dock-rail);
+    width:auto;
+    height:100dvh;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .tactical-board.full-court{
+    width:min(100%,186.667dvh)!important;
+    max-width:100%;
+    max-height:100dvh;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .mobile-side-dock{
+    top:50%;
+    left:6px;
+    right:auto;
+    bottom:auto;
+    width:calc(var(--mobile-dock-rail) - 12px);
+    max-height:calc(100dvh - 12px);
+    padding:6px;
+    transform:translateY(-50%);
+    border-color:rgba(255,255,255,.12);
+    background:rgba(0,35,54,.4);
+    box-shadow:none;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .mobile-side-dock>.mobile-dock-handle{
+    display:none;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .legend{
+    left:calc(var(--mobile-dock-rail) + (100vw - var(--mobile-dock-rail))/2);
+    max-width:calc(100vw - var(--mobile-dock-rail) - 20px);
+  }
+
+  body.mobile-board-mode.dock-floating .board-shell{
+    inset:0;
+    width:100vw;
+  }
+
+  body.mobile-board-mode.dock-floating .mobile-side-dock{
+    top:50%;
+    left:auto;
+    right:7px;
+    bottom:auto;
+    width:158px;
+    padding:14px 6px 6px;
+    transform:translateY(-50%);
+    background:rgba(0,35,54,.56);
+    box-shadow:0 12px 34px rgba(0,0,0,.24);
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-app-controls{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-float-btn{
+    min-height:38px;
+    padding:3px 2px;
+    font-size:.49rem;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-float-btn>span:first-child{
+    font-size:.84rem;
+  }
 }
