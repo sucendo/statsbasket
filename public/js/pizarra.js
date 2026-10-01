@@ -668,6 +668,7 @@
           if(toId) drawing.toId=toId;
         }
         if(traced && traced.length >= 2) drawing.points=traced;
+        drawing.phase=spatialPhaseForDrawing(drawing) || drawing.phase;
         board().drawings.push(drawing);
         renderDrawings();
         save();
@@ -722,6 +723,40 @@
     return drawingPoints(d);
   }
 
+  function distancePointToSegment(p,a,b){
+    const dx=b.x-a.x,dy=b.y-a.y;
+    const len2=dx*dx+dy*dy;
+    if(!len2) return Math.hypot(p.x-a.x,p.y-a.y);
+    const t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy)/len2));
+    const x=a.x+t*dx,y=a.y+t*dy;
+    return Math.hypot(p.x-x,p.y-y);
+  }
+
+  function distanceStepToDrawing(step,d){
+    const points=playbackPoints(d);
+    if(!points?.length) return Infinity;
+    if(points.length===1) return Math.hypot(step.x-points[0].x,step.y-points[0].y);
+    let best=Infinity;
+    for(let i=1;i<points.length;i++){
+      best=Math.min(best,distancePointToSegment(step,points[i-1],points[i]));
+    }
+    return best;
+  }
+
+  function spatialPhaseForDrawing(d,maxDistance=210){
+    const steps=board().drawings.filter(item=>item.type==='step');
+    if(!steps.length) return null;
+    let best=null,bestDistance=maxDistance;
+    steps.forEach(step=>{
+      const distance=distanceStepToDrawing(step,d);
+      if(distance<bestDistance){
+        bestDistance=distance;
+        best=Math.max(1,Number(step.n)||1);
+      }
+    });
+    return best;
+  }
+
   function pointAtPolyline(points,t){
     if(!points?.length) return {x:0,y:0};
     if(points.length===1) return {x:points[0].x,y:points[0].y};
@@ -767,7 +802,11 @@
   function playbackPhases(){
     const raw=board().drawings
       .filter(d=>d.type!=='step')
-      .map((d,index)=>({d:{...d},index,phase:Math.max(1,Number(d.phase)||1)}));
+      .map((d,index)=>({
+        d:{...d},
+        index,
+        phase:spatialPhaseForDrawing(d) || Math.max(1,Number(d.phase)||1)
+      }));
     const numbers=[...new Set(raw.map(a=>a.phase))].sort((a,b)=>a-b);
     const predicted=clone(board().pieces);
 
@@ -825,14 +864,77 @@
     drawingsLayer.querySelectorAll('.playback-active').forEach(el=>el.classList.remove('playback-active'));
   }
 
-  function phaseDuration(phase){
-    let maxLength=0;
+  function actionDuration(d){
+    const length=polylineLength(playbackPoints(d));
+    if(d.type==='pass') return Math.max(420,Math.min(1500,length*2.5));
+    if(d.type==='shot') return Math.max(520,Math.min(1700,length*2.8));
+    if(d.type==='dribble') return Math.max(650,Math.min(2400,length*4.1));
+    return Math.max(750,Math.min(2600,length*4.0));
+  }
+
+  function phaseTiming(phase){
+    const ballActions=phase.actions.filter(({d})=>['dribble','pass','shot'].includes(d.type));
+    const ballSegments=[];
+    let ballTotal=0;
+    ballActions.forEach(action=>{
+      const duration=actionDuration(action.d);
+      ballSegments.push({action,start:ballTotal,end:ballTotal+duration,duration});
+      ballTotal+=duration;
+    });
+
+    let playerDuration=0;
     phase.actions.forEach(({d})=>{
-      if(['arrow','dribble','pass','screen','shot'].includes(d.type)){
-        maxLength=Math.max(maxLength,polylineLength(playbackPoints(d)));
+      if(['arrow','screen'].includes(d.type)){
+        playerDuration=Math.max(playerDuration,actionDuration(d));
       }
     });
-    return Math.max(900,Math.min(3600,maxLength*4.2 || 1100));
+
+    return {
+      ballSegments,
+      ballTotal,
+      duration:Math.max(900,playerDuration,ballTotal)
+    };
+  }
+
+  function animateBallSequence(timing,elapsed){
+    if(!timing.ballSegments.length) return;
+
+    const clamped=Math.max(0,Math.min(timing.ballTotal,elapsed));
+    let active=timing.ballSegments[timing.ballSegments.length-1];
+
+    for(const segment of timing.ballSegments){
+      if(clamped<=segment.end){
+        active=segment;
+        break;
+      }
+    }
+
+    // Mantener el balón en el final de la última acción ya completada.
+    for(const segment of timing.ballSegments){
+      if(clamped>=segment.end){
+        const d=segment.action.d;
+        if(d.type==='dribble'){
+          const end=pointAtPolyline(playbackPoints(d),1);
+          movePieceDom('ball',{x:end.x+24,y:end.y+24});
+        }else{
+          movePieceDom('ball',pointAtPolyline(playbackPoints(d),1));
+        }
+      }
+    }
+
+    if(clamped<active.start || clamped>active.end) return;
+
+    const d=active.action.d;
+    const localT=active.duration ? Math.max(0,Math.min(1,(clamped-active.start)/active.duration)) : 1;
+    const pos=pointAtPolyline(playbackPoints(d),localT);
+
+    if(d.type==='dribble'){
+      if(d.pieceId) movePieceDom(d.pieceId,pos);
+      const bounce=24+Math.abs(Math.sin(localT*Math.PI*10))*11;
+      movePieceDom('ball',{x:pos.x+24,y:pos.y+bounce});
+    }else{
+      movePieceDom('ball',pos);
+    }
   }
 
   function animatePlaybackPhase(now){
@@ -843,24 +945,24 @@
       return;
     }
     if(!playback.phaseStart) playback.phaseStart=now-playback.phaseElapsed;
-    const duration=phaseDuration(phase);
+
+    const timing=phaseTiming(phase);
+    const duration=timing.duration;
     const elapsed=now-playback.phaseStart;
     playback.phaseElapsed=elapsed;
     const t=Math.min(1,elapsed/duration);
 
+    // Movimientos sin balón pueden ejecutarse simultáneamente.
     phase.actions.forEach(({d})=>{
-      const pts=playbackPoints(d);
-      const pos=pointAtPolyline(pts,t);
       if((d.type==='arrow' || d.type==='screen') && d.pieceId){
-        movePieceDom(d.pieceId,pos);
-      }else if(d.type==='dribble'){
-        if(d.pieceId) movePieceDom(d.pieceId,pos);
-        const bounce=24+Math.abs(Math.sin(t*Math.PI*10))*11;
-        movePieceDom('ball',{x:pos.x+24,y:pos.y+bounce});
-      }else if(d.type==='pass' || d.type==='shot'){
-        movePieceDom('ball',pos);
+        const localDuration=actionDuration(d);
+        const localT=Math.min(1,elapsed/localDuration);
+        movePieceDom(d.pieceId,pointAtPolyline(playbackPoints(d),localT));
       }
     });
+
+    // El balón solo puede ejecutar una acción cada vez: bote, pase o tiro.
+    animateBallSequence(timing,elapsed);
 
     if(t>=1){
       playback.phaseIndex+=1;
