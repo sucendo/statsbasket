@@ -952,12 +952,12 @@
     playback.phaseElapsed=elapsed;
     const t=Math.min(1,elapsed/duration);
 
-    // Movimientos sin balón pueden ejecutarse simultáneamente.
+    // Todos los movimientos simultáneos del mismo Paso/Evento
+    // empiezan y terminan juntos. Una trayectoria más larga implica
+    // mayor velocidad, no que el jugador termine antes y espere parado.
     phase.actions.forEach(({d})=>{
       if((d.type==='arrow' || d.type==='screen') && d.pieceId){
-        const localDuration=actionDuration(d);
-        const localT=Math.min(1,elapsed/localDuration);
-        movePieceDom(d.pieceId,pointAtPolyline(playbackPoints(d),localT));
+        movePieceDom(d.pieceId,pointAtPolyline(playbackPoints(d),t));
       }
     });
 
