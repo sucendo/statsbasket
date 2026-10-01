@@ -57,12 +57,30 @@
   const mobileExitMenuBtn = document.getElementById('mobileExitMenuBtn');
   const mobileToast = document.getElementById('mobileToast');
 
+  const desktopPlayBtn = document.getElementById('desktopPlayBtn');
+  const desktopPauseBtn = document.getElementById('desktopPauseBtn');
+  const desktopStopBtn = document.getElementById('desktopStopBtn');
+  const desktopPlaybackStatus = document.getElementById('desktopPlaybackStatus');
+  const desktopAttackColor = document.getElementById('desktopAttackColor');
+  const desktopDefenseColor = document.getElementById('desktopDefenseColor');
+  const desktopClearStepsBtn = document.getElementById('desktopClearStepsBtn');
+  const desktopSavePlayBtn = document.getElementById('desktopSavePlayBtn');
+  const desktopExportPlayBtn = document.getElementById('desktopExportPlayBtn');
+  const desktopImportPlayBtn = document.getElementById('desktopImportPlayBtn');
+  const desktopExportLibraryBtn = document.getElementById('desktopExportLibraryBtn');
+  const desktopImportLibraryBtn = document.getElementById('desktopImportLibraryBtn');
+  const desktopPlayLibraryList = document.getElementById('desktopPlayLibraryList');
+
   const STORAGE_KEY = 'statsbasket.pizarra.v2';
   const LIBRARY_KEY = 'statsbasket.pizarra.library.v1';
   const MOBILE_POS_PREFIX = 'statsbasket.pizarra.mobile.pos.';
   const MOBILE_DOCK_FLOAT_KEY = 'statsbasket.pizarra.mobile.dockFloating';
   const isMobileBoard = /Android|iPhone|iPod|Mobile/i.test(navigator.userAgent) ||
     (window.matchMedia('(pointer:coarse)').matches && Math.min(screen.width,screen.height) <= 700);
+
+  function mobileModeFromViewport(){
+    return window.innerHeight >= window.innerWidth ? 'half' : 'full';
+  }
 
   const defaults = {
     half: {
@@ -346,15 +364,18 @@
   }
 
   function renderPlayLibrary(){
-    if(!playLibraryList) return;
-    playLibraryList.replaceChildren();
+    const containers=[playLibraryList,desktopPlayLibraryList].filter(Boolean);
+    if(!containers.length) return;
+    containers.forEach(container=>container.replaceChildren());
 
     const entries=readPlayLibrary().sort((a,b)=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')));
     if(!entries.length){
-      const empty=document.createElement('div');
-      empty.className='play-library-empty';
-      empty.textContent='Todavía no hay jugadas guardadas.';
-      playLibraryList.appendChild(empty);
+      containers.forEach(container=>{
+        const empty=document.createElement('div');
+        empty.className='play-library-empty';
+        empty.textContent='Todavía no hay jugadas guardadas.';
+        container.appendChild(empty);
+      });
       return;
     }
 
@@ -397,7 +418,7 @@
       });
 
       item.append(head,actions);
-      playLibraryList.appendChild(item);
+      containers.forEach(container=>container.appendChild(item.cloneNode(true)));
     });
   }
 
@@ -586,6 +607,8 @@
     root.style.setProperty('--step-text',state.colors.stepText);
     if(mobileAttackColor) mobileAttackColor.value=state.colors.attack;
     if(mobileDefenseColor) mobileDefenseColor.value=state.colors.defense;
+    if(desktopAttackColor) desktopAttackColor.value=state.colors.attack;
+    if(desktopDefenseColor) desktopDefenseColor.value=state.colors.defense;
     if(mobileStepColorSwatch) mobileStepColorSwatch.style.background=state.colors.step;
   }
 
@@ -604,8 +627,9 @@
     if(mobileQuickUndoBtn) mobileQuickUndoBtn.disabled = disabled;
   }
 
-  function setView(mode){
+  function setView(mode,{ignoreMobileLock=false}={}){
     if(mode !== 'half' && mode !== 'full') return;
+    if(isMobileBoard && !ignoreMobileLock) mode=mobileModeFromViewport();
     if(playback.running) stopPlayback(true);
     state.view = mode;
     undoStack = [];
@@ -1027,11 +1051,13 @@
   });
 
   clearBtn.addEventListener('click',() => {
-    if(!board().drawings.length) return;
+    if(!board().drawings.some(d=>d.type!=='step')) return;
+    if(playback.running) stopPlayback(true);
     pushUndo();
-    board().drawings = [];
+    board().drawings = board().drawings.filter(d=>d.type==='step');
     renderDrawings();
     save();
+    setPlaybackStatus('Trazos borrados; los pasos se conservan.');
   });
 
   playName.addEventListener('input',() => {
@@ -1158,21 +1184,33 @@
     });
   }
 
-  function updatePlaybackControls(){
-    if(mobilePlayBtn) mobilePlayBtn.disabled=playback.running && !playback.paused;
-    if(mobilePauseBtn){
-      mobilePauseBtn.disabled=!playback.running;
-      const icon=mobilePauseBtn.querySelector('span:first-child');
-      const label=mobilePauseBtn.querySelector('span:last-child');
-      if(icon) icon.textContent=playback.paused ? '▶' : 'Ⅱ';
-      if(label) label.textContent=playback.paused ? 'Continuar' : 'Pausa';
-      if(!icon && !label) mobilePauseBtn.textContent=playback.paused ? '▶ Continuar' : 'Ⅱ Pausa';
+  function syncPauseButton(button){
+    if(!button) return;
+    button.disabled=!playback.running;
+    const icon=button.querySelector('span:first-child');
+    const label=button.querySelector('span:last-child');
+    if(icon && label){
+      icon.textContent=playback.paused ? '▶' : 'Ⅱ';
+      label.textContent=playback.paused ? 'Continuar' : 'Pausa';
+    }else{
+      button.textContent=playback.paused ? '▶ Continuar' : 'Ⅱ Pausa';
     }
-    if(mobileStopBtn) mobileStopBtn.disabled=!playback.running;
+  }
+
+  function updatePlaybackControls(){
+    [mobilePlayBtn,desktopPlayBtn].forEach(button=>{
+      if(button) button.disabled=playback.running && !playback.paused;
+    });
+    syncPauseButton(mobilePauseBtn);
+    syncPauseButton(desktopPauseBtn);
+    [mobileStopBtn,desktopStopBtn].forEach(button=>{
+      if(button) button.disabled=!playback.running;
+    });
   }
 
   function setPlaybackStatus(text){
     if(mobilePlaybackStatus) mobilePlaybackStatus.textContent=text;
+    if(desktopPlaybackStatus) desktopPlaybackStatus.textContent=text;
   }
 
   function highlightPlaybackPhase(number){
@@ -1678,10 +1716,19 @@
     applyDockMode();
     placeMobileDock();
 
+    const lockedMode=mobileModeFromViewport();
+    setView(lockedMode,{ignoreMobileLock:true});
+
+    const launchText=mobileLaunch?.querySelector('.mobile-launch-card span');
+    if(launchText){
+      launchText.textContent=lockedMode==='half'
+        ? 'Se abrirá a pantalla completa en media pista vertical.'
+        : 'Se abrirá a pantalla completa en pista completa horizontal.';
+    }
+
     const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     if(document.fullscreenElement || standalone){
-      setView('full');
-      enterMobilePresentation('full',{ensureFullscreen:false});
+      enterMobilePresentation(lockedMode,{ensureFullscreen:false});
     }else{
       mobileLaunch?.classList.add('active');
       mobileLaunch?.setAttribute('aria-hidden','false');
@@ -1689,8 +1736,9 @@
   }
 
   mobileLaunchBtn?.addEventListener('click',async() => {
-    setView('full');
-    await enterMobilePresentation('full');
+    const lockedMode=mobileModeFromViewport();
+    setView(lockedMode,{ignoreMobileLock:true});
+    await enterMobilePresentation(lockedMode);
     mobileLaunch?.classList.remove('active');
     mobileLaunch?.setAttribute('aria-hidden','true');
   });
@@ -1712,16 +1760,12 @@
   mobileQuickResetBtn?.addEventListener('click',() => resetBtn.click());
   mobileExitMenuBtn?.addEventListener('click',exitToStatsBasket);
 
-  mobileHalfCourtBtn?.addEventListener('click',async() => {
-    setView('half');
-    closeMobileOptions();
-    await enterMobilePresentation('half',{ensureFullscreen:!document.fullscreenElement});
+  mobileHalfCourtBtn?.addEventListener('click',() => {
+    showMobileToast('En móvil la vista está ligada a la orientación: vertical = media pista.');
   });
 
-  mobileFullCourtBtn?.addEventListener('click',async() => {
-    setView('full');
-    closeMobileOptions();
-    await enterMobilePresentation('full',{ensureFullscreen:!document.fullscreenElement});
+  mobileFullCourtBtn?.addEventListener('click',() => {
+    showMobileToast('En móvil la vista está ligada a la orientación: horizontal = pista completa.');
   });
 
   halfBtn.addEventListener('click',() => {
@@ -1895,6 +1939,8 @@
     if(!isMobileBoard) return;
     clearTimeout(resizeTimer);
     resizeTimer=setTimeout(() => {
+      const lockedMode=mobileModeFromViewport();
+      if(state.view!==lockedMode) setView(lockedMode,{ignoreMobileLock:true});
       placeMobileDock();
       if(document.body.classList.contains('dock-floating')) restoreDraggable(mobileSideDock);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
@@ -1904,6 +1950,8 @@
   window.addEventListener('orientationchange',() => {
     if(!isMobileBoard) return;
     setTimeout(() => {
+      const lockedMode=mobileModeFromViewport();
+      if(state.view!==lockedMode) setView(lockedMode,{ignoreMobileLock:true});
       placeMobileDock();
       if(document.body.classList.contains('dock-floating')) restoreDraggable(mobileSideDock);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
@@ -1914,7 +1962,7 @@
   playName.value = state.playName;
   applyBoardColors();
   setTool('move');
-  setView(state.view);
+  setView(isMobileBoard ? mobileModeFromViewport() : state.view,{ignoreMobileLock:isMobileBoard});
   updateUndo();
   updatePlaybackControls();
   renderPlayLibrary();
