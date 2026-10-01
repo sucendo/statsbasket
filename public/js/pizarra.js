@@ -191,9 +191,21 @@
     return nums.length ? Math.max(...nums) : 1;
   }
 
-  function nearestPlayer(pos,maxDistance=92){
+  function plannedPlayerPositions(beforePhase=currentPhase()){
+    const positions=clone(board().pieces);
+    board().drawings.forEach(d=>{
+      if(d.type==='step') return;
+      const phase=Math.max(1,Number(d.phase)||1);
+      if(phase>=beforePhase || !d.pieceId || !positions[d.pieceId]) return;
+      positions[d.pieceId]={x:Number(d.x2),y:Number(d.y2)};
+    });
+    return positions;
+  }
+
+  function nearestPlayer(pos,maxDistance=92,phase=currentPhase()){
     let best=null,bestDistance=maxDistance;
-    Object.entries(board().pieces).forEach(([id,p])=>{
+    const positions=plannedPlayerPositions(phase);
+    Object.entries(positions).forEach(([id,p])=>{
       if(id==='ball') return;
       const distance=Math.hypot(p.x-pos.x,p.y-pos.y);
       if(distance<bestDistance){
