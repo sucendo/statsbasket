@@ -288,7 +288,7 @@
 
   function makeLibraryId(){
     try{
-      if(crypto?.randomUUID) return crypto.randomUUID();
+      if(globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
     }catch(_){}
     return 'play-'+Date.now()+'-'+Math.random().toString(36).slice(2,9);
   }
@@ -449,12 +449,12 @@
     const parsed=JSON.parse(text);
     const play=normalizePlayData(parsed);
 
-    applyPlayData(play);
-
     const entries=readPlayLibrary();
     const now=new Date().toISOString();
     const name=play.playName || file.name.replace(/\.json$/i,'') || 'Jugada importada';
     play.playName=name;
+
+    applyPlayData(play);
 
     const entry={
       id:makeLibraryId(),
