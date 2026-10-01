@@ -293,7 +293,7 @@
 
     applyBoardColors();
     undoStack=[];
-    setView(play.view);
+    setView(play.view,{ignoreMobileLock:isMobileBoard});
     updateUndo();
     render();
     save();
@@ -1834,7 +1834,7 @@
     }
   });
 
-  playLibraryList?.addEventListener('click',evt=>{
+  function handleLibraryListClick(evt){
     const button=evt.target.closest?.('[data-library-action]');
     if(!button) return;
 
@@ -1895,6 +1895,41 @@
       renderPlayLibrary();
       showMobileToast('Jugada eliminada.');
     }
+  }
+
+  playLibraryList?.addEventListener('click',handleLibraryListClick);
+  desktopPlayLibraryList?.addEventListener('click',handleLibraryListClick);
+
+  desktopPlayBtn?.addEventListener('click',startPlayback);
+  desktopPauseBtn?.addEventListener('click',togglePlaybackPause);
+  desktopStopBtn?.addEventListener('click',() => stopPlayback(true));
+
+  desktopClearStepsBtn?.addEventListener('click',() => {
+    if(!board().drawings.some(d=>d.type==='step')) return;
+    if(playback.running) stopPlayback(true);
+    pushUndo();
+    board().drawings=board().drawings.filter(d=>d.type!=='step');
+    renderDrawings();
+    save();
+    setPlaybackStatus('Pasos borrados; los trazos se conservan.');
+  });
+
+  desktopSavePlayBtn?.addEventListener('click',saveCurrentToLibrary);
+  desktopExportPlayBtn?.addEventListener('click',exportCurrentPlay);
+  desktopImportPlayBtn?.addEventListener('click',()=>mobileImportPlayInput?.click());
+  desktopExportLibraryBtn?.addEventListener('click',exportLibrary);
+  desktopImportLibraryBtn?.addEventListener('click',()=>mobileImportLibraryInput?.click());
+
+  desktopAttackColor?.addEventListener('input',() => {
+    state.colors.attack=desktopAttackColor.value;
+    applyBoardColors();
+    save();
+  });
+
+  desktopDefenseColor?.addEventListener('input',() => {
+    state.colors.defense=desktopDefenseColor.value;
+    applyBoardColors();
+    save();
   });
 
   mobileAttackColor?.addEventListener('input',() => {
