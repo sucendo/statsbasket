@@ -1828,3 +1828,57 @@ body.mobile-board-mode .mobile-options-head>.mobile-drag-handle{
     border-left:0;
   }
 }
+
+
+/* Representación animada de jugadas */
+.mobile-playback-grid{
+  display:grid;
+  grid-template-columns:1.25fr 1fr 1fr;
+  gap:5px;
+}
+.mobile-playback-grid button{
+  min-height:42px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:10px;
+  padding:7px 6px;
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  font-size:.66rem;
+  font-weight:800;
+  cursor:pointer;
+}
+.mobile-playback-grid button.playback-primary{
+  background:rgba(22,163,74,.78);
+  border-color:rgba(134,239,172,.28);
+}
+.mobile-playback-grid button:disabled{
+  opacity:.38;
+  cursor:not-allowed;
+}
+.mobile-playback-status{
+  min-height:28px;
+  display:flex;
+  align-items:center;
+  padding:5px 8px;
+  border-radius:8px;
+  background:rgba(0,0,0,.16);
+  color:rgba(255,255,255,.72);
+  font-size:.58rem;
+  line-height:1.25;
+}
+
+body.playback-running #drawings>[data-phase]{
+  opacity:.22;
+  transition:opacity .18s ease,filter .18s ease;
+}
+body.playback-running #drawings>[data-phase].playback-active{
+  opacity:1;
+  filter:drop-shadow(0 0 4px rgba(255,255,255,.3));
+}
+body.playback-running .step-marker.playback-active circle{
+  stroke-width:7;
+  filter:drop-shadow(0 0 8px var(--step-color));
+}
+body.playback-running .piece{
+  cursor:default;
+}
