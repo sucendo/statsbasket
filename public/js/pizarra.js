@@ -37,6 +37,10 @@
   const mobileAttackColor = document.getElementById('mobileAttackColor');
   const mobileDefenseColor = document.getElementById('mobileDefenseColor');
   const mobileStepColorSwatch = document.getElementById('mobileStepColorSwatch');
+  const mobilePlayBtn = document.getElementById('mobilePlayBtn');
+  const mobilePauseBtn = document.getElementById('mobilePauseBtn');
+  const mobileStopBtn = document.getElementById('mobileStopBtn');
+  const mobilePlaybackStatus = document.getElementById('mobilePlaybackStatus');
   const mobileFullscreenBtn = document.getElementById('mobileFullscreenBtn');
   const mobileDockModeBtn = document.getElementById('mobileDockModeBtn');
   const mobileResetControlsBtn = document.getElementById('mobileResetControlsBtn');
@@ -78,6 +82,17 @@
   let undoStack = [];
   let interaction = null;
   let previewPath = null;
+  const playback = {
+    running:false,
+    paused:false,
+    raf:0,
+    phaseIndex:0,
+    phaseStart:0,
+    phaseElapsed:0,
+    phases:[],
+    snapshot:null,
+    positions:null
+  };
 
   function clone(value){ return JSON.parse(JSON.stringify(value)); }
 
@@ -147,8 +162,12 @@
     const normalized={
       id:String(d.id || ('d'+Date.now())),
       type,
-      x1:Number(d.x1),y1:Number(d.y1),x2:Number(d.x2),y2:Number(d.y2)
+      x1:Number(d.x1),y1:Number(d.y1),x2:Number(d.x2),y2:Number(d.y2),
+      phase:Math.max(1,Number(d.phase)||1)
     };
+    if(typeof d.pieceId === 'string') normalized.pieceId=d.pieceId;
+    if(typeof d.fromId === 'string') normalized.fromId=d.fromId;
+    if(typeof d.toId === 'string') normalized.toId=d.toId;
     if(['arrow','pass','dribble'].includes(type) && Array.isArray(d.points) && d.points.length >= 2){
       normalized.points=d.points.filter(validPoint).map(p=>({x:Number(p.x),y:Number(p.y)}));
       if(normalized.points.length >= 2){
@@ -165,6 +184,24 @@
   function nextStepNumber(){
     const nums=board().drawings.filter(d=>d.type==='step').map(d=>Number(d.n)||0);
     return (nums.length ? Math.max(...nums) : 0) + 1;
+  }
+
+  function currentPhase(){
+    const nums=board().drawings.filter(d=>d.type==='step').map(d=>Number(d.n)||0);
+    return nums.length ? Math.max(...nums) : 1;
+  }
+
+  function nearestPlayer(pos,maxDistance=92){
+    let best=null,bestDistance=maxDistance;
+    Object.entries(board().pieces).forEach(([id,p])=>{
+      if(id==='ball') return;
+      const distance=Math.hypot(p.x-pos.x,p.y-pos.y);
+      if(distance<bestDistance){
+        bestDistance=distance;
+        best=id;
+      }
+    });
+    return best;
   }
 
   function hexRgb(hex){
@@ -226,6 +263,7 @@
 
   function setView(mode){
     if(mode !== 'half' && mode !== 'full') return;
+    if(playback.running) stopPlayback(true);
     state.view = mode;
     undoStack = [];
     updateUndo();
@@ -352,7 +390,10 @@
     if(d.type === 'step'){
       const g=document.createElementNS(ns,'g');
       g.setAttribute('class',`step-marker${preview?' preview':''}`);
-      if(!preview) g.dataset.drawingId=d.id;
+      if(!preview){
+        g.dataset.drawingId=d.id;
+        g.dataset.phase=String(d.n || 1);
+      }
       const circle=document.createElementNS(ns,'circle');
       circle.setAttribute('cx',d.x);circle.setAttribute('cy',d.y);circle.setAttribute('r','24');
       const text=document.createElementNS(ns,'text');
@@ -365,7 +406,10 @@
     if(d.type === 'screen'){
       const g=document.createElementNS(ns,'g');
       g.setAttribute('class',`screen-drawing${preview?' preview':''}`);
-      if(!preview) g.dataset.drawingId=d.id;
+      if(!preview){
+        g.dataset.drawingId=d.id;
+        g.dataset.phase=String(d.phase || 1);
+      }
       const path=document.createElementNS(ns,'path');
       path.setAttribute('d',`M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`);
       path.setAttribute('class','draw-path screen');
@@ -383,7 +427,10 @@
     const pathData=d.type === 'dribble' ? dribblePath(pts) : smoothPath(pts);
     path.setAttribute('d',pathData);
     path.setAttribute('class',`draw-path ${d.type === 'pass' ? 'pass' : d.type === 'dribble' ? 'dribble' : 'move'}${preview?' preview':''}`);
-    if(!preview) path.dataset.drawingId=d.id;
+    if(!preview){
+      path.dataset.drawingId=d.id;
+      path.dataset.phase=String(d.phase || 1);
+    }
     return path;
   }
 
@@ -441,7 +488,7 @@
 
   pieceEls.forEach(el => {
     el.addEventListener('pointerdown',evt => {
-      if(state.tool !== 'move') return;
+      if(playback.running || state.tool !== 'move') return;
       evt.preventDefault();
       const id = el.dataset.piece;
       const p = board().pieces[id];
@@ -479,6 +526,7 @@
   });
 
   svg.addEventListener('pointerdown',evt => {
+    if(playback.running) return;
     if(state.tool === 'erase'){
       const path = evt.target.closest?.('[data-drawing-id]');
       if(path){
@@ -514,6 +562,9 @@
       pointerId:evt.pointerId,
       type:state.tool,
       x1:p.x,y1:p.y,x2:p.x,y2:p.y,
+      phase:currentPhase(),
+      pieceId:['arrow','dribble','screen'].includes(state.tool) ? nearestPlayer(p) : null,
+      fromId:state.tool==='pass' ? nearestPlayer(p) : null,
       points:['arrow','dribble','pass'].includes(state.tool) ? [{x:p.x,y:p.y}] : null
     };
     previewPath = drawingElement(interaction,true);
@@ -561,8 +612,15 @@
           id:'d'+Date.now()+'-'+Math.random().toString(36).slice(2,7),
           type:interaction.type,
           x1:interaction.x1,y1:interaction.y1,
-          x2:interaction.x2,y2:interaction.y2
+          x2:interaction.x2,y2:interaction.y2,
+          phase:interaction.phase || 1
         };
+        if(interaction.pieceId) drawing.pieceId=interaction.pieceId;
+        if(interaction.fromId) drawing.fromId=interaction.fromId;
+        if(interaction.type==='pass'){
+          const toId=nearestPlayer({x:interaction.x2,y:interaction.y2});
+          if(toId) drawing.toId=toId;
+        }
         if(traced && traced.length >= 2) drawing.points=traced;
         board().drawings.push(drawing);
         renderDrawings();
@@ -611,6 +669,195 @@
     if(mobilePlayName && mobilePlayName.value !== playName.value) mobilePlayName.value = playName.value;
     save();
   });
+
+
+  function playbackPoints(d){
+    if(d.type==='screen') return [{x:d.x1,y:d.y1},{x:d.x2,y:d.y2}];
+    return drawingPoints(d);
+  }
+
+  function pointAtPolyline(points,t){
+    if(!points?.length) return {x:0,y:0};
+    if(points.length===1) return {x:points[0].x,y:points[0].y};
+    const lengths=[];
+    let total=0;
+    for(let i=1;i<points.length;i++){
+      const len=Math.hypot(points[i].x-points[i-1].x,points[i].y-points[i-1].y);
+      lengths.push(len);
+      total+=len;
+    }
+    if(total<=0) return {x:points[points.length-1].x,y:points[points.length-1].y};
+    let target=Math.max(0,Math.min(1,t))*total;
+    for(let i=0;i<lengths.length;i++){
+      if(target<=lengths[i] || i===lengths.length-1){
+        const a=points[i],b=points[i+1];
+        const local=lengths[i] ? target/lengths[i] : 1;
+        return {x:a.x+(b.x-a.x)*local,y:a.y+(b.y-a.y)*local};
+      }
+      target-=lengths[i];
+    }
+    return {x:points[points.length-1].x,y:points[points.length-1].y};
+  }
+
+  function movePieceDom(id,pos){
+    const el=svg.querySelector('[data-piece="'+id+'"]');
+    if(el) el.setAttribute('transform','translate('+pos.x+' '+pos.y+')');
+    if(playback.positions && id) playback.positions[id]={x:pos.x,y:pos.y};
+  }
+
+  function playbackPhases(){
+    const actions=board().drawings
+      .filter(d=>d.type!=='step')
+      .map((d,index)=>({d,index,phase:Math.max(1,Number(d.phase)||1)}));
+    const numbers=[...new Set(actions.map(a=>a.phase))].sort((a,b)=>a-b);
+    return numbers.map(n=>({number:n,actions:actions.filter(a=>a.phase===n).sort((a,b)=>a.index-b.index)}));
+  }
+
+  function updatePlaybackControls(){
+    if(mobilePlayBtn) mobilePlayBtn.disabled=playback.running && !playback.paused;
+    if(mobilePauseBtn){
+      mobilePauseBtn.disabled=!playback.running;
+      mobilePauseBtn.textContent=playback.paused ? '▶ Continuar' : 'Ⅱ Pausa';
+    }
+    if(mobileStopBtn) mobileStopBtn.disabled=!playback.running;
+  }
+
+  function setPlaybackStatus(text){
+    if(mobilePlaybackStatus) mobilePlaybackStatus.textContent=text;
+  }
+
+  function highlightPlaybackPhase(number){
+    drawingsLayer.querySelectorAll('[data-phase]').forEach(el=>{
+      el.classList.toggle('playback-active',Number(el.dataset.phase)===Number(number));
+    });
+  }
+
+  function clearPlaybackHighlight(){
+    drawingsLayer.querySelectorAll('.playback-active').forEach(el=>el.classList.remove('playback-active'));
+  }
+
+  function phaseDuration(phase){
+    let maxLength=0;
+    phase.actions.forEach(({d})=>{
+      if(['arrow','dribble','pass','screen'].includes(d.type)){
+        maxLength=Math.max(maxLength,polylineLength(playbackPoints(d)));
+      }
+    });
+    return Math.max(900,Math.min(3600,maxLength*4.2 || 1100));
+  }
+
+  function animatePlaybackPhase(now){
+    if(!playback.running || playback.paused) return;
+    const phase=playback.phases[playback.phaseIndex];
+    if(!phase){
+      finishPlayback();
+      return;
+    }
+    if(!playback.phaseStart) playback.phaseStart=now-playback.phaseElapsed;
+    const duration=phaseDuration(phase);
+    const elapsed=now-playback.phaseStart;
+    playback.phaseElapsed=elapsed;
+    const t=Math.min(1,elapsed/duration);
+
+    phase.actions.forEach(({d})=>{
+      const pts=playbackPoints(d);
+      const pos=pointAtPolyline(pts,t);
+      if((d.type==='arrow' || d.type==='screen') && d.pieceId){
+        movePieceDom(d.pieceId,pos);
+      }else if(d.type==='dribble'){
+        if(d.pieceId) movePieceDom(d.pieceId,pos);
+        const bounce=24+Math.abs(Math.sin(t*Math.PI*10))*11;
+        movePieceDom('ball',{x:pos.x+24,y:pos.y+bounce});
+      }else if(d.type==='pass'){
+        movePieceDom('ball',pos);
+      }
+    });
+
+    if(t>=1){
+      playback.phaseIndex+=1;
+      playback.phaseStart=0;
+      playback.phaseElapsed=0;
+      const next=playback.phases[playback.phaseIndex];
+      if(next){
+        highlightPlaybackPhase(next.number);
+        setPlaybackStatus('Paso '+next.number+' · '+(playback.phaseIndex+1)+' de '+playback.phases.length);
+      }
+    }
+    playback.raf=requestAnimationFrame(animatePlaybackPhase);
+  }
+
+  function startPlayback(){
+    if(playback.running) stopPlayback(true);
+    const phases=playbackPhases();
+    if(!phases.length){
+      showMobileToast('Dibuja primero algún movimiento, bote, pase o bloqueo.');
+      setPlaybackStatus('No hay trazos para representar.');
+      return;
+    }
+    playback.running=true;
+    playback.paused=false;
+    playback.phaseIndex=0;
+    playback.phaseStart=0;
+    playback.phaseElapsed=0;
+    playback.phases=phases;
+    playback.snapshot=clone(board().pieces);
+    playback.positions=clone(board().pieces);
+    document.body.classList.add('playback-running');
+    highlightPlaybackPhase(phases[0].number);
+    setPlaybackStatus('Paso '+phases[0].number+' · 1 de '+phases.length);
+    updatePlaybackControls();
+    playback.raf=requestAnimationFrame(animatePlaybackPhase);
+  }
+
+  function togglePlaybackPause(){
+    if(!playback.running) return;
+    if(playback.paused){
+      playback.paused=false;
+      playback.phaseStart=performance.now()-playback.phaseElapsed;
+      setPlaybackStatus('Paso '+playback.phases[playback.phaseIndex].number+' · reproducción');
+      playback.raf=requestAnimationFrame(animatePlaybackPhase);
+    }else{
+      playback.paused=true;
+      cancelAnimationFrame(playback.raf);
+      setPlaybackStatus('Pausa · Paso '+playback.phases[playback.phaseIndex].number);
+    }
+    updatePlaybackControls();
+  }
+
+  function stopPlayback(restore=true){
+    if(!playback.running && !playback.snapshot) return;
+    cancelAnimationFrame(playback.raf);
+    playback.running=false;
+    playback.paused=false;
+    playback.phaseStart=0;
+    playback.phaseElapsed=0;
+    playback.phaseIndex=0;
+    document.body.classList.remove('playback-running');
+    clearPlaybackHighlight();
+    if(restore) renderPieces();
+    playback.phases=[];
+    playback.snapshot=null;
+    playback.positions=null;
+    updatePlaybackControls();
+    setPlaybackStatus('Representación detenida.');
+  }
+
+  function finishPlayback(){
+    cancelAnimationFrame(playback.raf);
+    playback.running=false;
+    playback.paused=false;
+    document.body.classList.remove('playback-running');
+    clearPlaybackHighlight();
+    renderPieces();
+    playback.phases=[];
+    playback.snapshot=null;
+    playback.positions=null;
+    playback.phaseIndex=0;
+    playback.phaseStart=0;
+    playback.phaseElapsed=0;
+    updatePlaybackControls();
+    setPlaybackStatus('Representación finalizada. Pulsa Representar para repetir.');
+  }
 
   function exportPng(){
     const cloneSvg = svg.cloneNode(true);
@@ -946,15 +1193,29 @@
 
   mobileUndoBtn?.addEventListener('click',() => undoBtn.click());
   mobileResetBtn?.addEventListener('click',() => resetBtn.click());
-  mobileClearBtn?.addEventListener('click',() => clearBtn.click());
+  mobileClearBtn?.addEventListener('click',() => {
+    if(!board().drawings.some(d=>d.type!=='step')) return;
+    if(playback.running) stopPlayback(true);
+    pushUndo();
+    board().drawings=board().drawings.filter(d=>d.type==='step');
+    renderDrawings();
+    save();
+    setPlaybackStatus('Trazos borrados; los pasos se conservan.');
+  });
   mobileResetStepsBtn?.addEventListener('click',() => {
     if(!board().drawings.some(d=>d.type==='step')) return;
+    if(playback.running) stopPlayback(true);
     pushUndo();
     board().drawings=board().drawings.filter(d=>d.type!=='step');
     renderDrawings();
     save();
+    setPlaybackStatus('Pasos borrados; los trazos se conservan.');
   });
   mobileExportBtn?.addEventListener('click',() => exportBtn.click());
+
+  mobilePlayBtn?.addEventListener('click',startPlayback);
+  mobilePauseBtn?.addEventListener('click',togglePlaybackPause);
+  mobileStopBtn?.addEventListener('click',() => stopPlayback(true));
 
   mobileAttackColor?.addEventListener('input',() => {
     state.colors.attack=mobileAttackColor.value;
@@ -1017,5 +1278,6 @@
   setTool('move');
   setView(state.view);
   updateUndo();
+  updatePlaybackControls();
   setupMobileBoard();
 })();
