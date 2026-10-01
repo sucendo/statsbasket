@@ -2185,3 +2185,57 @@ body.playback-running .piece{
     width:min(100vw,93.333dvh)!important;
   }
 }
+
+
+/* Controles de reproducción siempre visibles fuera de Opciones */
+body.mobile-board-mode .mobile-side-dock .mobile-app-controls{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-float-btn.playback.play{
+  background:rgba(22,163,74,.32);
+  border-color:rgba(134,239,172,.22);
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-float-btn.playback.stop{
+  background:rgba(190,42,42,.26);
+  border-color:rgba(254,202,202,.18);
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-float-btn.playback:disabled{
+  opacity:.38;
+}
+
+body.mobile-board-mode .dock-playback-status{
+  grid-column:1 / -1;
+  min-height:24px;
+  margin-top:1px;
+  padding:4px 6px;
+  border-radius:5px;
+  background:rgba(0,0,0,.14);
+  color:rgba(255,255,255,.7);
+  font-size:.51rem;
+  line-height:1.15;
+  text-align:center;
+}
+
+@media (orientation:portrait) and (max-width:700px){
+  body.mobile-board-mode.view-half:not(.dock-floating) .dock-playback-status{
+    background:#edf3f4;
+    color:var(--sb-blue);
+    border:1px solid #d9e1df;
+    font-size:.5rem;
+  }
+
+  body.mobile-board-mode.view-half:not(.dock-floating) .mobile-side-dock .mobile-float-btn.playback.play{
+    background:#e8f6ed;
+    color:#15733a;
+    border-color:#cbe8d5;
+  }
+
+  body.mobile-board-mode.view-half:not(.dock-floating) .mobile-side-dock .mobile-float-btn.playback.stop{
+    background:#f9eded;
+    color:#9f2c2c;
+    border-color:#efd1d1;
+  }
+}
