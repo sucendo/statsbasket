@@ -2317,3 +2317,192 @@ body.mobile-board-mode .dock-playback-status{
     max-height:210px;
   }
 }
+
+
+/* =========================================================
+   Gestión de jugadas en escritorio
+   ========================================================= */
+.desktop-play-management{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(340px,.72fr);
+  gap:10px;
+  margin:10px 0 2px;
+}
+
+.desktop-playback-card,
+.desktop-library-card{
+  border:1px solid var(--sb-line);
+  background:#fff;
+  box-shadow:0 4px 14px rgba(0,79,124,.06);
+}
+
+.desktop-playback-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:9px 10px;
+  border-top:4px solid var(--sb-blue);
+}
+
+.desktop-playback-controls{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.desktop-play-btn,
+.desktop-extra-controls button,
+.desktop-library-actions button{
+  min-height:38px;
+  border:1px solid #cad5d2;
+  border-radius:4px;
+  padding:7px 10px;
+  background:#f8faf9;
+  color:var(--sb-blue);
+  font-size:.72rem;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.desktop-play-btn.play{
+  background:#e7f5eb;
+  border-color:#c8e7d1;
+  color:#15733a;
+}
+
+.desktop-play-btn.stop{
+  background:#faeeee;
+  border-color:#efd1d1;
+  color:#a12f2f;
+}
+
+.desktop-play-btn:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+
+.desktop-playback-status{
+  min-width:170px;
+  color:var(--sb-muted);
+  font-size:.68rem;
+  font-weight:700;
+}
+
+.desktop-extra-controls{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.desktop-extra-controls label{
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:5px 8px;
+  border:1px solid #d7dfdd;
+  border-radius:4px;
+  color:var(--sb-muted);
+  background:#f8faf9;
+  font-size:.66rem;
+  font-weight:800;
+}
+
+.desktop-extra-controls input[type="color"]{
+  width:31px;
+  height:27px;
+  padding:1px;
+  border:1px solid #c8d2cf;
+  border-radius:4px;
+  background:#fff;
+  cursor:pointer;
+}
+
+.desktop-library-card{
+  padding:0;
+}
+
+.desktop-library-card>summary{
+  padding:10px 12px;
+  cursor:pointer;
+  color:var(--sb-blue);
+  font-size:.78rem;
+  font-weight:800;
+  user-select:none;
+}
+
+.desktop-library-card[open]>summary{
+  border-bottom:1px solid var(--sb-line);
+}
+
+.desktop-library-actions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:5px;
+  padding:9px 9px 6px;
+}
+
+.desktop-library-actions button.primary{
+  background:var(--sb-orange);
+  border-color:var(--sb-orange);
+  color:#fff;
+}
+
+.desktop-play-library-list{
+  max-height:230px;
+  padding:0 9px 9px;
+}
+
+.desktop-play-management .play-library-empty{
+  border-color:#cfd8d5;
+  color:var(--sb-muted);
+  background:#f8faf9;
+}
+
+.desktop-play-management .play-library-item{
+  border-color:#d6dfdc;
+  background:#f8faf9;
+}
+
+.desktop-play-management .play-library-item-head strong{
+  color:var(--sb-blue);
+}
+
+.desktop-play-management .play-library-item-head span{
+  color:var(--sb-muted);
+}
+
+.desktop-play-management .play-library-item-actions button{
+  border-color:#d0dad7;
+  background:#fff;
+  color:var(--sb-blue);
+}
+
+.desktop-play-management .play-library-item-actions button:first-child{
+  background:#e7f0f4;
+  color:var(--sb-blue);
+}
+
+.desktop-play-management .play-library-item-actions button.danger{
+  background:#f8eaea;
+  color:#9f2d2d;
+}
+
+body.mobile-board-mode .desktop-play-management{
+  display:none!important;
+}
+
+body.mobile-board-mode .mobile-view-section{
+  display:none!important;
+}
+
+@media(max-width:980px){
+  body:not(.mobile-board-mode) .desktop-play-management{
+    grid-template-columns:1fr;
+  }
+}
