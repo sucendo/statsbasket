@@ -521,7 +521,14 @@
     if(!isMobileBoard || !el?.id) return;
     let saved=null;
     try{ saved=JSON.parse(localStorage.getItem(positionKey(el)) || 'null'); }catch(_){}
-    if(!saved || !Number.isFinite(saved.left) || !Number.isFinite(saved.top)) return;
+    if(!saved || !Number.isFinite(saved.left) || !Number.isFinite(saved.top)){
+      el.style.removeProperty('left');
+      el.style.removeProperty('top');
+      el.style.removeProperty('right');
+      el.style.removeProperty('bottom');
+      el.style.removeProperty('transform');
+      return;
+    }
     requestAnimationFrame(() => {
       const pos=clampFloating(el,saved.left,saved.top);
       el.style.left=pos.left+'px';
