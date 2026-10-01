@@ -575,7 +575,12 @@
         if(drawing){
           pushUndo();
           const maxStep=Math.max(1,...board().drawings.filter(d=>d.type==='step').map(d=>Number(d.n)||1));
-          drawing.n = Number(drawing.n)>1 ? Number(drawing.n)-1 : maxStep;
+          const previousNumber=Number(drawing.n)||1;
+          const nextNumber=previousNumber>1 ? previousNumber-1 : maxStep;
+          drawing.n=nextNumber;
+          board().drawings.forEach(d=>{
+            if(d.type!=='step' && Number(d.phase)===previousNumber) d.phase=nextNumber;
+          });
           renderDrawings();
           save();
         }
@@ -870,7 +875,7 @@
     if(playback.running) stopPlayback(true);
     const phases=playbackPhases();
     if(!phases.length){
-      showMobileToast('Dibuja primero algún movimiento, bote, pase o bloqueo.');
+      showMobileToast('Dibuja primero algún movimiento, bote, pase, bloqueo o tiro.');
       setPlaybackStatus('No hay trazos para representar.');
       return;
     }
