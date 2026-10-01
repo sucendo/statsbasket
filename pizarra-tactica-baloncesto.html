@@ -7,6 +7,10 @@
 <meta name="description" content="Pizarra táctica de baloncesto de StatsBasket para preparar, dibujar y compartir jugadas.">
 <meta name="author" content="Sucendo">
 <meta name="theme-color" content="#004f7c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="StatsBasket">
 <link rel="shortcut icon" href="public/favicon.ico">
 <link rel="stylesheet" href="public/css/normalize.css">
 <link rel="stylesheet" href="public/css/pizarra.css">
@@ -39,7 +43,7 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
   </section>
 
   <section class="toolbar" aria-label="Herramientas de pizarra">
-    <div class="tool-group" role="group" aria-label="Herramienta activa">
+    <div class="tool-group primary-tools" role="group" aria-label="Herramienta activa">
       <button type="button" class="tool active" data-tool="move" aria-pressed="true">
         <span class="tool-icon">✥</span><span>Mover</span>
       </button>
@@ -54,12 +58,12 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
       </button>
     </div>
 
-    <div class="tool-group" role="group" aria-label="Vista de pista">
+    <div class="tool-group view-tools" role="group" aria-label="Vista de pista">
       <button type="button" class="action active-view" id="halfCourtBtn" aria-pressed="true">Media pista</button>
       <button type="button" class="action" id="fullCourtBtn" aria-pressed="false">Pista completa</button>
     </div>
 
-    <div class="tool-group actions" role="group" aria-label="Acciones">
+    <div class="tool-group actions secondary-actions" role="group" aria-label="Acciones">
       <button type="button" class="action" id="undoBtn" title="Deshacer">↶ <span>Deshacer</span></button>
       <button type="button" class="action" id="resetBtn" title="Recolocar jugadores">↺ <span>Recolocar</span></button>
       <button type="button" class="action" id="clearBtn" title="Borrar trazos">⌫ <span>Borrar trazos</span></button>
