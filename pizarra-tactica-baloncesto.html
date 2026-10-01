@@ -234,6 +234,18 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
   <button type="button" class="mobile-float-btn" id="mobileOptionsBtn" aria-expanded="false" aria-controls="mobileOptionsPanel">
     <span aria-hidden="true">☰</span><span>Opciones</span>
   </button>
+
+  <button type="button" class="mobile-float-btn playback play" id="mobilePlayBtn" title="Representar jugada">
+    <span aria-hidden="true">▶</span><span>Play</span>
+  </button>
+  <button type="button" class="mobile-float-btn playback" id="mobilePauseBtn" title="Pausar representación" disabled>
+    <span aria-hidden="true">Ⅱ</span><span>Pausa</span>
+  </button>
+  <button type="button" class="mobile-float-btn playback stop" id="mobileStopBtn" title="Detener representación" disabled>
+    <span aria-hidden="true">■</span><span>Stop</span>
+  </button>
+
+  <div class="mobile-playback-status dock-playback-status" id="mobilePlaybackStatus">Lista para representar.</div>
 </div>
 
 <aside class="mobile-options-panel mobile-draggable" id="mobileOptionsPanel" aria-hidden="true" aria-label="Opciones de pizarra">
@@ -277,16 +289,6 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
       <button type="button" id="mobileResetStepsBtn">① Borrar pasos</button>
       <button type="button" class="accent" id="mobileExportBtn">Guardar PNG</button>
     </div>
-  </div>
-
-  <div class="mobile-options-section">
-    <span class="mobile-options-label">Representación</span>
-    <div class="mobile-playback-grid">
-      <button type="button" class="playback-primary" id="mobilePlayBtn">▶ Representar</button>
-      <button type="button" id="mobilePauseBtn" disabled>Ⅱ Pausa</button>
-      <button type="button" id="mobileStopBtn" disabled>■ Detener</button>
-    </div>
-    <div class="mobile-playback-status" id="mobilePlaybackStatus">Lista para representar la jugada.</div>
   </div>
 
   <div class="mobile-options-section">
