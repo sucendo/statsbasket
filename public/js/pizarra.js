@@ -22,7 +22,8 @@
   const mobileLaunchBtn = document.getElementById('mobileLaunchBtn');
   const mobileAppControls = document.getElementById('mobileAppControls');
   const mobileOptionsBtn = document.getElementById('mobileOptionsBtn');
-  const mobileExitBtn = document.getElementById('mobileExitBtn');
+  const mobileQuickUndoBtn = document.getElementById('mobileQuickUndoBtn');
+  const mobileQuickResetBtn = document.getElementById('mobileQuickResetBtn');
   const mobileOptionsPanel = document.getElementById('mobileOptionsPanel');
   const mobileOptionsClose = document.getElementById('mobileOptionsClose');
   const mobilePlayName = document.getElementById('mobilePlayName');
@@ -33,6 +34,9 @@
   const mobileClearBtn = document.getElementById('mobileClearBtn');
   const mobileResetStepsBtn = document.getElementById('mobileResetStepsBtn');
   const mobileExportBtn = document.getElementById('mobileExportBtn');
+  const mobileAttackColor = document.getElementById('mobileAttackColor');
+  const mobileDefenseColor = document.getElementById('mobileDefenseColor');
+  const mobileStepColorSwatch = document.getElementById('mobileStepColorSwatch');
   const mobileFullscreenBtn = document.getElementById('mobileFullscreenBtn');
   const mobileDockModeBtn = document.getElementById('mobileDockModeBtn');
   const mobileResetControlsBtn = document.getElementById('mobileResetControlsBtn');
@@ -67,7 +71,8 @@
     view:'half',
     tool:'move',
     boards:{half:freshBoard('half'),full:freshBoard('full')},
-    playName:''
+    playName:'',
+    colors:{attack:'#df1c31',defense:'#004f7c',step:'#16a34a',stepText:'#ffffff'}
   };
 
   let undoStack = [];
@@ -82,6 +87,10 @@
       if(!saved || typeof saved !== 'object') return;
       if(saved.view === 'half' || saved.view === 'full') state.view = saved.view;
       state.playName = String(saved.playName || '');
+      if(saved.colors && typeof saved.colors === 'object'){
+        if(/^#[0-9a-f]{6}$/i.test(saved.colors.attack || '')) state.colors.attack=saved.colors.attack;
+        if(/^#[0-9a-f]{6}$/i.test(saved.colors.defense || '')) state.colors.defense=saved.colors.defense;
+      }
       ['half','full'].forEach(mode => {
         const src = saved.boards?.[mode];
         if(!src) return;
@@ -105,6 +114,7 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         view:state.view,
         playName:state.playName,
+        colors:{attack:state.colors.attack,defense:state.colors.defense},
         boards:state.boards
       }));
     }catch(_){}
@@ -157,6 +167,48 @@
     return (nums.length ? Math.max(...nums) : 0) + 1;
   }
 
+  function hexRgb(hex){
+    const m=String(hex||'').match(/^#([0-9a-f]{6})$/i);
+    if(!m) return {r:0,g:0,b:0};
+    const n=parseInt(m[1],16);
+    return {r:(n>>16)&255,g:(n>>8)&255,b:n&255};
+  }
+
+  function colorDistance(a,b){
+    const A=hexRgb(a),B=hexRgb(b);
+    const dr=A.r-B.r,dg=A.g-B.g,db=A.b-B.b;
+    return Math.sqrt(dr*dr+dg*dg+db*db);
+  }
+
+  function readableText(hex){
+    const {r,g,b}=hexRgb(hex);
+    const lum=(0.299*r+0.587*g+0.114*b);
+    return lum>155 ? '#10202a' : '#ffffff';
+  }
+
+  function pickStepColor(attack,defense){
+    const palette=['#16a34a','#7c3aed','#f4c430','#0891b2','#d946ef','#111827','#ea580c','#0f766e'];
+    let best=palette[0],bestScore=-1;
+    palette.forEach(color=>{
+      const score=Math.min(colorDistance(color,attack),colorDistance(color,defense));
+      if(score>bestScore){bestScore=score;best=color;}
+    });
+    return best;
+  }
+
+  function applyBoardColors(){
+    state.colors.step=pickStepColor(state.colors.attack,state.colors.defense);
+    state.colors.stepText=readableText(state.colors.step);
+    const root=document.documentElement;
+    root.style.setProperty('--attack-color',state.colors.attack);
+    root.style.setProperty('--defense-color',state.colors.defense);
+    root.style.setProperty('--step-color',state.colors.step);
+    root.style.setProperty('--step-text',state.colors.stepText);
+    if(mobileAttackColor) mobileAttackColor.value=state.colors.attack;
+    if(mobileDefenseColor) mobileDefenseColor.value=state.colors.defense;
+    if(mobileStepColorSwatch) mobileStepColorSwatch.style.background=state.colors.step;
+  }
+
   function board(){ return state.boards[state.view]; }
 
   function pushUndo(){
@@ -169,6 +221,7 @@
     const disabled = undoStack.length === 0;
     undoBtn.disabled = disabled;
     if(mobileUndoBtn) mobileUndoBtn.disabled = disabled;
+    if(mobileQuickUndoBtn) mobileQuickUndoBtn.disabled = disabled;
   }
 
   function setView(mode){
@@ -573,8 +626,8 @@
     const style = document.createElementNS('http://www.w3.org/2000/svg','style');
     style.textContent = `
       .piece circle{stroke:#fff;stroke-width:6}.piece text{fill:#fff;font-family:Arial,sans-serif;font-size:38px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
-      .attack-piece circle{fill:#df1c31}.defense-piece circle{fill:#004f7c}.ball-piece circle{fill:#ff8a20;stroke:#fff3dd}.ball-piece path{fill:none;stroke:#8a4200;stroke-width:4}
-      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:6;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:5;stroke-dasharray:14 11;marker-end:url(#arrowWhite)}.draw-path.dribble{stroke:#ffd34f;stroke-width:5;marker-end:url(#arrowYellow)}.draw-path.screen,.screen-cap{stroke:#68dcff;stroke-width:6;fill:none;stroke-linecap:round}.step-marker circle{fill:#003753;stroke:#fff;stroke-width:5}.step-marker text{fill:#fff;font-family:Arial,sans-serif;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
+      .attack-piece circle{fill:${state.colors.attack}}.defense-piece circle{fill:${state.colors.defense}}.ball-piece circle{fill:#ff8a20;stroke:#fff3dd}.ball-piece path{fill:none;stroke:#8a4200;stroke-width:4}
+      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:5;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:4;stroke-dasharray:12 10;marker-end:url(#arrowWhite)}.draw-path.dribble{stroke:#ffd34f;stroke-width:4;marker-end:url(#arrowYellow)}.draw-path.screen,.screen-cap{stroke:#68dcff;stroke-width:5;fill:none;stroke-linecap:round}.step-marker circle{fill:${state.colors.step};stroke:#fff;stroke-width:4}.step-marker text{fill:${state.colors.stepText};font-family:Arial,sans-serif;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
     `;
     cloneSvg.insertBefore(style,cloneSvg.firstChild);
 
@@ -868,7 +921,8 @@
   });
   mobileOptionsClose?.addEventListener('click',closeMobileOptions);
 
-  mobileExitBtn?.addEventListener('click',exitToStatsBasket);
+  mobileQuickUndoBtn?.addEventListener('click',() => undoBtn.click());
+  mobileQuickResetBtn?.addEventListener('click',() => resetBtn.click());
   mobileExitMenuBtn?.addEventListener('click',exitToStatsBasket);
 
   mobileHalfCourtBtn?.addEventListener('click',async() => {
@@ -901,6 +955,18 @@
     save();
   });
   mobileExportBtn?.addEventListener('click',() => exportBtn.click());
+
+  mobileAttackColor?.addEventListener('input',() => {
+    state.colors.attack=mobileAttackColor.value;
+    applyBoardColors();
+    save();
+  });
+
+  mobileDefenseColor?.addEventListener('input',() => {
+    state.colors.defense=mobileDefenseColor.value;
+    applyBoardColors();
+    save();
+  });
 
   mobilePlayName?.addEventListener('input',() => {
     playName.value=mobilePlayName.value;
@@ -947,6 +1013,7 @@
 
   load();
   playName.value = state.playName;
+  applyBoardColors();
   setTool('move');
   setView(state.view);
   updateUndo();
