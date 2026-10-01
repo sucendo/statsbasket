@@ -1766,3 +1766,65 @@ body.mobile-board-mode .mobile-options-head>.mobile-drag-handle{
     font-size:.84rem;
   }
 }
+
+
+/* Panel lateral fijo integrado en la app */
+@media (orientation:landscape){
+  body.mobile-board-mode:not(.dock-floating) .mobile-side-dock{
+    top:0;
+    bottom:0;
+    left:0;
+    right:auto;
+    width:var(--mobile-dock-rail);
+    max-height:none;
+    height:100dvh;
+    padding:
+      calc(8px + env(safe-area-inset-top))
+      7px
+      calc(8px + env(safe-area-inset-bottom))
+      calc(7px + env(safe-area-inset-left));
+    border:0;
+    border-right:1px solid rgba(255,255,255,.11);
+    border-radius:0;
+    background:linear-gradient(180deg,rgba(0,35,54,.97),rgba(0,27,43,.97));
+    box-shadow:none;
+    transform:none;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-width:none;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .mobile-side-dock::-webkit-scrollbar{
+    display:none;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .mobile-dock-brand{
+    border-radius:0;
+    background:transparent;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    padding-bottom:5px;
+    margin-bottom:1px;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .mobile-side-dock .primary-tools .tool,
+  body.mobile-board-mode:not(.dock-floating) .mobile-side-dock .mobile-float-btn{
+    border-color:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.055);
+    border-radius:6px;
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .mobile-side-dock .primary-tools .tool.active{
+    background:rgba(0,79,124,.92);
+    border-color:rgba(255,255,255,.16);
+    box-shadow:inset 3px 0 0 var(--sb-orange);
+  }
+
+  body.mobile-board-mode:not(.dock-floating) .board-shell{
+    inset:0 0 0 var(--mobile-dock-rail);
+    width:auto;
+    height:100dvh;
+    border-left:0;
+  }
+}
