@@ -36,6 +36,13 @@
   const mobileClearBtn = document.getElementById('mobileClearBtn');
   const mobileResetStepsBtn = document.getElementById('mobileResetStepsBtn');
   const mobileExportBtn = document.getElementById('mobileExportBtn');
+  const mobileSavePlayBtn = document.getElementById('mobileSavePlayBtn');
+  const mobileImportPlayBtn = document.getElementById('mobileImportPlayBtn');
+  const mobileExportLibraryBtn = document.getElementById('mobileExportLibraryBtn');
+  const mobileImportLibraryBtn = document.getElementById('mobileImportLibraryBtn');
+  const mobileImportPlayInput = document.getElementById('mobileImportPlayInput');
+  const mobileImportLibraryInput = document.getElementById('mobileImportLibraryInput');
+  const playLibraryList = document.getElementById('playLibraryList');
   const mobileAttackColor = document.getElementById('mobileAttackColor');
   const mobileDefenseColor = document.getElementById('mobileDefenseColor');
   const mobileStepColorSwatch = document.getElementById('mobileStepColorSwatch');
@@ -50,6 +57,7 @@
   const mobileToast = document.getElementById('mobileToast');
 
   const STORAGE_KEY = 'statsbasket.pizarra.v2';
+  const LIBRARY_KEY = 'statsbasket.pizarra.library.v1';
   const MOBILE_POS_PREFIX = 'statsbasket.pizarra.mobile.pos.';
   const MOBILE_DOCK_FLOAT_KEY = 'statsbasket.pizarra.mobile.dockFloating';
   const isMobileBoard = /Android|iPhone|iPod|Mobile/i.test(navigator.userAgent) ||
@@ -156,7 +164,7 @@
     if(d.type === 'step'){
       return [d.x,d.y,d.n].every(v => Number.isFinite(Number(v)));
     }
-    if(['arrow','pass','dribble','shot'].includes(d.type) && Array.isArray(d.points) && d.points.length >= 2){
+    if(['arrow','pass','dribble','screen','shot'].includes(d.type) && Array.isArray(d.points) && d.points.length >= 2){
       return d.points.every(validPoint);
     }
     return [d.x1,d.y1,d.x2,d.y2].every(v => Number.isFinite(Number(v)));
@@ -180,7 +188,7 @@
     if(typeof d.pieceId === 'string') normalized.pieceId=d.pieceId;
     if(typeof d.fromId === 'string') normalized.fromId=d.fromId;
     if(typeof d.toId === 'string') normalized.toId=d.toId;
-    if(['arrow','pass','dribble','shot'].includes(type) && Array.isArray(d.points) && d.points.length >= 2){
+    if(['arrow','pass','dribble','screen','shot'].includes(type) && Array.isArray(d.points) && d.points.length >= 2){
       normalized.points=d.points.filter(validPoint).map(p=>({x:Number(p.x),y:Number(p.y)}));
       if(normalized.points.length >= 2){
         normalized.x1=normalized.points[0].x;
@@ -402,11 +410,14 @@
   }
 
   function screenCap(d){
-    const dx=d.x2-d.x1,dy=d.y2-d.y1,len=Math.hypot(dx,dy)||1;
+    const pts=drawingPoints(d);
+    const end=pts[pts.length-1] || {x:d.x2,y:d.y2};
+    const prev=pts[pts.length-2] || {x:d.x1,y:d.y1};
+    const dx=end.x-prev.x,dy=end.y-prev.y,len=Math.hypot(dx,dy)||1;
     const px=-dy/len,py=dx/len,half=22;
     return {
-      x1:d.x2+px*half,y1:d.y2+py*half,
-      x2:d.x2-px*half,y2:d.y2-py*half
+      x1:end.x+px*half,y1:end.y+py*half,
+      x2:end.x-px*half,y2:end.y-py*half
     };
   }
 
@@ -437,7 +448,7 @@
         g.dataset.phase=String(d.phase || 1);
       }
       const path=document.createElementNS(ns,'path');
-      path.setAttribute('d',`M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`);
+      path.setAttribute('d',smoothPath(drawingPoints(d)));
       path.setAttribute('class','draw-path screen');
       const cap=screenCap(d);
       const line=document.createElementNS(ns,'line');
@@ -465,7 +476,7 @@
     if(d.type === 'screen'){
       const path=el.querySelector('path');
       const line=el.querySelector('line');
-      path?.setAttribute('d',`M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`);
+      path?.setAttribute('d',smoothPath(drawingPoints(d)));
       const cap=screenCap(d);
       if(line){
         line.setAttribute('x1',cap.x1);line.setAttribute('y1',cap.y1);
@@ -611,7 +622,7 @@
       phase:currentPhase(),
       pieceId:['arrow','dribble','screen'].includes(state.tool) ? nearestPlayer(p) : null,
       fromId:['pass','shot'].includes(state.tool) ? nearestPlayer(p) : null,
-      points:['arrow','dribble','pass','shot'].includes(state.tool) ? [{x:p.x,y:p.y}] : null
+      points:['arrow','dribble','pass','screen','shot'].includes(state.tool) ? [{x:p.x,y:p.y}] : null
     };
     previewPath = drawingElement(interaction,true);
     drawingsLayer.appendChild(previewPath);
@@ -719,7 +730,6 @@
 
 
   function playbackPoints(d){
-    if(d.type==='screen') return [{x:d.x1,y:d.y1},{x:d.x2,y:d.y2}];
     return drawingPoints(d);
   }
 
