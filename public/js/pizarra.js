@@ -567,6 +567,21 @@
     }
 
     if(state.tool === 'step'){
+      const existingStep=evt.target.closest?.('.step-marker[data-drawing-id]');
+      if(existingStep){
+        evt.preventDefault();
+        const id=existingStep.dataset.drawingId;
+        const drawing=board().drawings.find(d=>d.id===id && d.type==='step');
+        if(drawing){
+          pushUndo();
+          const maxStep=Math.max(1,...board().drawings.filter(d=>d.type==='step').map(d=>Number(d.n)||1));
+          drawing.n = Number(drawing.n)>1 ? Number(drawing.n)-1 : maxStep;
+          renderDrawings();
+          save();
+        }
+        return;
+      }
+
       evt.preventDefault();
       const p=svgPoint(evt);
       pushUndo();
