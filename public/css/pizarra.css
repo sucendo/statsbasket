@@ -2239,3 +2239,81 @@ body.mobile-board-mode .dock-playback-status{
     border-color:#efd1d1;
   }
 }
+
+
+/* Biblioteca de jugadas */
+.play-library-section{
+  gap:7px;
+}
+.play-library-list{
+  display:grid;
+  gap:6px;
+  max-height:240px;
+  overflow:auto;
+  padding-right:2px;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+}
+.play-library-empty{
+  padding:10px 9px;
+  border:1px dashed rgba(255,255,255,.18);
+  border-radius:9px;
+  color:rgba(255,255,255,.58);
+  font-size:.62rem;
+  text-align:center;
+}
+.play-library-item{
+  display:grid;
+  gap:6px;
+  padding:7px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  background:rgba(255,255,255,.07);
+}
+.play-library-item-head{
+  min-width:0;
+  display:grid;
+  gap:2px;
+}
+.play-library-item-head strong{
+  overflow:hidden;
+  color:#fff;
+  font-size:.68rem;
+  line-height:1.15;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.play-library-item-head span{
+  color:rgba(255,255,255,.55);
+  font-size:.53rem;
+}
+.play-library-item-actions{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:4px;
+}
+.play-library-item-actions button{
+  min-width:0;
+  min-height:31px;
+  padding:4px 3px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:7px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:.52rem;
+  font-weight:750;
+  cursor:pointer;
+}
+.play-library-item-actions button:first-child{
+  background:rgba(0,79,124,.72);
+}
+.play-library-item-actions button.danger{
+  background:rgba(170,38,38,.3);
+  color:#ffd9d9;
+}
+
+@media (orientation:portrait) and (max-width:700px){
+  body.mobile-board-mode.view-half:not(.dock-floating) .play-library-list{
+    max-height:210px;
+  }
+}
