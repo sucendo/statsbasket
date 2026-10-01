@@ -218,13 +218,15 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
   <div class="mobile-dock-actions" id="mobileDockActions"></div>
 </div>
 
-<div class="mobile-app-controls mobile-draggable" id="mobileAppControls" aria-label="Controles de la aplicación">
-  <span class="mobile-drag-handle" data-drag-handle title="Mover controles" aria-hidden="true">•••</span>
+<div class="mobile-app-controls" id="mobileAppControls" aria-label="Acciones rápidas">
+  <button type="button" class="mobile-float-btn" id="mobileQuickUndoBtn" title="Deshacer">
+    <span aria-hidden="true">↶</span><span>Deshacer</span>
+  </button>
+  <button type="button" class="mobile-float-btn" id="mobileQuickResetBtn" title="Recolocar jugadores">
+    <span aria-hidden="true">↺</span><span>Recolocar</span>
+  </button>
   <button type="button" class="mobile-float-btn" id="mobileOptionsBtn" aria-expanded="false" aria-controls="mobileOptionsPanel">
     <span aria-hidden="true">☰</span><span>Opciones</span>
-  </button>
-  <button type="button" class="mobile-float-btn exit" id="mobileExitBtn">
-    <span aria-hidden="true">↩</span><span>Salir</span>
   </button>
 </div>
 
@@ -245,6 +247,18 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
     <div class="mobile-options-grid two">
       <button type="button" id="mobileHalfCourtBtn">Media pista</button>
       <button type="button" id="mobileFullCourtBtn">Pista completa</button>
+    </div>
+  </div>
+
+  <div class="mobile-options-section">
+    <span class="mobile-options-label">Colores de equipos</span>
+    <div class="mobile-color-grid">
+      <label><span>Ataque</span><input type="color" id="mobileAttackColor" value="#df1c31"></label>
+      <label><span>Defensa</span><input type="color" id="mobileDefenseColor" value="#004f7c"></label>
+    </div>
+    <div class="mobile-step-color-note">
+      <span class="mobile-step-color-swatch" id="mobileStepColorSwatch"></span>
+      <span>Los pasos usan un color automático distinto de ambos equipos.</span>
     </div>
   </div>
 
