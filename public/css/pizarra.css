@@ -361,6 +361,21 @@ button{touch-action:manipulation}
   .board-page{padding-top:8px}
   .toolbar{position:relative}
   .legend{min-height:34px;padding:5px 2px}
-  .tactical-board{max-height:calc(100vh - 180px)}
+  .board-shell{padding-top:6px;padding-bottom:6px}
+  .board-scroll{overflow-x:auto;overflow-y:visible}
+  /*
+   * No limitar la altura del SVG en horizontal.
+   * Si se fuerza max-height manteniendo width:100%, el viewport SVG queda
+   * panorámico pero el viewBox conserva 1400/750 y el dibujo aparece
+   * encogido en el centro con grandes bandas laterales.
+   */
+  .tactical-board{
+    width:100%;
+    height:auto;
+    max-height:none;
+  }
+  .tactical-board.full-court{
+    min-width:760px;
+  }
   .board-help{display:none}
 }
