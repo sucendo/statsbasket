@@ -61,8 +61,17 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
       <button type="button" class="tool" data-tool="arrow" aria-pressed="false">
         <span class="tool-icon">➜</span><span>Movimiento</span>
       </button>
+      <button type="button" class="tool" data-tool="dribble" aria-pressed="false">
+        <span class="tool-icon">〰</span><span>Bote</span>
+      </button>
       <button type="button" class="tool" data-tool="pass" aria-pressed="false">
         <span class="tool-icon">⇢</span><span>Pase</span>
+      </button>
+      <button type="button" class="tool" data-tool="screen" aria-pressed="false">
+        <span class="tool-icon">⊣</span><span>Bloqueo</span>
+      </button>
+      <button type="button" class="tool" data-tool="step" aria-pressed="false">
+        <span class="tool-icon">①</span><span>Paso</span>
       </button>
       <button type="button" class="tool" data-tool="erase" aria-pressed="false">
         <span class="tool-icon">⌦</span><span>Borrador</span>
@@ -111,6 +120,9 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
           </marker>
           <marker id="arrowWhite" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
             <path d="M0,0 L12,6 L0,12 z" fill="#ffffff"></path>
+          </marker>
+          <marker id="arrowYellow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L12,6 L0,12 z" fill="#ffd34f"></path>
           </marker>
           <filter id="pieceShadow" x="-30%" y="-30%" width="160%" height="160%">
             <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#002a42" flood-opacity=".28"></feDropShadow>
@@ -196,6 +208,16 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
   </section>
 </main>
 
+<div class="mobile-side-dock mobile-draggable" id="mobileSideDock" aria-label="Herramientas de pizarra">
+  <span class="mobile-drag-handle mobile-dock-handle" data-drag-handle title="Mover panel" aria-hidden="true">•••</span>
+  <a class="mobile-dock-brand" href="./" aria-label="StatsBasket">
+    <img src="public/favicon/android-icon-192x192.png" alt="">
+    <span>Stats<span>Basket</span></span>
+  </a>
+  <div class="mobile-dock-tools" id="mobileDockTools"></div>
+  <div class="mobile-dock-actions" id="mobileDockActions"></div>
+</div>
+
 <div class="mobile-app-controls mobile-draggable" id="mobileAppControls" aria-label="Controles de la aplicación">
   <span class="mobile-drag-handle" data-drag-handle title="Mover controles" aria-hidden="true">•••</span>
   <button type="button" class="mobile-float-btn" id="mobileOptionsBtn" aria-expanded="false" aria-controls="mobileOptionsPanel">
@@ -232,6 +254,7 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
       <button type="button" id="mobileUndoBtn">↶ Deshacer</button>
       <button type="button" id="mobileResetBtn">↺ Recolocar</button>
       <button type="button" id="mobileClearBtn">⌫ Borrar</button>
+      <button type="button" id="mobileResetStepsBtn">① Reiniciar pasos</button>
       <button type="button" class="accent" id="mobileExportBtn">Guardar PNG</button>
     </div>
   </div>
