@@ -94,6 +94,35 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
     </div>
   </section>
 
+  <section class="desktop-play-management" id="desktopPlayManagement" aria-label="Representación y biblioteca de jugadas">
+    <div class="desktop-playback-card">
+      <div class="desktop-playback-controls">
+        <button type="button" class="desktop-play-btn play" id="desktopPlayBtn">▶ Representar</button>
+        <button type="button" class="desktop-play-btn" id="desktopPauseBtn" disabled>Ⅱ Pausa</button>
+        <button type="button" class="desktop-play-btn stop" id="desktopStopBtn" disabled>■ Stop</button>
+        <span class="desktop-playback-status" id="desktopPlaybackStatus">Lista para representar.</span>
+      </div>
+
+      <div class="desktop-extra-controls">
+        <label>Ataque <input type="color" id="desktopAttackColor" value="#df1c31"></label>
+        <label>Defensa <input type="color" id="desktopDefenseColor" value="#004f7c"></label>
+        <button type="button" id="desktopClearStepsBtn">① Borrar pasos</button>
+      </div>
+    </div>
+
+    <details class="desktop-library-card">
+      <summary>Biblioteca de jugadas</summary>
+      <div class="desktop-library-actions">
+        <button type="button" class="primary" id="desktopSavePlayBtn">＋ Guardar jugada</button>
+        <button type="button" id="desktopExportPlayBtn">⇧ Exportar actual</button>
+        <button type="button" id="desktopImportPlayBtn">⇩ Importar JSON</button>
+        <button type="button" id="desktopExportLibraryBtn">⇧ Exportar biblioteca</button>
+        <button type="button" id="desktopImportLibraryBtn">⇩ Importar biblioteca</button>
+      </div>
+      <div class="play-library-list desktop-play-library-list" id="desktopPlayLibraryList" aria-live="polite"></div>
+    </details>
+  </section>
+
   <section class="legend" aria-label="Leyenda">
     <span><i class="dot attack"></i>Ataque</span>
     <span><i class="dot defense"></i>Defensa</span>
