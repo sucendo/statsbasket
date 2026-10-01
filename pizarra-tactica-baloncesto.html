@@ -30,6 +30,16 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
   </div>
 </header>
 
+<div class="mobile-launch" id="mobileLaunch" aria-hidden="true">
+  <div class="mobile-launch-card">
+    <div class="mobile-launch-ball" aria-hidden="true">🏀</div>
+    <strong>Pizarra táctica</strong>
+    <span>Se abrirá a pantalla completa en horizontal.</span>
+    <button type="button" id="mobileLaunchBtn">Abrir pizarra</button>
+    <a href="./">Volver a StatsBasket</a>
+  </div>
+</div>
+
 <main class="board-page">
   <section class="board-intro" aria-labelledby="board-title">
     <div>
@@ -43,7 +53,8 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
   </section>
 
   <section class="toolbar" aria-label="Herramientas de pizarra">
-    <div class="tool-group primary-tools" role="group" aria-label="Herramienta activa">
+    <div class="tool-group primary-tools mobile-draggable" id="primaryTools" role="group" aria-label="Herramienta activa">
+      <span class="mobile-drag-handle" data-drag-handle title="Mover controles" aria-hidden="true">•••</span>
       <button type="button" class="tool active" data-tool="move" aria-pressed="true">
         <span class="tool-icon">✥</span><span>Mover</span>
       </button>
@@ -184,6 +195,59 @@ ga('create','UA-88735130-1','auto');ga('send','pageview');
     <div><strong>3.</strong> La jugada se guarda automáticamente en este dispositivo.</div>
   </section>
 </main>
+
+<div class="mobile-app-controls mobile-draggable" id="mobileAppControls" aria-label="Controles de la aplicación">
+  <span class="mobile-drag-handle" data-drag-handle title="Mover controles" aria-hidden="true">•••</span>
+  <button type="button" class="mobile-float-btn" id="mobileOptionsBtn" aria-expanded="false" aria-controls="mobileOptionsPanel">
+    <span aria-hidden="true">☰</span><span>Opciones</span>
+  </button>
+  <button type="button" class="mobile-float-btn exit" id="mobileExitBtn">
+    <span aria-hidden="true">↩</span><span>Salir</span>
+  </button>
+</div>
+
+<aside class="mobile-options-panel mobile-draggable" id="mobileOptionsPanel" aria-hidden="true" aria-label="Opciones de pizarra">
+  <div class="mobile-options-head">
+    <span class="mobile-drag-handle" data-drag-handle title="Mover opciones" aria-hidden="true">•••</span>
+    <strong>Opciones</strong>
+    <button type="button" id="mobileOptionsClose" aria-label="Cerrar opciones">×</button>
+  </div>
+
+  <label class="mobile-play-name">
+    <span>Nombre de la jugada</span>
+    <input id="mobilePlayName" type="text" maxlength="60" placeholder="Ej. Saque de fondo 1">
+  </label>
+
+  <div class="mobile-options-section">
+    <span class="mobile-options-label">Vista</span>
+    <div class="mobile-options-grid two">
+      <button type="button" id="mobileHalfCourtBtn">Media pista</button>
+      <button type="button" id="mobileFullCourtBtn">Pista completa</button>
+    </div>
+  </div>
+
+  <div class="mobile-options-section">
+    <span class="mobile-options-label">Jugada</span>
+    <div class="mobile-options-grid">
+      <button type="button" id="mobileUndoBtn">↶ Deshacer</button>
+      <button type="button" id="mobileResetBtn">↺ Recolocar</button>
+      <button type="button" id="mobileClearBtn">⌫ Borrar</button>
+      <button type="button" class="accent" id="mobileExportBtn">Guardar PNG</button>
+    </div>
+  </div>
+
+  <div class="mobile-options-section">
+    <span class="mobile-options-label">Pantalla</span>
+    <div class="mobile-options-grid two">
+      <button type="button" id="mobileFullscreenBtn">⛶ Pantalla completa</button>
+      <button type="button" id="mobileResetControlsBtn">↺ Restablecer controles</button>
+    </div>
+  </div>
+
+  <button type="button" class="mobile-options-exit" id="mobileExitMenuBtn">Salir a StatsBasket</button>
+</aside>
+
+<div class="mobile-toast" id="mobileToast" role="status" aria-live="polite"></div>
 
 <script src="public/js/pizarra.js"></script>
 </body>
