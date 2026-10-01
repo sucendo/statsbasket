@@ -37,6 +37,7 @@
   const mobileResetStepsBtn = document.getElementById('mobileResetStepsBtn');
   const mobileExportBtn = document.getElementById('mobileExportBtn');
   const mobileSavePlayBtn = document.getElementById('mobileSavePlayBtn');
+  const mobileExportPlayBtn = document.getElementById('mobileExportPlayBtn');
   const mobileImportPlayBtn = document.getElementById('mobileImportPlayBtn');
   const mobileExportLibraryBtn = document.getElementById('mobileExportLibraryBtn');
   const mobileImportLibraryBtn = document.getElementById('mobileImportLibraryBtn');
@@ -199,6 +200,316 @@
       }
     }
     return normalized;
+  }
+
+
+  function normalizePlayData(raw){
+    const src=(raw && raw.play && typeof raw.play==='object') ? raw.play : raw;
+    if(!src || typeof src!=='object') throw new Error('Formato de jugada no válido');
+
+    const result={
+      version:1,
+      view:(src.view==='full' ? 'full' : 'half'),
+      playName:String(src.playName || src.name || '').slice(0,60),
+      colors:{
+        attack:/^#[0-9a-f]{6}$/i.test(src.colors?.attack || '') ? src.colors.attack : '#df1c31',
+        defense:/^#[0-9a-f]{6}$/i.test(src.colors?.defense || '') ? src.colors.defense : '#004f7c'
+      },
+      boards:{half:freshBoard('half'),full:freshBoard('full')}
+    };
+
+    ['half','full'].forEach(mode=>{
+      const source=src.boards?.[mode];
+      if(!source) return;
+      const next=freshBoard(mode);
+
+      Object.keys(next.pieces).forEach(id=>{
+        const p=source.pieces?.[id];
+        if(Number.isFinite(Number(p?.x)) && Number.isFinite(Number(p?.y))){
+          next.pieces[id]={x:Number(p.x),y:Number(p.y)};
+        }
+      });
+
+      next.drawings=[];
+      if(Array.isArray(source.drawings)){
+        let inferredPhase=1;
+        source.drawings.filter(validDrawing).forEach(rawDrawing=>{
+          const d=normalizeDrawing(rawDrawing);
+          if(d.type==='step'){
+            inferredPhase=Math.max(1,Number(d.n)||inferredPhase);
+          }else if(!Number.isFinite(Number(rawDrawing.phase))){
+            d.phase=inferredPhase;
+          }
+          next.drawings.push(d);
+        });
+      }
+
+      result.boards[mode]=next;
+    });
+
+    return result;
+  }
+
+  function currentPlayData(){
+    state.playName=playName.value.trim();
+    return {
+      version:1,
+      view:state.view,
+      playName:state.playName,
+      colors:{attack:state.colors.attack,defense:state.colors.defense},
+      boards:clone(state.boards)
+    };
+  }
+
+  function applyPlayData(raw,{orient=true}={}){
+    const play=normalizePlayData(raw);
+    if(playback.running) stopPlayback(true);
+
+    state.boards=clone(play.boards);
+    state.playName=play.playName;
+    state.colors.attack=play.colors.attack;
+    state.colors.defense=play.colors.defense;
+
+    playName.value=state.playName;
+    if(mobilePlayName) mobilePlayName.value=state.playName;
+
+    applyBoardColors();
+    undoStack=[];
+    setView(play.view);
+    updateUndo();
+    render();
+    save();
+
+    if(isMobileBoard && orient){
+      enterMobilePresentation(play.view,{ensureFullscreen:false});
+    }
+    return play;
+  }
+
+  function makeLibraryId(){
+    try{
+      if(crypto?.randomUUID) return crypto.randomUUID();
+    }catch(_){}
+    return 'play-'+Date.now()+'-'+Math.random().toString(36).slice(2,9);
+  }
+
+  function readPlayLibrary(){
+    try{
+      const parsed=JSON.parse(localStorage.getItem(LIBRARY_KEY) || '[]');
+      return Array.isArray(parsed) ? parsed.filter(entry=>entry && typeof entry==='object' && entry.play) : [];
+    }catch(_){
+      return [];
+    }
+  }
+
+  function writePlayLibrary(entries){
+    try{
+      localStorage.setItem(LIBRARY_KEY,JSON.stringify(entries));
+      return true;
+    }catch(_){
+      showMobileToast('No se ha podido guardar la biblioteca en este dispositivo.');
+      return false;
+    }
+  }
+
+  function safeFileName(value,fallback='jugada'){
+    const text=String(value || fallback)
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+      .replace(/[^a-z0-9_-]+/gi,'-')
+      .replace(/^-+|-+$/g,'');
+    return text || fallback;
+  }
+
+  function downloadJson(data,fileName){
+    const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download=fileName;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1200);
+  }
+
+  function formatLibraryDate(value){
+    const date=new Date(value);
+    if(Number.isNaN(date.getTime())) return '';
+    try{
+      return new Intl.DateTimeFormat('es-ES',{
+        day:'2-digit',month:'2-digit',year:'2-digit',
+        hour:'2-digit',minute:'2-digit'
+      }).format(date);
+    }catch(_){
+      return date.toLocaleString();
+    }
+  }
+
+  function renderPlayLibrary(){
+    if(!playLibraryList) return;
+    playLibraryList.replaceChildren();
+
+    const entries=readPlayLibrary().sort((a,b)=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')));
+    if(!entries.length){
+      const empty=document.createElement('div');
+      empty.className='play-library-empty';
+      empty.textContent='Todavía no hay jugadas guardadas.';
+      playLibraryList.appendChild(empty);
+      return;
+    }
+
+    entries.forEach(entry=>{
+      let play;
+      try{ play=normalizePlayData(entry.play); }catch(_){ return; }
+
+      const item=document.createElement('article');
+      item.className='play-library-item';
+      item.dataset.libraryId=entry.id;
+
+      const head=document.createElement('div');
+      head.className='play-library-item-head';
+
+      const title=document.createElement('strong');
+      title.textContent=entry.name || play.playName || 'Jugada sin nombre';
+
+      const meta=document.createElement('span');
+      meta.textContent=(play.view==='full' ? 'Pista completa' : 'Media pista')+
+        (entry.updatedAt ? ' · '+formatLibraryDate(entry.updatedAt) : '');
+
+      head.append(title,meta);
+
+      const actions=document.createElement('div');
+      actions.className='play-library-item-actions';
+
+      [
+        ['load','Cargar'],
+        ['duplicate','Duplicar'],
+        ['export','Exportar'],
+        ['delete','Eliminar']
+      ].forEach(([action,label])=>{
+        const button=document.createElement('button');
+        button.type='button';
+        button.dataset.libraryAction=action;
+        button.dataset.libraryId=entry.id;
+        button.textContent=label;
+        if(action==='delete') button.classList.add('danger');
+        actions.appendChild(button);
+      });
+
+      item.append(head,actions);
+      playLibraryList.appendChild(item);
+    });
+  }
+
+  function saveCurrentToLibrary(){
+    save();
+    const entries=readPlayLibrary();
+    let name=playName.value.trim();
+
+    if(!name){
+      name='Jugada '+(entries.length+1);
+      playName.value=name;
+      if(mobilePlayName) mobilePlayName.value=name;
+      save();
+    }
+
+    const existing=entries.find(entry=>String(entry.name||'').trim().toLowerCase()===name.toLowerCase());
+    const now=new Date().toISOString();
+    const entry={
+      id:existing?.id || makeLibraryId(),
+      name,
+      createdAt:existing?.createdAt || now,
+      updatedAt:now,
+      play:currentPlayData()
+    };
+
+    const next=existing
+      ? entries.map(item=>item.id===existing.id ? entry : item)
+      : [entry,...entries];
+
+    if(writePlayLibrary(next)){
+      renderPlayLibrary();
+      showMobileToast(existing ? 'Jugada actualizada en la biblioteca.' : 'Jugada guardada en la biblioteca.');
+    }
+  }
+
+  function exportCurrentPlay(){
+    const play=currentPlayData();
+    const name=play.playName || 'jugada-statsbasket';
+    downloadJson({
+      format:'statsbasket-play',
+      version:1,
+      exportedAt:new Date().toISOString(),
+      play
+    },safeFileName(name,'jugada-statsbasket')+'.json');
+  }
+
+  async function importPlayFile(file){
+    const text=await file.text();
+    const parsed=JSON.parse(text);
+    const play=normalizePlayData(parsed);
+
+    applyPlayData(play);
+
+    const entries=readPlayLibrary();
+    const now=new Date().toISOString();
+    const name=play.playName || file.name.replace(/\.json$/i,'') || 'Jugada importada';
+    play.playName=name;
+
+    const entry={
+      id:makeLibraryId(),
+      name,
+      createdAt:now,
+      updatedAt:now,
+      play
+    };
+
+    writePlayLibrary([entry,...entries]);
+    renderPlayLibrary();
+    showMobileToast('Jugada importada y cargada.');
+  }
+
+  function exportLibrary(){
+    const entries=readPlayLibrary();
+    if(!entries.length){
+      showMobileToast('No hay jugadas guardadas para exportar.');
+      return;
+    }
+    downloadJson({
+      format:'statsbasket-play-library',
+      version:1,
+      exportedAt:new Date().toISOString(),
+      entries
+    },'statsbasket-biblioteca-jugadas.json');
+  }
+
+  async function importLibraryFile(file){
+    const text=await file.text();
+    const parsed=JSON.parse(text);
+    const sourceEntries=Array.isArray(parsed) ? parsed : parsed?.entries;
+    if(!Array.isArray(sourceEntries)) throw new Error('Formato de biblioteca no válido');
+
+    const current=readPlayLibrary();
+    const imported=[];
+
+    sourceEntries.forEach(source=>{
+      try{
+        const play=normalizePlayData(source.play || source);
+        const now=new Date().toISOString();
+        imported.push({
+          id:makeLibraryId(),
+          name:String(source.name || play.playName || 'Jugada importada').slice(0,60),
+          createdAt:source.createdAt || now,
+          updatedAt:source.updatedAt || now,
+          play
+        });
+      }catch(_){}
+    });
+
+    if(!imported.length) throw new Error('No se han encontrado jugadas válidas');
+    writePlayLibrary([...imported,...current]);
+    renderPlayLibrary();
+    showMobileToast(imported.length+' jugada'+(imported.length===1?' importada.':'s importadas.'));
   }
 
   function nextStepNumber(){
@@ -1449,6 +1760,99 @@
   mobilePauseBtn?.addEventListener('click',togglePlaybackPause);
   mobileStopBtn?.addEventListener('click',() => stopPlayback(true));
 
+
+  mobileSavePlayBtn?.addEventListener('click',saveCurrentToLibrary);
+  mobileExportPlayBtn?.addEventListener('click',exportCurrentPlay);
+  mobileImportPlayBtn?.addEventListener('click',()=>mobileImportPlayInput?.click());
+  mobileExportLibraryBtn?.addEventListener('click',exportLibrary);
+  mobileImportLibraryBtn?.addEventListener('click',()=>mobileImportLibraryInput?.click());
+
+  mobileImportPlayInput?.addEventListener('change',async()=>{
+    const file=mobileImportPlayInput.files?.[0];
+    mobileImportPlayInput.value='';
+    if(!file) return;
+    try{
+      await importPlayFile(file);
+      closeMobileOptions();
+    }catch(_){
+      showMobileToast('El archivo no contiene una jugada válida de StatsBasket.');
+    }
+  });
+
+  mobileImportLibraryInput?.addEventListener('change',async()=>{
+    const file=mobileImportLibraryInput.files?.[0];
+    mobileImportLibraryInput.value='';
+    if(!file) return;
+    try{
+      await importLibraryFile(file);
+    }catch(_){
+      showMobileToast('No se ha podido importar esa biblioteca.');
+    }
+  });
+
+  playLibraryList?.addEventListener('click',evt=>{
+    const button=evt.target.closest?.('[data-library-action]');
+    if(!button) return;
+
+    const entries=readPlayLibrary();
+    const entry=entries.find(item=>item.id===button.dataset.libraryId);
+    if(!entry) return;
+
+    const action=button.dataset.libraryAction;
+
+    if(action==='load'){
+      try{
+        applyPlayData(entry.play);
+        closeMobileOptions();
+        showMobileToast('Jugada cargada: '+entry.name);
+      }catch(_){
+        showMobileToast('No se ha podido cargar esa jugada.');
+      }
+      return;
+    }
+
+    if(action==='duplicate'){
+      try{
+        const play=normalizePlayData(entry.play);
+        const name=(entry.name || play.playName || 'Jugada')+' (copia)';
+        play.playName=name;
+        const now=new Date().toISOString();
+        const duplicate={
+          id:makeLibraryId(),
+          name,
+          createdAt:now,
+          updatedAt:now,
+          play
+        };
+        writePlayLibrary([duplicate,...entries]);
+        renderPlayLibrary();
+        showMobileToast('Jugada duplicada.');
+      }catch(_){}
+      return;
+    }
+
+    if(action==='export'){
+      try{
+        const play=normalizePlayData(entry.play);
+        downloadJson({
+          format:'statsbasket-play',
+          version:1,
+          exportedAt:new Date().toISOString(),
+          play
+        },safeFileName(entry.name || play.playName,'jugada-statsbasket')+'.json');
+      }catch(_){}
+      return;
+    }
+
+    if(action==='delete'){
+      const ok=window.confirm('¿Eliminar la jugada "'+(entry.name || 'sin nombre')+'"?');
+      if(!ok) return;
+      writePlayLibrary(entries.filter(item=>item.id!==entry.id));
+      renderPlayLibrary();
+      showMobileToast('Jugada eliminada.');
+    }
+  });
+
   mobileAttackColor?.addEventListener('input',() => {
     state.colors.attack=mobileAttackColor.value;
     applyBoardColors();
@@ -1513,5 +1917,6 @@
   setView(state.view);
   updateUndo();
   updatePlaybackControls();
+  renderPlayLibrary();
   setupMobileBoard();
 })();
