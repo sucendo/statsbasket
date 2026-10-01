@@ -2,6 +2,8 @@
   'use strict';
 
   const svg = document.getElementById('tacticalBoard');
+  const boardPage = document.querySelector('.board-page');
+  const boardLegend = document.querySelector('.legend');
   const drawingsLayer = document.getElementById('drawings');
   const playName = document.getElementById('playName');
   const undoBtn = document.getElementById('undoBtn');
@@ -302,6 +304,7 @@
     fullBtn.setAttribute('aria-pressed',mode === 'full' ? 'true':'false');
     document.body.classList.toggle('view-half',mode === 'half');
     document.body.classList.toggle('view-full',mode === 'full');
+    if(isMobileBoard) placeMobileDock();
     syncMobileViewButtons();
     render();
     save();
@@ -1138,17 +1141,37 @@
     try{return localStorage.getItem(MOBILE_DOCK_FLOAT_KEY)==='1';}catch(_){return false;}
   }
 
+  function placeMobileDock(){
+    if(!isMobileBoard || !mobileSideDock) return;
+    const integratedHalf=state.view==='half' && !document.body.classList.contains('dock-floating');
+
+    if(integratedHalf && boardPage && boardLegend){
+      if(mobileSideDock.parentElement!==boardPage || mobileSideDock.nextElementSibling!==boardLegend){
+        boardPage.insertBefore(mobileSideDock,boardLegend);
+      }
+      mobileSideDock.classList.add('half-integrated');
+    }else{
+      if(mobileSideDock.parentElement!==document.body){
+        document.body.insertBefore(mobileSideDock,mobileOptionsPanel || mobileToast || null);
+      }
+      mobileSideDock.classList.remove('half-integrated');
+    }
+  }
+
   function applyDockMode(floating=dockIsFloating()){
     document.body.classList.toggle('dock-floating',!!floating);
     if(mobileDockModeBtn) mobileDockModeBtn.textContent=floating ? '▥ Acoplar panel' : '▣ Panel flotante';
     if(!mobileSideDock) return;
-    if(!floating){
-      mobileSideDock.style.removeProperty('left');
-      mobileSideDock.style.removeProperty('top');
-      mobileSideDock.style.removeProperty('right');
-      mobileSideDock.style.removeProperty('bottom');
-      mobileSideDock.style.removeProperty('transform');
-    }else{
+
+    mobileSideDock.style.removeProperty('left');
+    mobileSideDock.style.removeProperty('top');
+    mobileSideDock.style.removeProperty('right');
+    mobileSideDock.style.removeProperty('bottom');
+    mobileSideDock.style.removeProperty('transform');
+
+    placeMobileDock();
+
+    if(floating){
       restoreDraggable(mobileSideDock);
     }
   }
@@ -1203,6 +1226,7 @@
     if(mobilePlayName) mobilePlayName.value=playName.value;
     syncMobileViewButtons();
     applyDockMode();
+    placeMobileDock();
 
     const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     if(document.fullscreenElement || standalone){
@@ -1318,6 +1342,7 @@
     if(!isMobileBoard) return;
     clearTimeout(resizeTimer);
     resizeTimer=setTimeout(() => {
+      placeMobileDock();
       if(document.body.classList.contains('dock-floating')) restoreDraggable(mobileSideDock);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
     },180);
@@ -1326,6 +1351,7 @@
   window.addEventListener('orientationchange',() => {
     if(!isMobileBoard) return;
     setTimeout(() => {
+      placeMobileDock();
       if(document.body.classList.contains('dock-floating')) restoreDraggable(mobileSideDock);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
     },260);
