@@ -379,3 +379,420 @@ button{touch-action:manipulation}
   }
   .board-help{display:none}
 }
+
+
+/* =========================================================
+   Experiencia móvil tipo app
+   Mantiene la interfaz de escritorio y reorganiza los controles
+   en pantallas pequeñas o móviles en horizontal.
+   ========================================================= */
+@media (max-width:900px), (orientation:landscape) and (max-height:620px){
+  html{
+    background:#eef2f3;
+  }
+
+  body{
+    min-height:100dvh;
+    padding-bottom:calc(82px + env(safe-area-inset-bottom));
+    background:#eef2f3;
+    overscroll-behavior-y:contain;
+  }
+
+  .sb-header{
+    position:sticky;
+    top:0;
+    z-index:80;
+    border-bottom:0;
+    box-shadow:0 2px 14px rgba(0,42,66,.18);
+    padding-top:env(safe-area-inset-top);
+  }
+
+  .sb-header-inner{
+    width:100%;
+    min-height:54px;
+    padding:8px 12px;
+    gap:10px;
+  }
+
+  .brand{
+    font-size:1.25rem;
+    letter-spacing:-.5px;
+  }
+
+  .sb-header p{
+    margin-top:2px;
+    font-size:.68rem;
+    line-height:1.1;
+    opacity:.9;
+  }
+
+  .back-link{
+    flex:0 0 auto;
+    min-height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.32);
+    border-radius:999px;
+    padding:7px 11px;
+    font-size:.72rem;
+    background:rgba(255,255,255,.08);
+  }
+
+  .board-page{
+    width:100%;
+    margin:0;
+    padding:10px 0 8px;
+  }
+
+  .board-intro{
+    margin:0 10px 8px;
+    padding:10px 12px;
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 3px 14px rgba(0,79,124,.07);
+    gap:10px;
+  }
+
+  .board-intro h1{
+    margin:0;
+    font-size:1.05rem;
+  }
+
+  .board-intro p{
+    display:none;
+  }
+
+  .play-name{
+    min-width:0;
+    flex:1 1 220px;
+    gap:3px;
+    font-size:.58rem;
+  }
+
+  .play-name input{
+    min-height:38px;
+    padding:7px 10px;
+    border-radius:10px;
+    background:#f7f9f9;
+    border-color:#d8e0de;
+    font-size:.82rem;
+  }
+
+  .toolbar{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:7px;
+    margin:0 10px 8px;
+    padding:0;
+    border:0;
+    background:transparent;
+  }
+
+  .toolbar>.tool-group{
+    flex:none;
+  }
+
+  .view-tools,
+  .secondary-actions{
+    display:grid;
+    gap:6px;
+    padding:6px;
+    background:#fff;
+    border:1px solid #dbe3e1;
+    border-radius:14px;
+    box-shadow:0 3px 14px rgba(0,79,124,.06);
+  }
+
+  .view-tools{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .secondary-actions{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .view-tools .action,
+  .secondary-actions .action{
+    min-width:0;
+    min-height:40px;
+    border:0;
+    border-radius:10px;
+    padding:7px 5px;
+    background:#f2f6f6;
+    font-size:.68rem;
+    line-height:1.05;
+  }
+
+  .view-tools .active-view{
+    background:#e5f0f5;
+    color:var(--sb-blue);
+    box-shadow:inset 0 -3px 0 var(--sb-orange);
+  }
+
+  .secondary-actions .primary{
+    background:var(--sb-orange);
+    color:#fff;
+  }
+
+  /* Barra principal inferior, similar a una app nativa. */
+  .primary-tools{
+    position:fixed;
+    left:8px;
+    right:8px;
+    bottom:calc(7px + env(safe-area-inset-bottom));
+    z-index:100;
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:4px;
+    padding:6px;
+    border:1px solid rgba(0,79,124,.14);
+    border-radius:18px;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 10px 30px rgba(0,42,66,.22);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+  }
+
+  .primary-tools .tool{
+    min-width:0;
+    min-height:58px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:2px;
+    padding:5px 3px;
+    border:0;
+    border-radius:13px;
+    background:transparent;
+    font-size:.66rem;
+    line-height:1;
+  }
+
+  .primary-tools .tool-icon{
+    font-size:1.22rem;
+    line-height:1;
+  }
+
+  .primary-tools .tool.active{
+    background:var(--sb-blue);
+    color:#fff;
+    box-shadow:0 4px 12px rgba(0,79,124,.24);
+  }
+
+  .legend{
+    min-height:34px;
+    margin:0 10px 7px;
+    padding:0;
+    display:block;
+  }
+
+  .legend>span:not(.hint){
+    display:none;
+  }
+
+  .legend .hint{
+    width:100%;
+    min-height:34px;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:6px 10px;
+    border-radius:999px;
+    background:#dfecef;
+    color:var(--sb-blue);
+    font-size:.68rem;
+    text-align:center;
+  }
+
+  .board-shell{
+    margin:0 8px;
+    padding:5px;
+    border:0;
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 5px 22px rgba(0,42,66,.13);
+    overflow:hidden;
+  }
+
+  .board-scroll{
+    border-radius:11px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .board-scroll::-webkit-scrollbar{
+    display:none;
+  }
+
+  .tactical-board{
+    max-height:none;
+  }
+
+  .board-help{
+    display:none;
+  }
+}
+
+/* Móvil en vertical: pista a borde casi completo y controles compactos. */
+@media (max-width:620px) and (orientation:portrait){
+  .sb-header-inner{
+    min-height:52px;
+    align-items:center;
+    padding:7px 10px;
+  }
+
+  .sb-header p{
+    display:none;
+  }
+
+  .back-link{
+    font-size:0;
+    width:38px;
+    height:38px;
+    padding:0;
+  }
+
+  .back-link::before{
+    content:"←";
+    font-size:1.05rem;
+  }
+
+  .board-intro{
+    align-items:center;
+    flex-direction:row;
+  }
+
+  .board-intro>div{
+    flex:0 0 auto;
+  }
+
+  .play-name span{
+    display:none;
+  }
+
+  .toolbar,
+  .legend{
+    margin-left:8px;
+    margin-right:8px;
+  }
+
+  .secondary-actions{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .secondary-actions .action span{
+    display:none;
+  }
+
+  .board-shell{
+    margin-left:4px;
+    margin-right:4px;
+    border-radius:12px;
+  }
+
+  .tactical-board.full-court{
+    min-width:700px;
+  }
+}
+
+/* Móvil horizontal: máxima superficie útil para la pista. */
+@media (orientation:landscape) and (max-height:620px){
+  body{
+    padding-bottom:calc(74px + env(safe-area-inset-bottom));
+  }
+
+  .sb-header-inner{
+    min-height:46px;
+    padding:5px 10px;
+  }
+
+  .brand{
+    font-size:1.1rem;
+  }
+
+  .sb-header p{
+    display:none;
+  }
+
+  .back-link{
+    min-height:34px;
+    padding:5px 9px;
+  }
+
+  .board-page{
+    padding-top:6px;
+  }
+
+  .board-intro{
+    display:none;
+  }
+
+  .toolbar{
+    grid-template-columns:minmax(180px,.75fr) minmax(360px,1.5fr);
+    align-items:center;
+    gap:6px;
+    margin:0 8px 5px;
+  }
+
+  .view-tools,
+  .secondary-actions{
+    padding:4px;
+    border-radius:11px;
+  }
+
+  .view-tools .action,
+  .secondary-actions .action{
+    min-height:34px;
+    padding:5px 4px;
+    font-size:.64rem;
+  }
+
+  .legend{
+    margin:0 8px 5px;
+    min-height:29px;
+  }
+
+  .legend .hint{
+    min-height:29px;
+    padding:4px 8px;
+    font-size:.64rem;
+  }
+
+  .board-shell{
+    margin:0 5px;
+    padding:4px;
+    border-radius:12px;
+  }
+
+  .primary-tools{
+    left:50%;
+    right:auto;
+    width:min(560px,calc(100% - 16px));
+    transform:translateX(-50%);
+    bottom:calc(5px + env(safe-area-inset-bottom));
+    padding:4px;
+    border-radius:16px;
+  }
+
+  .primary-tools .tool{
+    min-height:51px;
+    flex-direction:row;
+    gap:5px;
+    font-size:.66rem;
+  }
+
+  .primary-tools .tool-icon{
+    font-size:1.05rem;
+  }
+
+  .tactical-board,
+  .tactical-board.full-court{
+    width:100%;
+    height:auto;
+    max-height:none;
+    min-width:760px;
+  }
+}
