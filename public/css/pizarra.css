@@ -1630,3 +1630,13 @@ body.mobile-board-mode.view-full .legend{
     max-width:92vw;
   }
 }
+
+
+/* Los tiradores solo aparecen dentro del modo app móvil. */
+body:not(.mobile-board-mode) .mobile-drag-handle{
+  display:none!important;
+}
+body.mobile-board-mode .mobile-side-dock>.mobile-dock-handle,
+body.mobile-board-mode .mobile-options-head>.mobile-drag-handle{
+  display:block;
+}
