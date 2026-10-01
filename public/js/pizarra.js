@@ -13,7 +13,31 @@
   const hint = document.getElementById('toolHint');
   const toolButtons = [...document.querySelectorAll('[data-tool]')];
   const pieceEls = [...svg.querySelectorAll('.piece')];
+
+  const primaryTools = document.getElementById('primaryTools');
+  const mobileLaunch = document.getElementById('mobileLaunch');
+  const mobileLaunchBtn = document.getElementById('mobileLaunchBtn');
+  const mobileAppControls = document.getElementById('mobileAppControls');
+  const mobileOptionsBtn = document.getElementById('mobileOptionsBtn');
+  const mobileExitBtn = document.getElementById('mobileExitBtn');
+  const mobileOptionsPanel = document.getElementById('mobileOptionsPanel');
+  const mobileOptionsClose = document.getElementById('mobileOptionsClose');
+  const mobilePlayName = document.getElementById('mobilePlayName');
+  const mobileHalfCourtBtn = document.getElementById('mobileHalfCourtBtn');
+  const mobileFullCourtBtn = document.getElementById('mobileFullCourtBtn');
+  const mobileUndoBtn = document.getElementById('mobileUndoBtn');
+  const mobileResetBtn = document.getElementById('mobileResetBtn');
+  const mobileClearBtn = document.getElementById('mobileClearBtn');
+  const mobileExportBtn = document.getElementById('mobileExportBtn');
+  const mobileFullscreenBtn = document.getElementById('mobileFullscreenBtn');
+  const mobileResetControlsBtn = document.getElementById('mobileResetControlsBtn');
+  const mobileExitMenuBtn = document.getElementById('mobileExitMenuBtn');
+  const mobileToast = document.getElementById('mobileToast');
+
   const STORAGE_KEY = 'statsbasket.pizarra.v2';
+  const MOBILE_POS_PREFIX = 'statsbasket.pizarra.mobile.pos.';
+  const isMobileBoard = /Android|iPhone|iPod|Mobile/i.test(navigator.userAgent) ||
+    (window.matchMedia('(pointer:coarse)').matches && Math.min(screen.width,screen.height) <= 700);
 
   const defaults = {
     half: {
@@ -95,7 +119,11 @@
     updateUndo();
   }
 
-  function updateUndo(){ undoBtn.disabled = undoStack.length === 0; }
+  function updateUndo(){
+    const disabled = undoStack.length === 0;
+    undoBtn.disabled = disabled;
+    if(mobileUndoBtn) mobileUndoBtn.disabled = disabled;
+  }
 
   function setView(mode){
     if(mode !== 'half' && mode !== 'full') return;
@@ -113,6 +141,9 @@
     fullBtn.classList.toggle('active-view',mode === 'full');
     halfBtn.setAttribute('aria-pressed',mode === 'half' ? 'true':'false');
     fullBtn.setAttribute('aria-pressed',mode === 'full' ? 'true':'false');
+    document.body.classList.toggle('view-half',mode === 'half');
+    document.body.classList.toggle('view-full',mode === 'full');
+    syncMobileViewButtons();
     render();
     save();
   }
@@ -326,7 +357,10 @@
     save();
   });
 
-  playName.addEventListener('input',save);
+  playName.addEventListener('input',() => {
+    if(mobilePlayName && mobilePlayName.value !== playName.value) mobilePlayName.value = playName.value;
+    save();
+  });
 
   function exportPng(){
     const cloneSvg = svg.cloneNode(true);
@@ -381,9 +415,296 @@
 
   exportBtn.addEventListener('click',exportPng);
 
+  function syncMobileViewButtons(){
+    if(!mobileHalfCourtBtn || !mobileFullCourtBtn) return;
+    const half = state.view === 'half';
+    mobileHalfCourtBtn.classList.toggle('active-view',half);
+    mobileFullCourtBtn.classList.toggle('active-view',!half);
+    mobileHalfCourtBtn.setAttribute('aria-pressed',half ? 'true':'false');
+    mobileFullCourtBtn.setAttribute('aria-pressed',half ? 'false':'true');
+  }
+
+  let toastTimer = 0;
+  function showMobileToast(message){
+    if(!mobileToast) return;
+    mobileToast.textContent = message;
+    mobileToast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => mobileToast.classList.remove('show'),2600);
+  }
+
+  async function requestFullscreen(){
+    if(document.fullscreenElement) return true;
+    const root = document.documentElement;
+    const fn = root.requestFullscreen || root.webkitRequestFullscreen;
+    if(!fn) return false;
+    try{
+      await fn.call(root,{navigationUI:'hide'});
+      return true;
+    }catch(_){
+      try{
+        await fn.call(root);
+        return true;
+      }catch(__){
+        return false;
+      }
+    }
+  }
+
+  async function requestMobileOrientation(mode){
+    if(!isMobileBoard) return false;
+    const orientation = mode === 'half' ? 'portrait' : 'landscape';
+    if(!screen.orientation?.lock) return false;
+    try{
+      await screen.orientation.lock(orientation);
+      return true;
+    }catch(_){
+      return false;
+    }
+  }
+
+  async function enterMobilePresentation(mode,{ensureFullscreen=true}={}){
+    if(!isMobileBoard) return;
+    let fullscreenOk = !!document.fullscreenElement;
+    if(ensureFullscreen) fullscreenOk = await requestFullscreen();
+    const orientationOk = await requestMobileOrientation(mode);
+    if(!fullscreenOk && !orientationOk){
+      showMobileToast(mode === 'half'
+        ? 'Gira el móvil a vertical si tu navegador no cambia la orientación automáticamente.'
+        : 'Gira el móvil a horizontal si tu navegador no cambia la orientación automáticamente.');
+    }
+  }
+
+  function closeMobileOptions(){
+    if(!mobileOptionsPanel) return;
+    mobileOptionsPanel.classList.remove('open');
+    mobileOptionsPanel.setAttribute('aria-hidden','true');
+    mobileOptionsBtn?.setAttribute('aria-expanded','false');
+  }
+
+  function openMobileOptions(){
+    if(!mobileOptionsPanel) return;
+    mobileOptionsPanel.classList.add('open');
+    mobileOptionsPanel.setAttribute('aria-hidden','false');
+    mobileOptionsBtn?.setAttribute('aria-expanded','true');
+    restoreDraggable(mobileOptionsPanel);
+  }
+
+  function toggleMobileOptions(){
+    if(mobileOptionsPanel?.classList.contains('open')) closeMobileOptions();
+    else openMobileOptions();
+  }
+
+  function positionKey(el){
+    const orientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+    return MOBILE_POS_PREFIX + el.id + '.' + orientation;
+  }
+
+  function clampFloating(el,left,top){
+    const rect = el.getBoundingClientRect();
+    const pad = 6;
+    return {
+      left:Math.max(pad,Math.min(window.innerWidth-rect.width-pad,left)),
+      top:Math.max(pad,Math.min(window.innerHeight-rect.height-pad,top))
+    };
+  }
+
+  function saveDraggable(el){
+    if(!el?.id) return;
+    const rect = el.getBoundingClientRect();
+    try{
+      localStorage.setItem(positionKey(el),JSON.stringify({left:rect.left,top:rect.top}));
+    }catch(_){}
+  }
+
+  function restoreDraggable(el){
+    if(!isMobileBoard || !el?.id) return;
+    let saved=null;
+    try{ saved=JSON.parse(localStorage.getItem(positionKey(el)) || 'null'); }catch(_){}
+    if(!saved || !Number.isFinite(saved.left) || !Number.isFinite(saved.top)) return;
+    requestAnimationFrame(() => {
+      const pos=clampFloating(el,saved.left,saved.top);
+      el.style.left=pos.left+'px';
+      el.style.top=pos.top+'px';
+      el.style.right='auto';
+      el.style.bottom='auto';
+      el.style.transform='none';
+    });
+  }
+
+  function makeDraggable(el){
+    if(!el) return;
+    const handle=el.querySelector('[data-drag-handle]');
+    if(!handle) return;
+    let drag=null;
+
+    handle.addEventListener('pointerdown',evt => {
+      if(!isMobileBoard) return;
+      evt.preventDefault();
+      evt.stopPropagation();
+      const rect=el.getBoundingClientRect();
+      el.style.left=rect.left+'px';
+      el.style.top=rect.top+'px';
+      el.style.right='auto';
+      el.style.bottom='auto';
+      el.style.transform='none';
+      drag={pointerId:evt.pointerId,dx:evt.clientX-rect.left,dy:evt.clientY-rect.top};
+      try{handle.setPointerCapture(evt.pointerId);}catch(_){}
+    });
+
+    handle.addEventListener('pointermove',evt => {
+      if(!drag || evt.pointerId!==drag.pointerId) return;
+      evt.preventDefault();
+      const pos=clampFloating(el,evt.clientX-drag.dx,evt.clientY-drag.dy);
+      el.style.left=pos.left+'px';
+      el.style.top=pos.top+'px';
+    });
+
+    const finish=evt => {
+      if(!drag || evt.pointerId!==drag.pointerId) return;
+      saveDraggable(el);
+      drag=null;
+      try{handle.releasePointerCapture(evt.pointerId);}catch(_){}
+    };
+    handle.addEventListener('pointerup',finish);
+    handle.addEventListener('pointercancel',finish);
+  }
+
+  function resetMobileControlPositions(){
+    try{
+      Object.keys(localStorage)
+        .filter(key => key.startsWith(MOBILE_POS_PREFIX))
+        .forEach(key => localStorage.removeItem(key));
+    }catch(_){}
+    [primaryTools,mobileAppControls,mobileOptionsPanel].forEach(el => {
+      if(!el) return;
+      el.style.removeProperty('left');
+      el.style.removeProperty('top');
+      el.style.removeProperty('right');
+      el.style.removeProperty('bottom');
+      el.style.removeProperty('transform');
+    });
+    showMobileToast('Controles restablecidos.');
+  }
+
+  async function exitToStatsBasket(){
+    try{
+      if(screen.orientation?.unlock) screen.orientation.unlock();
+    }catch(_){}
+    try{
+      if(document.fullscreenElement && document.exitFullscreen) await document.exitFullscreen();
+    }catch(_){}
+    window.location.href='./';
+  }
+
+  function updateFullscreenLabel(){
+    if(!mobileFullscreenBtn) return;
+    mobileFullscreenBtn.textContent = document.fullscreenElement ? '⛶ Salir de pantalla completa' : '⛶ Pantalla completa';
+  }
+
+  function setupMobileBoard(){
+    if(!isMobileBoard) return;
+    document.body.classList.add('mobile-board-mode');
+
+    makeDraggable(primaryTools);
+    makeDraggable(mobileAppControls);
+    makeDraggable(mobileOptionsPanel);
+
+    if(mobilePlayName) mobilePlayName.value=playName.value;
+    syncMobileViewButtons();
+    restoreDraggable(primaryTools);
+    restoreDraggable(mobileAppControls);
+
+    const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    if(document.fullscreenElement || standalone){
+      setView('full');
+      enterMobilePresentation('full',{ensureFullscreen:false});
+    }else{
+      mobileLaunch?.classList.add('active');
+      mobileLaunch?.setAttribute('aria-hidden','false');
+    }
+  }
+
+  mobileLaunchBtn?.addEventListener('click',async() => {
+    setView('full');
+    await enterMobilePresentation('full');
+    mobileLaunch?.classList.remove('active');
+    mobileLaunch?.setAttribute('aria-hidden','true');
+  });
+
+  mobileOptionsBtn?.addEventListener('click',evt => {
+    evt.stopPropagation();
+    toggleMobileOptions();
+  });
+  mobileOptionsClose?.addEventListener('click',closeMobileOptions);
+
+  mobileExitBtn?.addEventListener('click',exitToStatsBasket);
+  mobileExitMenuBtn?.addEventListener('click',exitToStatsBasket);
+
+  mobileHalfCourtBtn?.addEventListener('click',async() => {
+    setView('half');
+    closeMobileOptions();
+    await enterMobilePresentation('half',{ensureFullscreen:!document.fullscreenElement});
+  });
+
+  mobileFullCourtBtn?.addEventListener('click',async() => {
+    setView('full');
+    closeMobileOptions();
+    await enterMobilePresentation('full',{ensureFullscreen:!document.fullscreenElement});
+  });
+
+  halfBtn.addEventListener('click',() => {
+    if(isMobileBoard) enterMobilePresentation('half',{ensureFullscreen:false});
+  });
+  fullBtn.addEventListener('click',() => {
+    if(isMobileBoard) enterMobilePresentation('full',{ensureFullscreen:false});
+  });
+
+  mobileUndoBtn?.addEventListener('click',() => undoBtn.click());
+  mobileResetBtn?.addEventListener('click',() => resetBtn.click());
+  mobileClearBtn?.addEventListener('click',() => clearBtn.click());
+  mobileExportBtn?.addEventListener('click',() => exportBtn.click());
+
+  mobilePlayName?.addEventListener('input',() => {
+    playName.value=mobilePlayName.value;
+    save();
+  });
+
+  mobileFullscreenBtn?.addEventListener('click',async() => {
+    if(document.fullscreenElement){
+      try{ await document.exitFullscreen(); }catch(_){}
+    }else{
+      await enterMobilePresentation(state.view);
+    }
+    updateFullscreenLabel();
+  });
+
+  mobileResetControlsBtn?.addEventListener('click',resetMobileControlPositions);
+
+  document.addEventListener('fullscreenchange',updateFullscreenLabel);
+
+  let resizeTimer=0;
+  window.addEventListener('resize',() => {
+    if(!isMobileBoard) return;
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(() => {
+      [primaryTools,mobileAppControls].forEach(restoreDraggable);
+      if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
+    },180);
+  });
+
+  window.addEventListener('orientationchange',() => {
+    if(!isMobileBoard) return;
+    setTimeout(() => {
+      [primaryTools,mobileAppControls].forEach(restoreDraggable);
+      if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
+    },260);
+  });
+
   load();
   playName.value = state.playName;
   setTool('move');
   setView(state.view);
   updateUndo();
+  setupMobileBoard();
 })();
