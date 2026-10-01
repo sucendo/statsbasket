@@ -2506,3 +2506,39 @@ body.mobile-board-mode .mobile-view-section{
     grid-template-columns:1fr;
   }
 }
+
+
+/* Acceso directo y visible a la biblioteca */
+body.mobile-board-mode .mobile-side-dock .mobile-float-btn.library{
+  background:rgba(255,103,0,.18);
+  border-color:rgba(255,164,102,.26);
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-float-btn.library>span:first-child{
+  color:#ffb27d;
+}
+
+.desktop-library-card[open]{
+  display:block;
+}
+
+.desktop-library-card[open] .desktop-library-actions,
+.desktop-library-card[open] .desktop-play-library-list{
+  display:grid;
+}
+
+@media (orientation:portrait) and (max-width:700px){
+  body.mobile-board-mode.view-half:not(.dock-floating) .mobile-side-dock .mobile-app-controls{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  body.mobile-board-mode.view-half:not(.dock-floating) .mobile-side-dock .dock-playback-status{
+    grid-column:1 / -1;
+  }
+
+  body.mobile-board-mode.view-half:not(.dock-floating) .mobile-side-dock .mobile-float-btn.library{
+    background:#fff1e7;
+    border-color:#f1c8aa;
+    color:#a84c12;
+  }
+}
