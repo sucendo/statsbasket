@@ -1330,3 +1330,303 @@ body.mobile-board-mode .mobile-options-panel.open{
     min-width:62px;
   }
 }
+
+
+/* Herramientas tácticas adicionales */
+.draw-path.dribble{
+  stroke:#ffd34f;
+  stroke-width:8;
+  marker-end:url(#arrowYellow);
+  filter:drop-shadow(0 2px 2px rgba(0,42,66,.38));
+}
+.draw-path.screen{
+  stroke:#68dcff;
+  stroke-width:10;
+}
+.screen-cap{
+  stroke:#68dcff;
+  stroke-width:10;
+  stroke-linecap:round;
+  pointer-events:stroke;
+}
+.screen-drawing{
+  pointer-events:stroke;
+}
+.screen-drawing.preview{opacity:.72}
+.step-marker{
+  cursor:pointer;
+}
+.step-marker circle{
+  fill:rgba(0,55,83,.94);
+  stroke:#fff;
+  stroke-width:5;
+  filter:drop-shadow(0 3px 4px rgba(0,42,66,.3));
+}
+.step-marker text{
+  fill:#fff;
+  font-family:'Raleway',Arial,sans-serif;
+  font-size:27px;
+  font-weight:800;
+  text-anchor:middle;
+  dominant-baseline:middle;
+  pointer-events:none;
+}
+.step-marker.preview{opacity:.72}
+
+/* Dock móvil unificado: logo + herramientas + opciones/salir. */
+.mobile-side-dock{
+  display:none;
+}
+
+body.mobile-board-mode .mobile-side-dock{
+  position:fixed;
+  z-index:55;
+  top:50%;
+  right:calc(8px + env(safe-area-inset-right));
+  width:158px;
+  max-height:calc(100dvh - 16px);
+  display:grid;
+  grid-template-rows:auto auto auto;
+  gap:6px;
+  padding:14px 6px 6px;
+  border:1px solid rgba(255,255,255,.19);
+  border-radius:18px;
+  background:rgba(0,35,54,.54);
+  box-shadow:0 12px 34px rgba(0,0,0,.24);
+  transform:translateY(-50%);
+  backdrop-filter:blur(13px);
+  -webkit-backdrop-filter:blur(13px);
+}
+
+body.mobile-board-mode .mobile-side-dock>.mobile-dock-handle{
+  position:absolute;
+  top:2px;
+  left:50%;
+  transform:translateX(-50%);
+  height:10px;
+  color:rgba(255,255,255,.58);
+  font-size:.76rem;
+  line-height:8px;
+  letter-spacing:2px;
+}
+
+.mobile-dock-brand{
+  height:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  border-radius:10px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  text-decoration:none;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+
+.mobile-dock-brand img{
+  width:27px;
+  height:27px;
+  object-fit:contain;
+  flex:0 0 27px;
+}
+
+.mobile-dock-brand>span>span{
+  color:var(--sb-orange);
+}
+
+body.mobile-board-mode .mobile-dock-tools{
+  display:block;
+}
+
+body.mobile-board-mode .mobile-side-dock .primary-tools{
+  position:static;
+  left:auto;
+  right:auto;
+  top:auto;
+  bottom:auto;
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:4px;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  transform:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+
+body.mobile-board-mode .mobile-side-dock .primary-tools>.mobile-drag-handle{
+  display:none;
+}
+
+body.mobile-board-mode .mobile-side-dock .primary-tools .tool{
+  min-height:42px;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:4px 2px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:10px;
+  background:rgba(255,255,255,.09);
+  color:#fff;
+  font-size:.56rem;
+  line-height:1.05;
+}
+
+body.mobile-board-mode .mobile-side-dock .primary-tools .tool-icon{
+  font-size:1rem;
+}
+
+body.mobile-board-mode .mobile-side-dock .primary-tools .tool.active{
+  background:rgba(0,79,124,.9);
+  border-color:rgba(255,255,255,.28);
+  box-shadow:inset 0 -2px 0 var(--sb-orange);
+}
+
+body.mobile-board-mode .mobile-dock-actions{
+  display:block;
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-app-controls{
+  position:static;
+  left:auto;
+  right:auto;
+  top:auto;
+  bottom:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  transform:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-app-controls>.mobile-drag-handle{
+  display:none;
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-float-btn{
+  min-width:0;
+  min-height:42px;
+  padding:3px;
+  border-radius:10px;
+  font-size:.55rem;
+  background:rgba(255,255,255,.11);
+}
+
+body.mobile-board-mode .mobile-side-dock .mobile-float-btn.exit{
+  background:rgba(176,40,40,.48);
+}
+
+/* La indicación de herramienta deja libre el lateral ocupado por el dock. */
+body.mobile-board-mode.view-full .legend{
+  max-width:calc(100vw - 180px);
+}
+
+/* En horizontal todo cabe en un lateral. */
+@media (orientation:landscape){
+  body.mobile-board-mode .mobile-side-dock{
+    top:50%;
+    right:calc(7px + env(safe-area-inset-right));
+    bottom:auto;
+    left:auto;
+    width:158px;
+    transform:translateY(-50%);
+  }
+
+  body.mobile-board-mode .mobile-side-dock .primary-tools{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  body.mobile-board-mode .mobile-side-dock .primary-tools .tool{
+    min-height:39px;
+    flex-direction:row;
+    justify-content:flex-start;
+    padding:4px 5px;
+    gap:4px;
+    font-size:.54rem;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .primary-tools .tool-icon{
+    width:15px;
+    font-size:.88rem;
+    text-align:center;
+  }
+}
+
+/* Media pista en vertical: mismo dock, pero en horizontal abajo para no tapar la cancha. */
+@media (orientation:portrait){
+  body.mobile-board-mode .mobile-side-dock{
+    top:auto;
+    right:auto;
+    bottom:calc(6px + env(safe-area-inset-bottom));
+    left:50%;
+    width:min(410px,calc(100vw - 12px));
+    max-height:none;
+    grid-template-columns:74px 1fr 104px;
+    grid-template-rows:auto;
+    align-items:center;
+    gap:5px;
+    padding:11px 5px 5px;
+    transform:translateX(-50%);
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-dock-brand{
+    height:100%;
+    min-height:48px;
+    flex-direction:column;
+    gap:1px;
+    font-size:.55rem;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-dock-brand img{
+    width:25px;
+    height:25px;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .primary-tools{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  body.mobile-board-mode .mobile-side-dock .primary-tools .tool{
+    min-height:34px;
+    font-size:.48rem;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .primary-tools .tool-icon{
+    font-size:.84rem;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-app-controls{
+    grid-template-columns:1fr;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-float-btn{
+    min-height:32px;
+    flex-direction:row;
+    gap:3px;
+    font-size:.48rem;
+  }
+
+  body.mobile-board-mode .mobile-side-dock .mobile-float-btn>span:first-child{
+    font-size:.78rem;
+  }
+
+  body.mobile-board-mode .legend{
+    top:calc(7px + env(safe-area-inset-top));
+    max-width:92vw;
+  }
+}
