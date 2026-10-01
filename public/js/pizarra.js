@@ -152,11 +152,11 @@
   }
 
   function validDrawing(d){
-    if(!d || !['arrow','pass','dribble','screen','step'].includes(d.type)) return false;
+    if(!d || !['arrow','pass','dribble','screen','shot','step'].includes(d.type)) return false;
     if(d.type === 'step'){
       return [d.x,d.y,d.n].every(v => Number.isFinite(Number(v)));
     }
-    if(['arrow','pass','dribble'].includes(d.type) && Array.isArray(d.points) && d.points.length >= 2){
+    if(['arrow','pass','dribble','shot'].includes(d.type) && Array.isArray(d.points) && d.points.length >= 2){
       return d.points.every(validPoint);
     }
     return [d.x1,d.y1,d.x2,d.y2].every(v => Number.isFinite(Number(v)));
@@ -170,7 +170,7 @@
         x:Number(d.x),y:Number(d.y),n:Number(d.n)
       };
     }
-    const type=['pass','dribble','screen'].includes(d.type) ? d.type : 'arrow';
+    const type=['pass','dribble','screen','shot'].includes(d.type) ? d.type : 'arrow';
     const normalized={
       id:String(d.id || ('d'+Date.now())),
       type,
@@ -180,7 +180,7 @@
     if(typeof d.pieceId === 'string') normalized.pieceId=d.pieceId;
     if(typeof d.fromId === 'string') normalized.fromId=d.fromId;
     if(typeof d.toId === 'string') normalized.toId=d.toId;
-    if(['arrow','pass','dribble'].includes(type) && Array.isArray(d.points) && d.points.length >= 2){
+    if(['arrow','pass','dribble','shot'].includes(type) && Array.isArray(d.points) && d.points.length >= 2){
       normalized.points=d.points.filter(validPoint).map(p=>({x:Number(p.x),y:Number(p.y)}));
       if(normalized.points.length >= 2){
         normalized.x1=normalized.points[0].x;
@@ -311,20 +311,21 @@
   }
 
   function setTool(tool){
-    if(!['move','arrow','dribble','pass','screen','step','erase'].includes(tool)) return;
+    if(!['move','arrow','dribble','pass','screen','shot','step','erase'].includes(tool)) return;
     state.tool = tool;
     toolButtons.forEach(btn => {
       const active = btn.dataset.tool === tool;
       btn.classList.toggle('active',active);
       btn.setAttribute('aria-pressed',active ? 'true':'false');
     });
-    svg.classList.toggle('drawing-tool',['arrow','dribble','pass','screen'].includes(tool));
+    svg.classList.toggle('drawing-tool',['arrow','dribble','pass','screen','shot'].includes(tool));
     const messages = {
       move:'Mover: arrastra jugadores y balón.',
       arrow:'Movimiento: línea continua con flecha.',
       dribble:'Bote: movimiento con balón en zigzag.',
       pass:'Pase: línea discontinua con flecha.',
       screen:'Bloqueo: arrastra para colocar un bloqueo terminado en T.',
+      shot:'Tiro: dibuja con el dedo la trayectoria del lanzamiento.',
       step:'Paso: toca la pista para numerar la secuencia 1, 2, 3…',
       erase:'Borrador: toca cualquier trazo o paso para eliminarlo.'
     };
@@ -451,7 +452,7 @@
     const pts=drawingPoints(d);
     const pathData=d.type === 'dribble' ? dribblePath(pts) : smoothPath(pts);
     path.setAttribute('d',pathData);
-    path.setAttribute('class',`draw-path ${d.type === 'pass' ? 'pass' : d.type === 'dribble' ? 'dribble' : 'move'}${preview?' preview':''}`);
+    path.setAttribute('class',`draw-path ${d.type === 'pass' ? 'pass' : d.type === 'dribble' ? 'dribble' : d.type === 'shot' ? 'shot' : 'move'}${preview?' preview':''}`);
     if(!preview){
       path.dataset.drawingId=d.id;
       path.dataset.phase=String(d.phase || 1);
@@ -578,7 +579,7 @@
       return;
     }
 
-    if(!['arrow','dribble','pass','screen'].includes(state.tool)) return;
+    if(!['arrow','dribble','pass','screen','shot'].includes(state.tool)) return;
     evt.preventDefault();
     const p = svgPoint(evt);
     pushUndo();
@@ -589,8 +590,8 @@
       x1:p.x,y1:p.y,x2:p.x,y2:p.y,
       phase:currentPhase(),
       pieceId:['arrow','dribble','screen'].includes(state.tool) ? nearestPlayer(p) : null,
-      fromId:state.tool==='pass' ? nearestPlayer(p) : null,
-      points:['arrow','dribble','pass'].includes(state.tool) ? [{x:p.x,y:p.y}] : null
+      fromId:['pass','shot'].includes(state.tool) ? nearestPlayer(p) : null,
+      points:['arrow','dribble','pass','shot'].includes(state.tool) ? [{x:p.x,y:p.y}] : null
     };
     previewPath = drawingElement(interaction,true);
     drawingsLayer.appendChild(previewPath);
@@ -762,6 +763,8 @@
         if(d.type==='pass'){
           if(!d.fromId) d.fromId=nearestInPositions({x:d.x1,y:d.y1},phaseStart);
           if(!d.toId) d.toId=nearestInPositions({x:d.x2,y:d.y2},phaseStart);
+        }else if(d.type==='shot' && !d.fromId){
+          d.fromId=nearestInPositions({x:d.x1,y:d.y1},phaseStart);
         }
       });
 
@@ -801,7 +804,7 @@
   function phaseDuration(phase){
     let maxLength=0;
     phase.actions.forEach(({d})=>{
-      if(['arrow','dribble','pass','screen'].includes(d.type)){
+      if(['arrow','dribble','pass','screen','shot'].includes(d.type)){
         maxLength=Math.max(maxLength,polylineLength(playbackPoints(d)));
       }
     });
@@ -830,7 +833,7 @@
         if(d.pieceId) movePieceDom(d.pieceId,pos);
         const bounce=24+Math.abs(Math.sin(t*Math.PI*10))*11;
         movePieceDom('ball',{x:pos.x+24,y:pos.y+bounce});
-      }else if(d.type==='pass'){
+      }else if(d.type==='pass' || d.type==='shot'){
         movePieceDom('ball',pos);
       }
     });
@@ -936,7 +939,7 @@
     style.textContent = `
       .piece circle{stroke:#fff;stroke-width:6}.piece text{fill:#fff;font-family:Arial,sans-serif;font-size:38px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
       .attack-piece circle{fill:${state.colors.attack}}.defense-piece circle{fill:${state.colors.defense}}.ball-piece circle{fill:#ff8a20;stroke:#fff3dd}.ball-piece path{fill:none;stroke:#8a4200;stroke-width:4}
-      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:5;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:4;stroke-dasharray:12 10;marker-end:url(#arrowWhite)}.draw-path.dribble{stroke:#ffd34f;stroke-width:4;marker-end:url(#arrowYellow)}.draw-path.screen,.screen-cap{stroke:#68dcff;stroke-width:5;fill:none;stroke-linecap:round}.step-marker circle{fill:${state.colors.step};stroke:#fff;stroke-width:4}.step-marker text{fill:${state.colors.stepText};font-family:Arial,sans-serif;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
+      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:5;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:4;stroke-dasharray:12 10;marker-end:url(#arrowWhite)}.draw-path.dribble{stroke:#ffd34f;stroke-width:4;marker-end:url(#arrowYellow)}.draw-path.shot{stroke:#f472b6;stroke-width:4;stroke-dasharray:5 9;marker-end:url(#arrowShot)}.draw-path.screen,.screen-cap{stroke:#68dcff;stroke-width:5;fill:none;stroke-linecap:round}.step-marker circle{fill:${state.colors.step};stroke:#fff;stroke-width:4}.step-marker text{fill:${state.colors.stepText};font-family:Arial,sans-serif;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
     `;
     cloneSvg.insertBefore(style,cloneSvg.firstChild);
 
@@ -1251,6 +1254,13 @@
   });
   mobileOptionsClose?.addEventListener('click',closeMobileOptions);
 
+  document.addEventListener('pointerdown',evt => {
+    if(!mobileOptionsPanel?.classList.contains('open')) return;
+    const target=evt.target;
+    if(mobileOptionsPanel.contains(target) || mobileOptionsBtn?.contains(target)) return;
+    closeMobileOptions();
+  });
+
   mobileQuickUndoBtn?.addEventListener('click',() => undoBtn.click());
   mobileQuickResetBtn?.addEventListener('click',() => resetBtn.click());
   mobileExitMenuBtn?.addEventListener('click',exitToStatsBasket);
@@ -1296,7 +1306,10 @@
   });
   mobileExportBtn?.addEventListener('click',() => exportBtn.click());
 
-  mobilePlayBtn?.addEventListener('click',startPlayback);
+  mobilePlayBtn?.addEventListener('click',() => {
+    closeMobileOptions();
+    startPlayback();
+  });
   mobilePauseBtn?.addEventListener('click',togglePlaybackPause);
   mobileStopBtn?.addEventListener('click',() => stopPlayback(true));
 
