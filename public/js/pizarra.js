@@ -24,6 +24,7 @@
   const mobileLaunchBtn = document.getElementById('mobileLaunchBtn');
   const mobileAppControls = document.getElementById('mobileAppControls');
   const mobileOptionsBtn = document.getElementById('mobileOptionsBtn');
+  const mobileLibraryBtn = document.getElementById('mobileLibraryBtn');
   const mobileQuickUndoBtn = document.getElementById('mobileQuickUndoBtn');
   const mobileQuickResetBtn = document.getElementById('mobileQuickResetBtn');
   const mobileOptionsPanel = document.getElementById('mobileOptionsPanel');
@@ -44,6 +45,7 @@
   const mobileImportPlayInput = document.getElementById('mobileImportPlayInput');
   const mobileImportLibraryInput = document.getElementById('mobileImportLibraryInput');
   const playLibraryList = document.getElementById('playLibraryList');
+  const mobilePlayLibrarySection = document.getElementById('mobilePlayLibrarySection');
   const mobileAttackColor = document.getElementById('mobileAttackColor');
   const mobileDefenseColor = document.getElementById('mobileDefenseColor');
   const mobileStepColorSwatch = document.getElementById('mobileStepColorSwatch');
@@ -1747,12 +1749,21 @@
     evt.stopPropagation();
     toggleMobileOptions();
   });
+
+  mobileLibraryBtn?.addEventListener('click',evt => {
+    evt.stopPropagation();
+    openMobileOptions();
+    requestAnimationFrame(() => {
+      mobilePlayLibrarySection?.scrollIntoView({block:'start',behavior:'smooth'});
+    });
+  });
+
   mobileOptionsClose?.addEventListener('click',closeMobileOptions);
 
   document.addEventListener('pointerdown',evt => {
     if(!mobileOptionsPanel?.classList.contains('open')) return;
     const target=evt.target;
-    if(mobileOptionsPanel.contains(target) || mobileOptionsBtn?.contains(target)) return;
+    if(mobileOptionsPanel.contains(target) || mobileOptionsBtn?.contains(target) || mobileLibraryBtn?.contains(target)) return;
     closeMobileOptions();
   });
 
