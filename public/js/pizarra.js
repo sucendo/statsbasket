@@ -34,12 +34,14 @@
   const mobileResetStepsBtn = document.getElementById('mobileResetStepsBtn');
   const mobileExportBtn = document.getElementById('mobileExportBtn');
   const mobileFullscreenBtn = document.getElementById('mobileFullscreenBtn');
+  const mobileDockModeBtn = document.getElementById('mobileDockModeBtn');
   const mobileResetControlsBtn = document.getElementById('mobileResetControlsBtn');
   const mobileExitMenuBtn = document.getElementById('mobileExitMenuBtn');
   const mobileToast = document.getElementById('mobileToast');
 
   const STORAGE_KEY = 'statsbasket.pizarra.v2';
   const MOBILE_POS_PREFIX = 'statsbasket.pizarra.mobile.pos.';
+  const MOBILE_DOCK_FLOAT_KEY = 'statsbasket.pizarra.mobile.dockFloating';
   const isMobileBoard = /Android|iPhone|iPod|Mobile/i.test(navigator.userAgent) ||
     (window.matchMedia('(pointer:coarse)').matches && Math.min(screen.width,screen.height) <= 700);
 
@@ -108,10 +110,17 @@
     }catch(_){}
   }
 
+  function validPoint(p){
+    return p && Number.isFinite(Number(p.x)) && Number.isFinite(Number(p.y));
+  }
+
   function validDrawing(d){
     if(!d || !['arrow','pass','dribble','screen','step'].includes(d.type)) return false;
     if(d.type === 'step'){
       return [d.x,d.y,d.n].every(v => Number.isFinite(Number(v)));
+    }
+    if(['arrow','pass','dribble'].includes(d.type) && Array.isArray(d.points) && d.points.length >= 2){
+      return d.points.every(validPoint);
     }
     return [d.x1,d.y1,d.x2,d.y2].every(v => Number.isFinite(Number(v)));
   }
@@ -124,11 +133,23 @@
         x:Number(d.x),y:Number(d.y),n:Number(d.n)
       };
     }
-    return {
+    const type=['pass','dribble','screen'].includes(d.type) ? d.type : 'arrow';
+    const normalized={
       id:String(d.id || ('d'+Date.now())),
-      type:['pass','dribble','screen'].includes(d.type) ? d.type : 'arrow',
+      type,
       x1:Number(d.x1),y1:Number(d.y1),x2:Number(d.x2),y2:Number(d.y2)
     };
+    if(['arrow','pass','dribble'].includes(type) && Array.isArray(d.points) && d.points.length >= 2){
+      normalized.points=d.points.filter(validPoint).map(p=>({x:Number(p.x),y:Number(p.y)}));
+      if(normalized.points.length >= 2){
+        normalized.x1=normalized.points[0].x;
+        normalized.y1=normalized.points[0].y;
+        const last=normalized.points[normalized.points.length-1];
+        normalized.x2=last.x;
+        normalized.y2=last.y;
+      }
+    }
+    return normalized;
   }
 
   function nextStepNumber(){
@@ -205,8 +226,8 @@
   function zigzagPath(x1,y1,x2,y2){
     const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);
     if(len<2) return `M ${x1} ${y1} L ${x2} ${y2}`;
-    const ux=dx/len,uy=dy/len,px=-uy,py=ux;
-    const spacing=24,amp=11,steps=Math.max(2,Math.floor(len/spacing));
+    const px=-dy/len,py=dx/len;
+    const spacing=20,amp=7,steps=Math.max(2,Math.floor(len/spacing));
     let path=`M ${x1} ${y1}`;
     for(let i=1;i<steps;i++){
       const t=i/steps;
@@ -216,6 +237,51 @@
       path+=` L ${x} ${y}`;
     }
     return path+` L ${x2} ${y2}`;
+  }
+
+  function drawingPoints(d){
+    if(Array.isArray(d.points) && d.points.length >= 2) return d.points;
+    return [{x:d.x1,y:d.y1},{x:d.x2,y:d.y2}];
+  }
+
+  function smoothPath(points){
+    if(!points?.length) return '';
+    if(points.length === 1) return `M ${points[0].x} ${points[0].y}`;
+    if(points.length === 2) return `M ${points[0].x} ${points[0].y} L ${points[1].x} ${points[1].y}`;
+    let d=`M ${points[0].x} ${points[0].y}`;
+    for(let i=1;i<points.length-1;i++){
+      const p=points[i],n=points[i+1];
+      const mx=(p.x+n.x)/2,my=(p.y+n.y)/2;
+      d+=` Q ${p.x} ${p.y} ${mx} ${my}`;
+    }
+    const last=points[points.length-1];
+    d+=` L ${last.x} ${last.y}`;
+    return d;
+  }
+
+  function polylineLength(points){
+    let len=0;
+    for(let i=1;i<points.length;i++) len+=Math.hypot(points[i].x-points[i-1].x,points[i].y-points[i-1].y);
+    return len;
+  }
+
+  function dribblePath(points){
+    if(!points || points.length < 2) return '';
+    const out=[points[0]];
+    let flip=1;
+    const amp=6;
+    for(let i=1;i<points.length;i++){
+      const a=points[i-1],b=points[i];
+      const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1;
+      const px=-dy/len,py=dx/len;
+      if(i<points.length-1){
+        out.push({x:b.x+px*amp*flip,y:b.y+py*amp*flip});
+        flip*=-1;
+      }else{
+        out.push({x:b.x,y:b.y});
+      }
+    }
+    return smoothPath(out);
   }
 
   function screenCap(d){
@@ -260,9 +326,8 @@
     }
 
     const path=document.createElementNS(ns,'path');
-    const pathData=d.type === 'dribble'
-      ? zigzagPath(d.x1,d.y1,d.x2,d.y2)
-      : `M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`;
+    const pts=drawingPoints(d);
+    const pathData=d.type === 'dribble' ? dribblePath(pts) : smoothPath(pts);
     path.setAttribute('d',pathData);
     path.setAttribute('class',`draw-path ${d.type === 'pass' ? 'pass' : d.type === 'dribble' ? 'dribble' : 'move'}${preview?' preview':''}`);
     if(!preview) path.dataset.drawingId=d.id;
@@ -282,9 +347,8 @@
       }
       return;
     }
-    const pathData=d.type === 'dribble'
-      ? zigzagPath(d.x1,d.y1,d.x2,d.y2)
-      : `M ${d.x1} ${d.y1} L ${d.x2} ${d.y2}`;
+    const pts=drawingPoints(d);
+    const pathData=d.type === 'dribble' ? dribblePath(pts) : smoothPath(pts);
     el.setAttribute('d',pathData);
   }
 
@@ -396,7 +460,8 @@
       kind:'draw',
       pointerId:evt.pointerId,
       type:state.tool,
-      x1:p.x,y1:p.y,x2:p.x,y2:p.y
+      x1:p.x,y1:p.y,x2:p.x,y2:p.y,
+      points:['arrow','dribble','pass'].includes(state.tool) ? [{x:p.x,y:p.y}] : null
     };
     previewPath = drawingElement(interaction,true);
     drawingsLayer.appendChild(previewPath);
@@ -413,6 +478,12 @@
     }else if(interaction.kind === 'draw'){
       interaction.x2=p.x;
       interaction.y2=p.y;
+      if(Array.isArray(interaction.points)){
+        const last=interaction.points[interaction.points.length-1];
+        if(!last || Math.hypot(p.x-last.x,p.y-last.y) >= 7){
+          interaction.points.push({x:p.x,y:p.y});
+        }
+      }
       updatePreviewElement(previewPath,interaction);
     }
   });
@@ -426,14 +497,21 @@
     }else if(interaction.kind === 'draw'){
       previewPath?.remove();
       previewPath=null;
-      const dx=interaction.x2-interaction.x1,dy=interaction.y2-interaction.y1;
-      if(Math.hypot(dx,dy) >= 18){
-        board().drawings.push({
+      const traced=Array.isArray(interaction.points) ? interaction.points : null;
+      if(traced && traced.length){
+        const last=traced[traced.length-1];
+        if(Math.hypot(interaction.x2-last.x,interaction.y2-last.y) >= 2) traced.push({x:interaction.x2,y:interaction.y2});
+      }
+      const length=traced ? polylineLength(traced) : Math.hypot(interaction.x2-interaction.x1,interaction.y2-interaction.y1);
+      if(length >= 18){
+        const drawing={
           id:'d'+Date.now()+'-'+Math.random().toString(36).slice(2,7),
           type:interaction.type,
           x1:interaction.x1,y1:interaction.y1,
           x2:interaction.x2,y2:interaction.y2
-        });
+        };
+        if(traced && traced.length >= 2) drawing.points=traced;
+        board().drawings.push(drawing);
         renderDrawings();
         save();
       }else{
@@ -496,7 +574,7 @@
     style.textContent = `
       .piece circle{stroke:#fff;stroke-width:6}.piece text{fill:#fff;font-family:Arial,sans-serif;font-size:38px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
       .attack-piece circle{fill:#df1c31}.defense-piece circle{fill:#004f7c}.ball-piece circle{fill:#ff8a20;stroke:#fff3dd}.ball-piece path{fill:none;stroke:#8a4200;stroke-width:4}
-      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:11;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:9;stroke-dasharray:24 18;marker-end:url(#arrowWhite)}.draw-path.dribble{stroke:#ffd34f;stroke-width:8;marker-end:url(#arrowYellow)}.draw-path.screen,.screen-cap{stroke:#68dcff;stroke-width:10;fill:none;stroke-linecap:round}.step-marker circle{fill:#003753;stroke:#fff;stroke-width:5}.step-marker text{fill:#fff;font-family:Arial,sans-serif;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
+      .draw-path{fill:none;stroke-linecap:round;stroke-linejoin:round}.draw-path.move{stroke:#ff6700;stroke-width:6;marker-end:url(#arrowOrange)}.draw-path.pass{stroke:#fff;stroke-width:5;stroke-dasharray:14 11;marker-end:url(#arrowWhite)}.draw-path.dribble{stroke:#ffd34f;stroke-width:5;marker-end:url(#arrowYellow)}.draw-path.screen,.screen-cap{stroke:#68dcff;stroke-width:6;fill:none;stroke-linecap:round}.step-marker circle{fill:#003753;stroke:#fff;stroke-width:5}.step-marker text{fill:#fff;font-family:Arial,sans-serif;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
     `;
     cloneSvg.insertBefore(style,cloneSvg.firstChild);
 
@@ -666,6 +744,7 @@
 
     handle.addEventListener('pointerdown',evt => {
       if(!isMobileBoard) return;
+      if(el===mobileSideDock && !document.body.classList.contains('dock-floating')) return;
       evt.preventDefault();
       evt.stopPropagation();
       const rect=el.getBoundingClientRect();
@@ -696,6 +775,25 @@
     handle.addEventListener('pointercancel',finish);
   }
 
+  function dockIsFloating(){
+    try{return localStorage.getItem(MOBILE_DOCK_FLOAT_KEY)==='1';}catch(_){return false;}
+  }
+
+  function applyDockMode(floating=dockIsFloating()){
+    document.body.classList.toggle('dock-floating',!!floating);
+    if(mobileDockModeBtn) mobileDockModeBtn.textContent=floating ? '▥ Acoplar panel' : '▣ Panel flotante';
+    if(!mobileSideDock) return;
+    if(!floating){
+      mobileSideDock.style.removeProperty('left');
+      mobileSideDock.style.removeProperty('top');
+      mobileSideDock.style.removeProperty('right');
+      mobileSideDock.style.removeProperty('bottom');
+      mobileSideDock.style.removeProperty('transform');
+    }else{
+      restoreDraggable(mobileSideDock);
+    }
+  }
+
   function resetMobileControlPositions(){
     try{
       Object.keys(localStorage)
@@ -710,6 +808,7 @@
       el.style.removeProperty('bottom');
       el.style.removeProperty('transform');
     });
+    applyDockMode();
     showMobileToast('Controles restablecidos.');
   }
 
@@ -744,7 +843,7 @@
 
     if(mobilePlayName) mobilePlayName.value=playName.value;
     syncMobileViewButtons();
-    restoreDraggable(mobileSideDock);
+    applyDockMode();
 
     const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     if(document.fullscreenElement || standalone){
@@ -817,6 +916,13 @@
     updateFullscreenLabel();
   });
 
+  mobileDockModeBtn?.addEventListener('click',() => {
+    const next=!document.body.classList.contains('dock-floating');
+    try{localStorage.setItem(MOBILE_DOCK_FLOAT_KEY,next?'1':'0');}catch(_){}
+    applyDockMode(next);
+    showMobileToast(next ? 'Panel flotante activado.' : 'Panel acoplado al lateral.');
+  });
+
   mobileResetControlsBtn?.addEventListener('click',resetMobileControlPositions);
 
   document.addEventListener('fullscreenchange',updateFullscreenLabel);
@@ -826,7 +932,7 @@
     if(!isMobileBoard) return;
     clearTimeout(resizeTimer);
     resizeTimer=setTimeout(() => {
-      [mobileSideDock].forEach(restoreDraggable);
+      if(document.body.classList.contains('dock-floating')) restoreDraggable(mobileSideDock);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
     },180);
   });
@@ -834,7 +940,7 @@
   window.addEventListener('orientationchange',() => {
     if(!isMobileBoard) return;
     setTimeout(() => {
-      [mobileSideDock].forEach(restoreDraggable);
+      if(document.body.classList.contains('dock-floating')) restoreDraggable(mobileSideDock);
       if(mobileOptionsPanel?.classList.contains('open')) restoreDraggable(mobileOptionsPanel);
     },260);
   });
