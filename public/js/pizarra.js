@@ -802,7 +802,11 @@
     if(mobilePlayBtn) mobilePlayBtn.disabled=playback.running && !playback.paused;
     if(mobilePauseBtn){
       mobilePauseBtn.disabled=!playback.running;
-      mobilePauseBtn.textContent=playback.paused ? '▶ Continuar' : 'Ⅱ Pausa';
+      const icon=mobilePauseBtn.querySelector('span:first-child');
+      const label=mobilePauseBtn.querySelector('span:last-child');
+      if(icon) icon.textContent=playback.paused ? '▶' : 'Ⅱ';
+      if(label) label.textContent=playback.paused ? 'Continuar' : 'Pausa';
+      if(!icon && !label) mobilePauseBtn.textContent=playback.paused ? '▶ Continuar' : 'Ⅱ Pausa';
     }
     if(mobileStopBtn) mobileStopBtn.disabled=!playback.running;
   }
